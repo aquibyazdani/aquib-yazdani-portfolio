@@ -1,17 +1,66 @@
 import svgPaths from "../imports/svg-cipwcyx6co";
 import aboutImage from "figma:asset/7164f2117b63b79a5ca779d1dbda20e3d3175e9f.png";
-import { Link } from 'react-router-dom';
+import profileImage from "figma:asset/29f56eff71a2ffc468127e31faf642ab5fe726bd.png";
+import { Code2, FileCode, Atom, Zap, Paintbrush, Wind, GitBranch, Github, Smartphone, Palette, Box, CheckCircle, TestTube2, Gauge, Timer, Globe, Database, Cloud, MessageSquare, Folder, Puzzle, Users } from "lucide-react";
+import Navbar from "./Navbar";
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-export default function About() {
-  const capabilities = [
-    "HTML",
-    "CSS",
-    "JAVASCRIPT",
-    "JQUERY",
-    "ACCESSIBILITY",
-    "FIGMA",
-    "TAILWIND CSS"
-  ];
+gsap.registerPlugin(ScrollTrigger);
+
+interface AboutProps {
+  navigate: (path: string) => void;
+}
+
+export default function About({ navigate }: AboutProps) {
+  const capabilities = {
+    "Frontend Development": [
+      { name: 'React.js', icon: Atom },
+      { name: 'React Native', icon: Smartphone },
+      { name: 'Next.js', icon: Zap },
+      { name: 'JavaScript (ES6+)', icon: Code2 },
+      { name: 'TypeScript', icon: FileCode },
+      { name: 'HTML', icon: FileCode },
+      { name: 'CSS', icon: Paintbrush },
+      { name: 'SCSS', icon: Paintbrush },
+      { name: 'Tailwind CSS', icon: Wind },
+      { name: 'Material UI', icon: Palette },
+      { name: 'Bootstrap', icon: Palette }
+    ],
+    "State Management": [
+      { name: 'Redux', icon: Box },
+      { name: 'Context API', icon: Box },
+      { name: 'Zustand', icon: Box }
+    ],
+    "Testing & QA": [
+      { name: 'Jest', icon: CheckCircle },
+      { name: 'React Testing Library', icon: TestTube2 },
+      { name: 'Unit Testing', icon: CheckCircle }
+    ],
+    "Performance Optimization": [
+      { name: 'SSR', icon: Zap },
+      { name: 'SSG', icon: Zap },
+      { name: 'Component Reusability', icon: Puzzle },
+      { name: 'UI Optimization', icon: Gauge },
+      { name: 'Load Time Reduction', icon: Timer },
+      { name: 'Accessibility Improvements', icon: Users }
+    ],
+    "API Integration": [
+      { name: 'RESTful APIs', icon: Globe },
+      { name: 'GraphQL', icon: Database }
+    ],
+    "Version Control & Collaboration": [
+      { name: 'Git', icon: GitBranch },
+      { name: 'GitHub', icon: Github },
+      { name: 'Azure', icon: Cloud },
+      { name: 'GitLab', icon: GitBranch },
+      { name: 'Bitbucket', icon: GitBranch },
+      { name: 'Jira', icon: Folder },
+      { name: 'Slack', icon: MessageSquare },
+      { name: 'ProofHub', icon: Folder }
+    ]
+  };
 
   const experiences = [
     {
@@ -28,24 +77,80 @@ export default function About() {
     }
   ];
 
+  const heroRef = useRef(null);
+  const capabilitiesRef = useRef(null);
+  const experienceRef = useRef(null);
+  const connectRef = useRef(null);
+
+  useEffect(() => {
+    const currentRef = heroRef.current;
+    if (currentRef) {
+      gsap.from(currentRef, {
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        scrollTrigger: {
+          trigger: currentRef,
+          start: "top 80%",
+          end: "top 50%",
+          toggleActions: "restart none none none"
+        }
+      });
+    }
+
+    const capabilitiesCurrentRef = capabilitiesRef.current;
+    if (capabilitiesCurrentRef) {
+      gsap.from(capabilitiesCurrentRef, {
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        scrollTrigger: {
+          trigger: capabilitiesCurrentRef,
+          start: "top 80%",
+          end: "top 50%",
+          toggleActions: "restart none none none"
+        }
+      });
+    }
+
+    const experienceCurrentRef = experienceRef.current;
+    if (experienceCurrentRef) {
+      gsap.from(experienceCurrentRef, {
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        scrollTrigger: {
+          trigger: experienceCurrentRef,
+          start: "top 80%",
+          end: "top 50%",
+          toggleActions: "restart none none none"
+        }
+      });
+    }
+
+    const connectCurrentRef = connectRef.current;
+    if (connectCurrentRef) {
+      gsap.from(connectCurrentRef, {
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        scrollTrigger: {
+          trigger: connectCurrentRef,
+          start: "top 80%",
+          end: "top 50%",
+          toggleActions: "restart none none none"
+        }
+      });
+    }
+  }, []);
+
   return (
     <div className="bg-neutral-950 min-h-screen">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-neutral-950/80 backdrop-blur-sm border-b border-[#484848]">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <Link to="/" className="font-['Bebas_Neue:Regular',sans-serif] text-[#c7c7c7] text-[28px] tracking-[-0.32px]">
-            robert garcia
-          </Link>
-          <div className="flex gap-8 font-['Inter:Medium',sans-serif] font-medium text-[#c7c7c7] text-[16px]">
-            <Link to="/projects" className="hover:text-white transition-colors">Work</Link>
-            <Link to="/about" className="hover:text-white transition-colors">About</Link>
-            <Link to="/" className="hover:text-white transition-colors">Contact</Link>
-          </div>
-        </div>
-      </nav>
+      <Navbar navigate={navigate} currentPage="about" />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-6">
+      <section className="pt-32 pb-20 px-6" ref={heroRef}>
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             {/* Left Content */}
@@ -91,25 +196,22 @@ export default function About() {
               </div>
             </div>
 
-            {/* Right - Empty for spacing on desktop */}
-            <div className="hidden lg:block" />
-          </div>
-
-          {/* Portrait Image */}
-          <div className="mt-12">
-            <div className="bg-[#c7c7c7] rounded-[12px] w-full max-w-4xl mx-auto overflow-hidden">
-              <img 
-                src={aboutImage} 
-                alt="Robert Garcia" 
-                className="w-full h-auto object-cover"
-              />
+            {/* Right - Profile Image */}
+            <div className="lg:block">
+              <div className="bg-[#c7c7c7] rounded-[12px] overflow-hidden">
+                <img 
+                  src={profileImage} 
+                  alt="Robert Garcia" 
+                  className="w-full h-auto object-cover"
+                />
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* My Capabilities Section */}
-      <section className="py-20 px-6">
+      <section className="py-20 px-6" ref={capabilitiesRef}>
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div>
@@ -124,15 +226,28 @@ export default function About() {
               </p>
               
               {/* Capability Tags */}
-              <div className="flex flex-wrap gap-3">
-                {capabilities.map((skill, index) => (
-                  <div 
-                    key={index}
-                    className="border border-[#484848] px-6 py-3 rounded-[4px]"
-                  >
-                    <span className="font-['Manrope:Medium',sans-serif] text-white text-[14px] uppercase">
-                      {skill}
-                    </span>
+              <div className="space-y-6">
+                {Object.entries(capabilities).map(([category, skills]) => (
+                  <div key={category} className="space-y-3">
+                    <h3 className="font-['Manrope:SemiBold',sans-serif] font-semibold text-[#d3e97a] text-[14px] uppercase">
+                      {category}
+                    </h3>
+                    <div className="flex flex-wrap gap-3">
+                      {skills.map((skill) => {
+                        const Icon = skill.icon;
+                        return (
+                          <div 
+                            key={skill.name}
+                            className="border border-[#484848] px-4 py-2.5 rounded-[4px] inline-flex items-center gap-2 hover:border-[#d3e97a] transition-colors"
+                          >
+                            <Icon className="size-4 text-[#d3e97a]" />
+                            <span className="font-['Manrope:Medium',sans-serif] text-white text-[13px]">
+                              {skill.name}
+                            </span>
+                          </div>
+                        );
+                      })}
+                    </div>
                   </div>
                 ))}
               </div>
@@ -142,7 +257,7 @@ export default function About() {
       </section>
 
       {/* My Experience Section */}
-      <section className="py-20 px-6">
+      <section className="py-20 px-6" ref={experienceRef}>
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div>
@@ -180,7 +295,7 @@ export default function About() {
       </section>
 
       {/* Let's Connect Section */}
-      <section className="py-20 px-6">
+      <section className="py-20 px-6" ref={connectRef}>
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Left - Contact Info */}

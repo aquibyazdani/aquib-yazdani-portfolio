@@ -1,16 +1,48 @@
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import Portfolio from './components/Portfolio';
 import About from './components/About';
 import Projects from './components/Projects';
+import Resume from './components/Resume';
 
 export default function App() {
-  return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Portfolio />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/projects" element={<Projects />} />
-      </Routes>
-    </Router>
-  );
+  const [currentPage, setCurrentPage] = useState('home');
+
+  useEffect(() => {
+    // Handle initial route
+    const hash = window.location.hash.slice(1) || '/';
+    if (hash === '/about') setCurrentPage('about');
+    else if (hash === '/projects') setCurrentPage('projects');
+    else if (hash === '/resume') setCurrentPage('resume');
+    else setCurrentPage('home');
+
+    // Listen for hash changes
+    const handleHashChange = () => {
+      const hash = window.location.hash.slice(1) || '/';
+      if (hash === '/about') setCurrentPage('about');
+      else if (hash === '/projects') setCurrentPage('projects');
+      else if (hash === '/resume') setCurrentPage('resume');
+      else setCurrentPage('home');
+    };
+
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
+
+  const navigate = (path: string) => {
+    window.location.hash = path;
+  };
+
+  if (currentPage === 'about') {
+    return <About navigate={navigate} />;
+  }
+
+  if (currentPage === 'projects') {
+    return <Projects navigate={navigate} />;
+  }
+
+  if (currentPage === 'resume') {
+    return <Resume navigate={navigate} />;
+  }
+
+  return <Portfolio navigate={navigate} />;
 }

@@ -2,9 +2,18 @@ import svgPaths from "../imports/svg-cipwcyx6co";
 import imgWork from "figma:asset/5dcd97dc5eedd121a4e28d7d486be0fccd32ffb8.png";
 import imgImage10 from "figma:asset/b4ad9145f503384fa2e01584bf6a2e40a529a372.png";
 import imgImage9 from "figma:asset/ada6183f66559558faf021a9606a30839d13d925.png";
-import { Link } from 'react-router-dom';
+import Navbar from "./Navbar";
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-export default function Projects() {
+gsap.registerPlugin(ScrollTrigger);
+
+interface ProjectsProps {
+  navigate: (path: string) => void;
+}
+
+export default function Projects({ navigate }: ProjectsProps) {
   const projects = [
     {
       id: 1,
@@ -92,21 +101,30 @@ export default function Projects() {
     }
   ];
 
+  const projectsRef = useRef(null);
+
+  useEffect(() => {
+    const currentRef = projectsRef.current;
+    if (currentRef) {
+      gsap.from(currentRef.children, {
+        opacity: 0,
+        y: 50,
+        stagger: 0.2,
+        duration: 1,
+        scrollTrigger: {
+          trigger: currentRef,
+          start: "top 80%",
+          end: "bottom 20%",
+          toggleActions: "restart none none none"
+        }
+      });
+    }
+  }, []);
+
   return (
     <div className="bg-neutral-950 min-h-screen">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-neutral-950/80 backdrop-blur-sm border-b border-[#484848]">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <Link to="/" className="font-['Bebas_Neue:Regular',sans-serif] text-[#c7c7c7] text-[28px] tracking-[-0.32px]">
-            robert garcia
-          </Link>
-          <div className="flex gap-8 font-['Inter:Medium',sans-serif] font-medium text-[#c7c7c7] text-[16px]">
-            <Link to="/projects" className="hover:text-white transition-colors">Work</Link>
-            <Link to="/about" className="hover:text-white transition-colors">About</Link>
-            <Link to="/" className="hover:text-white transition-colors">Contact</Link>
-          </div>
-        </div>
-      </nav>
+      <Navbar navigate={navigate} currentPage="projects" />
 
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-6">
@@ -125,7 +143,7 @@ export default function Projects() {
       {/* Projects Grid */}
       <section className="pb-20 px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="space-y-20">
+          <div className="space-y-20" ref={projectsRef}>
             {projects.map((project, index) => (
               <div key={project.id} className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
                 {/* Image */}
@@ -195,7 +213,7 @@ export default function Projects() {
                         <div className="flex items-center gap-1">
                           <span className="font-['Manrope:Bold',sans-serif] font-bold text-[#d3e97a] text-[16px] uppercase">See on Github</span>
                           <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
-                            <path clipRule="evenodd" d={svgPaths.p17e6c000} fill="#D3E97A" fillRule="evenodd" />
+                            <path clipRule="evenodd" d={svgPaths.p17e6c000} fill="#D3E97a" fillRule="evenodd" />
                           </svg>
                         </div>
                         <div className="h-[2px] w-full bg-[#d3e97a]" />
@@ -216,9 +234,9 @@ export default function Projects() {
             <h2 className="font-['Bebas_Neue:Regular',sans-serif] text-[64px] lg:text-[76px] text-white leading-[0.9]">
               INTERESTED IN WORKING TOGETHER?
             </h2>
-            <Link 
-              to="/" 
-              className="inline-flex bg-[#d3e97a] rounded-full items-center gap-3 pl-6 pr-2 py-3 h-[54px] hover:bg-[#c5db6c] transition-colors"
+            <button 
+              onClick={() => navigate('/')} 
+              className="inline-flex bg-[#d3e97a] rounded-full items-center gap-3 pl-6 pr-2 py-3 h-[54px] hover:bg-[#c5db6c] transition-colors cursor-pointer"
             >
               <span className="font-['Manrope:Bold',sans-serif] font-bold text-[16px] text-neutral-950 uppercase">
                 Get in Touch
@@ -228,7 +246,7 @@ export default function Projects() {
                   <path d={svgPaths.p23c4ec40} fill="white" />
                 </svg>
               </div>
-            </Link>
+            </button>
           </div>
         </div>
       </section>

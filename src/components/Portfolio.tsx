@@ -3,27 +3,96 @@ import imgPotrait from "figma:asset/0d3630f0a8ce367183462cfffe8f59bdd44167c0.png
 import imgWork from "figma:asset/5dcd97dc5eedd121a4e28d7d486be0fccd32ffb8.png";
 import imgImage10 from "figma:asset/b4ad9145f503384fa2e01584bf6a2e40a529a372.png";
 import imgImage9 from "figma:asset/ada6183f66559558faf021a9606a30839d13d925.png";
-import { Link } from 'react-router-dom';
+import Navbar from "./Navbar";
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-export default function Portfolio() {
+gsap.registerPlugin(ScrollTrigger);
+
+interface PortfolioProps {
+  navigate: (path: string) => void;
+}
+
+export default function Portfolio({ navigate }: PortfolioProps) {
+  const heroRef = useRef(null);
+  const projectsRef = useRef(null);
+  const aboutRef = useRef(null);
+  const contactRef = useRef(null);
+
+  useEffect(() => {
+    const currentRef = heroRef.current;
+    if (currentRef) {
+      gsap.from(currentRef, {
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: currentRef,
+          start: "top 80%",
+          end: "top 50%",
+          toggleActions: "play none none none",
+        },
+      });
+    }
+
+    const projectsCurrentRef = projectsRef.current;
+    if (projectsCurrentRef) {
+      gsap.from(projectsCurrentRef, {
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: projectsCurrentRef,
+          start: "top 80%",
+          end: "top 50%",
+          toggleActions: "play none none none",
+        },
+      });
+    }
+
+    const aboutCurrentRef = aboutRef.current;
+    if (aboutCurrentRef) {
+      gsap.from(aboutCurrentRef, {
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: aboutCurrentRef,
+          start: "top 80%",
+          end: "top 50%",
+          toggleActions: "play none none none",
+        },
+      });
+    }
+
+    const contactCurrentRef = contactRef.current;
+    if (contactCurrentRef) {
+      gsap.from(contactCurrentRef, {
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: contactCurrentRef,
+          start: "top 80%",
+          end: "top 50%",
+          toggleActions: "play none none none",
+        },
+      });
+    }
+  }, []);
+
   return (
     <div className="bg-neutral-950 min-h-screen">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-neutral-950/80 backdrop-blur-sm border-b border-[#484848]">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <Link to="/" className="font-['Bebas_Neue:Regular',sans-serif] text-[#c7c7c7] text-[28px] tracking-[-0.32px]">
-            robert garcia
-          </Link>
-          <div className="flex gap-8 font-['Inter:Medium',sans-serif] font-medium text-[#c7c7c7] text-[16px]">
-            <Link to="/projects" className="hover:text-white transition-colors">Work</Link>
-            <Link to="/about" className="hover:text-white transition-colors">About</Link>
-            <a href="#contact" className="hover:text-white transition-colors">Contact</a>
-          </div>
-        </div>
-      </nav>
+      <Navbar navigate={navigate} currentPage="home" />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-6">
+      <section ref={heroRef} className="pt-32 pb-20 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
@@ -86,7 +155,7 @@ export default function Portfolio() {
       </div>
 
       {/* Featured Projects Section */}
-      <section id="work" className="py-20 px-6">
+      <section ref={projectsRef} id="work" className="py-20 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="space-y-4 mb-16">
             <h2 className="font-['Bebas_Neue:Regular',sans-serif] text-[76px] text-white leading-none">
@@ -288,7 +357,7 @@ export default function Portfolio() {
       </div>
 
       {/* About Section */}
-      <section id="about" className="py-20 px-6">
+      <section ref={aboutRef} id="about" className="py-20 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div>
@@ -324,7 +393,7 @@ export default function Portfolio() {
       </div>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 px-6">
+      <section ref={contactRef} id="contact" className="py-20 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Left - Contact Info */}

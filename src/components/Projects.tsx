@@ -1,11 +1,10 @@
-import svgPaths from "../imports/svg-cipwcyx6co";
-import imgWork from "figma:asset/5dcd97dc5eedd121a4e28d7d486be0fccd32ffb8.png";
-import imgImage10 from "figma:asset/b4ad9145f503384fa2e01584bf6a2e40a529a372.png";
-import imgImage9 from "figma:asset/ada6183f66559558faf021a9606a30839d13d925.png";
+import svgPaths from "../imports/svg-34il4djopb";
 import Navbar from "./Navbar";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { personalInfo, projects } from "../config/portfolio";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -14,93 +13,6 @@ interface ProjectsProps {
 }
 
 export default function Projects({ navigate }: ProjectsProps) {
-  const projects = [
-    {
-      id: 1,
-      title: "Promotional landing page for our favorite show",
-      description: "Teamed up with a designer to breathe life into a promotional webpage for our beloved show, Adventure Time. Delivered a fully responsive design with dynamic content capabilities, seamlessly integrating a newsletter feature to keep fans updated with the latest adventures.",
-      image: imgWork,
-      tag: "Conceptual Work",
-      year: "2023",
-      role: "Front-end Developer",
-      client: null,
-      links: {
-        demo: "#",
-        github: "#"
-      }
-    },
-    {
-      id: 2,
-      title: "Blog site for World News",
-      description: "Mastered CSS Grid complexities in building an innovative news homepage, navigating intricate design decisions for a seamless user experience. Leveraged the challenge to enhance skills in front-end development.",
-      image: imgImage10,
-      tag: null,
-      year: "2022",
-      role: "Front-end Developer",
-      client: "World News",
-      links: {
-        demo: "#",
-        github: null
-      }
-    },
-    {
-      id: 3,
-      title: "E-commerce product page",
-      description: "Successfully crafted an engaging product page featuring a dynamic lightbox gallery and seamless cart functionality, showcasing proficiency in JavaScript development.",
-      image: imgImage9,
-      tag: "Challenge",
-      year: "2022",
-      role: "Front-end Developer",
-      client: null,
-      links: {
-        demo: "#",
-        github: "#"
-      }
-    },
-    {
-      id: 4,
-      title: "Restaurant booking app",
-      description: "Built a modern restaurant reservation system with real-time availability, table management, and customer notifications. Focused on creating an intuitive user experience for both customers and restaurant staff.",
-      image: imgWork,
-      tag: "Client Work",
-      year: "2023",
-      role: "Full-stack Developer",
-      client: "TasteBuds Restaurant",
-      links: {
-        demo: "#",
-        github: null
-      }
-    },
-    {
-      id: 5,
-      title: "Portfolio website redesign",
-      description: "Complete redesign and development of a photographer's portfolio website. Implemented a custom image gallery with lazy loading and optimized performance for high-resolution images.",
-      image: imgImage10,
-      tag: null,
-      year: "2023",
-      role: "Front-end Developer",
-      client: "Sarah Mitchell Photography",
-      links: {
-        demo: "#",
-        github: "#"
-      }
-    },
-    {
-      id: 6,
-      title: "Fitness tracking dashboard",
-      description: "Developed an interactive fitness tracking dashboard with data visualization, goal setting, and progress monitoring. Integrated with popular fitness APIs for seamless data synchronization.",
-      image: imgImage9,
-      tag: "Personal Project",
-      year: "2022",
-      role: "Front-end Developer",
-      client: null,
-      links: {
-        demo: "#",
-        github: "#"
-      }
-    }
-  ];
-
   const projectsRef = useRef(null);
 
   useEffect(() => {
@@ -149,7 +61,7 @@ export default function Projects({ navigate }: ProjectsProps) {
                 {/* Image */}
                 <div className={`${index % 2 === 1 ? 'lg:order-2' : ''}`}>
                   <div className="bg-[#1a1a1a] rounded-[12px] aspect-square relative overflow-hidden">
-                    <img 
+                    <ImageWithFallback 
                       src={project.image} 
                       alt={project.title} 
                       className="absolute inset-0 w-full h-full object-contain p-12"
@@ -255,7 +167,7 @@ export default function Projects({ navigate }: ProjectsProps) {
       <footer className="py-8 px-6 border-t border-[#484848]">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="font-['Manrope:Medium',sans-serif] text-[#c7c7c7] text-[14px]">
-            © 2023 Robert Garcia
+            {personalInfo.copyright}
           </p>
           <div className="flex gap-4">
             <a href="#" className="hover:opacity-80 transition-opacity">

@@ -1,11 +1,12 @@
-import svgPaths from "../imports/svg-cipwcyx6co";
-import aboutImage from "figma:asset/7164f2117b63b79a5ca779d1dbda20e3d3175e9f.png";
-import profileImage from "figma:asset/29f56eff71a2ffc468127e31faf642ab5fe726bd.png";
-import { Code2, FileCode, Atom, Zap, Paintbrush, Wind, GitBranch, Github, Smartphone, Palette, Box, CheckCircle, TestTube2, Gauge, Timer, Globe, Database, Cloud, MessageSquare, Folder, Puzzle, Users } from "lucide-react";
+import imgProfile from "figma:asset/06cf0933c30e0b73ece9f13a4fdfac2e7d8ec97c.png";
+import svgPaths from "../imports/svg-34il4djopb";
+import { Mail, Phone, MapPin, ArrowRight } from "lucide-react";
 import Navbar from "./Navbar";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { personalInfo, aboutMe, skills as configSkills } from "../config/portfolio";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -15,51 +16,12 @@ interface AboutProps {
 
 export default function About({ navigate }: AboutProps) {
   const capabilities = {
-    "Frontend Development": [
-      { name: 'React.js', icon: Atom },
-      { name: 'React Native', icon: Smartphone },
-      { name: 'Next.js', icon: Zap },
-      { name: 'JavaScript (ES6+)', icon: Code2 },
-      { name: 'TypeScript', icon: FileCode },
-      { name: 'HTML', icon: FileCode },
-      { name: 'CSS', icon: Paintbrush },
-      { name: 'SCSS', icon: Paintbrush },
-      { name: 'Tailwind CSS', icon: Wind },
-      { name: 'Material UI', icon: Palette },
-      { name: 'Bootstrap', icon: Palette }
-    ],
-    "State Management": [
-      { name: 'Redux', icon: Box },
-      { name: 'Context API', icon: Box },
-      { name: 'Zustand', icon: Box }
-    ],
-    "Testing & QA": [
-      { name: 'Jest', icon: CheckCircle },
-      { name: 'React Testing Library', icon: TestTube2 },
-      { name: 'Unit Testing', icon: CheckCircle }
-    ],
-    "Performance Optimization": [
-      { name: 'SSR', icon: Zap },
-      { name: 'SSG', icon: Zap },
-      { name: 'Component Reusability', icon: Puzzle },
-      { name: 'UI Optimization', icon: Gauge },
-      { name: 'Load Time Reduction', icon: Timer },
-      { name: 'Accessibility Improvements', icon: Users }
-    ],
-    "API Integration": [
-      { name: 'RESTful APIs', icon: Globe },
-      { name: 'GraphQL', icon: Database }
-    ],
-    "Version Control & Collaboration": [
-      { name: 'Git', icon: GitBranch },
-      { name: 'GitHub', icon: Github },
-      { name: 'Azure', icon: Cloud },
-      { name: 'GitLab', icon: GitBranch },
-      { name: 'Bitbucket', icon: GitBranch },
-      { name: 'Jira', icon: Folder },
-      { name: 'Slack', icon: MessageSquare },
-      { name: 'ProofHub', icon: Folder }
-    ]
+    "Frontend Development": configSkills.frontend,
+    "State Management": configSkills.stateManagement,
+    "Testing & QA": configSkills.testing,
+    "Performance Optimization": configSkills.performance,
+    "API Integration": configSkills.api,
+    "Version Control & Collaboration": configSkills.tools
   };
 
   const experiences = [
@@ -199,9 +161,9 @@ export default function About({ navigate }: AboutProps) {
             {/* Right - Profile Image */}
             <div className="lg:block">
               <div className="bg-[#c7c7c7] rounded-[12px] overflow-hidden">
-                <img 
-                  src={profileImage} 
-                  alt="Robert Garcia" 
+                <ImageWithFallback 
+                  src={imgProfile} 
+                  alt={personalInfo.name} 
                   className="w-full h-auto object-cover"
                 />
               </div>
@@ -348,7 +310,7 @@ export default function About({ navigate }: AboutProps) {
               </div>
 
               <p className="font-['Manrope:Medium',sans-serif] text-[#c7c7c7] text-[14px] pt-8">
-                © 2023 Robert Garcia
+                {personalInfo.copyright}
               </p>
             </div>
 

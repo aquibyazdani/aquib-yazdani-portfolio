@@ -1,12 +1,20 @@
-import svgPaths from "../imports/svg-cipwcyx6co";
 import imgPotrait from "figma:asset/0d3630f0a8ce367183462cfffe8f59bdd44167c0.png";
 import imgWork from "figma:asset/5dcd97dc5eedd121a4e28d7d486be0fccd32ffb8.png";
 import imgImage10 from "figma:asset/b4ad9145f503384fa2e01584bf6a2e40a529a372.png";
 import imgImage9 from "figma:asset/ada6183f66559558faf021a9606a30839d13d925.png";
+import svgPaths from "../imports/svg-34il4djopb";
+import { Mail, Phone, MapPin, ArrowRight } from "lucide-react";
 import Navbar from "./Navbar";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { 
+  personalInfo, 
+  projects, 
+  contactInfo, 
+  socialMedia 
+} from "../config/portfolio";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -100,10 +108,10 @@ export default function Portfolio({ navigate }: PortfolioProps) {
               <div className="space-y-2">
                 <h1 className="font-['Bebas_Neue:Regular',sans-serif] text-[80px] lg:text-[101px] leading-[0.9] text-white">
                   HI, I AM<br />
-                  ROBERT GARCIA.
+                  {personalInfo.name.toUpperCase()}.
                 </h1>
                 <p className="font-['Manrope:Regular',sans-serif] text-[#c7c7c7] text-[18px] leading-[1.5] max-w-[540px]">
-                  A Sydney based front-end developer passionate about building accessible and user friendly websites.
+                  {personalInfo.tagline}
                 </p>
               </div>
 
@@ -140,7 +148,7 @@ export default function Portfolio({ navigate }: PortfolioProps) {
               <div className="bg-[#c7c7c7] rounded-[16px] w-full max-w-[600px] mx-auto aspect-[6/7] relative overflow-hidden">
                 <img 
                   src={imgPotrait} 
-                  alt="Robert Garcia" 
+                  alt={personalInfo.name} 
                   className="absolute inset-0 w-full h-full object-cover object-center"
                 />
               </div>
@@ -405,8 +413,8 @@ export default function Portfolio({ navigate }: PortfolioProps) {
                 <div className="space-y-2">
                   <p className="font-['Manrope:Regular',sans-serif] text-[#c7c7c7] text-[18px]">
                     Say hello at{' '}
-                    <a href="mailto:robertgarcia@gmail.com" className="text-white border-b border-[#d3e97a]">
-                      robertgarcia@gmail.com
+                    <a href={`mailto:${personalInfo.email}`} className="text-white border-b border-[#d3e97a]">
+                      {personalInfo.email}
                     </a>
                   </p>
                   <p className="font-['Manrope:Regular',sans-serif] text-[#c7c7c7] text-[18px]">
@@ -446,7 +454,7 @@ export default function Portfolio({ navigate }: PortfolioProps) {
               </div>
 
               <p className="font-['Manrope:Medium',sans-serif] text-[#c7c7c7] text-[16px] pt-8">
-                © 2023 Robert Garcia
+                {personalInfo.copyright}
               </p>
             </div>
 

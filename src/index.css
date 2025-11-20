@@ -39,6 +39,7 @@
   :root, :host {
     --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --color-gray-100: oklch(.967 .003 264.542);
     --color-neutral-950: oklch(.145 0 0);
     --color-white: #fff;
     --spacing: .25rem;
@@ -467,12 +468,12 @@
     display: none;
   }
 
-  .inline-flex {
-    display: inline-flex;
+  .inline-block {
+    display: inline-block;
   }
 
-  .table {
-    display: table;
+  .inline-flex {
+    display: inline-flex;
   }
 
   .aspect-\[6\/7\] {
@@ -833,17 +834,21 @@
     background-color: oklab(89.4405% -.0663821 .122061 / .3);
   }
 
+  .bg-gray-100 {
+    background-color: var(--color-gray-100);
+  }
+
   .bg-neutral-950 {
     background-color: var(--color-neutral-950);
   }
 
-  .bg-neutral-950\/80 {
-    background-color: color-mix(in srgb, oklch(.145 0 0) 80%, transparent);
+  .bg-neutral-950\/90 {
+    background-color: color-mix(in srgb, oklch(.145 0 0) 90%, transparent);
   }
 
   @supports (color: color-mix(in lab, red, red)) {
-    .bg-neutral-950\/80 {
-      background-color: color-mix(in oklab, var(--color-neutral-950) 80%, transparent);
+    .bg-neutral-950\/90 {
+      background-color: color-mix(in oklab, var(--color-neutral-950) 90%, transparent);
     }
   }
 
@@ -975,12 +980,16 @@
     text-align: center;
   }
 
-  .font-\[\'Bebas_Neue\:Regular\'\,sans-serif\] {
-    font-family: Bebas Neue\:Regular, sans-serif;
+  .text-left {
+    text-align: left;
   }
 
-  .font-\[\'Inter\:Medium\'\,sans-serif\] {
-    font-family: Inter\:Medium, sans-serif;
+  .align-middle {
+    vertical-align: middle;
+  }
+
+  .font-\[\'Bebas_Neue\:Regular\'\,sans-serif\] {
+    font-family: Bebas Neue\:Regular, sans-serif;
   }
 
   .font-\[\'Manrope\:Bold\'\,sans-serif\] {
@@ -1091,11 +1100,6 @@
   .font-bold {
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
-  }
-
-  .font-medium {
-    --tw-font-weight: var(--font-weight-medium);
-    font-weight: var(--font-weight-medium);
   }
 
   .font-semibold {
@@ -1210,6 +1214,18 @@
   }
 
   @media (width >= 48rem) {
+    .md\:flex {
+      display: flex;
+    }
+  }
+
+  @media (width >= 48rem) {
+    .md\:hidden {
+      display: none;
+    }
+  }
+
+  @media (width >= 48rem) {
     .md\:grid-cols-2 {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
@@ -1236,18 +1252,6 @@
   @media (width >= 64rem) {
     .lg\:block {
       display: block;
-    }
-  }
-
-  @media (width >= 64rem) {
-    .lg\:flex {
-      display: flex;
-    }
-  }
-
-  @media (width >= 64rem) {
-    .lg\:hidden {
-      display: none;
     }
   }
 

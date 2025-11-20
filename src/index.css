@@ -770,6 +770,11 @@
     border-width: 1px;
   }
 
+  .border-0 {
+    border-style: var(--tw-border-style);
+    border-width: 0;
+  }
+
   .border-4 {
     border-style: var(--tw-border-style);
     border-width: 4px;
@@ -788,6 +793,11 @@
   .border-b-2 {
     border-bottom-style: var(--tw-border-style);
     border-bottom-width: 2px;
+  }
+
+  .border-b-\[1px\] {
+    border-bottom-style: var(--tw-border-style);
+    border-bottom-width: 1px;
   }
 
   .border-\[\#1a1a1a\] {
@@ -852,6 +862,10 @@
     }
   }
 
+  .bg-transparent {
+    background-color: #0000;
+  }
+
   .object-contain {
     object-fit: contain;
   }
@@ -862,6 +876,10 @@
 
   .object-center {
     object-position: center;
+  }
+
+  .p-0 {
+    padding: calc(var(--spacing) * 0);
   }
 
   .p-3 {
@@ -1178,6 +1196,12 @@
   @media (hover: hover) {
     .hover\:bg-\[\#c5db6c\]:hover {
       background-color: #c5db6c;
+    }
+  }
+
+  @media (hover: hover) {
+    .hover\:text-\[\#d3e97a\]:hover {
+      color: #d3e97a;
     }
   }
 

@@ -146,7 +146,7 @@ export default function Portfolio({ navigate }: PortfolioProps) {
             {/* Right Image */}
             <div className="relative">
               <div className="bg-[#c7c7c7] rounded-[16px] w-full max-w-[600px] mx-auto aspect-[6/7] relative overflow-hidden">
-                <img 
+                <ImageWithFallback 
                   src={imgPotrait} 
                   alt={personalInfo.name} 
                   className="absolute inset-0 w-full h-full object-cover object-center"
@@ -384,12 +384,12 @@ export default function Portfolio({ navigate }: PortfolioProps) {
                 </p>
               </div>
               
-              <a href="#" className="inline-flex flex-col gap-1">
+              <button onClick={() => navigate('/about')} className="inline-flex flex-col gap-1 cursor-pointer border-0 bg-transparent p-0">
                 <span className="font-['Manrope:Bold',sans-serif] font-bold text-[#d3e97a] text-[16px] uppercase">
                   More about me
                 </span>
                 <div className="h-[2px] w-full bg-[#d3e97a]" />
-              </a>
+              </button>
             </div>
           </div>
         </div>
@@ -419,9 +419,12 @@ export default function Portfolio({ navigate }: PortfolioProps) {
                   </p>
                   <p className="font-['Manrope:Regular',sans-serif] text-[#c7c7c7] text-[18px]">
                     For more info, here's my{' '}
-                    <a href="#" className="text-white border-b border-[#d3e97a]">
+                    <button 
+                      onClick={() => navigate('/resume')} 
+                      className="text-white border-b border-[#d3e97a] hover:text-[#d3e97a] transition-colors cursor-pointer bg-transparent border-0 border-b-[1px] p-0 font-['Manrope:Regular',sans-serif] text-[18px]"
+                    >
                       resume
-                    </a>
+                    </button>
                   </p>
                 </div>
               </div>

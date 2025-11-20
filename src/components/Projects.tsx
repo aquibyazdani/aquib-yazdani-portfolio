@@ -125,7 +125,7 @@ export default function Projects({ navigate }: ProjectsProps) {
                         <div className="flex items-center gap-1">
                           <span className="font-['Manrope:Bold',sans-serif] font-bold text-[#d3e97a] text-[16px] uppercase">See on Github</span>
                           <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
-                            <path clipRule="evenodd" d={svgPaths.p17e6c000} fill="#D3E97a" fillRule="evenodd" />
+                            <path clipRule="evenodd" d={svgPaths.p17e6c000} fill="#D3E97A" fillRule="evenodd" />
                           </svg>
                         </div>
                         <div className="h-[2px] w-full bg-[#d3e97a]" />

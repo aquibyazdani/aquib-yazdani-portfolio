@@ -15,6 +15,7 @@ export const personalInfo = {
   email: "hello@robertgarcia.com",
   phone: "+1 (555) 123-4567",
   copyright: "© 2023 Robert Garcia",
+  careerStartDate: "2021-06-01", // Format: YYYY-MM-DD
 };
 
 // Social Links
@@ -90,38 +91,30 @@ export const skills = {
 export const workExperience = [
   {
     id: 1,
-    title: "Senior Front-end Developer",
-    company: "TechFlow Inc.",
-    location: "San Francisco, CA",
-    period: "Jan 2022 - Present",
+    title: "Sr. Software Engineer",
+    company: "Zensar Technologies",
+    location: "Mumbai, Maharashtra",
+    period: "June 2025 - Present",
     responsibilities: [
-      "Led development of company's design system used across 5+ products, improving consistency by 40%",
-      "Mentored team of 4 junior developers, conducting code reviews and pair programming sessions",
-      "Optimized application performance resulting in 60% faster load times"
+      "Leading frontend development initiatives for enterprise-level applications.",
+      "Architecting scalable and maintainable React-based solutions.",
+      "Mentoring junior developers and conducting code reviews.",
+      "Collaborating with cross-functional teams to deliver high-quality products."
     ]
   },
   {
     id: 2,
-    title: "Front-end Developer",
-    company: "Digital Creations",
-    location: "San Francisco, CA",
-    period: "Mar 2020 - Dec 2021",
+    title: "SDE-II",
+    company: "Harns Technologies Pvt Ltd",
+    location: "Mumbai, Maharashtra",
+    period: "June 2021 - June 2025",
     responsibilities: [
-      "Developed 20+ responsive websites for clients across various industries",
-      "Collaborated with designers to implement pixel-perfect UI components",
-      "Integrated RESTful APIs and third-party services"
-    ]
-  },
-  {
-    id: 3,
-    title: "Junior Front-end Developer",
-    company: "StartupHub",
-    location: "San Francisco, CA",
-    period: "Jun 2018 - Feb 2020",
-    responsibilities: [
-      "Built and maintained web applications using React and modern JavaScript",
-      "Implemented responsive designs and ensured cross-browser compatibility",
-      "Participated in agile development process and daily stand-ups"
+      "Engineered dynamic, responsive dashboards using React, Next.js, and TypeScript, supporting agile development practices and enhancing web functionality.",
+      "Crafted custom, responsive UI components with Material-UI and Tailwind CSS to streamline user onboarding and bolster digital marketing initiatives.",
+      "Optimized state management for a large-scale inspection system by leveraging Redux and Context API enhancing application stability and reducing errors.",
+      "Integrated RESTful APIs and GraphQL into a real-time insights application using Express.js, ensuring robust data flow and consistent system performance.",
+      "Modernized legacy systems by migrating to modern frameworks like Next.js, significantly improving scalability and overall performance by 30%.",
+      "Enhanced user accessibility and UX by implementing WCAG-compliant features in a control panel, promoting inclusive design across various browsers and devices."
     ]
   }
 ];
@@ -130,32 +123,100 @@ export const workExperience = [
 export const education = [
   {
     id: 1,
-    institution: "Stanford University",
-    degree: "Bachelor of Computer Science",
-    period: "2014 - 2018"
+    institution: "Heritage Institute Of Technology, Kolkata",
+    degree: "B.Tech in Chemical Engineering (CGPA: 8.5)",
+    period: "2016 - 2020"
+  }
+];
+
+// Notable Projects
+export const notableProjects = [
+  {
+    id: 1,
+    title: "TOI Epaper (Times of India)",
+    role: "Lead Frontend Engineer",
+    techStack: ["React.js", "Redux", "Bootstrap", "REST APIs"],
+    achievements: [
+      "Developed and maintained a high-traffic ePaper platform accessed by thousands daily.",
+      "Reduced development time by 30% using efficient language management and reusable components.",
+      "Built a reusable component library to streamline frontend development.",
+      "Integrated RESTful APIs for real-time updates, ensuring smooth content delivery.",
+      "Implemented cross-browser compatibility and accessibility features.",
+      "Integrated Google Ads and Google Analytics."
+    ]
   },
   {
     id: 2,
-    institution: "UC Berkeley Extension",
-    degree: "Certificate in UX/UI Design",
-    period: "2019"
+    title: "Adlob (Response 4You) - (Times of India)",
+    role: "Principal UI Developer",
+    techStack: ["React.js", "Context API", "Styled Components", "Jest", "REST APIs"],
+    achievements: [
+      "Designed a seamless ad booking platform, simplifying the process for agencies and clients.",
+      "Automated workflows, allowing 200+ agencies to manage campaigns effortlessly.",
+      "Developed a responsive UI, improving usability by 60% across all devices.",
+      "Integrated real-time tracking for ad placements and performance monitoring."
+    ]
+  },
+  {
+    id: 3,
+    title: "Screener - Zamzam Capital",
+    role: "Frontend Developer",
+    techStack: ["React.js", "TypeScript", "Tailwind CSS", "Chart.js", "REST APIs"],
+    achievements: [
+      "Developed a comprehensive stock screening platform for financial analysis and investment research.",
+      "Implemented real-time data visualization with interactive charts and graphs for market insights.",
+      "Built advanced filtering and sorting mechanisms for screening stocks based on multiple parameters.",
+      "Optimized performance for handling large datasets with efficient rendering and state management.",
+      "Created responsive dashboards with intuitive UI/UX for seamless user experience across devices.",
+      "Integrated RESTful APIs for fetching live market data and financial metrics."
+    ]
+  },
+  {
+    id: 4,
+    title: "Libsi Markah E-commerce",
+    role: "Key Developer",
+    techStack: ["React.js", "Node.js", "Express.js", "MongoDB", "AWS (EC2)"],
+    achievements: [
+      "Improved operational efficiency by 30% with enhanced data workflows.",
+      "Reduced manual intervention by 20% through seamless system integrations.",
+      "Implemented efficient language management to support multilingual content.",
+      "Implemented SEO-friendly practices, improving search rankings and organic traffic."
+    ]
   }
+];
+
+// Personal Projects
+export const personalProjects = [
+  { id: 1, title: "Portfolio", url: "https://aquibyazdani.com" },
+  { id: 2, title: "Amusement Park", url: "https://amusement-park-new.netlify.app" },
+  { id: 3, title: "Memorable Mumbai", url: "https://memorablemumbai.com" },
+  { id: 4, title: "E-commerce clone", url: "https://shoppe-aquib-yazdani.netlify.app" },
+  { id: 5, title: "Spotify clone", url: "https://spotify-yazdani.netlify.app" },
+  { id: 6, title: "Screener", url: "https://screener.zamzam-capital.com" },
+  { id: 7, title: "TOI ePaper - Archive", url: "#" }
 ];
 
 // Awards
 export const awards = [
   {
     id: 1,
-    title: "Best UI Developer of the Year",
-    organization: "TechCrunch",
-    date: "Oct 2023"
+    title: "Best Frontend Developer",
+    organization: "TechFlow Inc.",
+    date: "2023"
   },
   {
     id: 2,
-    title: "Excellence in Web Design",
-    organization: "Webby Awards",
-    date: "May 2022"
+    title: "Innovation Award",
+    organization: "Digital Creations",
+    date: "2021"
   }
+];
+
+// Achievements
+export const achievements = [
+  "Boosted application responsiveness by 25% through optimized front-end code and design.",
+  "Reduced version control conflicts by 15%, improving workflow efficiency by 20%.",
+  "Improved team collaboration by 10%, leading to a 12% increase in project delivery speed."
 ];
 
 // References

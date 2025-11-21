@@ -31,6 +31,7 @@
       --tw-backdrop-opacity: initial;
       --tw-backdrop-saturate: initial;
       --tw-backdrop-sepia: initial;
+      --tw-duration: initial;
     }
   }
 }
@@ -444,6 +445,10 @@
     margin-top: calc(var(--spacing) * .5);
   }
 
+  .mt-1\.5 {
+    margin-top: calc(var(--spacing) * 1.5);
+  }
+
   .mb-1 {
     margin-bottom: calc(var(--spacing) * 1);
   }
@@ -519,6 +524,10 @@
     height: 54px;
   }
 
+  .h-2 {
+    height: calc(var(--spacing) * 2);
+  }
+
   .h-4 {
     height: calc(var(--spacing) * 4);
   }
@@ -545,6 +554,10 @@
 
   .min-h-screen {
     min-height: 100vh;
+  }
+
+  .w-2 {
+    width: calc(var(--spacing) * 2);
   }
 
   .w-4 {
@@ -581,6 +594,10 @@
 
   .flex-1 {
     flex: 1;
+  }
+
+  .flex-shrink-0 {
+    flex-shrink: 0;
   }
 
   .cursor-pointer {
@@ -810,6 +827,10 @@
 
   .border-\[\#d3e97a\] {
     border-color: #d3e97a;
+  }
+
+  .border-\[\#d3e97a\]\/20 {
+    border-color: oklab(89.4405% -.0663821 .122061 / .2);
   }
 
   .border-\[\#d3e97a\]\/30 {
@@ -1169,6 +1190,12 @@
     backdrop-filter: var(--tw-backdrop-blur, ) var(--tw-backdrop-brightness, ) var(--tw-backdrop-contrast, ) var(--tw-backdrop-grayscale, ) var(--tw-backdrop-hue-rotate, ) var(--tw-backdrop-invert, ) var(--tw-backdrop-opacity, ) var(--tw-backdrop-saturate, ) var(--tw-backdrop-sepia, );
   }
 
+  .transition-all {
+    transition-property: all;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
+
   .transition-colors {
     transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
@@ -1179,6 +1206,11 @@
     transition-property: opacity;
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
     transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
+
+  .duration-300 {
+    --tw-duration: .3s;
+    transition-duration: .3s;
   }
 
   @media (hover: hover) {
@@ -1196,6 +1228,12 @@
   @media (hover: hover) {
     .hover\:bg-\[\#c5db6c\]:hover {
       background-color: #c5db6c;
+    }
+  }
+
+  @media (hover: hover) {
+    .hover\:bg-\[\#d3e97a\]\/10:hover {
+      background-color: oklab(89.4405% -.0663821 .122061 / .1);
     }
   }
 
@@ -1551,6 +1589,11 @@ html {
 }
 
 @property --tw-backdrop-sepia {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-duration {
   syntax: "*";
   inherits: false
 }

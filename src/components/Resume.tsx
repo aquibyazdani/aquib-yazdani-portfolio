@@ -8,6 +8,9 @@ import {
   skills, 
   workExperience, 
   education, 
+  notableProjects,
+  personalProjects,
+  achievements,
   awards, 
   references 
 } from "../config/portfolio";
@@ -38,6 +41,27 @@ export default function Resume({ navigate }: ResumeProps) {
       });
     }
   }, []);
+
+  // Calculate years and months of experience dynamically
+  const calculateExperience = () => {
+    const startDate = new Date(personalInfo.careerStartDate);
+    const currentDate = new Date();
+    
+    let years = currentDate.getFullYear() - startDate.getFullYear();
+    let months = currentDate.getMonth() - startDate.getMonth();
+    
+    if (months < 0) {
+      years--;
+      months += 12;
+    }
+    
+    return { years, months };
+  };
+
+  const { years, months } = calculateExperience();
+  const experienceText = months > 0 
+    ? `${years} years and ${months} months` 
+    : `${years} years`;
 
   const allSkills = [
     { title: "Frontend Development", items: skills.frontend },
@@ -106,7 +130,7 @@ export default function Resume({ navigate }: ResumeProps) {
                   Profile
                 </h2>
                 <p className="font-['Manrope:Regular',sans-serif] text-[#c7c7c7] text-[13px] leading-[1.6]">
-                  Passionate front-end developer with {personalInfo.title.toLowerCase().includes('senior') ? '8+' : '6+'} years of experience building responsive web applications and user interfaces. Specializing in React, TypeScript, and modern web technologies. Committed to writing clean, maintainable code and creating exceptional user experiences. Strong background in UI/UX design principles and agile development methodologies.
+                  Front End Engineer with {experienceText} of experience building high-performance web and mobile applications. Proficient in React, JavaScript (ES6+), HTML, and CSS, with a strong focus on optimizing user experience and front-end performance. Adept at developing scalable, responsive interfaces using modern frameworks like Next.js, Redux Toolkit, and React Native. Proven track record of improving application speed, accessibility, and maintainability. Collaborative team player experienced in Agile environments, consistently delivering user-centric solutions that drive business impact in fast-paced product teams.
                 </p>
               </div>
 
@@ -180,6 +204,69 @@ export default function Resume({ navigate }: ResumeProps) {
                 </div>
               </div>
 
+              {/* Notable Projects Section */}
+              <div className="space-y-3">
+                <h2 className="font-['Manrope:Bold',sans-serif] font-bold text-white text-[16px] uppercase text-[#d3e97a] border-b border-[#d3e97a]/30 pb-1.5">
+                  Notable Projects
+                </h2>
+                
+                <div className="space-y-4">
+                  {notableProjects.map((project) => (
+                    <div key={project.id} className="bg-[#1a1a1a]/50 p-4 rounded-lg space-y-2">
+                      <div className="space-y-1">
+                        <h3 className="font-['Manrope:SemiBold',sans-serif] font-semibold text-white text-[14px]">
+                          {project.title}
+                        </h3>
+                        <p className="font-['Manrope:Medium',sans-serif] text-[#d3e97a] text-[11px]">
+                          {project.role}
+                        </p>
+                      </div>
+                      
+                      <div className="flex flex-wrap gap-1.5">
+                        {project.techStack.map((tech, idx) => (
+                          <span 
+                            key={idx}
+                            className="font-['Manrope:Medium',sans-serif] text-[10px] text-[#2a4a4a] bg-[#d3e97a] px-2.5 py-1 rounded-md"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                      
+                      <ul className="space-y-1 font-['Manrope:Regular',sans-serif] text-[#c7c7c7] text-[11px]">
+                        {project.achievements.map((achievement, idx) => (
+                          <li key={idx} className="flex items-start gap-2">
+                            <span className="text-[#d3e97a] mt-0.5">•</span>
+                            <span>{achievement}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Personal Projects Section */}
+              <div className="space-y-3">
+                <h2 className="font-['Manrope:Bold',sans-serif] font-bold text-white text-[16px] uppercase text-[#d3e97a] border-b border-[#d3e97a]/30 pb-1.5">
+                  Personal Projects
+                </h2>
+                
+                <div className="flex flex-wrap gap-2">
+                  {personalProjects.map((project) => (
+                    <a 
+                      key={project.id}
+                      href={project.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-['Manrope:Medium',sans-serif] text-[12px] text-white bg-[#1a1a1a]/50 px-4 py-2 rounded-lg border border-[#d3e97a]/20 hover:bg-[#d3e97a]/10 hover:border-[#d3e97a] transition-all duration-300 cursor-pointer"
+                    >
+                      {project.title}
+                    </a>
+                  ))}
+                </div>
+              </div>
+
               {/* Work Experience Section */}
               <div className="space-y-3">
                 <h2 className="font-['Manrope:Bold',sans-serif] font-bold text-white text-[16px] uppercase text-[#d3e97a] border-b border-[#d3e97a]/30 pb-1.5">
@@ -218,6 +305,24 @@ export default function Resume({ navigate }: ResumeProps) {
                           ))}
                         </ul>
                       </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Achievements Section */}
+              <div className="space-y-3">
+                <h2 className="font-['Manrope:Bold',sans-serif] font-bold text-white text-[16px] uppercase text-[#d3e97a] border-b border-[#d3e97a]/30 pb-1.5">
+                  Achievements
+                </h2>
+                
+                <div className="space-y-1.5">
+                  {achievements.map((achievement, index) => (
+                    <div key={index} className="flex items-start gap-3 bg-[#1a1a1a]/50 p-3 rounded-lg">
+                      <div className="w-2 h-2 rounded-full bg-[#d3e97a] mt-1.5 flex-shrink-0" />
+                      <p className="font-['Manrope:Regular',sans-serif] text-[#c7c7c7] text-[12px] leading-[1.6]">
+                        {achievement}
+                      </p>
                     </div>
                   ))}
                 </div>

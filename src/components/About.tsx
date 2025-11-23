@@ -1,4 +1,4 @@
-import imgProfile from "figma:asset/06cf0933c30e0b73ece9f13a4fdfac2e7d8ec97c.png";
+import imgProfile from "../assets/about.png";
 import svgPaths from "../imports/svg-34il4djopb";
 import { Mail, Phone, MapPin, ArrowRight } from "lucide-react";
 import Navbar from "./Navbar";
@@ -6,7 +6,13 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
-import { personalInfo, aboutMe, skills as configSkills, workExperience, socialLinks } from "../config/portfolio";
+import {
+  personalInfo,
+  aboutMe,
+  skills as configSkills,
+  workExperience,
+  socialLinks,
+} from "../config/portfolio";
 import ConnectSection from "./ConnectSection";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -22,7 +28,7 @@ export default function About({ navigate }: AboutProps) {
     "Testing & QA": configSkills.testing,
     "Performance Optimization": configSkills.performance,
     "API Integration": configSkills.api,
-    "Version Control & Collaboration": configSkills.tools
+    "Version Control & Collaboration": configSkills.tools,
   };
 
   const experiences = workExperience;
@@ -43,8 +49,8 @@ export default function About({ navigate }: AboutProps) {
           trigger: currentRef,
           start: "top 80%",
           end: "top 50%",
-          toggleActions: "restart none none none"
-        }
+          toggleActions: "restart none none none",
+        },
       });
     }
 
@@ -58,8 +64,8 @@ export default function About({ navigate }: AboutProps) {
           trigger: capabilitiesCurrentRef,
           start: "top 80%",
           end: "top 50%",
-          toggleActions: "restart none none none"
-        }
+          toggleActions: "restart none none none",
+        },
       });
     }
 
@@ -73,8 +79,8 @@ export default function About({ navigate }: AboutProps) {
           trigger: experienceCurrentRef,
           start: "top 80%",
           end: "top 50%",
-          toggleActions: "restart none none none"
-        }
+          toggleActions: "restart none none none",
+        },
       });
     }
 
@@ -88,8 +94,8 @@ export default function About({ navigate }: AboutProps) {
           trigger: connectCurrentRef,
           start: "top 80%",
           end: "top 50%",
-          toggleActions: "restart none none none"
-        }
+          toggleActions: "restart none none none",
+        },
       });
     }
   }, []);
@@ -106,15 +112,15 @@ export default function About({ navigate }: AboutProps) {
             {/* Left Content */}
             <div className="space-y-8">
               <div className="space-y-6">
-                <h1 className="font-['Bebas_Neue:Regular',sans-serif] text-[80px] lg:text-[90px] leading-[0.9] text-white">
+                <h1 className="text-[80px] lg:text-[90px] leading-[0.9] text-white">
                   ABOUT ME
                 </h1>
-                
+
                 <div className="space-y-4">
-                  <p className="font-['Manrope:Medium',sans-serif] text-[24px] text-white leading-[1.4]">
+                  <p className="font-['Manrope',sans-serif] text-[24px] text-white leading-[1.4]">
                     {aboutMe.intro}
                   </p>
-                  <p className="font-['Manrope:Regular',sans-serif] text-[#c7c7c7] text-[16px] leading-[1.6]">
+                  <p className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[16px] leading-[1.6]">
                     {aboutMe.background}
                   </p>
                 </div>
@@ -122,28 +128,43 @@ export default function About({ navigate }: AboutProps) {
 
               {/* Download Resume & Social Links */}
               <div className="flex gap-4 items-center">
-                <button 
-                  onClick={() => navigate('/resume')}
+                <button
+                  onClick={() => navigate("/resume")}
                   className="bg-[#d3e97a] rounded-full flex items-center gap-2 px-6 py-3 hover:bg-[#c5db6c] transition-colors"
                 >
-                  <span className="font-['Manrope:Bold',sans-serif] font-bold text-[14px] text-neutral-950 uppercase">
+                  <span className="font-['Manrope',sans-serif] font-bold text-[14px] text-neutral-950 uppercase">
                     My Resume
                   </span>
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                     <path d={svgPaths.p23c4ec40} fill="#0A0A0A" />
                   </svg>
                 </button>
-                
-                <a href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
+
+                <a
+                  href={socialLinks.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:opacity-80 transition-opacity"
+                >
                   <svg width="24" height="24" viewBox="0 0 26 26" fill="none">
                     <path d={svgPaths.p282a2240} fill="#D3E97A" />
                     <path d={svgPaths.p31d7ad00} fill="#D3E97A" />
                   </svg>
                 </a>
-                
-                <a href={socialLinks.github} target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
+
+                <a
+                  href={socialLinks.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:opacity-80 transition-opacity"
+                >
                   <svg width="24" height="24" viewBox="0 0 26 26" fill="none">
-                    <path clipRule="evenodd" d={svgPaths.p17e6c000} fill="#D3E97A" fillRule="evenodd" />
+                    <path
+                      clipRule="evenodd"
+                      d={svgPaths.p17e6c000}
+                      fill="#D3E97A"
+                      fillRule="evenodd"
+                    />
                   </svg>
                 </a>
               </div>
@@ -152,9 +173,9 @@ export default function About({ navigate }: AboutProps) {
             {/* Right - Profile Image */}
             <div className="lg:block">
               <div className="bg-[#c7c7c7] rounded-[12px] overflow-hidden">
-                <ImageWithFallback 
-                  src={imgProfile} 
-                  alt={personalInfo.name} 
+                <ImageWithFallback
+                  src={imgProfile}
+                  alt={personalInfo.name}
                   className="w-full h-auto object-cover"
                 />
               </div>
@@ -168,33 +189,36 @@ export default function About({ navigate }: AboutProps) {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div>
-              <h2 className="font-['Bebas_Neue:Regular',sans-serif] text-[64px] lg:text-[76px] text-white leading-[0.9]">
+              <h2 className="text-[64px] lg:text-[76px] text-white leading-[0.9]">
                 MY CAPABILITIES
               </h2>
             </div>
-            
+
             <div className="space-y-6">
-              <p className="font-['Manrope:Regular',sans-serif] text-[#c7c7c7] text-[16px] leading-[1.6]">
-                I am always looking to add more skills.Morbi egestas neque eu blandit fermentum quisque egestas diam in. Nulla pharetra diam sit amet nisl suscipit. Eget nullam non nisi est sit amet facilisis magna etiam.
+              <p className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[16px] leading-[1.6]">
+                I am always looking to add more skills.Morbi egestas neque eu
+                blandit fermentum quisque egestas diam in. Nulla pharetra diam
+                sit amet nisl suscipit. Eget nullam non nisi est sit amet
+                facilisis magna etiam.
               </p>
-              
+
               {/* Capability Tags */}
               <div className="space-y-6">
                 {Object.entries(capabilities).map(([category, skills]) => (
                   <div key={category} className="space-y-3">
-                    <h3 className="font-['Manrope:SemiBold',sans-serif] font-semibold text-[#d3e97a] text-[14px] uppercase">
+                    <h3 className="font-['Manrope',sans-serif] font-semibold text-[#d3e97a] text-[14px] uppercase">
                       {category}
                     </h3>
                     <div className="flex flex-wrap gap-3">
                       {skills.map((skill) => {
                         const Icon = skill.icon;
                         return (
-                          <div 
+                          <div
                             key={skill.name}
                             className="border border-[#484848] px-4 py-2.5 rounded-[4px] inline-flex items-center gap-2 hover:border-[#d3e97a] transition-colors"
                           >
                             <Icon className="size-4 text-[#d3e97a]" />
-                            <span className="font-['Manrope:Medium',sans-serif] text-white text-[13px]">
+                            <span className="font-['Manrope',sans-serif] text-white text-[13px]">
                               {skill.name}
                             </span>
                           </div>
@@ -214,30 +238,30 @@ export default function About({ navigate }: AboutProps) {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div>
-              <h2 className="font-['Bebas_Neue:Regular',sans-serif] text-[64px] lg:text-[76px] text-white leading-[0.9]">
+              <h2 className="text-[64px] lg:text-[76px] text-white leading-[0.9]">
                 MY EXPERIENCE
               </h2>
             </div>
-            
+
             <div className="space-y-12">
               {experiences.map((exp, index) => (
                 <div key={index} className="space-y-4">
                   <div className="flex justify-between items-start flex-wrap gap-2">
                     <div>
-                      <h3 className="font-['Manrope:Medium',sans-serif] text-white text-[20px]">
+                      <h3 className="font-['Manrope',sans-serif] text-white text-[20px]">
                         {exp.title}
                       </h3>
                       {exp.company && (
-                        <p className="font-['Manrope:Regular',sans-serif] text-[#c7c7c7] text-[16px]">
+                        <p className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[16px]">
                           {exp.company}
                         </p>
                       )}
                     </div>
-                    <span className="font-['Manrope:Regular',sans-serif] text-[#c7c7c7] text-[14px]">
+                    <span className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[14px]">
                       {exp.period}
                     </span>
                   </div>
-                  <ul className="space-y-2 font-['Manrope:Regular',sans-serif] text-[#c7c7c7] text-[16px] leading-[1.6]">
+                  <ul className="space-y-2 font-['Manrope',sans-serif] text-[#c7c7c7] text-[16px] leading-[1.6]">
                     {exp.responsibilities.map((resp, idx) => (
                       <li key={idx} className="flex items-start gap-2">
                         <span className="text-[#d3e97a] mt-1">•</span>

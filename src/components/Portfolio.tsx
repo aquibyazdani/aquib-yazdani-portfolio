@@ -1,21 +1,14 @@
-import imgPotrait from "figma:asset/0d3630f0a8ce367183462cfffe8f59bdd44167c0.png";
-import imgWork from "figma:asset/5dcd97dc5eedd121a4e28d7d486be0fccd32ffb8.png";
-import imgImage10 from "figma:asset/b4ad9145f503384fa2e01584bf6a2e40a529a372.png";
-import imgImage9 from "figma:asset/ada6183f66559558faf021a9606a30839d13d925.png";
+import imgPotrait from "../assets/hero.png";
 import svgPaths from "../imports/svg-34il4djopb";
-import { Mail, Phone, MapPin, ArrowRight } from "lucide-react";
 import Navbar from "./Navbar";
+import toiPic from "../assets/toi.png";
+import screenr from "../assets/screenr_long.png";
+import mm from "../assets/mm.png";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
-import { 
-  personalInfo, 
-  projects, 
-  contactInfo, 
-  socialMedia,
-  socialLinks
-} from "../config/portfolio";
+import { personalInfo, socialMedia, socialLinks } from "../config/portfolio";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -107,19 +100,23 @@ export default function Portfolio({ navigate }: PortfolioProps) {
             {/* Left Content */}
             <div className="space-y-8">
               <div className="space-y-2">
-                <h1 className="font-['Bebas_Neue:Regular',sans-serif] text-[80px] lg:text-[101px] leading-[0.9] text-white">
-                  HI, I AM<br />
+                <h1 className="text-[80px] lg:text-[101px] leading-[0.9] text-white">
+                  HI, I AM
+                  <br />
                   {personalInfo.name.toUpperCase()}.
                 </h1>
-                <p className="font-['Manrope:Regular',sans-serif] text-[#c7c7c7] text-[18px] leading-[1.5] max-w-[540px]">
+                <p className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[18px] leading-[1.5] max-w-[540px]">
                   Sr. Software Engg. / JavaScript Expert / Tech Explorer
                 </p>
               </div>
 
               {/* Action Buttons */}
               <div className="flex gap-4 items-center flex-wrap">
-                <a href="#contact" className="bg-[#d3e97a] rounded-full flex items-center gap-3 pl-6 pr-2 py-3 h-[54px] hover:bg-[#c5db6c] transition-colors">
-                  <span className="font-['Manrope:Bold',sans-serif] font-bold text-[16px] text-neutral-950 uppercase">
+                <a
+                  href="#contact"
+                  className="bg-[#d3e97a] rounded-full flex items-center gap-3 pl-6 pr-2 py-3 h-[54px] hover:bg-[#c5db6c] transition-colors"
+                >
+                  <span className="font-['Manrope',sans-serif] font-bold text-[16px] text-neutral-950 uppercase">
                     Contact Me
                   </span>
                   <div className="size-[42px] bg-neutral-950 rounded-full flex items-center justify-center">
@@ -128,17 +125,32 @@ export default function Portfolio({ navigate }: PortfolioProps) {
                     </svg>
                   </div>
                 </a>
-                
-                <a href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer" className="bg-[#222222] size-[54px] rounded-full flex items-center justify-center hover:bg-[#333333] transition-colors">
+
+                <a
+                  href={socialLinks.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-[#222222] size-[54px] rounded-full flex items-center justify-center hover:bg-[#333333] transition-colors"
+                >
                   <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
                     <path d={svgPaths.p282a2240} fill="#D3E97A" />
                     <path d={svgPaths.p31d7ad00} fill="#D3E97A" />
                   </svg>
                 </a>
-                
-                <a href={socialLinks.github} target="_blank" rel="noopener noreferrer" className="bg-[#222222] size-[54px] rounded-full flex items-center justify-center hover:bg-[#333333] transition-colors">
+
+                <a
+                  href={socialLinks.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-[#222222] size-[54px] rounded-full flex items-center justify-center hover:bg-[#333333] transition-colors"
+                >
                   <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
-                    <path clipRule="evenodd" d={svgPaths.p17e6c000} fill="#D3E97A" fillRule="evenodd" />
+                    <path
+                      clipRule="evenodd"
+                      d={svgPaths.p17e6c000}
+                      fill="#D3E97A"
+                      fillRule="evenodd"
+                    />
                   </svg>
                 </a>
               </div>
@@ -147,9 +159,9 @@ export default function Portfolio({ navigate }: PortfolioProps) {
             {/* Right Image */}
             <div className="relative">
               <div className="bg-[#c7c7c7] rounded-[16px] w-full max-w-[600px] mx-auto aspect-[6/7] relative overflow-hidden">
-                <ImageWithFallback 
-                  src={imgPotrait} 
-                  alt={personalInfo.name} 
+                <ImageWithFallback
+                  src={imgPotrait}
+                  alt={personalInfo.name}
                   className="absolute inset-0 w-full h-full object-cover object-center"
                 />
               </div>
@@ -167,11 +179,12 @@ export default function Portfolio({ navigate }: PortfolioProps) {
       <section ref={projectsRef} id="work" className="py-20 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="space-y-4 mb-16">
-            <h2 className="font-['Bebas_Neue:Regular',sans-serif] text-[76px] text-white leading-none">
+            <h2 className="text-[76px] text-white leading-none">
               Featured Projects
             </h2>
-            <p className="font-['Manrope:Regular',sans-serif] text-[#c7c7c7] text-[18px] leading-[1.5] max-w-[600px]">
-              Here are some of the selected projects that showcase my passion for front-end development.
+            <p className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[18px] leading-[1.5] max-w-[600px]">
+              Here are some of the selected projects that showcase my passion
+              for front-end development.
             </p>
           </div>
 
@@ -180,51 +193,82 @@ export default function Portfolio({ navigate }: PortfolioProps) {
             {/* Project 1 - TOI Epaper */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="bg-[#1a1a1a] rounded-[12px] aspect-square relative overflow-hidden">
-                <ImageWithFallback 
-                  src="newspaper digital epaper platform" 
-                  alt="TOI Epaper" 
+                <ImageWithFallback
+                  src={toiPic}
+                  alt="TOI Epaper"
                   className="absolute inset-0 w-full h-full object-contain p-12"
                 />
                 <div className="absolute top-4 left-4 bg-neutral-950 px-4 py-2 rounded-full">
-                  <span className="font-['Manrope:Medium',sans-serif] text-white text-[14px]">Professional</span>
+                  <span className="font-['Manrope',sans-serif] text-white text-[14px]">
+                    Professional
+                  </span>
                 </div>
               </div>
 
               <div className="space-y-8">
                 <div className="space-y-4">
-                  <h3 className="font-['Manrope:Medium',sans-serif] text-[32px] text-white leading-[1.4]">
+                  <h3 className="font-['Manrope',sans-serif] text-[32px] text-white leading-[1.4]">
                     TOI Epaper (Times of India)
                   </h3>
-                  <p className="font-['Manrope:Regular',sans-serif] text-[#c7c7c7] text-[18px] leading-[1.5]">
-                    Developed and maintained a high-traffic ePaper platform accessed by thousands daily. Built a reusable component library to streamline frontend development, reducing development time by 30% through efficient language management and implementing cross-browser compatibility features.
+                  <p className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[18px] leading-[1.5]">
+                    Developed and maintained a high-traffic ePaper platform
+                    accessed by thousands daily. Built a reusable component
+                    library to streamline frontend development, reducing
+                    development time by 30% through efficient language
+                    management and implementing cross-browser compatibility
+                    features.
                   </p>
                 </div>
 
                 <div className="space-y-4">
-                  <p className="font-['Manrope:SemiBold',sans-serif] font-semibold text-white text-[16px] uppercase">
+                  <p className="font-['Manrope',sans-serif] font-semibold text-white text-[16px] uppercase">
                     Project Info
                   </p>
                   <div className="border-t border-b border-[#484848] divide-y divide-[#484848]">
                     <div className="flex justify-between py-4">
-                      <span className="font-['Manrope:Medium',sans-serif] text-white text-[16px]">Client</span>
-                      <span className="font-['Manrope:Medium',sans-serif] text-[#c7c7c7] text-[16px]">Times of India</span>
+                      <span className="font-['Manrope',sans-serif] text-white text-[16px]">
+                        Client
+                      </span>
+                      <span className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[16px]">
+                        Times of India
+                      </span>
                     </div>
                     <div className="flex justify-between py-4">
-                      <span className="font-['Manrope:Medium',sans-serif] text-white text-[16px]">Year</span>
-                      <span className="font-['Manrope:Medium',sans-serif] text-[#c7c7c7] text-[16px]">2023</span>
+                      <span className="font-['Manrope',sans-serif] text-white text-[16px]">
+                        Year
+                      </span>
+                      <span className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[16px]">
+                        2023
+                      </span>
                     </div>
                     <div className="flex justify-between py-4">
-                      <span className="font-['Manrope:Medium',sans-serif] text-white text-[16px]">Role</span>
-                      <span className="font-['Manrope:Medium',sans-serif] text-[#c7c7c7] text-[16px]">Lead Frontend Engineer</span>
+                      <span className="font-['Manrope',sans-serif] text-white text-[16px]">
+                        Role
+                      </span>
+                      <span className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[16px]">
+                        Lead Frontend Engineer
+                      </span>
                     </div>
                   </div>
                 </div>
 
                 <div className="flex gap-6 flex-wrap">
-                  <a href="https://epaper.indiatimes.com/" target="_blank" rel="noopener noreferrer" className="group inline-flex flex-col gap-1">
+                  <a
+                    href="https://epaper.indiatimes.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group inline-flex flex-col gap-1"
+                  >
                     <div className="flex items-center gap-1">
-                      <span className="font-['Manrope:Bold',sans-serif] font-bold text-[#d3e97a] text-[16px] uppercase">Live Demo</span>
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                      <span className="font-['Manrope',sans-serif] font-bold text-[#d3e97a] text-[16px] uppercase">
+                        Live Demo
+                      </span>
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                      >
                         <path d={svgPaths.p3589c00} fill="#D3E97A" />
                       </svg>
                     </div>
@@ -237,51 +281,82 @@ export default function Portfolio({ navigate }: PortfolioProps) {
             {/* Project 2 - Screener Zamzam Capital */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="bg-[#1a1a1a] rounded-[12px] aspect-square relative overflow-hidden">
-                <ImageWithFallback 
-                  src="stock market screener dashboard" 
-                  alt="Screener - Zamzam Capital" 
+                <ImageWithFallback
+                  src={screenr}
+                  alt="Screener - Zamzam Capital"
                   className="absolute inset-0 w-full h-full object-contain p-12"
                 />
                 <div className="absolute top-4 left-4 bg-neutral-950 px-4 py-2 rounded-full">
-                  <span className="font-['Manrope:Medium',sans-serif] text-white text-[14px]">Professional</span>
+                  <span className="font-['Manrope',sans-serif] text-white text-[14px]">
+                    Professional
+                  </span>
                 </div>
               </div>
 
               <div className="space-y-8">
                 <div className="space-y-4">
-                  <h3 className="font-['Manrope:Medium',sans-serif] text-[32px] text-white leading-[1.4]">
+                  <h3 className="font-['Manrope',sans-serif] text-[32px] text-white leading-[1.4]">
                     Screener - Zamzam Capital
                   </h3>
-                  <p className="font-['Manrope:Regular',sans-serif] text-[#c7c7c7] text-[18px] leading-[1.5]">
-                    Developed a dedicated Halal stock screening platform enabling investors to evaluate companies based on Shariah-compliant financial criteria. Implemented advanced filtering and screening logic to assess stocks across multiple compliance parameters, providing a streamlined and user-friendly interface for Islamic investment research.
+                  <p className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[18px] leading-[1.5]">
+                    Developed a dedicated Halal stock screening platform
+                    enabling investors to evaluate companies based on
+                    Shariah-compliant financial criteria. Implemented advanced
+                    filtering and screening logic to assess stocks across
+                    multiple compliance parameters, providing a streamlined and
+                    user-friendly interface for Islamic investment research.
                   </p>
                 </div>
 
                 <div className="space-y-4">
-                  <p className="font-['Manrope:SemiBold',sans-serif] font-semibold text-white text-[16px] uppercase">
+                  <p className="font-['Manrope',sans-serif] font-semibold text-white text-[16px] uppercase">
                     Project Info
                   </p>
                   <div className="border-t border-b border-[#484848] divide-y divide-[#484848]">
                     <div className="flex justify-between py-4">
-                      <span className="font-['Manrope:Medium',sans-serif] text-white text-[16px]">Client</span>
-                      <span className="font-['Manrope:Medium',sans-serif] text-[#c7c7c7] text-[16px]">Zamzam Capital</span>
+                      <span className="font-['Manrope',sans-serif] text-white text-[16px]">
+                        Client
+                      </span>
+                      <span className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[16px]">
+                        Zamzam Capital
+                      </span>
                     </div>
                     <div className="flex justify-between py-4">
-                      <span className="font-['Manrope:Medium',sans-serif] text-white text-[16px]">Year</span>
-                      <span className="font-['Manrope:Medium',sans-serif] text-[#c7c7c7] text-[16px]">2025</span>
+                      <span className="font-['Manrope',sans-serif] text-white text-[16px]">
+                        Year
+                      </span>
+                      <span className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[16px]">
+                        2025
+                      </span>
                     </div>
                     <div className="flex justify-between py-4">
-                      <span className="font-['Manrope:Medium',sans-serif] text-white text-[16px]">Role</span>
-                      <span className="font-['Manrope:Medium',sans-serif] text-[#c7c7c7] text-[16px]">Sole Developer</span>
+                      <span className="font-['Manrope',sans-serif] text-white text-[16px]">
+                        Role
+                      </span>
+                      <span className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[16px]">
+                        Sole Developer
+                      </span>
                     </div>
                   </div>
                 </div>
 
                 <div className="flex gap-6 flex-wrap">
-                  <a href="https://screener.zamzam-capital.com" target="_blank" rel="noopener noreferrer" className="group inline-flex flex-col gap-1">
+                  <a
+                    href="https://screener.zamzam-capital.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group inline-flex flex-col gap-1"
+                  >
                     <div className="flex items-center gap-1">
-                      <span className="font-['Manrope:Bold',sans-serif] font-bold text-[#d3e97a] text-[16px] uppercase">Live Demo</span>
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                      <span className="font-['Manrope',sans-serif] font-bold text-[#d3e97a] text-[16px] uppercase">
+                        Live Demo
+                      </span>
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                      >
                         <path d={svgPaths.p3589c00} fill="#D3E97A" />
                       </svg>
                     </div>
@@ -294,47 +369,73 @@ export default function Portfolio({ navigate }: PortfolioProps) {
             {/* Project 3 - Memorable Mumbai */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="bg-[#1a1a1a] rounded-[12px] aspect-square relative overflow-hidden">
-                <ImageWithFallback 
-                  src="mumbai tourism travel website" 
-                  alt="Memorable Mumbai" 
+                <ImageWithFallback
+                  src={mm}
+                  alt="Memorable Mumbai"
                   className="absolute inset-0 w-full h-full object-contain p-12"
                 />
                 <div className="absolute top-4 left-4 bg-neutral-950 px-4 py-2 rounded-full">
-                  <span className="font-['Manrope:Medium',sans-serif] text-white text-[14px]">Personal Project</span>
+                  <span className="font-['Manrope',sans-serif] text-white text-[14px]">
+                    Personal Project
+                  </span>
                 </div>
               </div>
 
               <div className="space-y-8">
                 <div className="space-y-4">
-                  <h3 className="font-['Manrope:Medium',sans-serif] text-[32px] text-white leading-[1.4]">
+                  <h3 className="font-['Manrope',sans-serif] text-[32px] text-white leading-[1.4]">
                     Memorable Mumbai
                   </h3>
-                  <p className="font-['Manrope:Regular',sans-serif] text-[#c7c7c7] text-[18px] leading-[1.5]">
-                    A comprehensive travel and tourism website showcasing the vibrant culture, iconic landmarks, and hidden gems of Mumbai. Features an intuitive interface with responsive design, interactive maps, and detailed guides to help visitors explore and experience the city's rich heritage.
+                  <p className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[18px] leading-[1.5]">
+                    A comprehensive travel and tourism website showcasing the
+                    vibrant culture, iconic landmarks, and hidden gems of
+                    Mumbai. Features an intuitive interface with responsive
+                    design, interactive maps, and detailed guides to help
+                    visitors explore and experience the city's rich heritage.
                   </p>
                 </div>
 
                 <div className="space-y-4">
-                  <p className="font-['Manrope:SemiBold',sans-serif] font-semibold text-white text-[16px] uppercase">
+                  <p className="font-['Manrope',sans-serif] font-semibold text-white text-[16px] uppercase">
                     Project Info
                   </p>
                   <div className="border-t border-b border-[#484848] divide-y divide-[#484848]">
                     <div className="flex justify-between py-4">
-                      <span className="font-['Manrope:Medium',sans-serif] text-white text-[16px]">Year</span>
-                      <span className="font-['Manrope:Medium',sans-serif] text-[#c7c7c7] text-[16px]">2023</span>
+                      <span className="font-['Manrope',sans-serif] text-white text-[16px]">
+                        Year
+                      </span>
+                      <span className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[16px]">
+                        2023
+                      </span>
                     </div>
                     <div className="flex justify-between py-4">
-                      <span className="font-['Manrope:Medium',sans-serif] text-white text-[16px]">Role</span>
-                      <span className="font-['Manrope:Medium',sans-serif] text-[#c7c7c7] text-[16px]">Sole Developer</span>
+                      <span className="font-['Manrope',sans-serif] text-white text-[16px]">
+                        Role
+                      </span>
+                      <span className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[16px]">
+                        Sole Developer
+                      </span>
                     </div>
                   </div>
                 </div>
 
                 <div className="flex gap-6 flex-wrap">
-                  <a href="https://memorablemumbai.com" target="_blank" rel="noopener noreferrer" className="group inline-flex flex-col gap-1">
+                  <a
+                    href="https://memorablemumbai.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group inline-flex flex-col gap-1"
+                  >
                     <div className="flex items-center gap-1">
-                      <span className="font-['Manrope:Bold',sans-serif] font-bold text-[#d3e97a] text-[16px] uppercase">View Project</span>
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                      <span className="font-['Manrope',sans-serif] font-bold text-[#d3e97a] text-[16px] uppercase">
+                        View Project
+                      </span>
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                      >
                         <path d={svgPaths.p3589c00} fill="#D3E97A" />
                       </svg>
                     </div>
@@ -357,23 +458,33 @@ export default function Portfolio({ navigate }: PortfolioProps) {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div>
-              <h2 className="font-['Bebas_Neue:Regular',sans-serif] text-[76px] lg:text-[101px] text-white leading-[0.9] mb-8">
+              <h2 className="text-[76px] lg:text-[101px] text-white leading-[0.9] mb-8">
                 About me
               </h2>
             </div>
-            
+
             <div className="space-y-8">
               <div className="space-y-4">
-                <p className="font-['Manrope:Medium',sans-serif] text-[32px] text-white leading-[1.4]">
-                  I am a front-end developer based in Sydney. Has Mechanical Engineering background.
+                <p className="font-['Manrope',sans-serif] text-[32px] text-white leading-[1.4]">
+                  I work as a senior full-stack developer, with deep expertise
+                  in frontend engineering.
                 </p>
-                <p className="font-['Manrope:Regular',sans-serif] text-[#c7c7c7] text-[18px] leading-[1.5]">
-                  I am a front-end developer based in Sydney looking for exciting opportunities. Has Mechanical Engineering background. Likes to focus on accessibility when developing. Passionate and curious about solving problems. Currently, I'm exploring Reactjs, Webflow and a bit of Designing. While I am not programming, I enjoy playing football, photography and playing Valorant. Learning more to improve skill.
+                <p className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[18px] leading-[1.5]">
+                  I am a front-end developer based in India looking for exciting
+                  opportunities. Likes to focus on accessibility when
+                  developing. Passionate and curious about solving problems.
+                  Currently, I'm exploring Reactjs, Webflow and a bit of
+                  Designing. While I am not programming, I enjoy playing
+                  football, photography and playing Valorant. Learning more to
+                  improve skill.
                 </p>
               </div>
-              
-              <button onClick={() => navigate('/about')} className="inline-flex flex-col gap-1 cursor-pointer border-0 bg-transparent p-0">
-                <span className="font-['Manrope:Bold',sans-serif] font-bold text-[#d3e97a] text-[16px] uppercase">
+
+              <button
+                onClick={() => navigate("/about")}
+                className="inline-flex flex-col gap-1 cursor-pointer border-0 bg-transparent p-0"
+              >
+                <span className="font-['Manrope',sans-serif] font-bold text-[#d3e97a] text-[16px] uppercase">
                   More about me
                 </span>
                 <div className="h-[2px] w-full bg-[#d3e97a]" />
@@ -395,21 +506,24 @@ export default function Portfolio({ navigate }: PortfolioProps) {
             {/* Left - Contact Info */}
             <div className="space-y-8">
               <div className="space-y-4">
-                <h2 className="font-['Bebas_Neue:Regular',sans-serif] text-[76px] text-white leading-none">
+                <h2 className="text-[76px] text-white leading-none">
                   Let's connect
                 </h2>
                 <div className="space-y-2">
-                  <p className="font-['Manrope:Regular',sans-serif] text-[#c7c7c7] text-[18px]">
-                    Say hello at{' '}
-                    <a href={`mailto:${personalInfo.email}`} className="text-white border-b border-[#d3e97a]">
+                  <p className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[18px]">
+                    Say hello at{" "}
+                    <a
+                      href={`mailto:${personalInfo.email}`}
+                      className="text-white border-b border-[#d3e97a]"
+                    >
                       {personalInfo.email}
                     </a>
                   </p>
-                  <p className="font-['Manrope:Regular',sans-serif] text-[#c7c7c7] text-[18px]">
-                    For more info, here's my{' '}
-                    <button 
-                      onClick={() => navigate('/resume')} 
-                      className="text-white border-b border-[#d3e97a] hover:text-[#d3e97a] transition-colors cursor-pointer bg-transparent border-0 border-b-[1px] p-0 font-['Manrope:Regular',sans-serif] text-[18px]"
+                  <p className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[18px]">
+                    For more info, here's my{" "}
+                    <button
+                      onClick={() => navigate("/resume")}
+                      className="text-white border-b border-[#d3e97a] hover:text-[#d3e97a] transition-colors cursor-pointer bg-transparent border-0 border-b-[1px] p-0 font-['Manrope',sans-serif] text-[18px]"
                     >
                       resume
                     </button>
@@ -419,18 +533,38 @@ export default function Portfolio({ navigate }: PortfolioProps) {
 
               {/* Social Links */}
               <div className="flex gap-6">
-                <a href={socialMedia[0].url} target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
+                <a
+                  href={socialMedia[0].url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:opacity-80 transition-opacity"
+                >
                   <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
                     <path d={svgPaths.p1bc476b0} fill="#D3E97A" />
                     <path d={svgPaths.p3ff62a40} fill="#D3E97A" />
                   </svg>
                 </a>
-                <a href={socialMedia[1].url} target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
+                <a
+                  href={socialMedia[1].url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:opacity-80 transition-opacity"
+                >
                   <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                    <path clipRule="evenodd" d={svgPaths.p3add5780} fill="#D3E97A" fillRule="evenodd" />
+                    <path
+                      clipRule="evenodd"
+                      d={svgPaths.p3add5780}
+                      fill="#D3E97A"
+                      fillRule="evenodd"
+                    />
                   </svg>
                 </a>
-                <a href={socialMedia[2].url} target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
+                <a
+                  href={socialMedia[2].url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:opacity-80 transition-opacity"
+                >
                   <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
                     <path d={svgPaths.p8ca3400} fill="#D3E97A" />
                     <path d={svgPaths.p5548000} fill="#D3E97A" />
@@ -439,7 +573,7 @@ export default function Portfolio({ navigate }: PortfolioProps) {
                 </a>
               </div>
 
-              <p className="font-['Manrope:Medium',sans-serif] text-[#c7c7c7] text-[16px] pt-8">
+              <p className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[16px] pt-8">
                 {personalInfo.copyright}
               </p>
             </div>
@@ -448,48 +582,48 @@ export default function Portfolio({ navigate }: PortfolioProps) {
             <div className="space-y-8">
               <div className="space-y-6">
                 <div className="space-y-2">
-                  <label className="font-['Manrope:Medium',sans-serif] text-[#c7c7c7] text-[16px]">
+                  <label className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[16px]">
                     Name
                   </label>
-                  <input 
-                    type="text" 
+                  <input
+                    type="text"
                     placeholder="John Doe"
-                    className="w-full bg-[#1a1a1a] rounded-[4px] px-4 py-3 text-white font-['Manrope:Regular',sans-serif] text-[18px] focus:outline-none focus:ring-2 focus:ring-[#d3e97a]"
+                    className="w-full bg-[#1a1a1a] rounded-[4px] px-4 py-3 text-white font-['Manrope',sans-serif] text-[18px] focus:outline-none focus:ring-2 focus:ring-[#d3e97a]"
                   />
                 </div>
 
                 <div className="space-y-2">
-                  <label className="font-['Manrope:Medium',sans-serif] text-[#c7c7c7] text-[16px]">
+                  <label className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[16px]">
                     Email
                   </label>
-                  <input 
-                    type="email" 
-                    className="w-full bg-[#1a1a1a] rounded-[4px] px-4 py-3 text-white font-['Manrope:Regular',sans-serif] text-[18px] focus:outline-none focus:ring-2 focus:ring-[#d3e97a]"
+                  <input
+                    type="email"
+                    className="w-full bg-[#1a1a1a] rounded-[4px] px-4 py-3 text-white font-['Manrope',sans-serif] text-[18px] focus:outline-none focus:ring-2 focus:ring-[#d3e97a]"
                   />
                 </div>
 
                 <div className="space-y-2">
-                  <label className="font-['Manrope:Medium',sans-serif] text-[#c7c7c7] text-[16px]">
+                  <label className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[16px]">
                     Subject
                   </label>
-                  <input 
-                    type="text" 
-                    className="w-full bg-[#1a1a1a] rounded-[4px] px-4 py-3 text-white font-['Manrope:Regular',sans-serif] text-[18px] focus:outline-none focus:ring-2 focus:ring-[#d3e97a]"
+                  <input
+                    type="text"
+                    className="w-full bg-[#1a1a1a] rounded-[4px] px-4 py-3 text-white font-['Manrope',sans-serif] text-[18px] focus:outline-none focus:ring-2 focus:ring-[#d3e97a]"
                   />
                 </div>
 
                 <div className="space-y-2">
-                  <label className="font-['Manrope:Medium',sans-serif] text-[#c7c7c7] text-[16px]">
+                  <label className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[16px]">
                     Message
                   </label>
-                  <textarea 
+                  <textarea
                     rows={5}
-                    className="w-full bg-[#1a1a1a] rounded-[4px] px-4 py-3 text-white font-['Manrope:Regular',sans-serif] text-[18px] focus:outline-none focus:ring-2 focus:ring-[#d3e97a] resize-none"
+                    className="w-full bg-[#1a1a1a] rounded-[4px] px-4 py-3 text-white font-['Manrope',sans-serif] text-[18px] focus:outline-none focus:ring-2 focus:ring-[#d3e97a] resize-none"
                   />
                 </div>
               </div>
 
-              <button className="bg-[#d3e97a] rounded-full px-10 py-4 font-['Manrope:Bold',sans-serif] font-bold text-[16px] text-neutral-950 uppercase hover:bg-[#c5db6c] transition-colors">
+              <button className="bg-[#d3e97a] rounded-full px-10 py-4 font-['Manrope',sans-serif] font-bold text-[16px] text-neutral-950 uppercase hover:bg-[#c5db6c] transition-colors">
                 Submit
               </button>
             </div>

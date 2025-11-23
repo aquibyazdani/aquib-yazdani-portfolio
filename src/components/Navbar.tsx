@@ -1,6 +1,6 @@
-import { Menu, X } from 'lucide-react';
-import { useState } from 'react';
-import { personalInfo, navItems } from '../config/portfolio';
+import { Menu, X } from "lucide-react";
+import { useState } from "react";
+import { personalInfo, navItems } from "../config/portfolio";
 
 interface NavbarProps {
   navigate: (path: string) => void;
@@ -17,7 +17,10 @@ export default function Navbar({ navigate, currentPage }: NavbarProps) {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-neutral-950/90 backdrop-blur-sm border-b border-[#484848]">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <button onClick={() => navigate('/')} className="font-['Bebas_Neue:Regular',sans-serif] text-[#c7c7c7] text-[28px] tracking-[-0.32px] cursor-pointer">
+        <button
+          onClick={() => navigate("/")}
+          className="text-[#c7c7c7] text-[28px] tracking-[-0.32px] cursor-pointer uppercase font-bold"
+        >
           {personalInfo.displayName}
         </button>
 
@@ -27,10 +30,11 @@ export default function Navbar({ navigate, currentPage }: NavbarProps) {
             <button
               key={item.path}
               onClick={() => navigate(item.path)}
-              className={`font-['Manrope:Medium',sans-serif] text-[14px] uppercase transition-colors ${
-                currentPage === item.path.slice(1) || (item.path === '/' && currentPage === 'home')
-                  ? 'text-[#d3e97a]'
-                  : 'text-[#c7c7c7] hover:text-white'
+              className={`font-['Manrope',sans-serif] text-[14px] uppercase transition-colors ${
+                currentPage === item.path.slice(1) ||
+                (item.path === "/" && currentPage === "home")
+                  ? "text-[#d3e97a]"
+                  : "text-[#c7c7c7] hover:text-white"
               }`}
             >
               {item.label}
@@ -59,10 +63,11 @@ export default function Navbar({ navigate, currentPage }: NavbarProps) {
                   navigate(item.path);
                   setIsMenuOpen(false);
                 }}
-                className={`font-['Manrope:Medium',sans-serif] text-[14px] uppercase text-left transition-colors ${
-                  currentPage === item.path.slice(1) || (item.path === '/' && currentPage === 'home')
-                    ? 'text-[#d3e97a]'
-                    : 'text-[#c7c7c7] hover:text-white'
+                className={`font-['Manrope',sans-serif] text-[14px] uppercase text-left transition-colors ${
+                  currentPage === item.path.slice(1) ||
+                  (item.path === "/" && currentPage === "home")
+                    ? "text-[#d3e97a]"
+                    : "text-[#c7c7c7] hover:text-white"
                 }`}
               >
                 {item.label}

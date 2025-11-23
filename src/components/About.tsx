@@ -1,6 +1,5 @@
-import imgProfile from "../assets/about.png";
+import imgProfile from "../assets/hero.png";
 import svgPaths from "../imports/svg-34il4djopb";
-import { Mail, Phone, MapPin, ArrowRight } from "lucide-react";
 import Navbar from "./Navbar";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";

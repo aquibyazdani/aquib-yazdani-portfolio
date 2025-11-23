@@ -8,6 +8,7 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
+import ContactForm from "./ContactForm";
 import { personalInfo, socialMedia, socialLinks } from "../config/portfolio";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -580,52 +581,13 @@ export default function Portfolio({ navigate }: PortfolioProps) {
 
             {/* Right - Contact Form */}
             <div className="space-y-8">
-              <div className="space-y-6">
-                <div className="space-y-2">
-                  <label className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[16px]">
-                    Name
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="John Doe"
-                    className="w-full bg-[#1a1a1a] rounded-[4px] px-4 py-3 text-white font-['Manrope',sans-serif] text-[18px] focus:outline-none focus:ring-2 focus:ring-[#d3e97a]"
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <label className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[16px]">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    className="w-full bg-[#1a1a1a] rounded-[4px] px-4 py-3 text-white font-['Manrope',sans-serif] text-[18px] focus:outline-none focus:ring-2 focus:ring-[#d3e97a]"
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <label className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[16px]">
-                    Subject
-                  </label>
-                  <input
-                    type="text"
-                    className="w-full bg-[#1a1a1a] rounded-[4px] px-4 py-3 text-white font-['Manrope',sans-serif] text-[18px] focus:outline-none focus:ring-2 focus:ring-[#d3e97a]"
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <label className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[16px]">
-                    Message
-                  </label>
-                  <textarea
-                    rows={5}
-                    className="w-full bg-[#1a1a1a] rounded-[4px] px-4 py-3 text-white font-['Manrope',sans-serif] text-[18px] focus:outline-none focus:ring-2 focus:ring-[#d3e97a] resize-none"
-                  />
-                </div>
-              </div>
-
-              <button className="bg-[#d3e97a] rounded-full px-10 py-4 font-['Manrope',sans-serif] font-bold text-[16px] text-neutral-950 uppercase hover:bg-[#c5db6c] transition-colors">
-                Submit
-              </button>
+              <ContactForm
+                labelSize="text-[16px]"
+                inputSize="text-[18px]"
+                textareaRows={5}
+                buttonPadding="px-10 py-4"
+                buttonTextSize="text-[16px]"
+              />
             </div>
           </div>
         </div>

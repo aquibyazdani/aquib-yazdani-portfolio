@@ -30,7 +30,7 @@ export default function Navbar({ navigate, currentPage }: NavbarProps) {
             <button
               key={item.path}
               onClick={() => navigate(item.path)}
-              className={`font-['Manrope',sans-serif] text-[14px] uppercase transition-colors ${
+              className={`cursor-pointer font-['Manrope',sans-serif] text-[14px] uppercase transition-colors ${
                 currentPage === item.path.slice(1) ||
                 (item.path === "/" && currentPage === "home")
                   ? "text-[#d3e97a]"

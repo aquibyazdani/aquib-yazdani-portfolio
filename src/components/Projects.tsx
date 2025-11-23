@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
-import { personalInfo, projects } from "../config/portfolio";
+import { personalInfo, notableProjects, personalProjects, socialLinks } from "../config/portfolio";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -52,25 +52,28 @@ export default function Projects({ navigate }: ProjectsProps) {
         </div>
       </section>
 
-      {/* Projects Grid */}
-      <section className="pb-20 px-6">
+      {/* Notable Projects Section */}
+      <section className="pb-12 px-6">
         <div className="max-w-7xl mx-auto">
+          <div className="mb-12">
+            <h2 className="font-['Bebas_Neue:Regular',sans-serif] text-[56px] text-white leading-[0.9]">
+              NOTABLE PROJECTS
+            </h2>
+          </div>
           <div className="space-y-20" ref={projectsRef}>
-            {projects.map((project, index) => (
+            {notableProjects.map((project, index) => (
               <div key={project.id} className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
                 {/* Image */}
                 <div className={`${index % 2 === 1 ? 'lg:order-2' : ''}`}>
                   <div className="bg-[#1a1a1a] rounded-[12px] aspect-square relative overflow-hidden">
                     <ImageWithFallback 
-                      src={project.image} 
+                      src={project.title.toLowerCase().replace(/[^a-z0-9]+/g, ' ')} 
                       alt={project.title} 
                       className="absolute inset-0 w-full h-full object-contain p-12"
                     />
-                    {project.tag && (
-                      <div className="absolute top-4 left-4 bg-neutral-950 px-4 py-2 rounded-full">
-                        <span className="font-['Manrope:Medium',sans-serif] text-white text-[14px]">{project.tag}</span>
-                      </div>
-                    )}
+                    <div className="absolute top-4 left-4 bg-neutral-950 px-4 py-2 rounded-full">
+                      <span className="font-['Manrope:Medium',sans-serif] text-white text-[14px]">Professional</span>
+                    </div>
                   </div>
                 </div>
 
@@ -80,9 +83,13 @@ export default function Projects({ navigate }: ProjectsProps) {
                     <h3 className="font-['Manrope:Medium',sans-serif] text-[32px] text-white leading-[1.4]">
                       {project.title}
                     </h3>
-                    <p className="font-['Manrope:Regular',sans-serif] text-[#c7c7c7] text-[18px] leading-[1.5]">
-                      {project.description}
-                    </p>
+                    <div className="space-y-2">
+                      {project.achievements.slice(0, 3).map((achievement, idx) => (
+                        <p key={idx} className="font-['Manrope:Regular',sans-serif] text-[#c7c7c7] text-[16px] leading-[1.5]">
+                          • {achievement}
+                        </p>
+                      ))}
+                    </div>
                   </div>
 
                   <div className="space-y-4">
@@ -90,48 +97,98 @@ export default function Projects({ navigate }: ProjectsProps) {
                       Project Info
                     </p>
                     <div className="border-t border-b border-[#484848] divide-y divide-[#484848]">
-                      {project.client && (
-                        <div className="flex justify-between py-4">
-                          <span className="font-['Manrope:Medium',sans-serif] text-white text-[16px]">Client</span>
-                          <span className="font-['Manrope:Medium',sans-serif] text-[#c7c7c7] text-[16px]">{project.client}</span>
-                        </div>
-                      )}
-                      <div className="flex justify-between py-4">
-                        <span className="font-['Manrope:Medium',sans-serif] text-white text-[16px]">Year</span>
-                        <span className="font-['Manrope:Medium',sans-serif] text-[#c7c7c7] text-[16px]">{project.year}</span>
-                      </div>
                       <div className="flex justify-between py-4">
                         <span className="font-['Manrope:Medium',sans-serif] text-white text-[16px]">Role</span>
                         <span className="font-['Manrope:Medium',sans-serif] text-[#c7c7c7] text-[16px]">{project.role}</span>
                       </div>
+                      <div className="flex justify-between py-4">
+                        <span className="font-['Manrope:Medium',sans-serif] text-white text-[16px]">Tech Stack</span>
+                        <span className="font-['Manrope:Medium',sans-serif] text-[#c7c7c7] text-[16px]">{project.techStack.slice(0, 3).join(', ')}</span>
+                      </div>
                     </div>
                   </div>
 
+                  {/* Project Links */}
                   <div className="flex gap-6 flex-wrap">
-                    {project.links.demo && (
-                      <a href={project.links.demo} className="group inline-flex flex-col gap-1">
+                    {project.title === "Screener - Zamzam Capital" && (
+                      <a href="https://screener.zamzam-capital.com/" target="_blank" rel="noopener noreferrer" className="group inline-flex flex-col gap-1">
                         <div className="flex items-center gap-1">
-                          <span className="font-['Manrope:Bold',sans-serif] font-bold text-[#d3e97a] text-[16px] uppercase">Live Demo</span>
-                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                          <span className="font-['Manrope:Bold',sans-serif] font-bold text-[#d3e97a] text-[14px] uppercase">Live Demo</span>
+                          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                             <path d={svgPaths.p3589c00} fill="#D3E97A" />
                           </svg>
                         </div>
                         <div className="h-[2px] w-full bg-[#d3e97a]" />
                       </a>
                     )}
-                    
-                    {project.links.github && (
-                      <a href={project.links.github} className="group inline-flex flex-col gap-1">
+                    {project.title === "TOI Epaper (Times of India)" && (
+                      <a href="https://epaper.indiatimes.com/" target="_blank" rel="noopener noreferrer" className="group inline-flex flex-col gap-1">
                         <div className="flex items-center gap-1">
-                          <span className="font-['Manrope:Bold',sans-serif] font-bold text-[#d3e97a] text-[16px] uppercase">See on Github</span>
-                          <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
-                            <path clipRule="evenodd" d={svgPaths.p17e6c000} fill="#D3E97A" fillRule="evenodd" />
+                          <span className="font-['Manrope:Bold',sans-serif] font-bold text-[#d3e97a] text-[14px] uppercase">Live Demo</span>
+                          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path d={svgPaths.p3589c00} fill="#D3E97A" />
+                          </svg>
+                        </div>
+                        <div className="h-[2px] w-full bg-[#d3e97a]" />
+                      </a>
+                    )}
+                    {project.title === "Libsi Markah E-commerce" && (
+                      <a href="https://libsimarkah.com/" target="_blank" rel="noopener noreferrer" className="group inline-flex flex-col gap-1">
+                        <div className="flex items-center gap-1">
+                          <span className="font-['Manrope:Bold',sans-serif] font-bold text-[#d3e97a] text-[14px] uppercase">Live Demo</span>
+                          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path d={svgPaths.p3589c00} fill="#D3E97A" />
                           </svg>
                         </div>
                         <div className="h-[2px] w-full bg-[#d3e97a]" />
                       </a>
                     )}
                   </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Personal Projects Section */}
+      <section className="pb-20 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-12">
+            <h2 className="font-['Bebas_Neue:Regular',sans-serif] text-[56px] text-white leading-[0.9]">
+              PERSONAL PROJECTS
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {personalProjects.map((project) => (
+              <div key={project.id} className="bg-[#1a1a1a] rounded-[12px] overflow-hidden group hover:bg-[#222222] transition-colors">
+                <div className="aspect-video relative overflow-hidden bg-[#0a0a0a]">
+                  <ImageWithFallback 
+                    src={project.title.toLowerCase().replace(/[^a-z0-9]+/g, ' ')} 
+                    alt={project.title} 
+                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <div className="p-6 space-y-4">
+                  <h3 className="font-['Manrope:Medium',sans-serif] text-[24px] text-white leading-[1.4]">
+                    {project.title}
+                  </h3>
+                  {project.url !== '#' && (
+                    <a 
+                      href={project.url} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="group inline-flex flex-col gap-1"
+                    >
+                      <div className="flex items-center gap-1">
+                        <span className="font-['Manrope:Bold',sans-serif] font-bold text-[#d3e97a] text-[14px] uppercase">View Project</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                          <path d={svgPaths.p3589c00} fill="#D3E97A" />
+                        </svg>
+                      </div>
+                      <div className="h-[2px] w-full bg-[#d3e97a]" />
+                    </a>
+                  )}
                 </div>
               </div>
             ))}
@@ -170,23 +227,18 @@ export default function Projects({ navigate }: ProjectsProps) {
             {personalInfo.copyright}
           </p>
           <div className="flex gap-4">
-            <a href="#" className="hover:opacity-80 transition-opacity">
+            <a href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
               <svg width="24" height="24" viewBox="0 0 26 26" fill="none">
                 <path d={svgPaths.p282a2240} fill="#D3E97A" />
                 <path d={svgPaths.p31d7ad00} fill="#D3E97A" />
               </svg>
             </a>
-            <a href="#" className="hover:opacity-80 transition-opacity">
+            <a href={socialLinks.github} target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
               <svg width="24" height="24" viewBox="0 0 26 26" fill="none">
                 <path clipRule="evenodd" d={svgPaths.p17e6c000} fill="#D3E97A" fillRule="evenodd" />
               </svg>
             </a>
-            <a href="#" className="hover:opacity-80 transition-opacity">
-              <svg width="24" height="24" viewBox="0 0 28 23" fill="none">
-                <path d={svgPaths.p3f377200} fill="#D3E97A" />
-              </svg>
-            </a>
-            <a href="#" className="hover:opacity-80 transition-opacity">
+            <a href={socialLinks.instagram} target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
               <svg width="24" height="24" viewBox="0 0 32 32" fill="none">
                 <path d={svgPaths.p8ca3400} fill="#D3E97A" />
                 <path d={svgPaths.p5548000} fill="#D3E97A" />

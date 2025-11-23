@@ -7,31 +7,31 @@ import {
 
 // Personal Information
 export const personalInfo = {
-  name: "Robert Garcia",
-  displayName: "robert garcia", // For navbar/logo
-  title: "Front-end Developer",
-  tagline: "A web developer and designer ready to help with your next project.",
-  location: "San Francisco, CA",
-  email: "hello@robertgarcia.com",
-  phone: "+1 (555) 123-4567",
-  copyright: "© 2023 Robert Garcia",
+  name: "Aquib Yazdani",
+  displayName: "aquib yazdani", // For navbar/logo
+  title: "Sr. Software Engineer",
+  tagline: "a Sr. Software Engineer",
+  location: "Pune Maharashtra, India",
+  email: "yazdaniaquib2@gmail.com",
+  phone: "+91 8210773776",
+  copyright: "© 2023 Aquib Yazdani",
   careerStartDate: "2021-06-01", // Format: YYYY-MM-DD
 };
 
 // Social Links
 export const socialLinks = {
-  linkedin: "https://linkedin.com",
-  github: "https://github.com",
-  instagram: "https://instagram.com",
+  linkedin: "https://www.linkedin.com/in/aquibyazdani/",
+  github: "https://github.com/aquibyazdani/",
+  instagram: "https://www.instagram.com/aquibyazdani/",
 };
 
 // About Me
 export const aboutMe = {
-  intro: `I'm a passionate front-end developer with over 6 years of experience crafting beautiful, responsive web applications. My journey in web development started with a curiosity about how websites work, and it has evolved into a career I'm truly passionate about.`,
+  intro: `I'm a Full-Stack Developer based in India with a background in Mechanical Engineering. I build end-to-end, accessible, and high-performance web solutions, with strong expertise in React and modern frontend technologies. I care deeply about clean architecture, usability, and creating meaningful digital products.`,
   
-  background: `I specialize in React, TypeScript, and modern JavaScript frameworks. I love turning complex problems into simple, beautiful, and intuitive designs. When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or mentoring junior developers.`,
+  background: `While I specialize in frontend development, I also develop full-stack solutions that integrate seamlessly from UI to backend. Outside of programming, I enjoy playing football, photography, and a few rounds of Valorant.`,
   
-  philosophy: `I believe in writing clean, maintainable code and creating exceptional user experiences. My approach combines technical expertise with a keen eye for design, ensuring that every project not only functions flawlessly but also delights users.`,
+  philosophy: ``,
   
   yearOfExperience: "6+",
   projectsCompleted: "50+",
@@ -133,6 +133,19 @@ export const education = [
 export const notableProjects = [
   {
     id: 1,
+    title: "Screener - Zamzam Capital",
+    role: "Sole Developer",
+    techStack: ["React.js", "TypeScript", "Tailwind CSS", "Chart.js", "REST APIs"],
+    year: "2025",
+    achievements: [
+      "Developed a dedicated Halal stock screening platform enabling investors to evaluate companies based on Shariah-compliant financial criteria.",
+      "Implemented advanced filtering and screening logic to assess stocks across multiple compliance parameters, providing a streamlined and user-friendly interface for Islamic investment research.",
+      "Optimized performance for handling large datasets with efficient rendering and state management.",
+      "Created responsive dashboards with intuitive UI/UX for seamless user experience across devices."
+    ]
+  },
+  {
+    id: 2,
     title: "TOI Epaper (Times of India)",
     role: "Lead Frontend Engineer",
     techStack: ["React.js", "Redux", "Bootstrap", "REST APIs"],
@@ -146,7 +159,7 @@ export const notableProjects = [
     ]
   },
   {
-    id: 2,
+    id: 3,
     title: "Adlob (Response 4You) - (Times of India)",
     role: "Principal UI Developer",
     techStack: ["React.js", "Context API", "Styled Components", "Jest", "REST APIs"],
@@ -155,20 +168,6 @@ export const notableProjects = [
       "Automated workflows, allowing 200+ agencies to manage campaigns effortlessly.",
       "Developed a responsive UI, improving usability by 60% across all devices.",
       "Integrated real-time tracking for ad placements and performance monitoring."
-    ]
-  },
-  {
-    id: 3,
-    title: "Screener - Zamzam Capital",
-    role: "Frontend Developer",
-    techStack: ["React.js", "TypeScript", "Tailwind CSS", "Chart.js", "REST APIs"],
-    achievements: [
-      "Developed a comprehensive stock screening platform for financial analysis and investment research.",
-      "Implemented real-time data visualization with interactive charts and graphs for market insights.",
-      "Built advanced filtering and sorting mechanisms for screening stocks based on multiple parameters.",
-      "Optimized performance for handling large datasets with efficient rendering and state management.",
-      "Created responsive dashboards with intuitive UI/UX for seamless user experience across devices.",
-      "Integrated RESTful APIs for fetching live market data and financial metrics."
     ]
   },
   {
@@ -223,19 +222,19 @@ export const achievements = [
 export const references = [
   {
     id: 1,
-    name: "Sarah Mitchell",
-    position: "CTO",
-    company: "TechFlow Inc.",
-    phone: "+1 (555) 987-6543",
-    email: "sarah@techflow.com"
+    name: "Harish Yerragintla",
+    position: "Lead Developer",
+    company: "Harns Technologies",
+    phone: "+1 (205) 736-5808",
+    email: "harish.yerraguntla2706@gmail.com"
   },
   {
     id: 2,
-    name: "Michael Chen",
-    position: "Lead Designer",
-    company: "Digital Creations",
-    phone: "+1 (555) 456-7890",
-    email: "michael@digitalcreations.com"
+    name: "Md Fariduzzaman Ansari",
+    position: "Senior Frontend Engineer",
+    company: "Icertis",
+    phone: "+91 70443 56471",
+    email: "fariduzzamaansari@gmail.com"
   }
 ];
 

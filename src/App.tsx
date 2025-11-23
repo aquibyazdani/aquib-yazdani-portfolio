@@ -28,6 +28,14 @@ export default function App() {
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
 
+  // Scroll to top smoothly when page changes
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }, [currentPage]);
+
   const navigate = (path: string) => {
     window.location.hash = path;
   };

@@ -6,7 +6,8 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
-import { personalInfo, aboutMe, skills as configSkills } from "../config/portfolio";
+import { personalInfo, aboutMe, skills as configSkills, workExperience, socialLinks } from "../config/portfolio";
+import ConnectSection from "./ConnectSection";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -24,20 +25,7 @@ export default function About({ navigate }: AboutProps) {
     "Version Control & Collaboration": configSkills.tools
   };
 
-  const experiences = [
-    {
-      role: "Freelance Developer",
-      company: "",
-      period: "Mar 2023 - Present",
-      description: "Ullamco tempor magna minim sit anim ad commodo consequat. Duis aute irure dolor in reprehenderit in voluptate elit esse culpa dolore eu fugiat nulla pariatur."
-    },
-    {
-      role: "Front-End Intern",
-      company: "Roar Tech",
-      period: "Sep 2022 - Mar 2023",
-      description: "Ullamco tempor magna minim sit anim ad commodo consequat. Duis aute irure dolor in reprehenderit in voluptate elit esse culpa dolore eu fugiat nulla pariatur."
-    }
-  ];
+  const experiences = workExperience;
 
   const heroRef = useRef(null);
   const capabilitiesRef = useRef(null);
@@ -124,33 +112,36 @@ export default function About({ navigate }: AboutProps) {
                 
                 <div className="space-y-4">
                   <p className="font-['Manrope:Medium',sans-serif] text-[24px] text-white leading-[1.4]">
-                    I am a front-end developer based in Sydney. Has Mechanical Engineering background.
+                    {aboutMe.intro}
                   </p>
                   <p className="font-['Manrope:Regular',sans-serif] text-[#c7c7c7] text-[16px] leading-[1.6]">
-                    I am a front-end developer based in Sydney looking for exciting opportunities. Has Mechanical Engineering background. Likes to focus on accessibility when developing. Passionate and curious about solving problems. Currently, I'm exploring Reactjs, Webflow and a bit of Designing. While I am not programming, I enjoy playing football, photography and playing Valorant. Learning more to improve skill.
+                    {aboutMe.background}
                   </p>
                 </div>
               </div>
 
               {/* Download Resume & Social Links */}
               <div className="flex gap-4 items-center">
-                <button className="bg-[#d3e97a] rounded-full flex items-center gap-2 px-6 py-3 hover:bg-[#c5db6c] transition-colors">
+                <button 
+                  onClick={() => navigate('/resume')}
+                  className="bg-[#d3e97a] rounded-full flex items-center gap-2 px-6 py-3 hover:bg-[#c5db6c] transition-colors"
+                >
                   <span className="font-['Manrope:Bold',sans-serif] font-bold text-[14px] text-neutral-950 uppercase">
-                    Download Resume
+                    My Resume
                   </span>
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                     <path d={svgPaths.p23c4ec40} fill="#0A0A0A" />
                   </svg>
                 </button>
                 
-                <a href="#" className="hover:opacity-80 transition-opacity">
+                <a href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
                   <svg width="24" height="24" viewBox="0 0 26 26" fill="none">
                     <path d={svgPaths.p282a2240} fill="#D3E97A" />
                     <path d={svgPaths.p31d7ad00} fill="#D3E97A" />
                   </svg>
                 </a>
                 
-                <a href="#" className="hover:opacity-80 transition-opacity">
+                <a href={socialLinks.github} target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
                   <svg width="24" height="24" viewBox="0 0 26 26" fill="none">
                     <path clipRule="evenodd" d={svgPaths.p17e6c000} fill="#D3E97A" fillRule="evenodd" />
                   </svg>
@@ -234,7 +225,7 @@ export default function About({ navigate }: AboutProps) {
                   <div className="flex justify-between items-start flex-wrap gap-2">
                     <div>
                       <h3 className="font-['Manrope:Medium',sans-serif] text-white text-[20px]">
-                        {exp.role}
+                        {exp.title}
                       </h3>
                       {exp.company && (
                         <p className="font-['Manrope:Regular',sans-serif] text-[#c7c7c7] text-[16px]">
@@ -246,9 +237,14 @@ export default function About({ navigate }: AboutProps) {
                       {exp.period}
                     </span>
                   </div>
-                  <p className="font-['Manrope:Regular',sans-serif] text-[#c7c7c7] text-[16px] leading-[1.6]">
-                    {exp.description}
-                  </p>
+                  <ul className="space-y-2 font-['Manrope:Regular',sans-serif] text-[#c7c7c7] text-[16px] leading-[1.6]">
+                    {exp.responsibilities.map((resp, idx) => (
+                      <li key={idx} className="flex items-start gap-2">
+                        <span className="text-[#d3e97a] mt-1">•</span>
+                        <span>{resp}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               ))}
             </div>
@@ -257,114 +253,7 @@ export default function About({ navigate }: AboutProps) {
       </section>
 
       {/* Let's Connect Section */}
-      <section className="py-20 px-6" ref={connectRef}>
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Left - Contact Info */}
-            <div className="space-y-8">
-              <div className="space-y-4">
-                <h2 className="font-['Bebas_Neue:Regular',sans-serif] text-[64px] lg:text-[76px] text-white leading-[0.9]">
-                  LET'S CONNECT
-                </h2>
-                <div className="space-y-2">
-                  <p className="font-['Manrope:Regular',sans-serif] text-[#c7c7c7] text-[16px]">
-                    Say hello at{' '}
-                    <a href="mailto:robertgarcia@gmail.com" className="text-[#d3e97a] hover:underline">
-                      robertgarcia@gmail.com
-                    </a>
-                  </p>
-                  <p className="font-['Manrope:Regular',sans-serif] text-[#c7c7c7] text-[16px]">
-                    For more info, here's my{' '}
-                    <a href="#" className="text-[#d3e97a] hover:underline">
-                      resume
-                    </a>
-                  </p>
-                </div>
-              </div>
-
-              {/* Social Links */}
-              <div className="flex gap-4">
-                <a href="#" className="hover:opacity-80 transition-opacity">
-                  <svg width="24" height="24" viewBox="0 0 26 26" fill="none">
-                    <path d={svgPaths.p282a2240} fill="#D3E97A" />
-                    <path d={svgPaths.p31d7ad00} fill="#D3E97A" />
-                  </svg>
-                </a>
-                <a href="#" className="hover:opacity-80 transition-opacity">
-                  <svg width="24" height="24" viewBox="0 0 26 26" fill="none">
-                    <path clipRule="evenodd" d={svgPaths.p17e6c000} fill="#D3E97A" fillRule="evenodd" />
-                  </svg>
-                </a>
-                <a href="#" className="hover:opacity-80 transition-opacity">
-                  <svg width="24" height="24" viewBox="0 0 28 23" fill="none">
-                    <path d={svgPaths.p3f377200} fill="#D3E97A" />
-                  </svg>
-                </a>
-                <a href="#" className="hover:opacity-80 transition-opacity">
-                  <svg width="24" height="24" viewBox="0 0 32 32" fill="none">
-                    <path d={svgPaths.p8ca3400} fill="#D3E97A" />
-                    <path d={svgPaths.p5548000} fill="#D3E97A" />
-                    <path d={svgPaths.p374be072} fill="#D3E97A" />
-                  </svg>
-                </a>
-              </div>
-
-              <p className="font-['Manrope:Medium',sans-serif] text-[#c7c7c7] text-[14px] pt-8">
-                {personalInfo.copyright}
-              </p>
-            </div>
-
-            {/* Right - Contact Form */}
-            <div className="space-y-6">
-              <div className="space-y-4">
-                <div className="space-y-2">
-                  <label className="font-['Manrope:Medium',sans-serif] text-[#c7c7c7] text-[14px]">
-                    Name
-                  </label>
-                  <input 
-                    type="text" 
-                    className="w-full bg-[#1a1a1a] rounded-[4px] px-4 py-3 text-white font-['Manrope:Regular',sans-serif] text-[16px] focus:outline-none focus:ring-2 focus:ring-[#d3e97a]"
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <label className="font-['Manrope:Medium',sans-serif] text-[#c7c7c7] text-[14px]">
-                    Email
-                  </label>
-                  <input 
-                    type="email" 
-                    className="w-full bg-[#1a1a1a] rounded-[4px] px-4 py-3 text-white font-['Manrope:Regular',sans-serif] text-[16px] focus:outline-none focus:ring-2 focus:ring-[#d3e97a]"
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <label className="font-['Manrope:Medium',sans-serif] text-[#c7c7c7] text-[14px]">
-                    Subject
-                  </label>
-                  <input 
-                    type="text" 
-                    className="w-full bg-[#1a1a1a] rounded-[4px] px-4 py-3 text-white font-['Manrope:Regular',sans-serif] text-[16px] focus:outline-none focus:ring-2 focus:ring-[#d3e97a]"
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <label className="font-['Manrope:Medium',sans-serif] text-[#c7c7c7] text-[14px]">
-                    Message
-                  </label>
-                  <textarea 
-                    rows={4}
-                    className="w-full bg-[#1a1a1a] rounded-[4px] px-4 py-3 text-white font-['Manrope:Regular',sans-serif] text-[16px] focus:outline-none focus:ring-2 focus:ring-[#d3e97a] resize-none"
-                  />
-                </div>
-              </div>
-
-              <button className="bg-[#d3e97a] rounded-full px-10 py-3 font-['Manrope:Bold',sans-serif] font-bold text-[14px] text-neutral-950 uppercase hover:bg-[#c5db6c] transition-colors">
-                Submit
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ConnectSection ref={connectRef} navigate={navigate} />
     </div>
   );
 }

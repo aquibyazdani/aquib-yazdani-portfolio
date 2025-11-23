@@ -14,6 +14,7 @@ import {
   awards, 
   references 
 } from "../config/portfolio";
+import { downloadResumeAsPDF } from "../utils/downloadResume";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -82,9 +83,9 @@ export default function Resume({ navigate }: ResumeProps) {
         <div className="max-w-6xl mx-auto">
           {/* Download Button */}
           <div className="flex justify-end mb-8">
-            <button className="inline-flex items-center gap-2 bg-[#d3e97a] text-neutral-950 px-6 py-3 rounded-full hover:bg-[#c5db6c] transition-colors">
+            <button className="inline-flex items-center gap-2 bg-[#d3e97a] text-neutral-950 px-6 py-3 rounded-full hover:bg-[#c5db6c] transition-colors" onClick={downloadResumeAsPDF}>
               <Download className="size-4" />
-              <span className="font-['Manrope:Bold',sans-serif] font-bold text-[14px] uppercase">Download PDF</span>
+              <span className="font-['Manrope:Bold',sans-serif] font-bold text-[14px] uppercase">Download Resume</span>
             </button>
           </div>
 
@@ -161,25 +162,6 @@ export default function Resume({ navigate }: ResumeProps) {
                     </div>
                   </div>
                 ))}
-              </div>
-
-              {/* Awards Section */}
-              <div className="space-y-2.5">
-                <h2 className="font-['Manrope:Bold',sans-serif] font-bold text-white text-[16px] uppercase text-[#d3e97a] border-b border-[#d3e97a]/30 pb-1.5">
-                  Awards
-                </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                  {awards.map((award) => (
-                    <div key={award.id} className="bg-[#1a1a1a]/50 p-3 rounded-lg">
-                      <p className="font-['Manrope:SemiBold',sans-serif] font-semibold text-white text-[12px] mb-1">
-                        {award.title}
-                      </p>
-                      <p className="font-['Manrope:Regular',sans-serif] text-[#d3e97a] text-[11px]">
-                        {award.date} | {award.organization}
-                      </p>
-                    </div>
-                  ))}
-                </div>
               </div>
 
               {/* Education Section */}
@@ -316,7 +298,7 @@ export default function Resume({ navigate }: ResumeProps) {
                   Achievements
                 </h2>
                 
-                <div className="space-y-1.5">
+                <div className="space-y-1">
                   {achievements.map((achievement, index) => (
                     <div key={index} className="flex items-start gap-3 bg-[#1a1a1a]/50 p-3 rounded-lg">
                       <div className="w-2 h-2 rounded-full bg-[#d3e97a] mt-1.5 flex-shrink-0" />

@@ -523,13 +523,9 @@ export default function Portfolio({ navigate }: PortfolioProps) {
                     in frontend engineering.
                   </p>
                   <p className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[18px] leading-[1.5]">
-                    I am a front-end developer based in India looking for
-                    exciting opportunities. Likes to focus on accessibility when
-                    developing. Passionate and curious about solving problems.
-                    Currently, I'm exploring Reactjs, Webflow and a bit of
-                    Designing. While I am not programming, I enjoy playing
-                    football, photography and playing Valorant. Learning more to
-                    improve skill.
+                    When I’m not coding, you’ll find me playing cricket,
+                    practicing photography, or spending quality time with my
+                    family. Always learning, always curious.
                   </p>
                 </div>
 

@@ -60,9 +60,9 @@ export const socialLinks = {
 
 // About Me
 export const aboutMe = {
-  intro: `I'm a Full-Stack Developer based in India. I build end-to-end, accessible, and high-performance web solutions, with strong expertise in React and modern frontend technologies. I care deeply about clean architecture, usability, and creating meaningful digital products.`,
+  intro: `Passionate Full-Stack Developer Focused on Accessibility & Design`,
 
-  background: `I care deeply about clean architecture, usability, and creating meaningful digital products. While I specialize in frontend development, I also develop full-stack solutions that integrate seamlessly from UI to backend. Outside of programming, I enjoy playing football, photography, and a few rounds of Valorant.`,
+  background: `When I’m not coding, you’ll find me playing cricket, practicing photography, or spending quality time with my family. Always learning, always curious.`,
 
   philosophy: ``,
 

@@ -26,6 +26,7 @@ import {
   Users,
   Linkedin,
   Instagram,
+  MessageCircle,
   type LucideIcon,
 } from "lucide-react";
 import toi from "../assets/toi.png";
@@ -62,7 +63,7 @@ export const socialLinks = {
 export const aboutMe = {
   intro: `Passionate Full-Stack Developer Focused on Accessibility & Design`,
 
-  background: `When I’m not coding, you’ll find me playing cricket, practicing photography, or spending quality time with my family. Always learning, always curious.`,
+  background: `I care deeply about clean architecture, usability, and creating meaningful digital products. While I specialize in frontend development, I also develop full-stack solutions that integrate seamlessly from UI to backend. Outside of programming, I enjoy playing football, photography, and a few rounds of Valorant.`,
 
   philosophy: ``,
 
@@ -451,6 +452,16 @@ export const socialMedia = [
     name: "Instagram",
     icon: Instagram,
     url: socialLinks.instagram,
+  },
+  {
+    name: "WhatsApp",
+    icon: MessageCircle,
+    url: "https://wa.me/918210773776",
+  },
+  {
+    name: "Phone",
+    icon: Phone,
+    url: "tel:+918210773776",
   },
 ];
 

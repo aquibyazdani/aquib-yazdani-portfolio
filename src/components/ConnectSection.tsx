@@ -1,6 +1,5 @@
 import { forwardRef } from "react";
-import svgPaths from "../imports/svg-34il4djopb";
-import { personalInfo, socialLinks } from "../config/portfolio";
+import { personalInfo, socialMedia } from "../config/portfolio";
 
 interface ConnectSectionProps {
   navigate?: (path: string) => void;
@@ -41,44 +40,24 @@ const ConnectSection = forwardRef<HTMLElement, ConnectSectionProps>(
 
               {/* Social Links */}
               <div className="flex gap-4">
-                <a
-                  href={socialLinks.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:opacity-80 transition-opacity"
-                >
-                  <svg width="24" height="24" viewBox="0 0 26 26" fill="none">
-                    <path d={svgPaths.p282a2240} fill="#D3E97A" />
-                    <path d={svgPaths.p31d7ad00} fill="#D3E97A" />
-                  </svg>
-                </a>
-                <a
-                  href={socialLinks.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:opacity-80 transition-opacity"
-                >
-                  <svg width="24" height="24" viewBox="0 0 26 26" fill="none">
-                    <path
-                      clipRule="evenodd"
-                      d={svgPaths.p17e6c000}
-                      fill="#D3E97A"
-                      fillRule="evenodd"
-                    />
-                  </svg>
-                </a>
-                <a
-                  href={socialLinks.instagram}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:opacity-80 transition-opacity"
-                >
-                  <svg width="24" height="24" viewBox="0 0 32 32" fill="none">
-                    <path d={svgPaths.p8ca3400} fill="#D3E97A" />
-                    <path d={svgPaths.p5548000} fill="#D3E97A" />
-                    <path d={svgPaths.p374be072} fill="#D3E97A" />
-                  </svg>
-                </a>
+                {socialMedia.map((social, index) => {
+                  const Icon = social.icon;
+                  return (
+                    <a
+                      key={index}
+                      href={social.url}
+                      target={social.name !== "Phone" ? "_blank" : undefined}
+                      rel={
+                        social.name !== "Phone"
+                          ? "noopener noreferrer"
+                          : undefined
+                      }
+                      className="hover:opacity-80 transition-opacity"
+                    >
+                      <Icon className="w-6 h-6 text-[#d3e97a]" />
+                    </a>
+                  );
+                })}
               </div>
 
               <p className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[14px] pt-8">

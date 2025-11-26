@@ -1,5 +1,7 @@
 import { forwardRef, useRef, useState } from "react";
 import emailjs from "emailjs-com";
+import { toast } from "react-toastify";
+import { Loader2 } from "lucide-react";
 
 interface ContactFormProps {
   labelSize?: string;
@@ -39,10 +41,33 @@ const ContactForm = forwardRef<HTMLDivElement, ContactFormProps>(
           console.log("EmailJS success:", result.text);
           formRef.current?.reset();
           setIsSending(false);
+          toast.success("Thank you! I'll get back to you soon!", {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+          });
         },
         (error) => {
           console.error("EmailJS error:", error.text || error);
           setIsSending(false);
+          toast.error(
+            "Oops! Something went wrong. Please try again or contact me directly.",
+            {
+              position: "top-right",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "dark",
+            }
+          );
         }
       );
     };
@@ -97,9 +122,15 @@ const ContactForm = forwardRef<HTMLDivElement, ContactFormProps>(
           <button
             type="submit"
             disabled={isSending}
-            className={`bg-[#d3e97a] rounded-full ${buttonPadding} font-['Manrope',sans-serif] font-bold ${buttonTextSize} text-neutral-950 uppercase hover:bg-[#c5db6c] transition-colors`}
+            className={`bg-[#d3e97a] rounded-full ${buttonPadding} font-['Manrope',sans-serif] font-bold ${buttonTextSize} text-neutral-950 uppercase hover:bg-[#c5db6c] transition-colors disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2`}
           >
-            Submit
+            {isSending ? "Submitting" : "Submit"}
+            {isSending && (
+              <Loader2
+                className="w-4 h-4"
+                style={{ animation: "spin 1s linear infinite" }}
+              />
+            )}
           </button>
         </form>
       </div>

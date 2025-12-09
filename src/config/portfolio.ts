@@ -33,12 +33,12 @@ import toi from "../assets/toi.png";
 import screener from "../assets/screener.png";
 import mm from "../assets/mm.png";
 import adlob from "../assets/adlob.png";
-import libsi from "../assets/libsi.png";
 import funpark from "../assets/funpark.png";
 import ecommerce from "../assets/ecommerce.png";
 import spotify from "../assets/spotify.png";
 import libsilong from "../assets/libsilong.png";
 import screenr_long from "../assets/screenr_long.png";
+import portfolio from "../assets/aquib-portfolio.png";
 // Personal Information
 export const personalInfo = {
   name: "Aquib Yazdani",
@@ -238,7 +238,12 @@ export const notableProjects = [
 
 // Personal Projects
 export const personalProjects = [
-  { id: 1, title: "Portfolio", url: "https://aquibyazdani.com" },
+  {
+    id: 1,
+    title: "Portfolio",
+    url: "https://aquibyazdani.com",
+    src: portfolio,
+  },
   {
     id: 2,
     title: "Amusement Park",

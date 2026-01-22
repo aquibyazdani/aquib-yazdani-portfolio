@@ -131,7 +131,7 @@ function Button() {
       data-name="button"
     >
       <p className="font-['Manrope',sans-serif] font-bold leading-none relative shrink-0 text-[16px] text-neutral-950 text-nowrap uppercase whitespace-pre">
-        Contact Me
+        Let's Connect
       </p>
       <Circle />
     </div>

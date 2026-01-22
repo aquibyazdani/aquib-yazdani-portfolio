@@ -18,7 +18,7 @@ const ConnectSection = forwardRef<HTMLElement, ConnectSectionProps>(
                   LET'S CONNECT
                 </h2>
                 <div className="space-y-2">
-                  <p className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[16px]">
+                  {/* <p className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[16px]">
                     Say hello at{" "}
                     <a
                       href={`mailto:${personalInfo.email}`}
@@ -26,7 +26,7 @@ const ConnectSection = forwardRef<HTMLElement, ConnectSectionProps>(
                     >
                       {personalInfo.email}
                     </a>
-                  </p>
+                  </p> */}
                 </div>
 
                 {/* My Resume Button */}

@@ -1,6 +1,4 @@
 import {
-  Mail,
-  Phone,
   MapPin,
   Code2,
   FileCode,
@@ -26,7 +24,6 @@ import {
   Users,
   Linkedin,
   Instagram,
-  MessageCircle,
   type LucideIcon,
 } from "lucide-react";
 import toi from "../assets/toi.png";
@@ -421,18 +418,18 @@ export const projects = [
 
 // Contact Information for Footer
 export const contactInfo = [
-  {
-    icon: Mail,
-    label: "Email",
-    value: personalInfo.email,
-    href: `mailto:${personalInfo.email}`,
-  },
-  {
-    icon: Phone,
-    label: "Phone",
-    value: personalInfo.phone,
-    href: `tel:${personalInfo.phone.replace(/\s/g, "")}`,
-  },
+  // {
+  //   icon: Mail,
+  //   label: "Email",
+  //   value: personalInfo.email,
+  //   href: `mailto:${personalInfo.email}`,
+  // },
+  // {
+  //   icon: Phone,
+  //   label: "Phone",
+  //   value: personalInfo.phone,
+  //   href: `tel:${personalInfo.phone.replace(/\s/g, "")}`,
+  // },
   {
     icon: MapPin,
     label: "Location",
@@ -458,16 +455,16 @@ export const socialMedia = [
     icon: Instagram,
     url: socialLinks.instagram,
   },
-  {
-    name: "WhatsApp",
-    icon: MessageCircle,
-    url: "https://wa.me/918210773776",
-  },
-  {
-    name: "Phone",
-    icon: Phone,
-    url: "tel:+918210773776",
-  },
+  // {
+  //   name: "WhatsApp",
+  //   icon: MessageCircle,
+  //   url: "https://wa.me/918210773776",
+  // },
+  // {
+  //   name: "Phone",
+  //   icon: Phone,
+  //   url: "tel:+918210773776",
+  // },
 ];
 
 // Navigation Items

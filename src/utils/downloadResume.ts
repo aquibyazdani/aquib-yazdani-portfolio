@@ -346,8 +346,8 @@ export const downloadResumeAsPDF = () => {
         <div class="title">${personalInfo.title}</div>
       </div>
       <div class="contact-info">
-        <div><a href="mailto:${personalInfo.email}">${personalInfo.email}</a></div>
-        <div>${personalInfo.phone}</div>
+        <!-- <div><a href="mailto:${personalInfo.email}">${personalInfo.email}</a></div> -->
+        <!-- <div>${personalInfo.phone}</div> -->
         <div>${personalInfo.location}</div>
       </div>
     </div>
@@ -444,10 +444,10 @@ export const downloadResumeAsPDF = () => {
           <div class="reference-item">
             <div class="reference-name">${ref.name}</div>
             <div class="reference-position">${ref.company} / ${ref.position}</div>
-            <div class="reference-contact">
+            <!-- <div class="reference-contact">
               <div>${ref.phone}</div>
               <div>${ref.email}</div>
-            </div>
+            </div> -->
           </div>
         `).join('')}
       </div>

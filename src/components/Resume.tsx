@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Download } from "lucide-react";
+import { MapPin, Download } from "lucide-react";
 import Navbar from "./Navbar";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
@@ -125,7 +125,7 @@ export default function Resume({ navigate }: ResumeProps) {
                   </div>
 
                   <div className="space-y-1.5 pt-1">
-                    <div className="flex items-center gap-2 justify-end">
+                    {/* <div className="flex items-center gap-2 justify-end">
                       <Mail className="size-3.5 text-[#d3e97a]" />
                       <a
                         href={`mailto:${personalInfo.email}`}
@@ -139,7 +139,7 @@ export default function Resume({ navigate }: ResumeProps) {
                       <span className="font-['Manrope',sans-serif] text-[12px] text-[#c7c7c7]">
                         {personalInfo.phone}
                       </span>
-                    </div>
+                    </div> */}
                     <div className="flex items-center gap-2 justify-end">
                       <MapPin className="size-3.5 text-[#d3e97a]" />
                       <span className="font-['Manrope',sans-serif] text-[12px] text-[#c7c7c7]">
@@ -372,7 +372,7 @@ export default function Resume({ navigate }: ResumeProps) {
                         <p className="font-['Manrope',sans-serif] text-[#d3e97a] text-[11px]">
                           {ref.company} / {ref.position}
                         </p>
-                        <div className="pt-2 space-y-1">
+                        {/* <div className="pt-2 space-y-1">
                           <div className="flex items-center gap-2">
                             <div className="w-5 h-5 rounded-md bg-[#d3e97a]/10 flex items-center justify-center">
                               <Phone className="size-2.5 text-[#d3e97a]" />
@@ -389,7 +389,7 @@ export default function Resume({ navigate }: ResumeProps) {
                               {ref.email}
                             </p>
                           </div>
-                        </div>
+                        </div> */}
                       </div>
                     ))}
                   </div>

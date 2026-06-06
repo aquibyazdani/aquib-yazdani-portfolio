@@ -137,15 +137,31 @@
       gtag("js", new Date());
       gtag("config", "G-YR78Y0K8L8");
     </script>
+    <!-- Critical paint: dark background before JS loads, hide raw shell from visual users -->
+    <style>
+      html, body { background: #0a0a0a; margin: 0; }
+      .seo-shell {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+    </style>
   </head>
 
   <body>
     <!--
-      Static content shell — visible to crawlers and AI bots that don't execute JS.
-      React replaces this on hydration; no visual flash since this is client-side rendering.
+      Static content shell — visually hidden from users (sr-only) but fully readable by
+      crawlers and AI bots that don't execute JS. React replaces #root content on load.
     -->
-    <div id="root">
+    <div id="root"><div class="seo-shell">
       <header>
+
         <nav aria-label="Main navigation">
           <a href="/">Md Aquib Yazdani</a>
           <a href="/about">About</a>
@@ -201,7 +217,7 @@
           <p>GitHub: <a href="https://github.com/aquibyazdani/" rel="noopener noreferrer">github.com/aquibyazdani</a></p>
         </section>
       </main>
-    </div>
+    </div></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

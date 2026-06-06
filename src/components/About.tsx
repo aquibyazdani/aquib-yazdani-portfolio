@@ -103,14 +103,14 @@ export default function About({ navigate }: AboutProps) {
   return (
     <>
       <Helmet>
-        <title>About Aquib Yazdani - Senior Software Engineer</title>
+        <title>About Md Aquib Yazdani — Senior Frontend Engineer, Pune</title>
         <meta
           name="description"
-          content="Learn more about Aquib Yazdani, a Senior Software Engineer specializing in React, JavaScript, and full-stack development. Discover my skills, experience, and passion for creating exceptional web solutions."
+          content="Meet Md Aquib Yazdani — 5 years in frontend engineering. Led React &amp; Next.js builds serving 60M+ users. Senior Engineer at Zensar Technologies, Pune, India."
         />
         <meta
           name="keywords"
-          content="Aquib Yazdani, About, Software Engineer, React Developer, JavaScript, Full-Stack Developer, Skills, Experience"
+          content="Md Aquib Yazdani, About, Senior Frontend Engineer, React Developer, Next.js, TypeScript, Skills, Experience, Pune India"
         />
         <link rel="canonical" href="https://aquibyazdani.com/about" />
       </Helmet>
@@ -127,6 +127,7 @@ export default function About({ navigate }: AboutProps) {
                 <div className="space-y-6">
                   <h1 className="text-[80px] lg:text-[90px] leading-[0.9] text-white">
                     ABOUT ME
+                    <span className="sr-only"> — Md Aquib Yazdani, Senior Frontend Engineer</span>
                   </h1>
 
                   <div className="space-y-4">
@@ -159,6 +160,7 @@ export default function About({ navigate }: AboutProps) {
                       <a
                         key={index}
                         href={social.url}
+                        aria-label={`Aquib Yazdani on ${social.name}`}
                         target={social.name !== "Phone" ? "_blank" : undefined}
                         rel={
                           social.name !== "Phone"
@@ -167,7 +169,7 @@ export default function About({ navigate }: AboutProps) {
                         }
                         className="hover:opacity-80 transition-opacity"
                       >
-                        <Icon className="w-6 h-6 text-[#d3e97a]" />
+                        <Icon className="w-6 h-6 text-[#d3e97a]" aria-hidden="true" />
                       </a>
                     );
                   })}
@@ -179,7 +181,7 @@ export default function About({ navigate }: AboutProps) {
                 <div className="bg-[#c7c7c7] rounded-[12px] overflow-hidden">
                   <ImageWithFallback
                     src={imgProfile}
-                    alt={personalInfo.name}
+                    alt="Md Aquib Yazdani — Senior Frontend Engineer based in Pune, India"
                     className="w-full h-auto object-cover"
                   />
                 </div>
@@ -200,10 +202,7 @@ export default function About({ navigate }: AboutProps) {
 
               <div className="space-y-6">
                 <p className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[16px] leading-[1.6]">
-                  I am always looking to add more skills.Morbi egestas neque eu
-                  blandit fermentum quisque egestas diam in. Nulla pharetra diam
-                  sit amet nisl suscipit. Eget nullam non nisi est sit amet
-                  facilisis magna etiam.
+                  I am always learning and expanding my toolkit — from React performance patterns and AI/LLM integration to WCAG accessibility and modern build tooling. Here's what I bring to the table today.
                 </p>
 
                 {/* Capability Tags */}

@@ -1,0 +1,28 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#0a0a0a"/>
+  <!-- Accent bar top -->
+  <rect x="0" y="0" width="1200" height="6" fill="#d3e97a"/>
+  <!-- Accent bar bottom -->
+  <rect x="0" y="624" width="1200" height="6" fill="#d3e97a"/>
+  <!-- Left accent line -->
+  <rect x="80" y="60" width="4" height="510" fill="#d3e97a" opacity="0.3"/>
+
+  <!-- Name -->
+  <text x="112" y="230" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-weight="800" font-size="68" fill="#ffffff" letter-spacing="-1">Md Aquib Yazdani</text>
+
+  <!-- Role -->
+  <text x="112" y="300" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-weight="400" font-size="34" fill="#d3e97a">Senior Frontend Engineer</text>
+
+  <!-- Divider -->
+  <rect x="112" y="328" width="500" height="2" fill="#333333"/>
+
+  <!-- Skills line -->
+  <text x="112" y="374" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-weight="400" font-size="22" fill="#c7c7c7">React · Next.js · TypeScript · AI Integration</text>
+
+  <!-- Location -->
+  <text x="112" y="418" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-weight="400" font-size="20" fill="#666666">Pune, India · 5 years experience</text>
+
+  <!-- Domain -->
+  <text x="112" y="560" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-weight="400" font-size="18" fill="#484848">aquibyazdani.com</text>
+</svg>

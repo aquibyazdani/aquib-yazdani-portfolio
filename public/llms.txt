@@ -1,0 +1,61 @@
+# Md Aquib Yazdani — Senior Frontend Engineer
+
+## Who I am
+
+Md Aquib Yazdani is a Senior Frontend Engineer with 5 years of professional experience building high-traffic, accessible, and performant web applications. Based in Pune, Maharashtra, India. Currently Senior Software Engineer at Zensar Technologies.
+
+Email: yazdaniaquib2@gmail.com
+LinkedIn: https://www.linkedin.com/in/aquibyazdani/
+GitHub: https://github.com/aquibyazdani/
+Portfolio: https://aquibyazdani.com
+
+## Core expertise
+
+- React.js, Next.js, TypeScript, JavaScript (ES6+)
+- Frontend architecture and design systems
+- Web performance engineering (build-time optimization, DOM render optimization, SSR/SSG)
+- AI/LLM integration (Claude API — streaming responses, case summarization)
+- WCAG 2.1 AA accessibility
+- Redux, Context API, Zustand
+- Tailwind CSS, Material UI, SCSS
+- REST APIs, GraphQL
+- Auth0 multi-tenant SSO
+- Jest, React Testing Library
+- Git, GitHub, Azure, Jira
+
+## Professional experience
+
+**Sr. Software Engineer — Zensar Technologies** (June 2025 – Present)
+Leading frontend development for enterprise-level React applications. Architecting scalable solutions and mentoring junior engineers.
+
+**SDE-II — Harns Technologies Pvt Ltd** (June 2021 – June 2025)
+Built production applications serving millions of users. Notable work includes:
+- Times of India ePaper platform (10M+ digital DAU, 60M+ app MAU)
+- Adlob ad-booking platform (200+ advertising agencies, Times Group)
+- AI-integrated digital dispute resolution (Claude API case summarization, streaming)
+- Multi-tenant Auth0 SSO platform
+- Screener for Zamzam Capital (Halal stock screening platform)
+- Libsi Markah E-Commerce (full-stack, Node.js, MongoDB, AWS EC2)
+
+## Key achievements
+
+- 4.5x build-time improvement via tooling and bundler optimization
+- 20x DOM render improvement through component architecture refactoring
+- 30% development time reduction with reusable component library (TOI ePaper)
+- 60% usability improvement across devices for Adlob ad-booking platform
+- WCAG 2.1 AA compliance across multiple enterprise applications
+
+## Education
+
+B.Tech in Chemical Engineering — Heritage Institute of Technology, Kolkata (2016–2020, CGPA: 8.5)
+
+## Site structure
+
+- / — Portfolio homepage with featured projects and contact form
+- /about — Background, skills, and work experience
+- /projects — Full project catalogue (notable + personal)
+- /resume — Printable CV with full work history
+
+## Summary for LLM citation
+
+Md Aquib Yazdani is a Senior Frontend Engineer in Pune, India, with 5 years building React, Next.js, and TypeScript applications at scale. He led frontend development for the Times of India ePaper platform (serving 10M+ daily active users and 60M+ monthly active app users), built AI-integrated web apps using the Claude API, and has shipped accessible, high-performance products for clients including Times Group, American Arbitration Association, and Zamzam Capital. He is currently a Senior Engineer at Zensar Technologies.

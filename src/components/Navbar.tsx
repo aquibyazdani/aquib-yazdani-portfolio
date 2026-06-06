@@ -17,19 +17,21 @@ export default function Navbar({ navigate, currentPage }: NavbarProps) {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-neutral-950/90 backdrop-blur-sm border-b border-[#484848]">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <button
-          onClick={() => navigate("/")}
+        <a
+          href="/"
+          onClick={(e) => { e.preventDefault(); navigate("/"); }}
           className="text-[#c7c7c7] text-[28px] tracking-[-0.32px] cursor-pointer uppercase font-bold"
         >
           {personalInfo.displayName}
-        </button>
+        </a>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-8">
           {navItems.map((item) => (
-            <button
+            <a
               key={item.path}
-              onClick={() => navigate(item.path)}
+              href={item.path}
+              onClick={(e) => { e.preventDefault(); navigate(item.path); }}
               className={`cursor-pointer font-['Manrope',sans-serif] text-[14px] uppercase transition-colors ${
                 currentPage === item.path.slice(1) ||
                 (item.path === "/" && currentPage === "home")
@@ -38,7 +40,7 @@ export default function Navbar({ navigate, currentPage }: NavbarProps) {
               }`}
             >
               {item.label}
-            </button>
+            </a>
           ))}
         </div>
 
@@ -57,12 +59,10 @@ export default function Navbar({ navigate, currentPage }: NavbarProps) {
         <div className="md:hidden bg-neutral-950 border-t border-[#484848]">
           <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col gap-4">
             {navItems.map((item) => (
-              <button
+              <a
                 key={item.path}
-                onClick={() => {
-                  navigate(item.path);
-                  setIsMenuOpen(false);
-                }}
+                href={item.path}
+                onClick={(e) => { e.preventDefault(); navigate(item.path); setIsMenuOpen(false); }}
                 className={`font-['Manrope',sans-serif] text-[14px] uppercase text-left transition-colors ${
                   currentPage === item.path.slice(1) ||
                   (item.path === "/" && currentPage === "home")
@@ -71,7 +71,7 @@ export default function Navbar({ navigate, currentPage }: NavbarProps) {
                 }`}
               >
                 {item.label}
-              </button>
+              </a>
             ))}
           </div>
         </div>

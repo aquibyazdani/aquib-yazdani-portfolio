@@ -11,7 +11,6 @@ import {
   socialMedia,
 } from "../config/portfolio";
 import { Helmet } from "react-helmet-async";
-console.log("notableProjects: ", notableProjects);
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -43,14 +42,14 @@ export default function Projects({ navigate }: ProjectsProps) {
   return (
     <>
       <Helmet>
-        <title>Projects by Aquib Yazdani - Software Engineer Portfolio</title>
+        <title>Projects — Md Aquib Yazdani, Frontend Engineer Portfolio</title>
         <meta
           name="description"
-          content="Explore the projects by Aquib Yazdani, including TOI Epaper, Screener for Zamzam Capital, Memorable Mumbai, and more. Showcasing expertise in React, JavaScript, and full-stack development."
+          content="Portfolio of frontend projects by Md Aquib Yazdani — Times of India ePaper (10M+ DAU), Zamzam Capital Screener, Adlob ad platform (200+ agencies), and more."
         />
         <meta
           name="keywords"
-          content="Aquib Yazdani, Projects, Portfolio, React Developer, JavaScript, Full-Stack Developer, TOI Epaper, Screener, Memorable Mumbai"
+          content="Md Aquib Yazdani, Projects, Portfolio, React Developer, Next.js, TypeScript, TOI Epaper, Zamzam Capital Screener, Adlob, Frontend Engineer"
         />
         <link rel="canonical" href="https://aquibyazdani.com/projects" />
       </Helmet>

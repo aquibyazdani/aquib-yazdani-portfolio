@@ -4,53 +4,35 @@ import About from './components/About';
 import Projects from './components/Projects';
 import Resume from './components/Resume';
 
+function getPage(pathname: string): string {
+  if (pathname === '/about') return 'about';
+  if (pathname === '/projects') return 'projects';
+  if (pathname === '/resume') return 'resume';
+  return 'home';
+}
+
 export default function App() {
-  const [currentPage, setCurrentPage] = useState('home');
+  const [currentPage, setCurrentPage] = useState(() => getPage(window.location.pathname));
 
   useEffect(() => {
-    // Handle initial route
-    const hash = window.location.hash.slice(1) || '/';
-    if (hash === '/about') setCurrentPage('about');
-    else if (hash === '/projects') setCurrentPage('projects');
-    else if (hash === '/resume') setCurrentPage('resume');
-    else setCurrentPage('home');
-
-    // Listen for hash changes
-    const handleHashChange = () => {
-      const hash = window.location.hash.slice(1) || '/';
-      if (hash === '/about') setCurrentPage('about');
-      else if (hash === '/projects') setCurrentPage('projects');
-      else if (hash === '/resume') setCurrentPage('resume');
-      else setCurrentPage('home');
+    const handlePopState = () => {
+      setCurrentPage(getPage(window.location.pathname));
     };
-
-    window.addEventListener('hashchange', handleHashChange);
-    return () => window.removeEventListener('hashchange', handleHashChange);
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
   }, []);
 
-  // Scroll to top smoothly when page changes
   useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [currentPage]);
 
   const navigate = (path: string) => {
-    window.location.hash = path;
+    window.history.pushState({}, '', path);
+    setCurrentPage(getPage(path));
   };
 
-  if (currentPage === 'about') {
-    return <About navigate={navigate} />;
-  }
-
-  if (currentPage === 'projects') {
-    return <Projects navigate={navigate} />;
-  }
-
-  if (currentPage === 'resume') {
-    return <Resume navigate={navigate} />;
-  }
-
+  if (currentPage === 'about') return <About navigate={navigate} />;
+  if (currentPage === 'projects') return <Projects navigate={navigate} />;
+  if (currentPage === 'resume') return <Resume navigate={navigate} />;
   return <Portfolio navigate={navigate} />;
 }

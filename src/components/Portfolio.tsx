@@ -95,44 +95,16 @@ export default function Portfolio({ navigate }: PortfolioProps) {
   return (
     <>
       <Helmet>
-        <title>Aquib Yazdani - Sr. Software Engineer | Portfolio</title>
+        <title>Md Aquib Yazdani — Senior Frontend Engineer</title>
         <meta
           name="description"
-          content="Aquib Yazdani - Senior Software Engineer specializing in React, JavaScript, and full-stack development. Explore my portfolio featuring projects like TOI Epaper, Screener for Zamzam Capital, and more."
+          content="Senior Frontend Engineer in Pune, India. 5 years building React, Next.js &amp; TypeScript at scale — Times of India (60M+ MAU), AI-integrated apps, WCAG accessibility."
         />
         <meta
           name="keywords"
-          content="Aquib Yazdani, Software Engineer, React Developer, JavaScript, Full-Stack Developer, Portfolio, Frontend Developer, Pune India"
+          content="Md Aquib Yazdani, Senior Frontend Engineer, React Developer, Next.js Developer, TypeScript, Frontend Architecture, Web Performance, AI Integration, React Developer Pune India"
         />
         <link rel="canonical" href="https://aquibyazdani.com" />
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Person",
-            name: "Aquib Yazdani",
-            jobTitle: "Senior Software Engineer",
-            url: "https://aquibyazdani.com",
-            sameAs: [
-              "https://www.linkedin.com/in/aquibyazdani/",
-              "https://github.com/aquibyazdani/",
-              "https://www.instagram.com/aquibyazdani/",
-            ],
-            address: {
-              "@type": "PostalAddress",
-              addressLocality: "Pune",
-              addressRegion: "Maharashtra",
-              addressCountry: "India",
-            },
-            knowsAbout: [
-              "React.js",
-              "JavaScript",
-              "TypeScript",
-              "Full-Stack Development",
-              "Frontend Development",
-              "Web Development",
-            ],
-          })}
-        </script>
       </Helmet>
       <div className="bg-neutral-950 min-h-screen">
         {/* Navigation */}
@@ -180,9 +152,10 @@ export default function Portfolio({ navigate }: PortfolioProps) {
                     href={socialLinks.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label="Aquib Yazdani on LinkedIn"
                     className="bg-[#222222] size-[54px] rounded-full flex items-center justify-center hover:bg-[#333333] transition-colors"
                   >
-                    <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+                    <svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true">
                       <path d={svgPaths.p282a2240} fill="#D3E97A" />
                       <path d={svgPaths.p31d7ad00} fill="#D3E97A" />
                     </svg>
@@ -192,9 +165,10 @@ export default function Portfolio({ navigate }: PortfolioProps) {
                     href={socialLinks.github}
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label="Aquib Yazdani on GitHub"
                     className="bg-[#222222] size-[54px] rounded-full flex items-center justify-center hover:bg-[#333333] transition-colors"
                   >
-                    <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+                    <svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true">
                       <path
                         clipRule="evenodd"
                         d={svgPaths.p17e6c000}
@@ -211,7 +185,7 @@ export default function Portfolio({ navigate }: PortfolioProps) {
                 <div className="bg-[#c7c7c7] rounded-[16px] w-full max-w-[600px] mx-auto aspect-[6/7] relative overflow-hidden">
                   <ImageWithFallback
                     src={imgPotrait}
-                    alt={personalInfo.name}
+                    alt="Md Aquib Yazdani — Senior Frontend Engineer based in Pune, India"
                     className="absolute inset-0 w-full h-full object-cover object-center"
                   />
                 </div>
@@ -245,7 +219,7 @@ export default function Portfolio({ navigate }: PortfolioProps) {
                 <div className="bg-[#1a1a1a] rounded-[12px] aspect-square relative overflow-hidden">
                   <ImageWithFallback
                     src={toiPic}
-                    alt="TOI Epaper"
+                    alt="Times of India ePaper platform — high-traffic digital newspaper serving 10M+ daily active users"
                     className="absolute inset-0 w-full h-full object-contain p-12"
                   />
                   <div className="absolute top-4 left-4 bg-neutral-950 px-4 py-2 rounded-full">
@@ -333,7 +307,7 @@ export default function Portfolio({ navigate }: PortfolioProps) {
                 <div className="bg-[#1a1a1a] rounded-[12px] aspect-square relative overflow-hidden">
                   <ImageWithFallback
                     src={screenr}
-                    alt="Screener - Zamzam Capital"
+                    alt="Screener by Zamzam Capital — Halal stock screening platform for Shariah-compliant investment research"
                     className="absolute inset-0 w-full h-full object-contain p-12"
                   />
                   <div className="absolute top-4 left-4 bg-neutral-950 px-4 py-2 rounded-full">
@@ -422,7 +396,7 @@ export default function Portfolio({ navigate }: PortfolioProps) {
                 <div className="bg-[#1a1a1a] rounded-[12px] aspect-square relative overflow-hidden">
                   <ImageWithFallback
                     src={mm}
-                    alt="Memorable Mumbai"
+                    alt="Memorable Mumbai — travel and tourism website showcasing Mumbai's culture, landmarks, and heritage"
                     className="absolute inset-0 w-full h-full object-contain p-12"
                   />
                   <div className="absolute top-4 left-4 bg-neutral-950 px-4 py-2 rounded-full">
@@ -601,6 +575,7 @@ export default function Portfolio({ navigate }: PortfolioProps) {
                       <a
                         key={index}
                         href={social.url}
+                        aria-label={`Aquib Yazdani on ${social.name}`}
                         target={social.name !== "Phone" ? "_blank" : undefined}
                         rel={
                           social.name !== "Phone"
@@ -609,7 +584,7 @@ export default function Portfolio({ navigate }: PortfolioProps) {
                         }
                         className="hover:opacity-80 transition-opacity"
                       >
-                        <Icon className="w-8 h-8 text-[#d3e97a]" />
+                        <Icon className="w-8 h-8 text-[#d3e97a]" aria-hidden="true" />
                       </a>
                     );
                   })}

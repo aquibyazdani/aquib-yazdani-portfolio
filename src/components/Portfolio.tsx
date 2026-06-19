@@ -155,7 +155,13 @@ export default function Portfolio({ navigate }: PortfolioProps) {
                     aria-label="Aquib Yazdani on LinkedIn"
                     className="bg-[#222222] size-[54px] rounded-full flex items-center justify-center hover:bg-[#333333] transition-colors"
                   >
-                    <svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true">
+                    <svg
+                      width="26"
+                      height="26"
+                      viewBox="0 0 26 26"
+                      fill="none"
+                      aria-hidden="true"
+                    >
                       <path d={svgPaths.p282a2240} fill="#D3E97A" />
                       <path d={svgPaths.p31d7ad00} fill="#D3E97A" />
                     </svg>
@@ -168,7 +174,13 @@ export default function Portfolio({ navigate }: PortfolioProps) {
                     aria-label="Aquib Yazdani on GitHub"
                     className="bg-[#222222] size-[54px] rounded-full flex items-center justify-center hover:bg-[#333333] transition-colors"
                   >
-                    <svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true">
+                    <svg
+                      width="26"
+                      height="26"
+                      viewBox="0 0 26 26"
+                      fill="none"
+                      aria-hidden="true"
+                    >
                       <path
                         clipRule="evenodd"
                         d={svgPaths.p17e6c000}
@@ -262,7 +274,7 @@ export default function Portfolio({ navigate }: PortfolioProps) {
                           Year
                         </span>
                         <span className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[16px]">
-                          2023
+                          {new Date().getFullYear()}
                         </span>
                       </div>
                       <div className="flex justify-between py-4">
@@ -430,7 +442,7 @@ export default function Portfolio({ navigate }: PortfolioProps) {
                           Year
                         </span>
                         <span className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[16px]">
-                          2023
+                          {new Date().getFullYear()}
                         </span>
                       </div>
                       <div className="flex justify-between py-4">
@@ -584,7 +596,10 @@ export default function Portfolio({ navigate }: PortfolioProps) {
                         }
                         className="hover:opacity-80 transition-opacity"
                       >
-                        <Icon className="w-8 h-8 text-[#d3e97a]" aria-hidden="true" />
+                        <Icon
+                          className="w-8 h-8 text-[#d3e97a]"
+                          aria-hidden="true"
+                        />
                       </a>
                     );
                   })}

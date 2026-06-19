@@ -323,7 +323,7 @@ function Year() {
         Year
       </p>
       <p className="font-['Manrope',sans-serif] font-medium leading-[1.6] relative shrink-0 text-[#c7c7c7] text-[16px] text-nowrap whitespace-pre">
-        2023
+        {new Date().getFullYear()}
       </p>
     </div>
   );

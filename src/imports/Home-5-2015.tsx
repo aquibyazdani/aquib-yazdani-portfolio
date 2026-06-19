@@ -323,7 +323,7 @@ function Year() {
         Year
       </p>
       <p className="font-['Manrope',sans-serif] font-medium leading-[1.6] relative shrink-0 text-[#c7c7c7] text-[16px] text-nowrap whitespace-pre">
-        2023
+        {new Date().getFullYear()}
       </p>
     </div>
   );
@@ -1353,7 +1353,7 @@ function Frame9() {
     <div className="basis-0 content-stretch flex flex-col grow items-start justify-between min-h-px min-w-px relative self-stretch shrink-0">
       <Frame7 />
       <p className="font-['Manrope',sans-serif] font-medium leading-[1.6] relative shrink-0 text-[#c7c7c7] text-[16px] text-nowrap whitespace-pre">
-        © 2023 Robert Garcia
+        © {new Date().getFullYear()} Robert Garcia
       </p>
     </div>
   );

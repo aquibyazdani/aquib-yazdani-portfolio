@@ -8,11 +8,7 @@ import {
   skills,
   workExperience,
   education,
-  notableProjects,
-  personalProjects,
-  achievements,
   awards,
-  references,
 } from "../config/portfolio";
 import { downloadResumeAsPDF } from "../utils/downloadResume";
 import { Helmet } from "react-helmet-async";
@@ -44,33 +40,21 @@ export default function Resume({ navigate }: ResumeProps) {
     }
   }, []);
 
-  // Calculate years and months of experience dynamically
-  const calculateExperience = () => {
-    const startDate = new Date(personalInfo.careerStartDate);
-    const currentDate = new Date();
-
-    let years = currentDate.getFullYear() - startDate.getFullYear();
-    let months = currentDate.getMonth() - startDate.getMonth();
-
-    if (months < 0) {
-      years--;
-      months += 12;
-    }
-
-    return { years, months };
-  };
-
-  const { years, months } = calculateExperience();
-  const experienceText =
-    months > 0 ? `${years} years and ${months} months` : `${years} years`;
-
   const allSkills = [
-    { title: "Frontend Development", items: skills.frontend },
-    { title: "State Management", items: skills.stateManagement },
-    { title: "Testing & QA", items: skills.testing },
-    { title: "Performance Optimization", items: skills.performance },
-    { title: "API Integration", items: skills.api },
-    { title: "Version Control & Collaboration", items: skills.tools },
+    { title: "Languages", items: skills.languages },
+    { title: "Frameworks", items: skills.frameworks },
+    { title: "Architecture", items: skills.architecture },
+    { title: "AI Integration", items: skills.aiIntegration },
+    { title: "AI Dev Tools", items: skills.aiDevTools },
+    { title: "State & Data", items: skills.stateAndData },
+    { title: "UI & Styling", items: skills.uiAndStyling },
+    { title: "Web Performance", items: skills.webPerformance },
+    { title: "Auth & Security", items: skills.authAndSecurity },
+    { title: "Testing", items: skills.testing },
+    { title: "Build & Tooling", items: skills.buildAndTooling },
+    { title: "Cloud & DevOps", items: skills.cloudAndDevOps },
+    { title: "Quality & Web", items: skills.qualityAndWeb },
+    { title: "Collaboration", items: skills.collaborationSkills },
   ];
 
   return (
@@ -149,23 +133,22 @@ export default function Resume({ navigate }: ResumeProps) {
                   </div>
                 </div>
 
-                {/* Profile Section */}
+                {/* Professional Summary Section */}
                 <div className="space-y-2.5">
                   <h2 className="font-['Manrope',sans-serif] font-bold text-white text-[16px] uppercase text-[#d3e97a] border-b border-[#d3e97a]/30 pb-1.5">
-                    Profile
+                    Professional Summary
                   </h2>
                   <p className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[13px] leading-[1.6]">
-                    Front End Engineer with {experienceText} of experience
-                    building high-performance web and mobile applications.
-                    Proficient in React, JavaScript (ES6+), HTML, and CSS, with
-                    a strong focus on optimizing user experience and front-end
-                    performance. Adept at developing scalable, responsive
-                    interfaces using modern frameworks like Next.js, Redux
-                    Toolkit, and React Native. Proven track record of improving
-                    application speed, accessibility, and maintainability.
-                    Collaborative team player experienced in Agile environments,
-                    consistently delivering user-centric solutions that drive
-                    business impact in fast-paced product teams.
+                    Senior Frontend Engineer with 5 years building user-facing
+                    products at scale on React, Next.js, and TypeScript. Built
+                    Times of India's ePaper platform (Times Group ecosystem —
+                    10M+ digital DAU, 60M+ app MAU), the American Arbitration
+                    Association's legal-tech arbitration product (largest US
+                    arbitration body, 180K+ annual cases), and a multi-tenant
+                    Auth0 SSO. Specialized in frontend architecture, performance
+                    engineering, AI/LLM integration, and accessibility. Track
+                    record of end-to-end ownership, mentoring direct reports,
+                    and conducting senior-level interviews.
                   </p>
                 </div>
 
@@ -220,72 +203,6 @@ export default function Resume({ navigate }: ResumeProps) {
                   </div>
                 </div>
 
-                {/* Notable Projects Section */}
-                <div className="space-y-3">
-                  <h2 className="font-['Manrope',sans-serif] font-bold text-white text-[16px] uppercase text-[#d3e97a] border-b border-[#d3e97a]/30 pb-1.5">
-                    Notable Projects
-                  </h2>
-
-                  <div className="space-y-4">
-                    {notableProjects.map((project) => (
-                      <div
-                        key={project.id}
-                        className="bg-[#1a1a1a]/50 p-4 rounded-lg space-y-2"
-                      >
-                        <div className="space-y-1">
-                          <h3 className="font-['Manrope',sans-serif] font-semibold text-white text-[14px]">
-                            {project.title}
-                          </h3>
-                          <p className="font-['Manrope',sans-serif] text-[#d3e97a] text-[11px]">
-                            {project.role}
-                          </p>
-                        </div>
-
-                        <div className="flex flex-wrap gap-1.5">
-                          {project.techStack.map((tech, idx) => (
-                            <span
-                              key={idx}
-                              className="font-['Manrope',sans-serif] text-[10px] text-[#2a4a4a] bg-[#d3e97a] px-2.5 py-1 rounded-md"
-                            >
-                              {tech}
-                            </span>
-                          ))}
-                        </div>
-
-                        <ul className="space-y-1 font-['Manrope',sans-serif] text-[#c7c7c7] text-[11px]">
-                          {project.achievements.map((achievement, idx) => (
-                            <li key={idx} className="flex items-start gap-2">
-                              <span className="text-[#d3e97a] mt-0.5">•</span>
-                              <span>{achievement}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Personal Projects Section */}
-                <div className="space-y-3">
-                  <h2 className="font-['Manrope',sans-serif] font-bold text-white text-[16px] uppercase text-[#d3e97a] border-b border-[#d3e97a]/30 pb-1.5">
-                    Personal Projects
-                  </h2>
-
-                  <div className="flex flex-wrap gap-2">
-                    {personalProjects.map((project) => (
-                      <a
-                        key={project.id}
-                        href={project.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="font-['Manrope',sans-serif] text-[12px] text-white bg-[#1a1a1a]/50 px-4 py-2 rounded-lg border border-[#d3e97a]/20 hover:bg-[#d3e97a]/10 hover:border-[#d3e97a] transition-all duration-300 cursor-pointer"
-                      >
-                        {project.title}
-                      </a>
-                    ))}
-                  </div>
-                </div>
-
                 {/* Work Experience Section */}
                 <div className="space-y-3">
                   <h2 className="font-['Manrope',sans-serif] font-bold text-white text-[16px] uppercase text-[#d3e97a] border-b border-[#d3e97a]/30 pb-1.5">
@@ -334,62 +251,25 @@ export default function Resume({ navigate }: ResumeProps) {
                   </div>
                 </div>
 
-                {/* Achievements Section */}
+                {/* Awards Section */}
                 <div className="space-y-3">
                   <h2 className="font-['Manrope',sans-serif] font-bold text-white text-[16px] uppercase text-[#d3e97a] border-b border-[#d3e97a]/30 pb-1.5">
-                    Achievements
+                    Awards
                   </h2>
 
                   <div className="space-y-1">
-                    {achievements.map((achievement, index) => (
+                    {awards.map((award) => (
                       <div
-                        key={index}
+                        key={award.id}
                         className="flex items-start gap-3 bg-[#1a1a1a]/50 p-3 rounded-lg"
                       >
                         <div className="w-2 h-2 rounded-full bg-[#d3e97a] mt-1.5 flex-shrink-0" />
                         <p className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[12px] leading-[1.6]">
-                          {achievement}
+                          <span className="text-white font-semibold">
+                            {award.title}
+                          </span>{" "}
+                          — {award.description}
                         </p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* References Section */}
-                <div className="space-y-3">
-                  <h2 className="font-['Manrope',sans-serif] font-bold text-white text-[16px] uppercase text-[#d3e97a] border-b border-[#d3e97a]/30 pb-1.5">
-                    References
-                  </h2>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                    {references.map((ref) => (
-                      <div
-                        key={ref.id}
-                        className="bg-[#1a1a1a]/50 p-4 rounded-lg space-y-1"
-                      >
-                        <h4 className="font-['Manrope',sans-serif] font-semibold text-white text-[13px]">
-                          {ref.name}
-                        </h4>
-                        <p className="font-['Manrope',sans-serif] text-[#d3e97a] text-[11px]">
-                          {ref.company} / {ref.position}
-                        </p>
-                        {/* <div className="pt-2 space-y-1">
-                          <div className="flex items-center gap-2">
-                            <div className="w-5 h-5 rounded-md bg-[#d3e97a]/10 flex items-center justify-center">
-                              <Phone className="size-2.5 text-[#d3e97a]" />
-                            </div>
-                            <p className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[10px]">
-                              {ref.phone}
-                            </p>
-                          </div>
-                          <div className="flex items-center gap-2">
-                            <div className="w-5 h-5 rounded-md bg-[#d3e97a]/10 flex items-center justify-center">
-                              <Mail className="size-2.5 text-[#d3e97a]" />
-                            </div>
-                            <p className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[10px]">
-                              {ref.email}
-                            </p>
-                          </div>
-                        </div> */}
                       </div>
                     ))}
                   </div>

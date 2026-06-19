@@ -40,7 +40,8 @@ import portfolio from "../assets/aquib-portfolio.png";
 export const personalInfo = {
   name: "Aquib Yazdani",
   displayName: "aquib yazdani", // For navbar/logo
-  title: "Senior Frontend Engineer | React • Next.js • Frontend Architecture • AI Integration",
+  title:
+    "Senior Frontend Engineer | React • Next.js • Frontend Architecture • AI Integration",
   tagline: "a Senior Frontend Engineer",
   location: "Pune, India",
   email: "yazdaniaquib2@gmail.com",
@@ -58,9 +59,9 @@ export const socialLinks = {
 
 // About Me
 export const aboutMe = {
-  intro: `Passionate Full-Stack Developer Focused on Accessibility & Design`,
+  intro: `Passionate Front-End Developer Focused on Accessibility & Design`,
 
-  background: `I care deeply about clean architecture, usability, and creating meaningful digital products. While I specialize in frontend development, I also develop full-stack solutions that integrate seamlessly from UI to backend. Outside of programming, I enjoy playing football, photography, and a few rounds of Valorant.`,
+  background: `I care deeply about clean architecture, usability, and creating meaningful digital products. While I specialize in frontend development, I also develop front-end solutions that integrate seamlessly from UI to backend. Outside of programming, I enjoy playing football, photography, and a few rounds of Valorant.`,
 
   philosophy: ``,
 

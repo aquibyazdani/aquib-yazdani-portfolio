@@ -518,7 +518,7 @@ export default function Portfolio({ navigate }: PortfolioProps) {
               <div className="space-y-8">
                 <div className="space-y-4">
                   <p className="font-['Manrope',sans-serif] text-[32px] text-white leading-[1.4]">
-                    I work as a senior full-stack developer, with deep expertise
+                    I work as a senior front-end developer, with deep expertise
                     in frontend engineering.
                   </p>
                   <p className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[18px] leading-[1.5]">

@@ -35,7 +35,7 @@ Built production applications serving millions of users. Notable work includes:
 - AI-integrated digital dispute resolution (Claude API case summarization, streaming)
 - Multi-tenant Auth0 SSO platform
 - Screener for Zamzam Capital (Halal stock screening platform)
-- Libsi Markah E-Commerce (full-stack, Node.js, MongoDB, AWS EC2)
+- Libsi Markah E-Commerce (front-end, Node.js, MongoDB, AWS EC2)
 
 ## Key achievements
 

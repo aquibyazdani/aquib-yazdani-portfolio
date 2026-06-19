@@ -1515,13 +1515,13 @@ function Frame8() {
 function Frame23() {
   return (
     <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full">
-      <p className="font-['Manrope',sans-serif] font-medium leading-[1.4] relative shrink-0 text-[32px] text-white w-full">{`I’m a senior full-stack developer with a frontend-first mindset, based in India. I love building clean, accessible, user-friendly interfaces and turning tricky problems into elegant solutions. I’m currently exploring React.js, Webflow, and a bit of design to level up my creative side.  `}</p>
+      <p className="font-['Manrope',sans-serif] font-medium leading-[1.4] relative shrink-0 text-[32px] text-white w-full">{`I’m a senior front-end developer with a frontend-first mindset, based in India. I love building clean, accessible, user-friendly interfaces and turning tricky problems into elegant solutions. I’m currently exploring React.js, Webflow, and a bit of design to level up my creative side.  `}</p>
       <p className="font-['Manrope',sans-serif] font-normal leading-[1.5] relative shrink-0 text-[#c7c7c7] text-[18px] w-full">
-        I’m a senior full-stack developer with a frontend-first mindset, based
-        in India. I love building clean, accessible, user-friendly interfaces
-        and turning tricky problems into elegant solutions. I’m currently
-        exploring React.js, Webflow, and a bit of design to level up my creative
-        side. When I’m not coding, you’ll find me playing cricket, practicing
+        I’m a senior front-end developer with a frontend-first mindset, based in
+        India. I love building clean, accessible, user-friendly interfaces and
+        turning tricky problems into elegant solutions. I’m currently exploring
+        React.js, Webflow, and a bit of design to level up my creative side.
+        When I’m not coding, you’ll find me playing cricket, practicing
         photography, or spending quality time with my family. Always learning,
         always curious.
       </p>

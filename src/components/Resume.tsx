@@ -139,16 +139,7 @@ export default function Resume({ navigate }: ResumeProps) {
                     Professional Summary
                   </h2>
                   <p className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[13px] leading-[1.6]">
-                    Senior Frontend Engineer with 5 years building user-facing
-                    products at scale on React, Next.js, and TypeScript. Built
-                    Times of India's ePaper platform (Times Group ecosystem —
-                    10M+ digital DAU, 60M+ app MAU), the American Arbitration
-                    Association's legal-tech arbitration product (largest US
-                    arbitration body, 180K+ annual cases), and a multi-tenant
-                    Auth0 SSO. Specialized in frontend architecture, performance
-                    engineering, AI/LLM integration, and accessibility. Track
-                    record of end-to-end ownership, mentoring direct reports,
-                    and conducting senior-level interviews.
+                    {personalInfo.professionalSummary}
                   </p>
                 </div>
 

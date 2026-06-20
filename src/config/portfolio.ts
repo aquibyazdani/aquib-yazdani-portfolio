@@ -39,15 +39,19 @@ import portfolio from "../assets/aquib-portfolio.png";
 // Personal Information
 export const personalInfo = {
   name: "Aquib Yazdani",
-  displayName: "aquib yazdani", // For navbar/logo
+  displayName: "aquib yazdani",
+  role: "Senior Frontend Engineer",
   title:
     "Senior Frontend Engineer | React • Next.js • Frontend Architecture • AI Integration",
+  heroTagline: "Sr. Software Engg. / JavaScript Expert / Tech Explorer",
   tagline: "a Senior Frontend Engineer",
   location: "Pune, India",
   email: "yazdaniaquib2@gmail.com",
   phone: "+91 8210773776",
   copyright: "© 2023 Aquib Yazdani",
-  careerStartDate: "2021-06-01", // Format: YYYY-MM-DD
+  careerStartDate: "2021-06-01",
+  professionalSummary:
+    "Senior Frontend Engineer with 5 years building user-facing products at scale on React, Next.js, and TypeScript. Built Times of India's ePaper platform (Times Group ecosystem — 10M+ digital DAU, 60M+ app MAU), the American Arbitration Association's legal-tech arbitration product (largest US arbitration body, 180K+ annual cases), and a multi-tenant Auth0 SSO. Specialized in frontend architecture, performance engineering, AI/LLM integration, and accessibility. Track record of end-to-end ownership, mentoring direct reports, and conducting senior-level interviews.",
 };
 
 // Social Links
@@ -62,6 +66,8 @@ export const aboutMe = {
   intro: `Passionate Front-End Developer Focused on Accessibility & Design`,
 
   background: `I care deeply about clean architecture, usability, and creating meaningful digital products. While I specialize in frontend development, I also develop front-end solutions that integrate seamlessly from UI to backend. Outside of programming, I enjoy playing football, photography, and a few rounds of Valorant.`,
+
+  capabilitiesDescription: `I am always learning and expanding my toolkit — from React performance patterns and AI/LLM integration to WCAG accessibility and modern build tooling. Here's what I bring to the table today.`,
 
   philosophy: ``,
 

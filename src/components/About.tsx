@@ -127,7 +127,10 @@ export default function About({ navigate }: AboutProps) {
                 <div className="space-y-6">
                   <h1 className="text-[80px] lg:text-[90px] leading-[0.9] text-white">
                     ABOUT ME
-                    <span className="sr-only"> — Md Aquib Yazdani, Senior Frontend Engineer</span>
+                    <span className="sr-only">
+                      {" "}
+                      — {personalInfo.name}, {personalInfo.role}
+                    </span>
                   </h1>
 
                   <div className="space-y-4">
@@ -169,7 +172,10 @@ export default function About({ navigate }: AboutProps) {
                         }
                         className="hover:opacity-80 transition-opacity"
                       >
-                        <Icon className="w-6 h-6 text-[#d3e97a]" aria-hidden="true" />
+                        <Icon
+                          className="w-6 h-6 text-[#d3e97a]"
+                          aria-hidden="true"
+                        />
                       </a>
                     );
                   })}
@@ -181,7 +187,7 @@ export default function About({ navigate }: AboutProps) {
                 <div className="bg-[#c7c7c7] rounded-[12px] overflow-hidden">
                   <ImageWithFallback
                     src={imgProfile}
-                    alt="Md Aquib Yazdani — Senior Frontend Engineer based in Pune, India"
+                    alt={`${personalInfo.name} — ${personalInfo.role} based in ${personalInfo.location}`}
                     className="w-full h-auto object-cover"
                   />
                 </div>
@@ -202,7 +208,7 @@ export default function About({ navigate }: AboutProps) {
 
               <div className="space-y-6">
                 <p className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[16px] leading-[1.6]">
-                  I am always learning and expanding my toolkit — from React performance patterns and AI/LLM integration to WCAG accessibility and modern build tooling. Here's what I bring to the table today.
+                  {aboutMe.capabilitiesDescription}
                 </p>
 
                 {/* Capability Tags */}

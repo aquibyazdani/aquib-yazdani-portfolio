@@ -123,7 +123,7 @@ export default function Portfolio({ navigate }: PortfolioProps) {
                     {personalInfo.name.toUpperCase()}.
                   </h1>
                   <p className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[18px] leading-[1.5] max-w-[540px]">
-                    Sr. Software Engg. / JavaScript Expert / Tech Explorer
+                    {personalInfo.heroTagline}
                   </p>
                 </div>
 
@@ -197,7 +197,7 @@ export default function Portfolio({ navigate }: PortfolioProps) {
                 <div className="bg-[#c7c7c7] rounded-[16px] w-full max-w-[600px] mx-auto aspect-[6/7] relative overflow-hidden">
                   <ImageWithFallback
                     src={imgPotrait}
-                    alt="Md Aquib Yazdani — Senior Frontend Engineer based in Pune, India"
+                    alt={`${personalInfo.name} — ${personalInfo.role} based in ${personalInfo.location}`}
                     className="absolute inset-0 w-full h-full object-cover object-center"
                   />
                 </div>

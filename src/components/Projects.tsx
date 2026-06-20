@@ -19,7 +19,7 @@ interface ProjectsProps {
 }
 
 export default function Projects({ navigate }: ProjectsProps) {
-  const projectsRef = useRef(null);
+  const projectsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const currentRef = projectsRef.current;

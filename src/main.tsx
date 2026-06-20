@@ -2,7 +2,7 @@ import { createRoot } from "react-dom/client";
 import { HelmetProvider } from "react-helmet-async";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import App from "./App.tsx";
+import App from "./App";
 import "./index.css";
 import "./styles/globals.css";
 

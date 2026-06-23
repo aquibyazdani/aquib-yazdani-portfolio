@@ -23,6 +23,8 @@ import {
   Users,
   Linkedin,
   Instagram,
+  MessageCircle,
+  Phone,
 } from "lucide-react";
 import toi from "../assets/toi.png";
 import screener from "../assets/screener.png";

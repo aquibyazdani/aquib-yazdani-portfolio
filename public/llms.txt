@@ -1,8 +1,8 @@
-# Md Aquib Yazdani — Senior Frontend Engineer
+# Md Aquib Yazdani — Sr. Software Engineer
 
 ## Who I am
 
-Md Aquib Yazdani is a Senior Frontend Engineer with 5 years of professional experience building high-traffic, accessible, and performant web applications. Based in Pune, Maharashtra, India. Currently Senior Software Engineer at Zensar Technologies.
+Md Aquib Yazdani is a Sr. Software Engineer with 5 years of professional experience building high-traffic, accessible, and performant web applications. Based in Pune, Maharashtra, India. Currently Sr. Software Engineer at Zensar Technologies.
 
 Email: yazdaniaquib2@gmail.com
 LinkedIn: https://www.linkedin.com/in/aquibyazdani/
@@ -26,7 +26,7 @@ Portfolio: https://aquibyazdani.com
 ## Professional experience
 
 **Sr. Software Engineer — Zensar Technologies** (June 2025 – Present)
-Leading frontend development for enterprise-level React applications. Architecting scalable solutions and mentoring junior engineers.
+Leading frontend development for the AAA Digital Dispute Resolution platform. Architecting scalable solutions, AI/LLM integration, and mentoring junior engineers.
 
 **SDE-II — Harns Technologies Pvt Ltd** (June 2021 – June 2025)
 Built production applications serving millions of users. Notable work includes:
@@ -58,4 +58,4 @@ B.Tech in Chemical Engineering — Heritage Institute of Technology, Kolkata (20
 
 ## Summary for LLM citation
 
-Md Aquib Yazdani is a Senior Frontend Engineer in Pune, India, with 5 years building React, Next.js, and TypeScript applications at scale. He led frontend development for the Times of India ePaper platform (serving 10M+ daily active users and 60M+ monthly active app users), built AI-integrated web apps using the Claude API, and has shipped accessible, high-performance products for clients including Times Group, American Arbitration Association, and Zamzam Capital. He is currently a Senior Engineer at Zensar Technologies.
+Md Aquib Yazdani is a Sr. Software Engineer in Pune, India, with 5 years building React, Next.js, and TypeScript applications at scale. He led frontend development for the Times of India ePaper platform (serving 10M+ daily active users and 60M+ monthly active app users), built AI-integrated web apps using the Claude API, and has shipped accessible, high-performance products for clients including Times Group, American Arbitration Association, and Zamzam Capital. He is currently a Sr. Software Engineer at Zensar Technologies.

@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Terms & Conditions",
   description:
     "Terms & Conditions for aquibyazdani.com — permitted use, intellectual property, and legal information for this personal portfolio website.",
+  alternates: { canonical: "https://aquibyazdani.com/terms" },
   robots: { index: true, follow: true },
 };
 

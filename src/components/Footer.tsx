@@ -5,7 +5,7 @@ import { personalInfo, socialMedia } from "../config/portfolio";
 
 export default function Footer() {
   return (
-    <footer className="py-8 px-6 border-t border-[#484848]">
+    <footer className="mt-auto py-8 px-6 border-t border-[#484848]">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
         {/* Left — copyright + legal */}
         <div className="flex flex-col items-center md:items-start gap-1">

@@ -6,7 +6,7 @@ import { personalInfo } from "../config/portfolio";
 
 export default function PrivacyPolicy() {
   return (
-    <div className="bg-neutral-950 min-h-screen">
+    <div className="bg-neutral-950 min-h-screen flex flex-col">
       <Navbar />
 
       <div className="pt-32 pb-20 px-6">

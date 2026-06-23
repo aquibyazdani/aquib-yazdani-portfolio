@@ -70,7 +70,7 @@ export default function Resume() {
   ];
 
   return (
-    <div className="bg-neutral-950 min-h-screen">
+    <div className="bg-neutral-950 min-h-screen flex flex-col">
         {/* Navigation */}
         <Navbar />
 

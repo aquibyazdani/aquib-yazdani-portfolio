@@ -63,7 +63,7 @@ export default function About() {
   }, []);
 
   return (
-    <div className="bg-neutral-950 min-h-screen">
+    <div className="bg-neutral-950 min-h-screen flex flex-col">
         {/* Navigation */}
         <Navbar />
 

@@ -29,7 +29,7 @@ export default function Navbar() {
             <Link
               key={item.path}
               href={item.path}
-              className={`font-['Manrope',sans-serif] text-[14px] uppercase transition-colors ${
+              className={`font-['Inter',sans-serif] text-[14px] uppercase transition-colors ${
                 isActive(item.path)
                   ? "text-[#d3e97a]"
                   : "text-[#c7c7c7] hover:text-white"
@@ -59,7 +59,7 @@ export default function Navbar() {
                 key={item.path}
                 href={item.path}
                 onClick={() => setIsMenuOpen(false)}
-                className={`font-['Manrope',sans-serif] text-[14px] uppercase text-left transition-colors ${
+                className={`font-['Inter',sans-serif] text-[14px] uppercase text-left transition-colors ${
                   isActive(item.path)
                     ? "text-[#d3e97a]"
                     : "text-[#c7c7c7] hover:text-white"

@@ -70,7 +70,7 @@ export default function Portfolio() {
                   <br />
                   {personalInfo.name.toUpperCase()}.
                 </h1>
-                <p className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[18px] leading-[1.5] max-w-[540px]">
+                <p className="font-['Inter',sans-serif] text-[#c7c7c7] text-[18px] leading-[1.5] max-w-[540px]">
                   {personalInfo.heroTagline}
                 </p>
               </div>
@@ -81,7 +81,7 @@ export default function Portfolio() {
                   onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
                   className="bg-[#d3e97a] rounded-full flex items-center gap-3 pl-6 pr-2 py-3 h-[54px] hover:bg-[#c5db6c] transition-colors"
                 >
-                  <span className="font-['Manrope',sans-serif] font-bold text-[16px] text-neutral-950 uppercase">
+                  <span className="font-['Inter',sans-serif] font-bold text-[16px] text-neutral-950 uppercase">
                     Let's Connect
                   </span>
                   <div className="size-[42px] bg-neutral-950 rounded-full flex items-center justify-center">
@@ -161,7 +161,7 @@ export default function Portfolio() {
             <h2 className="text-[76px] text-white leading-none">
               Featured Projects
             </h2>
-            <p className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[18px] leading-[1.5] max-w-[600px]">
+            <p className="font-['Inter',sans-serif] text-[#c7c7c7] text-[18px] leading-[1.5] max-w-[600px]">
               Here are some of the selected projects that showcase my passion
               for software development.
             </p>
@@ -178,7 +178,7 @@ export default function Portfolio() {
                   className="absolute inset-0 w-full h-full object-contain p-12"
                 />
                 <div className="absolute top-4 left-4 bg-neutral-950 px-4 py-2 rounded-full">
-                  <span className="font-['Manrope',sans-serif] text-white text-[14px]">
+                  <span className="font-['Inter',sans-serif] text-white text-[14px]">
                     Professional
                   </span>
                 </div>
@@ -186,10 +186,10 @@ export default function Portfolio() {
 
               <div className="space-y-8">
                 <div className="space-y-4">
-                  <h3 className="font-['Manrope',sans-serif] text-[32px] text-white leading-[1.4]">
+                  <h3 className="font-['Inter',sans-serif] text-[32px] text-white leading-[1.4]">
                     TOI Epaper (Times of India)
                   </h3>
-                  <p className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[18px] leading-[1.5]">
+                  <p className="font-['Inter',sans-serif] text-[#c7c7c7] text-[18px] leading-[1.5]">
                     Developed and maintained a high-traffic ePaper platform
                     accessed by thousands daily. Built a reusable component
                     library to streamline frontend development, reducing
@@ -200,31 +200,31 @@ export default function Portfolio() {
                 </div>
 
                 <div className="space-y-4">
-                  <p className="font-['Manrope',sans-serif] font-semibold text-white text-[16px] uppercase">
+                  <p className="font-['Inter',sans-serif] font-semibold text-white text-[16px] uppercase">
                     Project Info
                   </p>
                   <div className="border-t border-b border-[#484848] divide-y divide-[#484848]">
                     <div className="flex justify-between py-4">
-                      <span className="font-['Manrope',sans-serif] text-white text-[16px]">
+                      <span className="font-['Inter',sans-serif] text-white text-[16px]">
                         Client
                       </span>
-                      <span className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[16px]">
+                      <span className="font-['Inter',sans-serif] text-[#c7c7c7] text-[16px]">
                         Times of India
                       </span>
                     </div>
                     <div className="flex justify-between py-4">
-                      <span className="font-['Manrope',sans-serif] text-white text-[16px]">
+                      <span className="font-['Inter',sans-serif] text-white text-[16px]">
                         Year
                       </span>
-                      <span className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[16px]">
+                      <span className="font-['Inter',sans-serif] text-[#c7c7c7] text-[16px]">
                         2023
                       </span>
                     </div>
                     <div className="flex justify-between py-4">
-                      <span className="font-['Manrope',sans-serif] text-white text-[16px]">
+                      <span className="font-['Inter',sans-serif] text-white text-[16px]">
                         Role
                       </span>
-                      <span className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[16px]">
+                      <span className="font-['Inter',sans-serif] text-[#c7c7c7] text-[16px]">
                         Lead Frontend Engineer
                       </span>
                     </div>
@@ -239,7 +239,7 @@ export default function Portfolio() {
                     className="group inline-flex flex-col gap-1"
                   >
                     <div className="flex items-center gap-1">
-                      <span className="font-['Manrope',sans-serif] font-bold text-[#d3e97a] text-[16px] uppercase">
+                      <span className="font-['Inter',sans-serif] font-bold text-[#d3e97a] text-[16px] uppercase">
                         Live Demo
                       </span>
                       <svg
@@ -266,7 +266,7 @@ export default function Portfolio() {
                   className="absolute inset-0 w-full h-full object-contain p-12"
                 />
                 <div className="absolute top-4 left-4 bg-neutral-950 px-4 py-2 rounded-full">
-                  <span className="font-['Manrope',sans-serif] text-white text-[14px]">
+                  <span className="font-['Inter',sans-serif] text-white text-[14px]">
                     Professional
                   </span>
                 </div>
@@ -274,10 +274,10 @@ export default function Portfolio() {
 
               <div className="space-y-8">
                 <div className="space-y-4">
-                  <h3 className="font-['Manrope',sans-serif] text-[32px] text-white leading-[1.4]">
+                  <h3 className="font-['Inter',sans-serif] text-[32px] text-white leading-[1.4]">
                     Screener - Zamzam Capital
                   </h3>
-                  <p className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[18px] leading-[1.5]">
+                  <p className="font-['Inter',sans-serif] text-[#c7c7c7] text-[18px] leading-[1.5]">
                     Developed a dedicated Halal stock screening platform
                     enabling investors to evaluate companies based on
                     Shariah-compliant financial criteria. Implemented advanced
@@ -288,31 +288,31 @@ export default function Portfolio() {
                 </div>
 
                 <div className="space-y-4">
-                  <p className="font-['Manrope',sans-serif] font-semibold text-white text-[16px] uppercase">
+                  <p className="font-['Inter',sans-serif] font-semibold text-white text-[16px] uppercase">
                     Project Info
                   </p>
                   <div className="border-t border-b border-[#484848] divide-y divide-[#484848]">
                     <div className="flex justify-between py-4">
-                      <span className="font-['Manrope',sans-serif] text-white text-[16px]">
+                      <span className="font-['Inter',sans-serif] text-white text-[16px]">
                         Client
                       </span>
-                      <span className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[16px]">
+                      <span className="font-['Inter',sans-serif] text-[#c7c7c7] text-[16px]">
                         Zamzam Capital
                       </span>
                     </div>
                     <div className="flex justify-between py-4">
-                      <span className="font-['Manrope',sans-serif] text-white text-[16px]">
+                      <span className="font-['Inter',sans-serif] text-white text-[16px]">
                         Year
                       </span>
-                      <span className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[16px]">
+                      <span className="font-['Inter',sans-serif] text-[#c7c7c7] text-[16px]">
                         2025
                       </span>
                     </div>
                     <div className="flex justify-between py-4">
-                      <span className="font-['Manrope',sans-serif] text-white text-[16px]">
+                      <span className="font-['Inter',sans-serif] text-white text-[16px]">
                         Role
                       </span>
-                      <span className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[16px]">
+                      <span className="font-['Inter',sans-serif] text-[#c7c7c7] text-[16px]">
                         Sole Developer
                       </span>
                     </div>
@@ -327,7 +327,7 @@ export default function Portfolio() {
                     className="group inline-flex flex-col gap-1"
                   >
                     <div className="flex items-center gap-1">
-                      <span className="font-['Manrope',sans-serif] font-bold text-[#d3e97a] text-[16px] uppercase">
+                      <span className="font-['Inter',sans-serif] font-bold text-[#d3e97a] text-[16px] uppercase">
                         Live Demo
                       </span>
                       <svg
@@ -354,7 +354,7 @@ export default function Portfolio() {
                   className="absolute inset-0 w-full h-full object-contain p-12"
                 />
                 <div className="absolute top-4 left-4 bg-neutral-950 px-4 py-2 rounded-full">
-                  <span className="font-['Manrope',sans-serif] text-white text-[14px]">
+                  <span className="font-['Inter',sans-serif] text-white text-[14px]">
                     Personal Project
                   </span>
                 </div>
@@ -362,10 +362,10 @@ export default function Portfolio() {
 
               <div className="space-y-8">
                 <div className="space-y-4">
-                  <h3 className="font-['Manrope',sans-serif] text-[32px] text-white leading-[1.4]">
+                  <h3 className="font-['Inter',sans-serif] text-[32px] text-white leading-[1.4]">
                     Memorable Mumbai
                   </h3>
-                  <p className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[18px] leading-[1.5]">
+                  <p className="font-['Inter',sans-serif] text-[#c7c7c7] text-[18px] leading-[1.5]">
                     A comprehensive travel and tourism website showcasing the
                     vibrant culture, iconic landmarks, and hidden gems of
                     Mumbai. Features an intuitive interface with responsive
@@ -375,23 +375,23 @@ export default function Portfolio() {
                 </div>
 
                 <div className="space-y-4">
-                  <p className="font-['Manrope',sans-serif] font-semibold text-white text-[16px] uppercase">
+                  <p className="font-['Inter',sans-serif] font-semibold text-white text-[16px] uppercase">
                     Project Info
                   </p>
                   <div className="border-t border-b border-[#484848] divide-y divide-[#484848]">
                     <div className="flex justify-between py-4">
-                      <span className="font-['Manrope',sans-serif] text-white text-[16px]">
+                      <span className="font-['Inter',sans-serif] text-white text-[16px]">
                         Year
                       </span>
-                      <span className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[16px]">
+                      <span className="font-['Inter',sans-serif] text-[#c7c7c7] text-[16px]">
                         2022
                       </span>
                     </div>
                     <div className="flex justify-between py-4">
-                      <span className="font-['Manrope',sans-serif] text-white text-[16px]">
+                      <span className="font-['Inter',sans-serif] text-white text-[16px]">
                         Role
                       </span>
-                      <span className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[16px]">
+                      <span className="font-['Inter',sans-serif] text-[#c7c7c7] text-[16px]">
                         Sole Developer
                       </span>
                     </div>
@@ -406,7 +406,7 @@ export default function Portfolio() {
                     className="group inline-flex flex-col gap-1"
                   >
                     <div className="flex items-center gap-1">
-                      <span className="font-['Manrope',sans-serif] font-bold text-[#d3e97a] text-[16px] uppercase">
+                      <span className="font-['Inter',sans-serif] font-bold text-[#d3e97a] text-[16px] uppercase">
                         View Project
                       </span>
                       <svg
@@ -431,7 +431,7 @@ export default function Portfolio() {
       <section className="py-12 pb-20 px-6">
         <div className="max-w-7xl mx-auto text-center">
           <Link href="/projects" className="inline-flex flex-col gap-1">
-            <span className="font-['Manrope',sans-serif] font-bold text-[#d3e97a] text-[16px] uppercase">
+            <span className="font-['Inter',sans-serif] font-bold text-[#d3e97a] text-[16px] uppercase">
               All Projects
             </span>
             <div className="h-[2px] w-full bg-[#d3e97a]" />
@@ -456,10 +456,10 @@ export default function Portfolio() {
 
             <div className="space-y-8">
               <div className="space-y-4">
-                <p className="font-['Manrope',sans-serif] text-[32px] text-white leading-[1.4]">
+                <p className="font-['Inter',sans-serif] text-[32px] text-white leading-[1.4]">
                   {aboutMe.homeAboutBlurb}
                 </p>
-                <p className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[18px] leading-[1.5]">
+                <p className="font-['Inter',sans-serif] text-[#c7c7c7] text-[18px] leading-[1.5]">
                   When I’m not coding, you’ll find me playing cricket,
                   practicing photography, or spending quality time with my
                   family. Always learning, always curious.
@@ -467,7 +467,7 @@ export default function Portfolio() {
               </div>
 
               <Link href="/about" className="inline-flex flex-col gap-1">
-                <span className="font-['Manrope',sans-serif] font-bold text-[#d3e97a] text-[16px] uppercase">
+                <span className="font-['Inter',sans-serif] font-bold text-[#d3e97a] text-[16px] uppercase">
                   More about me
                 </span>
                 <div className="h-[2px] w-full bg-[#d3e97a]" />

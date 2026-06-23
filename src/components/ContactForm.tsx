@@ -78,7 +78,7 @@ const ContactForm = forwardRef<HTMLDivElement, ContactFormProps>(
           <div className="space-y-4">
             <div className="space-y-2">
               <label
-                className={`font-['Manrope',sans-serif] text-[#c7c7c7] ${labelSize}`}
+                className={`font-['Inter',sans-serif] text-[#c7c7c7] ${labelSize}`}
               >
                 Name
               </label>
@@ -86,13 +86,13 @@ const ContactForm = forwardRef<HTMLDivElement, ContactFormProps>(
                 name="from_name"
                 type="text"
                 required
-                className={`w-full bg-[#1a1a1a] rounded-[4px] px-4 py-3 text-white font-['Manrope',sans-serif] ${inputSize} focus:outline-none focus:ring-2 focus:ring-[#d3e97a]`}
+                className={`w-full bg-[#1a1a1a] rounded-[4px] px-4 py-3 text-white font-['Inter',sans-serif] ${inputSize} focus:outline-none focus:ring-2 focus:ring-[#d3e97a]`}
               />
             </div>
 
             <div className="space-y-2">
               <label
-                className={`font-['Manrope',sans-serif] text-[#c7c7c7] ${labelSize}`}
+                className={`font-['Inter',sans-serif] text-[#c7c7c7] ${labelSize}`}
               >
                 Email
               </label>
@@ -100,13 +100,13 @@ const ContactForm = forwardRef<HTMLDivElement, ContactFormProps>(
                 name="from_email"
                 type="email"
                 required
-                className={`w-full bg-[#1a1a1a] rounded-[4px] px-4 py-3 text-white font-['Manrope',sans-serif] ${inputSize} focus:outline-none focus:ring-2 focus:ring-[#d3e97a]`}
+                className={`w-full bg-[#1a1a1a] rounded-[4px] px-4 py-3 text-white font-['Inter',sans-serif] ${inputSize} focus:outline-none focus:ring-2 focus:ring-[#d3e97a]`}
               />
             </div>
 
             <div className="space-y-2">
               <label
-                className={`font-['Manrope',sans-serif] text-[#c7c7c7] ${labelSize}`}
+                className={`font-['Inter',sans-serif] text-[#c7c7c7] ${labelSize}`}
               >
                 Message
               </label>
@@ -114,7 +114,7 @@ const ContactForm = forwardRef<HTMLDivElement, ContactFormProps>(
                 name="message"
                 rows={textareaRows}
                 required
-                className={`w-full bg-[#1a1a1a] rounded-[4px] px-4 py-3 text-white font-['Manrope',sans-serif] ${inputSize} focus:outline-none focus:ring-2 focus:ring-[#d3e97a] resize-none`}
+                className={`w-full bg-[#1a1a1a] rounded-[4px] px-4 py-3 text-white font-['Inter',sans-serif] ${inputSize} focus:outline-none focus:ring-2 focus:ring-[#d3e97a] resize-none`}
               />
             </div>
           </div>
@@ -122,7 +122,7 @@ const ContactForm = forwardRef<HTMLDivElement, ContactFormProps>(
           <button
             type="submit"
             disabled={isSending}
-            className={`bg-[#d3e97a] rounded-full ${buttonPadding} font-['Manrope',sans-serif] font-bold ${buttonTextSize} text-neutral-950 uppercase hover:bg-[#c5db6c] transition-colors disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2`}
+            className={`bg-[#d3e97a] rounded-full ${buttonPadding} font-['Inter',sans-serif] font-bold ${buttonTextSize} text-neutral-950 uppercase hover:bg-[#c5db6c] transition-colors disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2`}
           >
             {isSending ? "Submitting" : "Submit"}
             {isSending && (

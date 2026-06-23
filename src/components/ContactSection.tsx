@@ -13,7 +13,7 @@ export default function ContactSection() {
           <h2 className="text-[72px] lg:text-[88px] text-white leading-[0.9]">
             GET IN TOUCH
           </h2>
-          <p className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[18px] leading-[1.6] max-w-[480px]">
+          <p className="font-['Inter',sans-serif] text-[#c7c7c7] text-[18px] leading-[1.6] max-w-[480px]">
             Open to new opportunities, collaborations, and interesting
             conversations. Fill in the form or reach out directly.
           </p>
@@ -26,13 +26,13 @@ export default function ContactSection() {
             className="group flex items-center gap-3"
           >
             <div className="w-2 h-2 rounded-full bg-[#d3e97a] flex-shrink-0" />
-            <span className="font-['Manrope',sans-serif] text-white text-[16px] group-hover:text-[#d3e97a] transition-colors">
+            <span className="font-['Inter',sans-serif] text-white text-[16px] group-hover:text-[#d3e97a] transition-colors">
               {personalInfo.email}
             </span>
           </a>
           <div className="flex items-center gap-3">
             <div className="w-2 h-2 rounded-full bg-[#d3e97a] flex-shrink-0" />
-            <span className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[16px]">
+            <span className="font-['Inter',sans-serif] text-[#c7c7c7] text-[16px]">
               {personalInfo.location}
             </span>
           </div>
@@ -42,7 +42,7 @@ export default function ContactSection() {
 
         {/* Social links */}
         <div className="space-y-4">
-          <p className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[13px] uppercase tracking-widest">
+          <p className="font-['Inter',sans-serif] text-[#c7c7c7] text-[13px] uppercase tracking-widest">
             Find me on
           </p>
           <div className="flex gap-4">
@@ -69,7 +69,7 @@ export default function ContactSection() {
         {/* Resume CTA */}
         <Link
           href="/resume"
-          className="inline-flex items-center gap-2 border border-[#484848] rounded-full px-6 py-3 font-['Manrope',sans-serif] text-[14px] text-[#c7c7c7] uppercase hover:border-[#d3e97a] hover:text-[#d3e97a] transition-colors"
+          className="inline-flex items-center gap-2 border border-[#484848] rounded-full px-6 py-3 font-['Inter',sans-serif] text-[14px] text-[#c7c7c7] uppercase hover:border-[#d3e97a] hover:text-[#d3e97a] transition-colors"
         >
           View My Resume
         </Link>

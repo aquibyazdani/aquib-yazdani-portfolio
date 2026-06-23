@@ -89,7 +89,7 @@ export default function Resume() {
                 ) : (
                   <Download className="size-4" />
                 )}
-                <span className="font-['Manrope',sans-serif] font-bold text-[14px] uppercase">
+                <span className="font-['Inter',sans-serif] font-bold text-[14px] uppercase">
                   {downloading ? "Generating..." : "Download Resume"}
                 </span>
               </button>
@@ -108,7 +108,7 @@ export default function Resume() {
                     <h1 className="text-[48px] text-white leading-[0.9]">
                       {personalInfo.name.toUpperCase()}
                     </h1>
-                    <p className="font-['Manrope',sans-serif] text-[#d3e97a] text-[18px]">
+                    <p className="font-['Inter',sans-serif] text-[#d3e97a] text-[18px]">
                       {personalInfo.title}
                     </p>
                   </div>
@@ -118,20 +118,20 @@ export default function Resume() {
                       <Mail className="size-3.5 text-[#d3e97a]" />
                       <a
                         href={`mailto:${personalInfo.email}`}
-                        className="font-['Manrope',sans-serif] text-[12px] text-[#c7c7c7] hover:text-white"
+                        className="font-['Inter',sans-serif] text-[12px] text-[#c7c7c7] hover:text-white"
                       >
                         {personalInfo.email}
                       </a>
                     </div>
                     <div className="flex items-center gap-2 justify-end">
                       <Phone className="size-3.5 text-[#d3e97a]" />
-                      <span className="font-['Manrope',sans-serif] text-[12px] text-[#c7c7c7]">
+                      <span className="font-['Inter',sans-serif] text-[12px] text-[#c7c7c7]">
                         {personalInfo.phone}
                       </span>
                     </div> */}
                     <div className="flex items-center gap-2 justify-end">
                       <MapPin className="size-3.5 text-[#d3e97a]" />
-                      <span className="font-['Manrope',sans-serif] text-[12px] text-[#c7c7c7]">
+                      <span className="font-['Inter',sans-serif] text-[12px] text-[#c7c7c7]">
                         {personalInfo.location}
                       </span>
                     </div>
@@ -143,7 +143,7 @@ export default function Resume() {
                   <h2 className="font-['Bebas_Neue',sans-serif] font-bold text-white text-[16px] uppercase text-[#d3e97a] border-b border-[#d3e97a]/30 pb-1.5">
                     Professional Summary
                   </h2>
-                  <p className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[13px] leading-[1.6]">
+                  <p className="font-['Inter',sans-serif] text-[#c7c7c7] text-[13px] leading-[1.6]">
                     {personalInfo.professionalSummary}
                   </p>
                 </div>
@@ -165,7 +165,7 @@ export default function Resume() {
                           return (
                             <span
                               key={skill.name}
-                              className="font-['Manrope',sans-serif] text-[11px] text-[#2a4a4a] bg-[#d3e97a] px-3 py-1.5 rounded-md inline-flex items-center gap-1.5"
+                              className="font-['Inter',sans-serif] text-[11px] text-[#2a4a4a] bg-[#d3e97a] px-3 py-1.5 rounded-md inline-flex items-center gap-1.5"
                             >
                               <Icon className="size-3" />
                               {skill.name}
@@ -188,10 +188,10 @@ export default function Resume() {
                         <h4 className="font-['Bebas_Neue',sans-serif] font-semibold text-white text-[13px]">
                           {edu.institution}
                         </h4>
-                        <p className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[12px] leading-[1.6]">
+                        <p className="font-['Inter',sans-serif] text-[#c7c7c7] text-[12px] leading-[1.6]">
                           {edu.degree}
                         </p>
-                        <p className="font-['Manrope',sans-serif] text-[#d3e97a] text-[11px]">
+                        <p className="font-['Inter',sans-serif] text-[#d3e97a] text-[11px]">
                           {edu.period}
                         </p>
                       </div>
@@ -225,15 +225,15 @@ export default function Resume() {
                               <h3 className="font-['Bebas_Neue',sans-serif] font-semibold text-white text-[15px]">
                                 {exp.title}
                               </h3>
-                              <p className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[12px]">
+                              <p className="font-['Inter',sans-serif] text-[#c7c7c7] text-[12px]">
                                 {exp.company} | {exp.location}
                               </p>
                             </div>
-                            <span className="font-['Manrope',sans-serif] text-[#d3e97a] text-[11px] whitespace-nowrap bg-[#d3e97a]/10 px-2.5 py-1 rounded-md">
+                            <span className="font-['Inter',sans-serif] text-[#d3e97a] text-[11px] whitespace-nowrap bg-[#d3e97a]/10 px-2.5 py-1 rounded-md">
                               {exp.period}
                             </span>
                           </div>
-                          <ul className="space-y-1 font-['Manrope',sans-serif] text-[#c7c7c7] text-[12px]">
+                          <ul className="space-y-1 font-['Inter',sans-serif] text-[#c7c7c7] text-[12px]">
                             {exp.responsibilities.map((resp, idx) => (
                               <li key={idx} className="flex items-start gap-2">
                                 <span className="text-[#d3e97a] mt-0.5">•</span>
@@ -260,7 +260,7 @@ export default function Resume() {
                         className="flex items-start gap-3 bg-[#1a1a1a]/50 p-3 rounded-lg"
                       >
                         <div className="w-2 h-2 rounded-full bg-[#d3e97a] mt-1.5 flex-shrink-0" />
-                        <p className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[12px] leading-[1.6]">
+                        <p className="font-['Inter',sans-serif] text-[#c7c7c7] text-[12px] leading-[1.6]">
                           <span className="text-white font-semibold">
                             {award.title}
                           </span>{" "}

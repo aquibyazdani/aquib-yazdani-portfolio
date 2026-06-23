@@ -22,7 +22,7 @@
   --input: transparent;
   --ring: oklch(0.708 0 0);
   --radius: 0.625rem;
-  --font-family: var(--font-manrope), "Manrope", sans-serif;
+  --font-family: var(--font-inter), "Inter", sans-serif;
   --font-family-headline: var(--font-bebas-neue), "Bebas Neue", sans-serif;
   --font-weight-medium: 500;
   --font-weight-normal: 400;

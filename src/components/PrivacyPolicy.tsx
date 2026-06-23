@@ -16,13 +16,13 @@ export default function PrivacyPolicy() {
             <h1 className="text-[64px] lg:text-[80px] text-white leading-[0.9]">
               PRIVACY POLICY
             </h1>
-            <p className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[14px]">
+            <p className="font-['Inter',sans-serif] text-[#c7c7c7] text-[14px]">
               Last updated: June 23, 2026
             </p>
           </div>
 
           {/* Content */}
-          <div className="space-y-10 font-['Manrope',sans-serif]">
+          <div className="space-y-10 font-['Inter',sans-serif]">
             <section className="space-y-3">
               <h2 className="text-[28px] text-[#d3e97a] leading-[1.1]">
                 OVERVIEW

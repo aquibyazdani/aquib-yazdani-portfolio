@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Bebas_Neue, Manrope } from "next/font/google";
+import { Bebas_Neue, Inter } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import Providers from "./providers";
 import "./globals.css";
@@ -11,10 +11,10 @@ const bebasNeue = Bebas_Neue({
   display: "swap",
 });
 
-const manrope = Manrope({
+const inter = Inter({
   weight: ["400", "500", "600", "700", "800"],
   subsets: ["latin"],
-  variable: "--font-manrope",
+  variable: "--font-inter",
   display: "swap",
 });
 
@@ -149,7 +149,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${bebasNeue.variable} ${manrope.variable}`}>
+    <html lang="en" className={`${bebasNeue.variable} ${inter.variable}`}>
       <head>
         <script
           type="application/ld+json"

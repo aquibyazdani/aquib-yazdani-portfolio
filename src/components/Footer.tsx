@@ -9,19 +9,19 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
         {/* Left — copyright + legal */}
         <div className="flex flex-col items-center md:items-start gap-1">
-          <p className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[14px]">
+          <p className="font-['Inter',sans-serif] text-[#c7c7c7] text-[14px]">
             {personalInfo.copyright}
           </p>
           <div className="flex gap-4">
             <Link
               href="/privacy-policy"
-              className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[12px] hover:text-[#d3e97a] transition-colors"
+              className="font-['Inter',sans-serif] text-[#c7c7c7] text-[12px] hover:text-[#d3e97a] transition-colors"
             >
               Privacy Policy
             </Link>
             <Link
               href="/terms"
-              className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[12px] hover:text-[#d3e97a] transition-colors"
+              className="font-['Inter',sans-serif] text-[#c7c7c7] text-[12px] hover:text-[#d3e97a] transition-colors"
             >
               Terms &amp; Conditions
             </Link>

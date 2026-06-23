@@ -53,7 +53,7 @@ export default function Projects() {
               <h1 className="text-[80px] lg:text-[90px] text-white leading-[0.9]">
                 ALL PROJECTS
               </h1>
-              <p className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[18px] leading-[1.5] max-w-[600px]">
+              <p className="font-['Inter',sans-serif] text-[#c7c7c7] text-[18px] leading-[1.5] max-w-[600px]">
                 Here's a collection of projects that showcase my passion for
                 software development and problem-solving.
               </p>
@@ -86,7 +86,7 @@ export default function Projects() {
                         className="absolute inset-0 w-full h-full object-contain p-12"
                       />
                       <div className="absolute top-4 left-4 bg-neutral-950 px-4 py-2 rounded-full">
-                        <span className="font-['Manrope',sans-serif] text-white text-[14px]">
+                        <span className="font-['Inter',sans-serif] text-white text-[14px]">
                           Professional
                         </span>
                       </div>
@@ -109,7 +109,7 @@ export default function Projects() {
                           .map((achievement, idx) => (
                             <p
                               key={idx}
-                              className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[16px] leading-[1.5]"
+                              className="font-['Inter',sans-serif] text-[#c7c7c7] text-[16px] leading-[1.5]"
                             >
                               • {achievement}
                             </p>
@@ -118,23 +118,23 @@ export default function Projects() {
                     </div>
 
                     <div className="space-y-4">
-                      <p className="font-['Manrope',sans-serif] font-semibold text-white text-[16px] uppercase">
+                      <p className="font-['Inter',sans-serif] font-semibold text-white text-[16px] uppercase">
                         Project Info
                       </p>
                       <div className="border-t border-b border-[#484848] divide-y divide-[#484848]">
                         <div className="flex justify-between py-4">
-                          <span className="font-['Manrope',sans-serif] text-white text-[16px]">
+                          <span className="font-['Inter',sans-serif] text-white text-[16px]">
                             Role
                           </span>
-                          <span className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[16px]">
+                          <span className="font-['Inter',sans-serif] text-[#c7c7c7] text-[16px]">
                             {project.role}
                           </span>
                         </div>
                         <div className="flex justify-between py-4">
-                          <span className="font-['Manrope',sans-serif] text-white text-[16px]">
+                          <span className="font-['Inter',sans-serif] text-white text-[16px]">
                             Tech Stack
                           </span>
-                          <span className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[16px]">
+                          <span className="font-['Inter',sans-serif] text-[#c7c7c7] text-[16px]">
                             {project.techStack.slice(0, 3).join(", ")}
                           </span>
                         </div>
@@ -151,7 +151,7 @@ export default function Projects() {
                           className="group inline-flex flex-col gap-1"
                         >
                           <div className="flex items-center gap-1">
-                            <span className="font-['Manrope',sans-serif] font-bold text-[#d3e97a] text-[14px] uppercase">
+                            <span className="font-['Inter',sans-serif] font-bold text-[#d3e97a] text-[14px] uppercase">
                               Live Demo
                             </span>
                             <svg
@@ -174,7 +174,7 @@ export default function Projects() {
                           className="group inline-flex flex-col gap-1"
                         >
                           <div className="flex items-center gap-1">
-                            <span className="font-['Manrope',sans-serif] font-bold text-[#d3e97a] text-[14px] uppercase">
+                            <span className="font-['Inter',sans-serif] font-bold text-[#d3e97a] text-[14px] uppercase">
                               Live Demo
                             </span>
                             <svg
@@ -197,7 +197,7 @@ export default function Projects() {
                           className="group inline-flex flex-col gap-1"
                         >
                           <div className="flex items-center gap-1">
-                            <span className="font-['Manrope',sans-serif] font-bold text-[#d3e97a] text-[14px] uppercase">
+                            <span className="font-['Inter',sans-serif] font-bold text-[#d3e97a] text-[14px] uppercase">
                               Live Demo
                             </span>
                             <svg
@@ -253,7 +253,7 @@ export default function Projects() {
                         className="group inline-flex flex-col gap-1"
                       >
                         <div className="flex items-center gap-1">
-                          <span className="font-['Manrope',sans-serif] font-bold text-[#d3e97a] text-[14px] uppercase">
+                          <span className="font-['Inter',sans-serif] font-bold text-[#d3e97a] text-[14px] uppercase">
                             View Project
                           </span>
                           <svg
@@ -286,7 +286,7 @@ export default function Projects() {
                 href="/contact"
                 className="inline-flex bg-[#d3e97a] rounded-full items-center gap-3 pl-6 pr-2 py-3 h-[54px] hover:bg-[#c5db6c] transition-colors"
               >
-                <span className="font-['Manrope',sans-serif] font-bold text-[16px] text-neutral-950 uppercase">
+                <span className="font-['Inter',sans-serif] font-bold text-[16px] text-neutral-950 uppercase">
                   Get in Touch
                 </span>
                 <div className="size-[42px] bg-neutral-950 rounded-full flex items-center justify-center">

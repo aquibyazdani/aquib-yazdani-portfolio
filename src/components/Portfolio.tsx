@@ -12,11 +12,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import Footer from "./Footer";
 import ContactSection from "./ContactSection";
-import {
-  personalInfo,
-  aboutMe,
-  socialLinks,
-} from "../config/portfolio";
+import { personalInfo, aboutMe, socialLinks } from "../config/portfolio";
 import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -78,7 +74,11 @@ export default function Portfolio() {
               {/* Action Buttons */}
               <div className="flex gap-4 items-center flex-wrap">
                 <button
-                  onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+                  onClick={() =>
+                    document
+                      .getElementById("contact")
+                      ?.scrollIntoView({ behavior: "smooth" })
+                  }
                   className="bg-[#d3e97a] rounded-full flex items-center gap-3 pl-6 pr-2 py-3 h-[54px] hover:bg-[#c5db6c] transition-colors"
                 >
                   <span className="font-['Inter',sans-serif] font-bold text-[16px] text-neutral-950 uppercase">
@@ -137,7 +137,7 @@ export default function Portfolio() {
 
             {/* Right Image */}
             <div className="relative">
-              <div className="bg-[#c7c7c7] rounded-[16px] w-full max-w-[600px] mx-auto aspect-[6/7] relative overflow-hidden">
+              <div className="bg-[#c7c7c7] rounded-[16px] w-full max-w-[450px] mx-auto aspect-[6/7] relative overflow-hidden">
                 <ImageWithFallback
                   src={imgPotrait.src}
                   alt={`${personalInfo.name} — ${personalInfo.role} based in ${personalInfo.location}`}

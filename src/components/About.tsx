@@ -64,183 +64,183 @@ export default function About() {
 
   return (
     <div className="bg-neutral-950 min-h-screen flex flex-col">
-        {/* Navigation */}
-        <Navbar />
+      {/* Navigation */}
+      <Navbar />
 
-        {/* Hero Section */}
-        <section className="pt-32 pb-20 px-6" ref={heroRef}>
-          <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-              {/* Left Content */}
-              <div className="space-y-8">
-                <div className="space-y-6">
-                  <h1 className="text-[80px] lg:text-[90px] leading-[0.9] text-white">
-                    ABOUT ME
-                    <span className="sr-only">
-                      {" "}
-                      — {personalInfo.name}, {personalInfo.role}
-                    </span>
-                  </h1>
-
-                  <div className="space-y-4">
-                    <p className="font-['Inter',sans-serif] text-[24px] text-white leading-[1.4]">
-                      {aboutMe.intro}
-                    </p>
-                    <p className="font-['Inter',sans-serif] text-[#c7c7c7] text-[16px] leading-[1.6]">
-                      {aboutMe.background}
-                    </p>
-                  </div>
-                </div>
-
-                {/* Download Resume & Social Links */}
-                <div className="flex gap-4 items-center">
-                  <Link
-                    href="/resume"
-                    className="bg-[#d3e97a] rounded-full flex items-center gap-2 px-6 py-3 hover:bg-[#c5db6c] transition-colors"
-                  >
-                    <span className="font-['Inter',sans-serif] font-bold text-[14px] text-neutral-950 uppercase">
-                      My Resume
-                    </span>
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                      <path d={svgPaths.p23c4ec40} fill="#0A0A0A" />
-                    </svg>
-                  </Link>
-
-                  {socialMedia.map((social, index) => {
-                    const Icon = social.icon;
-                    return (
-                      <a
-                        key={index}
-                        href={social.url}
-                        aria-label={`Aquib Yazdani on ${social.name}`}
-                        target={social.name !== "Phone" ? "_blank" : undefined}
-                        rel={
-                          social.name !== "Phone"
-                            ? "noopener noreferrer"
-                            : undefined
-                        }
-                        className="hover:opacity-80 transition-opacity"
-                      >
-                        <Icon
-                          className="w-6 h-6 text-[#d3e97a]"
-                          aria-hidden="true"
-                        />
-                      </a>
-                    );
-                  })}
-                </div>
-              </div>
-
-              {/* Right - Profile Image */}
-              <div className="flex justify-center lg:justify-end">
-                <div className="bg-[#c7c7c7] rounded-[12px] overflow-hidden w-full max-w-[340px] aspect-[4/5] relative">
-                  <ImageWithFallback
-                    src={imgProfile.src}
-                    alt={`${personalInfo.name} — ${personalInfo.role} based in ${personalInfo.location}`}
-                    className="absolute inset-0 w-full h-full object-cover object-top"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* My Capabilities Section */}
-        <section className="py-20 px-6" ref={capabilitiesRef}>
-          <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              <div>
-                <h2 className="text-[64px] lg:text-[76px] text-white leading-[0.9]">
-                  MY CAPABILITIES
-                </h2>
-              </div>
-
+      {/* Hero Section */}
+      <section className="pt-32 pb-20 px-6" ref={heroRef}>
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            {/* Left Content */}
+            <div className="space-y-8">
               <div className="space-y-6">
-                <p className="font-['Inter',sans-serif] text-[#c7c7c7] text-[16px] leading-[1.6]">
-                  {aboutMe.capabilitiesDescription}
-                </p>
+                <h1 className="text-[80px] lg:text-[90px] leading-[0.9] text-white">
+                  ABOUT ME
+                  <span className="sr-only">
+                    {" "}
+                    — {personalInfo.name}, {personalInfo.role}
+                  </span>
+                </h1>
 
-                {/* Capability Tags */}
-                <div className="space-y-6">
-                  {Object.entries(capabilities).map(([category, skills]) => (
-                    <div key={category} className="space-y-3">
-                      <h3 className="font-['Bebas_Neue',sans-serif] font-semibold text-[#d3e97a] text-[14px] uppercase">
-                        {category}
-                      </h3>
-                      <div className="flex flex-wrap gap-3">
-                        {skills.map((skill) => {
-                          const Icon = skill.icon;
-                          return (
-                            <div
-                              key={skill.name}
-                              className="border border-[#484848] px-4 py-2.5 rounded-[4px] inline-flex items-center gap-2 hover:border-[#d3e97a] transition-colors"
-                            >
-                              <Icon className="size-4 text-[#d3e97a]" />
-                              <span className="font-['Inter',sans-serif] text-white text-[13px]">
-                                {skill.name}
-                              </span>
-                            </div>
-                          );
-                        })}
-                      </div>
-                    </div>
-                  ))}
+                <div className="space-y-4">
+                  <p className="font-['Inter',sans-serif] text-[24px] text-white leading-[1.4]">
+                    {aboutMe.intro}
+                  </p>
+                  <p className="font-['Inter',sans-serif] text-[#c7c7c7] text-[16px] leading-[1.6]">
+                    {aboutMe.background}
+                  </p>
                 </div>
+              </div>
+
+              {/* Download Resume & Social Links */}
+              <div className="flex gap-4 items-center">
+                <Link
+                  href="/resume"
+                  className="bg-[#d3e97a] rounded-full flex items-center gap-2 px-6 py-3 hover:bg-[#c5db6c] transition-colors"
+                >
+                  <span className="font-['Inter',sans-serif] font-bold text-[14px] text-neutral-950 uppercase">
+                    My Resume
+                  </span>
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d={svgPaths.p23c4ec40} fill="#0A0A0A" />
+                  </svg>
+                </Link>
+
+                {socialMedia.map((social, index) => {
+                  const Icon = social.icon;
+                  return (
+                    <a
+                      key={index}
+                      href={social.url}
+                      aria-label={`Aquib Yazdani on ${social.name}`}
+                      target={social.name !== "Phone" ? "_blank" : undefined}
+                      rel={
+                        social.name !== "Phone"
+                          ? "noopener noreferrer"
+                          : undefined
+                      }
+                      className="hover:opacity-80 transition-opacity"
+                    >
+                      <Icon
+                        className="w-6 h-6 text-[#d3e97a]"
+                        aria-hidden="true"
+                      />
+                    </a>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Right - Profile Image */}
+            <div className="flex justify-center lg:justify-end">
+              <div className="bg-[#c7c7c7] rounded-[12px] overflow-hidden w-full max-w-[400px] aspect-[4/5] relative">
+                <ImageWithFallback
+                  src={imgProfile.src}
+                  alt={`${personalInfo.name} — ${personalInfo.role} based in ${personalInfo.location}`}
+                  className="absolute inset-0 w-full h-full object-cover object-top"
+                />
               </div>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* My Experience Section */}
-        <section className="py-20 px-6" ref={experienceRef}>
-          <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              <div>
-                <h2 className="text-[64px] lg:text-[76px] text-white leading-[0.9]">
-                  MY EXPERIENCE
-                </h2>
-              </div>
+      {/* My Capabilities Section */}
+      <section className="py-20 px-6" ref={capabilitiesRef}>
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div>
+              <h2 className="text-[64px] lg:text-[76px] text-white leading-[0.9]">
+                MY CAPABILITIES
+              </h2>
+            </div>
 
-              <div className="space-y-12">
-                {experiences.map((exp, index) => (
-                  <div key={index} className="space-y-4">
-                    <div className="flex justify-between items-start flex-wrap gap-2">
-                      <div>
-                        <h3 className="font-['Bebas_Neue',sans-serif] text-white text-[20px]">
-                          {exp.title}
-                        </h3>
-                        {exp.company && (
-                          <p className="font-['Inter',sans-serif] text-[#c7c7c7] text-[16px]">
-                            {exp.company}
-                          </p>
-                        )}
-                      </div>
-                      <span className="font-['Inter',sans-serif] text-[#c7c7c7] text-[14px]">
-                        {exp.period}
-                      </span>
+            <div className="space-y-6">
+              <p className="font-['Inter',sans-serif] text-[#c7c7c7] text-[16px] leading-[1.6]">
+                {aboutMe.capabilitiesDescription}
+              </p>
+
+              {/* Capability Tags */}
+              <div className="space-y-6">
+                {Object.entries(capabilities).map(([category, skills]) => (
+                  <div key={category} className="space-y-3">
+                    <h3 className="font-['Bebas_Neue',sans-serif] font-semibold text-[#d3e97a] text-[14px] uppercase">
+                      {category}
+                    </h3>
+                    <div className="flex flex-wrap gap-3">
+                      {skills.map((skill) => {
+                        const Icon = skill.icon;
+                        return (
+                          <div
+                            key={skill.name}
+                            className="border border-[#484848] px-4 py-2.5 rounded-[4px] inline-flex items-center gap-2 hover:border-[#d3e97a] transition-colors"
+                          >
+                            <Icon className="size-4 text-[#d3e97a]" />
+                            <span className="font-['Inter',sans-serif] text-white text-[13px]">
+                              {skill.name}
+                            </span>
+                          </div>
+                        );
+                      })}
                     </div>
-                    <ul className="space-y-2 font-['Inter',sans-serif] text-[#c7c7c7] text-[16px] leading-[1.6]">
-                      {exp.responsibilities.map((resp, idx) => (
-                        <li key={idx} className="flex items-start gap-2">
-                          <span className="text-[#d3e97a] mt-1">•</span>
-                          <span>{resp}</span>
-                        </li>
-                      ))}
-                    </ul>
                   </div>
                 ))}
               </div>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Let's Connect Section */}
-        <section ref={connectRef} className="py-20 px-6">
-          <div className="max-w-7xl mx-auto">
-            <ContactSection />
+      {/* My Experience Section */}
+      <section className="py-20 px-6" ref={experienceRef}>
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div>
+              <h2 className="text-[64px] lg:text-[76px] text-white leading-[0.9]">
+                MY EXPERIENCE
+              </h2>
+            </div>
+
+            <div className="space-y-12">
+              {experiences.map((exp, index) => (
+                <div key={index} className="space-y-4">
+                  <div className="flex justify-between items-start flex-wrap gap-2">
+                    <div>
+                      <h3 className="font-['Bebas_Neue',sans-serif] text-white text-[20px]">
+                        {exp.title}
+                      </h3>
+                      {exp.company && (
+                        <p className="font-['Inter',sans-serif] text-[#c7c7c7] text-[16px]">
+                          {exp.company}
+                        </p>
+                      )}
+                    </div>
+                    <span className="font-['Inter',sans-serif] text-[#c7c7c7] text-[14px]">
+                      {exp.period}
+                    </span>
+                  </div>
+                  <ul className="space-y-2 font-['Inter',sans-serif] text-[#c7c7c7] text-[16px] leading-[1.6]">
+                    {exp.responsibilities.map((resp, idx) => (
+                      <li key={idx} className="flex items-start gap-2">
+                        <span className="text-[#d3e97a] mt-1">•</span>
+                        <span>{resp}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
           </div>
-        </section>
-        <Footer />
-      </div>
+        </div>
+      </section>
+
+      {/* Let's Connect Section */}
+      <section ref={connectRef} className="py-20 px-6">
+        <div className="max-w-7xl mx-auto">
+          <ContactSection />
+        </div>
+      </section>
+      <Footer />
+    </div>
   );
 }

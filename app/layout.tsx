@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Bebas_Neue, Manrope } from "next/font/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import Providers from "./providers";
 import "./globals.css";
 
@@ -158,6 +159,7 @@ export default function RootLayout({
       <body suppressHydrationWarning>
         <Providers>{children}</Providers>
       </body>
+      <GoogleAnalytics gaId="G-YR78Y0K8L8" />
     </html>
   );
 }

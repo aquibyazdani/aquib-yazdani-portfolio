@@ -60,14 +60,14 @@ export default function Resume({ navigate }: ResumeProps) {
   return (
     <>
       <Helmet>
-        <title>Resume — Md Aquib Yazdani, Senior Frontend Engineer</title>
+        <title>Resume — Md Aquib Yazdani, Sr. Software Engineer</title>
         <meta
           name="description"
-          content="Professional resume of Md Aquib Yazdani — Senior Frontend Engineer with React, Next.js &amp; TypeScript expertise. 5 years at Harns Technologies and Zensar Technologies."
+          content="Professional resume of Md Aquib Yazdani — Sr. Software Engineer with React, Next.js &amp; TypeScript expertise. 5 years at Harns Technologies and Zensar Technologies."
         />
         <meta
           name="keywords"
-          content="Md Aquib Yazdani, Resume, CV, Senior Frontend Engineer, React Developer, Next.js, TypeScript, Zensar Technologies"
+          content="Md Aquib Yazdani, Resume, CV, Sr. Software Engineer, React Developer, Next.js, TypeScript, Zensar Technologies"
         />
         <link rel="canonical" href="https://aquibyazdani.com/resume" />
       </Helmet>

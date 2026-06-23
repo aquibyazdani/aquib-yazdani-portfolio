@@ -95,14 +95,14 @@ export default function Portfolio({ navigate }: PortfolioProps) {
   return (
     <>
       <Helmet>
-        <title>Md Aquib Yazdani — Senior Frontend Engineer</title>
+        <title>Md Aquib Yazdani — Sr. Software Engineer</title>
         <meta
           name="description"
-          content="Senior Frontend Engineer in Pune, India. 5 years building React, Next.js &amp; TypeScript at scale — Times of India (60M+ MAU), AI-integrated apps, WCAG accessibility."
+          content="Sr. Software Engineer in Pune, India. 5 years building React, Next.js &amp; TypeScript at scale — Times of India (60M+ MAU), AI-integrated apps, WCAG accessibility."
         />
         <meta
           name="keywords"
-          content="Md Aquib Yazdani, Senior Frontend Engineer, React Developer, Next.js Developer, TypeScript, Frontend Architecture, Web Performance, AI Integration, React Developer Pune India"
+          content="Md Aquib Yazdani, Sr. Software Engineer, React Developer, Next.js Developer, TypeScript, Frontend Architecture, Web Performance, AI Integration, React Developer Pune India"
         />
         <link rel="canonical" href="https://aquibyazdani.com" />
       </Helmet>

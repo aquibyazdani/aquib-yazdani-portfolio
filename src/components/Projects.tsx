@@ -42,14 +42,14 @@ export default function Projects({ navigate }: ProjectsProps) {
   return (
     <>
       <Helmet>
-        <title>Projects — Md Aquib Yazdani, Frontend Engineer Portfolio</title>
+        <title>Projects — Md Aquib Yazdani, Sr. Software Engineer Portfolio</title>
         <meta
           name="description"
-          content="Portfolio of frontend projects by Md Aquib Yazdani — Times of India ePaper (10M+ DAU), Zamzam Capital Screener, Adlob ad platform (200+ agencies), and more."
+          content="Portfolio of projects by Md Aquib Yazdani — Times of India ePaper (10M+ DAU), Zamzam Capital Screener, Adlob ad platform (200+ agencies), and more."
         />
         <meta
           name="keywords"
-          content="Md Aquib Yazdani, Projects, Portfolio, React Developer, Next.js, TypeScript, TOI Epaper, Zamzam Capital Screener, Adlob, Frontend Engineer"
+          content="Md Aquib Yazdani, Projects, Portfolio, React Developer, Next.js, TypeScript, TOI Epaper, Zamzam Capital Screener, Adlob, Sr. Software Engineer"
         />
         <link rel="canonical" href="https://aquibyazdani.com/projects" />
       </Helmet>

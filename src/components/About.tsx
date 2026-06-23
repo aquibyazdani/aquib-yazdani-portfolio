@@ -103,14 +103,14 @@ export default function About({ navigate }: AboutProps) {
   return (
     <>
       <Helmet>
-        <title>About Md Aquib Yazdani — Senior Frontend Engineer, Pune</title>
+        <title>About Md Aquib Yazdani — Sr. Software Engineer, Pune</title>
         <meta
           name="description"
-          content="Meet Md Aquib Yazdani — 5 years in frontend engineering. Led React &amp; Next.js builds serving 60M+ users. Senior Engineer at Zensar Technologies, Pune, India."
+          content="Meet Md Aquib Yazdani — 5 years in frontend engineering. Led React &amp; Next.js builds serving 60M+ users. Sr. Software Engineer at Zensar Technologies, Pune, India."
         />
         <meta
           name="keywords"
-          content="Md Aquib Yazdani, About, Senior Frontend Engineer, React Developer, Next.js, TypeScript, Skills, Experience, Pune India"
+          content="Md Aquib Yazdani, About, Sr. Software Engineer, React Developer, Next.js, TypeScript, Skills, Experience, Pune India"
         />
         <link rel="canonical" href="https://aquibyazdani.com/about" />
       </Helmet>

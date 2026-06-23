@@ -1,5 +1,4 @@
 import {
-  MapPin,
   Code2,
   FileCode,
   Atom,
@@ -24,7 +23,6 @@ import {
   Users,
   Linkedin,
   Instagram,
-  type LucideIcon,
 } from "lucide-react";
 import toi from "../assets/toi.png";
 import screener from "../assets/screener.png";
@@ -443,127 +441,6 @@ export const references = [
   },
 ];
 
-// Featured Projects
-export const projects = [
-  {
-    id: 1,
-    title: "E-Commerce Platform",
-    category: "Web Development",
-    description:
-      "A full-featured e-commerce platform with cart, checkout, and payment integration.",
-    technologies: ["React", "Node.js", "MongoDB", "Stripe"],
-    image: "ecommerce platform",
-    year: "2023",
-    role: "Full Stack Developer",
-    client: "ShopFast Inc.",
-    tag: "Featured",
-    links: {
-      demo: "https://ecommerce-demo.com",
-      github: "https://github.com/username/ecommerce",
-    },
-  },
-  {
-    id: 2,
-    title: "Task Management App",
-    category: "Mobile App",
-    description:
-      "Cross-platform mobile app for task and project management with real-time sync.",
-    technologies: ["React Native", "Firebase", "Redux"],
-    image: "task management app",
-    year: "2023",
-    role: "Mobile Developer",
-    client: "ProductivePro",
-    links: {
-      demo: "https://taskapp-demo.com",
-      github: "https://github.com/username/taskapp",
-    },
-  },
-  {
-    id: 3,
-    title: "Portfolio Website",
-    category: "Web Design",
-    description:
-      "Modern, responsive portfolio website with smooth animations and dark mode.",
-    technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
-    image: "portfolio website design",
-    year: "2022",
-    role: "Front-end Developer",
-    links: {
-      demo: "https://portfolio-demo.com",
-      github: "https://github.com/username/portfolio",
-    },
-  },
-  {
-    id: 4,
-    title: "Analytics Dashboard",
-    category: "Data Visualization",
-    description:
-      "Interactive dashboard for visualizing complex data with charts and graphs.",
-    technologies: ["React", "D3.js", "TypeScript"],
-    image: "analytics dashboard",
-    year: "2022",
-    role: "Front-end Developer",
-    client: "DataViz Corp.",
-    links: {
-      demo: "https://analytics-demo.com",
-      github: "https://github.com/username/analytics",
-    },
-  },
-  {
-    id: 5,
-    title: "Social Media App",
-    category: "Full Stack",
-    description:
-      "Social networking platform with posts, comments, and real-time messaging.",
-    technologies: ["React", "GraphQL", "PostgreSQL"],
-    image: "social media interface",
-    year: "2021",
-    role: "Full Stack Developer",
-    client: "ConnectHub",
-    links: {
-      demo: "https://socialmedia-demo.com",
-      github: "https://github.com/username/social",
-    },
-  },
-  {
-    id: 6,
-    title: "Weather Application",
-    category: "API Integration",
-    description:
-      "Beautiful weather app with location-based forecasts and interactive maps.",
-    technologies: ["React", "OpenWeather API", "Mapbox"],
-    image: "weather app interface",
-    year: "2021",
-    role: "Front-end Developer",
-    links: {
-      demo: "https://weather-demo.com",
-      github: "https://github.com/username/weather",
-    },
-  },
-];
-
-// Contact Information for Footer
-export const contactInfo = [
-  // {
-  //   icon: Mail,
-  //   label: "Email",
-  //   value: personalInfo.email,
-  //   href: `mailto:${personalInfo.email}`,
-  // },
-  // {
-  //   icon: Phone,
-  //   label: "Phone",
-  //   value: personalInfo.phone,
-  //   href: `tel:${personalInfo.phone.replace(/\s/g, "")}`,
-  // },
-  {
-    icon: MapPin,
-    label: "Location",
-    value: personalInfo.location,
-    href: null,
-  },
-];
-
 // Social Media
 export const socialMedia = [
   {
@@ -581,16 +458,16 @@ export const socialMedia = [
     icon: Instagram,
     url: socialLinks.instagram,
   },
-  // {
-  //   name: "WhatsApp",
-  //   icon: MessageCircle,
-  //   url: "https://wa.me/918210773776",
-  // },
-  // {
-  //   name: "Phone",
-  //   icon: Phone,
-  //   url: "tel:+918210773776",
-  // },
+  {
+    name: "WhatsApp",
+    icon: MessageCircle,
+    url: "https://wa.me/918210773776",
+  },
+  {
+    name: "Phone",
+    icon: Phone,
+    url: "tel:+918210773776",
+  },
 ];
 
 // Navigation Items

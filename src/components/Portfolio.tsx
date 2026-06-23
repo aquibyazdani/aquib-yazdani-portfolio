@@ -540,9 +540,25 @@ export default function Portfolio() {
                 })}
               </div>
 
-              <p className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[16px] pt-8">
-                {personalInfo.copyright}
-              </p>
+              <div className="pt-8 space-y-2">
+                <p className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[16px]">
+                  {personalInfo.copyright}
+                </p>
+                <div className="flex gap-4">
+                  <Link
+                    href="/privacy-policy"
+                    className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[12px] hover:text-[#d3e97a] transition-colors"
+                  >
+                    Privacy Policy
+                  </Link>
+                  <Link
+                    href="/terms"
+                    className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[12px] hover:text-[#d3e97a] transition-colors"
+                  >
+                    Terms &amp; Conditions
+                  </Link>
+                </div>
+              </div>
             </div>
 
             {/* Right - Contact Form */}

@@ -277,9 +277,25 @@ export default function Resume() {
         {/* Footer */}
         <footer className="py-8 px-6 border-t border-[#484848]">
           <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[14px]">
-              {personalInfo.copyright}
-            </p>
+            <div className="flex flex-col items-center md:items-start gap-1">
+              <p className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[14px]">
+                {personalInfo.copyright}
+              </p>
+              <div className="flex gap-4">
+                <Link
+                  href="/privacy-policy"
+                  className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[12px] hover:text-[#d3e97a] transition-colors"
+                >
+                  Privacy Policy
+                </Link>
+                <Link
+                  href="/terms"
+                  className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[12px] hover:text-[#d3e97a] transition-colors"
+                >
+                  Terms &amp; Conditions
+                </Link>
+              </div>
+            </div>
             <Link
               href="/"
               className="font-['Manrope',sans-serif] text-[#d3e97a] text-[14px] hover:text-white transition-colors"

@@ -77,8 +77,8 @@ export default function Portfolio() {
 
               {/* Action Buttons */}
               <div className="flex gap-4 items-center flex-wrap">
-                <a
-                  href="#contact"
+                <button
+                  onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
                   className="bg-[#d3e97a] rounded-full flex items-center gap-3 pl-6 pr-2 py-3 h-[54px] hover:bg-[#c5db6c] transition-colors"
                 >
                   <span className="font-['Manrope',sans-serif] font-bold text-[16px] text-neutral-950 uppercase">
@@ -89,7 +89,7 @@ export default function Portfolio() {
                       <path d={svgPaths.p23c4ec40} fill="white" />
                     </svg>
                   </div>
-                </a>
+                </button>
 
                 <a
                   href={socialLinks.linkedin}

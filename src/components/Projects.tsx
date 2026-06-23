@@ -282,7 +282,7 @@ export default function Projects() {
                 INTERESTED IN WORKING TOGETHER?
               </h2>
               <Link
-                href="/#contact"
+                href="/contact"
                 className="inline-flex bg-[#d3e97a] rounded-full items-center gap-3 pl-6 pr-2 py-3 h-[54px] hover:bg-[#c5db6c] transition-colors"
               >
                 <span className="font-['Manrope',sans-serif] font-bold text-[16px] text-neutral-950 uppercase">

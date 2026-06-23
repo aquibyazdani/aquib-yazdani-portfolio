@@ -63,11 +63,13 @@ export const socialLinks = {
 
 // About Me
 export const aboutMe = {
-  intro: `Passionate Front-End Developer Focused on Accessibility & Design`,
+  intro: `Passionate Software Engineer with Deep Frontend Expertise`,
 
-  background: `I care deeply about clean architecture, usability, and creating meaningful digital products. While I specialize in frontend development, I also develop front-end solutions that integrate seamlessly from UI to backend. Outside of programming, I enjoy playing football, photography, and a few rounds of Valorant.`,
+  background: `I care deeply about clean architecture, usability, and creating meaningful digital products. I build end-to-end solutions that integrate seamlessly from UI to backend. Outside of programming, I enjoy playing football, photography, and a few rounds of Valorant.`,
 
   capabilitiesDescription: `I am always learning and expanding my toolkit — from React performance patterns and AI/LLM integration to WCAG accessibility and modern build tooling. Here's what I bring to the table today.`,
+
+  homeAboutBlurb: `I work as a senior software engineer with deep frontend expertise, building scalable products from UI to backend.`,
 
   philosophy: ``,
 
@@ -418,7 +420,7 @@ export const awards = [
 
 // Achievements
 export const achievements = [
-  "Boosted application responsiveness by 25% through optimized front-end code and design.",
+  "Boosted application responsiveness by 25% through optimized code and design.",
   "Reduced version control conflicts by 15%, improving workflow efficiency by 20%.",
   "Improved team collaboration by 10%, leading to a 12% increase in project delivery speed.",
 ];

@@ -1,3 +1,5 @@
+"use client";
+
 import imgProfile from "../assets/hero.png";
 import svgPaths from "../imports/svg-34il4djopb";
 import Navbar from "./Navbar";
@@ -13,15 +15,11 @@ import {
   socialMedia,
 } from "../config/portfolio";
 import ConnectSection from "./ConnectSection";
-import { Helmet } from "react-helmet-async";
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 
-interface AboutProps {
-  navigate: (path: string) => void;
-}
-
-export default function About({ navigate }: AboutProps) {
+export default function About() {
   const capabilities = {
     "Frontend Development": configSkills.frontend,
     "State Management": configSkills.stateManagement,
@@ -39,84 +37,34 @@ export default function About({ navigate }: AboutProps) {
   const connectRef = useRef(null);
 
   useEffect(() => {
-    const currentRef = heroRef.current;
-    if (currentRef) {
-      gsap.from(currentRef, {
-        opacity: 0,
-        y: 50,
-        duration: 1,
-        scrollTrigger: {
-          trigger: currentRef,
-          start: "top 80%",
-          end: "top 50%",
-          toggleActions: "restart none none none",
-        },
-      });
-    }
+    const ctx = gsap.context(() => {
+      const animate = (el: Element | null) => {
+        if (!el) return;
+        gsap.from(el, {
+          opacity: 0,
+          y: 50,
+          duration: 1,
+          scrollTrigger: {
+            trigger: el,
+            start: "top 80%",
+            end: "top 50%",
+            toggleActions: "play none none none",
+          },
+        });
+      };
+      animate(heroRef.current);
+      animate(capabilitiesRef.current);
+      animate(experienceRef.current);
+      animate(connectRef.current);
+    });
 
-    const capabilitiesCurrentRef = capabilitiesRef.current;
-    if (capabilitiesCurrentRef) {
-      gsap.from(capabilitiesCurrentRef, {
-        opacity: 0,
-        y: 50,
-        duration: 1,
-        scrollTrigger: {
-          trigger: capabilitiesCurrentRef,
-          start: "top 80%",
-          end: "top 50%",
-          toggleActions: "restart none none none",
-        },
-      });
-    }
-
-    const experienceCurrentRef = experienceRef.current;
-    if (experienceCurrentRef) {
-      gsap.from(experienceCurrentRef, {
-        opacity: 0,
-        y: 50,
-        duration: 1,
-        scrollTrigger: {
-          trigger: experienceCurrentRef,
-          start: "top 80%",
-          end: "top 50%",
-          toggleActions: "restart none none none",
-        },
-      });
-    }
-
-    const connectCurrentRef = connectRef.current;
-    if (connectCurrentRef) {
-      gsap.from(connectCurrentRef, {
-        opacity: 0,
-        y: 50,
-        duration: 1,
-        scrollTrigger: {
-          trigger: connectCurrentRef,
-          start: "top 80%",
-          end: "top 50%",
-          toggleActions: "restart none none none",
-        },
-      });
-    }
+    return () => ctx.revert();
   }, []);
 
   return (
-    <>
-      <Helmet>
-        <title>About Md Aquib Yazdani — Sr. Software Engineer, Pune</title>
-        <meta
-          name="description"
-          content="Meet Md Aquib Yazdani — 5 years in frontend engineering. Led React &amp; Next.js builds serving 60M+ users. Sr. Software Engineer at Zensar Technologies, Pune, India."
-        />
-        <meta
-          name="keywords"
-          content="Md Aquib Yazdani, About, Sr. Software Engineer, React Developer, Next.js, TypeScript, Skills, Experience, Pune India"
-        />
-        <link rel="canonical" href="https://aquibyazdani.com/about" />
-      </Helmet>
-      <div className="bg-neutral-950 min-h-screen">
+    <div className="bg-neutral-950 min-h-screen">
         {/* Navigation */}
-        <Navbar navigate={navigate} currentPage="about" />
+        <Navbar />
 
         {/* Hero Section */}
         <section className="pt-32 pb-20 px-6" ref={heroRef}>
@@ -145,8 +93,8 @@ export default function About({ navigate }: AboutProps) {
 
                 {/* Download Resume & Social Links */}
                 <div className="flex gap-4 items-center">
-                  <button
-                    onClick={() => navigate("/resume")}
+                  <Link
+                    href="/resume"
                     className="bg-[#d3e97a] rounded-full flex items-center gap-2 px-6 py-3 hover:bg-[#c5db6c] transition-colors"
                   >
                     <span className="font-['Manrope',sans-serif] font-bold text-[14px] text-neutral-950 uppercase">
@@ -155,7 +103,7 @@ export default function About({ navigate }: AboutProps) {
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                       <path d={svgPaths.p23c4ec40} fill="#0A0A0A" />
                     </svg>
-                  </button>
+                  </Link>
 
                   {socialMedia.map((social, index) => {
                     const Icon = social.icon;
@@ -186,7 +134,7 @@ export default function About({ navigate }: AboutProps) {
               <div className="lg:block">
                 <div className="bg-[#c7c7c7] rounded-[12px] overflow-hidden">
                   <ImageWithFallback
-                    src={imgProfile}
+                    src={imgProfile.src}
                     alt={`${personalInfo.name} — ${personalInfo.role} based in ${personalInfo.location}`}
                     className="w-full h-auto object-cover"
                   />
@@ -215,7 +163,7 @@ export default function About({ navigate }: AboutProps) {
                 <div className="space-y-6">
                   {Object.entries(capabilities).map(([category, skills]) => (
                     <div key={category} className="space-y-3">
-                      <h3 className="font-['Manrope',sans-serif] font-semibold text-[#d3e97a] text-[14px] uppercase">
+                      <h3 className="font-['Bebas_Neue',sans-serif] font-semibold text-[#d3e97a] text-[14px] uppercase">
                         {category}
                       </h3>
                       <div className="flex flex-wrap gap-3">
@@ -257,7 +205,7 @@ export default function About({ navigate }: AboutProps) {
                   <div key={index} className="space-y-4">
                     <div className="flex justify-between items-start flex-wrap gap-2">
                       <div>
-                        <h3 className="font-['Manrope',sans-serif] text-white text-[20px]">
+                        <h3 className="font-['Bebas_Neue',sans-serif] text-white text-[20px]">
                           {exp.title}
                         </h3>
                         {exp.company && (
@@ -286,8 +234,7 @@ export default function About({ navigate }: AboutProps) {
         </section>
 
         {/* Let's Connect Section */}
-        <ConnectSection ref={connectRef} navigate={navigate} />
+        <ConnectSection ref={connectRef} />
       </div>
-    </>
   );
 }

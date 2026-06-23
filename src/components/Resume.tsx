@@ -1,6 +1,9 @@
-import { MapPin, Download } from "lucide-react";
+"use client";
+
+import { MapPin, Download, Loader2 } from "lucide-react";
 import Navbar from "./Navbar";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {
@@ -10,34 +13,42 @@ import {
   education,
   awards,
 } from "../config/portfolio";
-import { downloadResumeAsPDF } from "../utils/downloadResume";
-import { Helmet } from "react-helmet-async";
 
 gsap.registerPlugin(ScrollTrigger);
 
-interface ResumeProps {
-  navigate: (path: string) => void;
-}
+export default function Resume() {
+  const [downloading, setDownloading] = useState(false);
 
-export default function Resume({ navigate }: ResumeProps) {
+  const handleDownload = async () => {
+    setDownloading(true);
+    try {
+      const { downloadResumeAsPDF } = await import("../utils/downloadResume");
+      await downloadResumeAsPDF();
+    } finally {
+      setDownloading(false);
+    }
+  };
   const resumeRef = useRef(null);
 
   useEffect(() => {
-    const currentRef = resumeRef.current;
-    if (currentRef) {
-      gsap.from(currentRef, {
-        opacity: 0,
-        y: 50,
-        duration: 1,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: currentRef,
-          start: "top 80%",
-          end: "top 50%",
-          toggleActions: "restart none none none",
-        },
-      });
-    }
+    const ctx = gsap.context(() => {
+      if (resumeRef.current) {
+        gsap.from(resumeRef.current, {
+          opacity: 0,
+          y: 50,
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: resumeRef.current,
+            start: "top 80%",
+            end: "top 50%",
+            toggleActions: "play none none none",
+          },
+        });
+      }
+    });
+
+    return () => ctx.revert();
   }, []);
 
   const allSkills = [
@@ -58,22 +69,9 @@ export default function Resume({ navigate }: ResumeProps) {
   ];
 
   return (
-    <>
-      <Helmet>
-        <title>Resume — Md Aquib Yazdani, Sr. Software Engineer</title>
-        <meta
-          name="description"
-          content="Professional resume of Md Aquib Yazdani — Sr. Software Engineer with React, Next.js &amp; TypeScript expertise. 5 years at Harns Technologies and Zensar Technologies."
-        />
-        <meta
-          name="keywords"
-          content="Md Aquib Yazdani, Resume, CV, Sr. Software Engineer, React Developer, Next.js, TypeScript, Zensar Technologies"
-        />
-        <link rel="canonical" href="https://aquibyazdani.com/resume" />
-      </Helmet>
-      <div className="bg-neutral-950 min-h-screen">
+    <div className="bg-neutral-950 min-h-screen">
         {/* Navigation */}
-        <Navbar navigate={navigate} currentPage="resume" />
+        <Navbar />
 
         {/* Resume Container */}
         <div className="pt-32 pb-20 px-6">
@@ -81,18 +79,24 @@ export default function Resume({ navigate }: ResumeProps) {
             {/* Download Button */}
             <div className="flex justify-end mb-8">
               <button
-                className="inline-flex items-center gap-2 bg-[#d3e97a] text-neutral-950 px-6 py-3 rounded-full hover:bg-[#c5db6c] transition-colors"
-                onClick={downloadResumeAsPDF}
+                className="inline-flex items-center gap-2 bg-[#d3e97a] text-neutral-950 px-6 py-3 rounded-full hover:bg-[#c5db6c] transition-colors disabled:opacity-70 disabled:cursor-not-allowed"
+                onClick={handleDownload}
+                disabled={downloading}
               >
-                <Download className="size-4" />
+                {downloading ? (
+                  <Loader2 className="size-4 animate-spin" />
+                ) : (
+                  <Download className="size-4" />
+                )}
                 <span className="font-['Manrope',sans-serif] font-bold text-[14px] uppercase">
-                  Download Resume
+                  {downloading ? "Generating..." : "Download Resume"}
                 </span>
               </button>
             </div>
 
             {/* Resume Card */}
             <div
+              id="resume-card"
               className="bg-[#1a1a1a] rounded-[20px] overflow-hidden shadow-2xl"
               ref={resumeRef}
             >
@@ -135,7 +139,7 @@ export default function Resume({ navigate }: ResumeProps) {
 
                 {/* Professional Summary Section */}
                 <div className="space-y-2.5">
-                  <h2 className="font-['Manrope',sans-serif] font-bold text-white text-[16px] uppercase text-[#d3e97a] border-b border-[#d3e97a]/30 pb-1.5">
+                  <h2 className="font-['Bebas_Neue',sans-serif] font-bold text-white text-[16px] uppercase text-[#d3e97a] border-b border-[#d3e97a]/30 pb-1.5">
                     Professional Summary
                   </h2>
                   <p className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[13px] leading-[1.6]">
@@ -145,13 +149,13 @@ export default function Resume({ navigate }: ResumeProps) {
 
                 {/* Skills Section */}
                 <div className="space-y-3">
-                  <h2 className="font-['Manrope',sans-serif] font-bold text-white text-[16px] uppercase text-[#d3e97a] border-b border-[#d3e97a]/30 pb-1.5">
+                  <h2 className="font-['Bebas_Neue',sans-serif] font-bold text-white text-[16px] uppercase text-[#d3e97a] border-b border-[#d3e97a]/30 pb-1.5">
                     Skills
                   </h2>
 
                   {allSkills.map((skillCategory) => (
                     <div key={skillCategory.title} className="space-y-1.5">
-                      <h3 className="font-['Manrope',sans-serif] font-semibold text-white text-[12px]">
+                      <h3 className="font-['Bebas_Neue',sans-serif] font-semibold text-white text-[12px]">
                         {skillCategory.title}
                       </h3>
                       <div className="flex flex-wrap gap-2">
@@ -174,13 +178,13 @@ export default function Resume({ navigate }: ResumeProps) {
 
                 {/* Education Section */}
                 <div className="space-y-2.5">
-                  <h2 className="font-['Manrope',sans-serif] font-bold text-white text-[16px] uppercase text-[#d3e97a] border-b border-[#d3e97a]/30 pb-1.5">
+                  <h2 className="font-['Bebas_Neue',sans-serif] font-bold text-white text-[16px] uppercase text-[#d3e97a] border-b border-[#d3e97a]/30 pb-1.5">
                     Education
                   </h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                     {education.map((edu) => (
                       <div key={edu.id} className="space-y-0.5">
-                        <h4 className="font-['Manrope',sans-serif] font-semibold text-white text-[13px]">
+                        <h4 className="font-['Bebas_Neue',sans-serif] font-semibold text-white text-[13px]">
                           {edu.institution}
                         </h4>
                         <p className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[12px] leading-[1.6]">
@@ -196,7 +200,7 @@ export default function Resume({ navigate }: ResumeProps) {
 
                 {/* Work Experience Section */}
                 <div className="space-y-3">
-                  <h2 className="font-['Manrope',sans-serif] font-bold text-white text-[16px] uppercase text-[#d3e97a] border-b border-[#d3e97a]/30 pb-1.5">
+                  <h2 className="font-['Bebas_Neue',sans-serif] font-bold text-white text-[16px] uppercase text-[#d3e97a] border-b border-[#d3e97a]/30 pb-1.5">
                     Work Experience
                   </h2>
 
@@ -217,7 +221,7 @@ export default function Resume({ navigate }: ResumeProps) {
                         <div className="bg-[#1a1a1a]/50 p-4 rounded-lg space-y-2">
                           <div className="flex items-start justify-between gap-4">
                             <div className="space-y-0.5 flex-1">
-                              <h3 className="font-['Manrope',sans-serif] font-semibold text-white text-[15px]">
+                              <h3 className="font-['Bebas_Neue',sans-serif] font-semibold text-white text-[15px]">
                                 {exp.title}
                               </h3>
                               <p className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[12px]">
@@ -244,7 +248,7 @@ export default function Resume({ navigate }: ResumeProps) {
 
                 {/* Awards Section */}
                 <div className="space-y-3">
-                  <h2 className="font-['Manrope',sans-serif] font-bold text-white text-[16px] uppercase text-[#d3e97a] border-b border-[#d3e97a]/30 pb-1.5">
+                  <h2 className="font-['Bebas_Neue',sans-serif] font-bold text-white text-[16px] uppercase text-[#d3e97a] border-b border-[#d3e97a]/30 pb-1.5">
                     Awards
                   </h2>
 
@@ -276,15 +280,14 @@ export default function Resume({ navigate }: ResumeProps) {
             <p className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[14px]">
               {personalInfo.copyright}
             </p>
-            <button
-              onClick={() => navigate("/")}
+            <Link
+              href="/"
               className="font-['Manrope',sans-serif] text-[#d3e97a] text-[14px] hover:text-white transition-colors"
             >
               Back to Home
-            </button>
+            </Link>
           </div>
         </footer>
       </div>
-    </>
   );
 }

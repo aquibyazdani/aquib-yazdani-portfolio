@@ -1,3 +1,5 @@
+"use client";
+
 import svgPaths from "../imports/svg-34il4djopb";
 import Navbar from "./Navbar";
 import { useEffect, useRef } from "react";
@@ -10,52 +12,38 @@ import {
   personalProjects,
   socialMedia,
 } from "../config/portfolio";
-import { Helmet } from "react-helmet-async";
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 
-interface ProjectsProps {
-  navigate: (path: string) => void;
-}
-
-export default function Projects({ navigate }: ProjectsProps) {
+export default function Projects() {
   const projectsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const currentRef = projectsRef.current;
-    if (currentRef) {
-      gsap.from(currentRef.children, {
-        opacity: 0,
-        y: 50,
-        stagger: 0.2,
-        duration: 1,
-        scrollTrigger: {
-          trigger: currentRef,
-          start: "top 80%",
-          end: "bottom 20%",
-          toggleActions: "restart none none none",
-        },
-      });
-    }
+    const ctx = gsap.context(() => {
+      if (projectsRef.current) {
+        gsap.from(projectsRef.current.children, {
+          opacity: 0,
+          y: 50,
+          stagger: 0.2,
+          duration: 1,
+          scrollTrigger: {
+            trigger: projectsRef.current,
+            start: "top 80%",
+            end: "bottom 20%",
+            toggleActions: "play none none none",
+          },
+        });
+      }
+    });
+
+    return () => ctx.revert();
   }, []);
 
   return (
-    <>
-      <Helmet>
-        <title>Projects — Md Aquib Yazdani, Sr. Software Engineer Portfolio</title>
-        <meta
-          name="description"
-          content="Portfolio of projects by Md Aquib Yazdani — Times of India ePaper (10M+ DAU), Zamzam Capital Screener, Adlob ad platform (200+ agencies), and more."
-        />
-        <meta
-          name="keywords"
-          content="Md Aquib Yazdani, Projects, Portfolio, React Developer, Next.js, TypeScript, TOI Epaper, Zamzam Capital Screener, Adlob, Sr. Software Engineer"
-        />
-        <link rel="canonical" href="https://aquibyazdani.com/projects" />
-      </Helmet>
-      <div className="bg-neutral-950 min-h-screen">
+    <div className="bg-neutral-950 min-h-screen">
         {/* Navigation */}
-        <Navbar navigate={navigate} currentPage="projects" />
+        <Navbar />
 
         {/* Hero Section */}
         <section className="pt-32 pb-20 px-6">
@@ -66,7 +54,7 @@ export default function Projects({ navigate }: ProjectsProps) {
               </h1>
               <p className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[18px] leading-[1.5] max-w-[600px]">
                 Here's a collection of projects that showcase my passion for
-                front-end development and problem-solving.
+                software development and problem-solving.
               </p>
             </div>
           </div>
@@ -92,7 +80,7 @@ export default function Projects({ navigate }: ProjectsProps) {
                   <div className={`${index % 2 === 1 ? "lg:order-2" : ""}`}>
                     <div className="bg-[#1a1a1a] rounded-[12px] aspect-square relative overflow-hidden">
                       <ImageWithFallback
-                        src={project.src}
+                        src={project.src.src}
                         alt={project.title}
                         className="absolute inset-0 w-full h-full object-contain p-12"
                       />
@@ -111,7 +99,7 @@ export default function Projects({ navigate }: ProjectsProps) {
                     }`}
                   >
                     <div className="space-y-4">
-                      <h3 className="font-['Manrope',sans-serif] text-[32px] text-white leading-[1.4]">
+                      <h3 className="font-['Bebas_Neue',sans-serif] text-[32px] text-white leading-[1.4]">
                         {project.title}
                       </h3>
                       <div className="space-y-2">
@@ -247,13 +235,13 @@ export default function Projects({ navigate }: ProjectsProps) {
                 >
                   <div className="aspect-video relative overflow-hidden bg-[#0a0a0a]">
                     <ImageWithFallback
-                      src={project.src}
+                      src={project.src.src}
                       alt={project.title}
                       className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                   </div>
                   <div className="p-6 space-y-4">
-                    <h3 className="font-['Manrope',sans-serif] text-[24px] text-white leading-[1.4]">
+                    <h3 className="font-['Bebas_Neue',sans-serif] text-[24px] text-white leading-[1.4]">
                       {project.title}
                     </h3>
                     {project.url !== "#" && (
@@ -293,9 +281,9 @@ export default function Projects({ navigate }: ProjectsProps) {
               <h2 className="text-[64px] lg:text-[76px] text-white leading-[0.9]">
                 INTERESTED IN WORKING TOGETHER?
               </h2>
-              <button
-                onClick={() => navigate("/")}
-                className="inline-flex bg-[#d3e97a] rounded-full items-center gap-3 pl-6 pr-2 py-3 h-[54px] hover:bg-[#c5db6c] transition-colors cursor-pointer"
+              <Link
+                href="/#contact"
+                className="inline-flex bg-[#d3e97a] rounded-full items-center gap-3 pl-6 pr-2 py-3 h-[54px] hover:bg-[#c5db6c] transition-colors"
               >
                 <span className="font-['Manrope',sans-serif] font-bold text-[16px] text-neutral-950 uppercase">
                   Get in Touch
@@ -305,7 +293,7 @@ export default function Projects({ navigate }: ProjectsProps) {
                     <path d={svgPaths.p23c4ec40} fill="white" />
                   </svg>
                 </div>
-              </button>
+              </Link>
             </div>
           </div>
         </section>
@@ -339,6 +327,5 @@ export default function Projects({ navigate }: ProjectsProps) {
           </div>
         </footer>
       </div>
-    </>
   );
 }

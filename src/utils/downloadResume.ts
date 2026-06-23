@@ -1,469 +1,174 @@
-import { 
-  personalInfo, 
-  skills, 
-  workExperience, 
-  education, 
-  notableProjects,
-  personalProjects,
-  achievements,
-  references 
-} from "../config/portfolio";
+import { personalInfo } from "../config/portfolio";
 
-// Calculate years and months of experience dynamically
-const calculateExperience = () => {
-  const startDate = new Date(personalInfo.careerStartDate);
-  const currentDate = new Date();
-  
-  let years = currentDate.getFullYear() - startDate.getFullYear();
-  let months = currentDate.getMonth() - startDate.getMonth();
-  
-  if (months < 0) {
-    years--;
-    months += 12;
+// Shared helpers
+const gamma = (v: number) =>
+  v > 0.0031308 ? 1.055 * v ** (1 / 2.4) - 0.055 : 12.92 * v;
+
+const toHex = (v: number) =>
+  Math.max(0, Math.min(255, Math.round(v * 255))).toString(16).padStart(2, "0");
+
+const alphaHex = (a: number) =>
+  a < 1 ? Math.round(a * 255).toString(16).padStart(2, "0") : "";
+
+function parseAlpha(val: string | undefined, isPct: boolean): number {
+  if (val === undefined) return 1;
+  const n = parseFloat(val);
+  return isPct ? n / 100 : n;
+}
+
+// oklab(L a b [/ alpha]) → #rrggbb[aa]
+function oklabToHex(str: string): string {
+  const m = str.match(
+    /oklab\(\s*([\d.]+)(%?)\s+([-\d.none]+)(%?)\s+([-\d.none]+)(%?)(?:\s*\/\s*([\d.]+)(%?))?\s*\)/
+  );
+  if (!m) return "transparent";
+  let l = parseFloat(m[1]);
+  if (m[2] === "%") l /= 100;
+  const a = m[3] === "none" ? 0 : parseFloat(m[3]) * (m[4] === "%" ? 0.004 : 1);
+  const b = m[5] === "none" ? 0 : parseFloat(m[5]) * (m[6] === "%" ? 0.004 : 1);
+  const alpha = parseAlpha(m[7], m[8] === "%");
+
+  const l_ = l + 0.3963377774 * a + 0.2158037573 * b;
+  const m_ = l - 0.1055613458 * a - 0.0638541728 * b;
+  const s_ = l - 0.0894841775 * a - 1.291485548 * b;
+  const lc = l_ ** 3, mc = m_ ** 3, sc = s_ ** 3;
+
+  let r = 4.0767416621 * lc - 3.3077115913 * mc + 0.2309699292 * sc;
+  let g = -1.2684380046 * lc + 2.6097574011 * mc - 0.3413193965 * sc;
+  let bv = -0.004196086 * lc - 0.7034186147 * mc + 1.707614701 * sc;
+
+  return `#${toHex(gamma(r))}${toHex(gamma(g))}${toHex(gamma(bv))}${alphaHex(alpha)}`;
+}
+
+// oklch(L C H [/ alpha]) → delegates to oklabToHex
+function oklchToHex(str: string): string {
+  const m = str.match(
+    /oklch\(\s*([\d.]+)(%?)\s+([\d.]+)\s+([\d.none]+)(?:\s*\/\s*([\d.]+)(%?))?\s*\)/
+  );
+  if (!m) return "transparent";
+  let l = parseFloat(m[1]);
+  if (m[2] === "%") l /= 100;
+  const c = parseFloat(m[3]);
+  const h = m[4] === "none" ? 0 : parseFloat(m[4]);
+  const hRad = (h * Math.PI) / 180;
+  const alpha = m[5] ? ` / ${m[5]}${m[6] ?? ""}` : "";
+  return oklabToHex(`oklab(${l} ${c * Math.cos(hRad)} ${c * Math.sin(hRad)}${alpha})`);
+}
+
+// CIE lab(L a b [/ alpha]) → #rrggbb[aa]  (D65 white point)
+function labToHex(str: string): string {
+  const m = str.match(
+    /\blab\(\s*([\d.]+)(%?)\s+([-\d.none]+)(%?)\s+([-\d.none]+)(%?)(?:\s*\/\s*([\d.]+)(%?))?\s*\)/
+  );
+  if (!m) return "transparent";
+  let L = parseFloat(m[1]);
+  if (m[2] === "%") L = L; // L is already 0-100
+  const a = m[3] === "none" ? 0 : parseFloat(m[3]);
+  const b = m[5] === "none" ? 0 : parseFloat(m[5]);
+  const alpha = parseAlpha(m[7], m[8] === "%");
+
+  // Lab → XYZ (D65)
+  const fy = (L + 16) / 116;
+  const fx = a / 500 + fy;
+  const fz = fy - b / 200;
+  const delta = 6 / 29;
+  const f = (t: number) => (t > delta ? t ** 3 : 3 * delta ** 2 * (t - 4 / 29));
+  const X = 0.95047 * f(fx);
+  const Y = 1.0 * f(fy);
+  const Z = 1.08883 * f(fz);
+
+  // XYZ → linear sRGB
+  let r = 3.2404542 * X - 1.5371385 * Y - 0.4985314 * Z;
+  let g = -0.9692660 * X + 1.8760108 * Y + 0.0415560 * Z;
+  let bv = 0.0556434 * X - 0.2040259 * Y + 1.0572252 * Z;
+
+  return `#${toHex(gamma(r))}${toHex(gamma(g))}${toHex(gamma(bv))}${alphaHex(alpha)}`;
+}
+
+// CIE lch(L C H [/ alpha]) → delegates to labToHex
+function lchToHex(str: string): string {
+  const m = str.match(
+    /\blch\(\s*([\d.]+)(%?)\s+([\d.]+)\s+([\d.none]+)(?:\s*\/\s*([\d.]+)(%?))?\s*\)/
+  );
+  if (!m) return "transparent";
+  const L = parseFloat(m[1]);
+  const C = parseFloat(m[3]);
+  const H = m[4] === "none" ? 0 : parseFloat(m[4]);
+  const hRad = (H * Math.PI) / 180;
+  const alpha = m[5] ? ` / ${m[5]}${m[6] ?? ""}` : "";
+  return labToHex(`lab(${L} ${C * Math.cos(hRad)} ${C * Math.sin(hRad)}${alpha})`);
+}
+
+function patchModernColorsInClone(clonedDoc: Document) {
+  const overrides: string[] = [];
+
+  Array.from(document.styleSheets).forEach((sheet) => {
+    try {
+      Array.from(sheet.cssRules).forEach((rule) => {
+        const text = rule.cssText;
+        if (
+          text.includes("oklch") ||
+          text.includes("oklab") ||
+          text.includes("lab(") ||
+          text.includes("lch(")
+        ) {
+          overrides.push(
+            text
+              .replace(/oklch\([^)]+\)/g, (m) => oklchToHex(m))
+              .replace(/oklab\([^)]+\)/g, (m) => oklabToHex(m))
+              .replace(/\blch\([^)]+\)/g, (m) => lchToHex(m))
+              .replace(/\blab\([^)]+\)/g, (m) => labToHex(m))
+          );
+        }
+      });
+    } catch {
+      // cross-origin stylesheets — skip
+    }
+  });
+
+  if (overrides.length > 0) {
+    const style = clonedDoc.createElement("style");
+    style.textContent = overrides.join("\n");
+    clonedDoc.head.appendChild(style);
   }
-  
-  return { years, months };
-};
+}
 
-const { years, months } = calculateExperience();
-const experienceText = months > 0 
-  ? `${years} years and ${months} months` 
-  : `${years} years`;
+export const downloadResumeAsPDF = async () => {
+  const element = document.getElementById("resume-card");
+  if (!element) return;
 
-const allSkills = [
-  { title: "Frontend Development", items: skills.frontend },
-  { title: "State Management", items: skills.stateManagement },
-  { title: "Testing & QA", items: skills.testing },
-  { title: "Performance Optimization", items: skills.performance },
-  { title: "API Integration", items: skills.api },
-  { title: "Version Control & Collaboration", items: skills.tools }
-];
+  const [{ default: html2canvas }, { default: jsPDF }] = await Promise.all([
+    import("html2canvas"),
+    import("jspdf"),
+  ]);
 
-export const downloadResumeAsPDF = () => {
-  // Create a complete HTML document with all styles
-  const htmlContent = `<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>${personalInfo.name} - Resume</title>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { 
-      font-family: 'Manrope', sans-serif; 
-      background: #0a0a0a;
-      color: #c7c7c7;
-      padding: 40px 20px;
-    }
-    .resume-container {
-      max-width: 1000px;
-      margin: 0 auto;
-      background: #1a1a1a;
-      border-radius: 20px;
-      padding: 60px;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-    }
-    .header { 
-      display: flex; 
-      justify-content: space-between; 
-      align-items: start;
-      padding-bottom: 24px;
-      border-bottom: 2px solid #d3e97a;
-      margin-bottom: 32px;
-    }
-    .name { 
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 48px; 
-      color: #ffffff;
-      line-height: 0.9;
-      letter-spacing: 2px;
-    }
-    .title { 
-      font-size: 18px; 
-      color: #d3e97a;
-      font-weight: 500;
-      margin-top: 8px;
-    }
-    .contact-info { 
-      text-align: right;
-      font-size: 12px;
-      line-height: 1.8;
-    }
-    .contact-info a {
-      color: #c7c7c7;
-      text-decoration: none;
-    }
-    .contact-info a:hover {
-      color: #d3e97a;
-    }
-    .section { 
-      margin-bottom: 28px;
-    }
-    .section-title { 
-      font-size: 16px; 
-      font-weight: 700;
-      color: #d3e97a;
-      text-transform: uppercase;
-      border-bottom: 1px solid rgba(211, 233, 122, 0.3);
-      padding-bottom: 8px;
-      margin-bottom: 16px;
-    }
-    .section-content {
-      font-size: 13px;
-      line-height: 1.6;
-    }
-    .skill-category {
-      margin-bottom: 12px;
-    }
-    .skill-category-title {
-      font-size: 12px;
-      font-weight: 600;
-      color: #ffffff;
-      margin-bottom: 8px;
-    }
-    .skills-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 12px;
-    }
-    .skill-tag {
-      background: #d3e97a;
-      color: #2a4a4a;
-      padding: 6px 12px;
-      border-radius: 6px;
-      font-size: 11px;
-      font-weight: 500;
-    }
-    .experience-item {
-      background: rgba(26, 26, 26, 0.5);
-      padding: 20px;
-      border-radius: 12px;
-      margin-bottom: 20px;
-      position: relative;
-      padding-left: 40px;
-    }
-    .experience-item::before {
-      content: '';
-      position: absolute;
-      left: 14px;
-      top: 20px;
-      width: 12px;
-      height: 12px;
-      background: #d3e97a;
-      border-radius: 50%;
-      border: 3px solid #1a1a1a;
-    }
-    .experience-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: start;
-      margin-bottom: 12px;
-    }
-    .job-title {
-      font-size: 15px;
-      font-weight: 600;
-      color: #ffffff;
-    }
-    .company-info {
-      font-size: 12px;
-      color: #c7c7c7;
-      margin-top: 4px;
-    }
-    .period {
-      font-size: 11px;
-      color: #d3e97a;
-      background: rgba(211, 233, 122, 0.1);
-      padding: 4px 10px;
-      border-radius: 6px;
-      white-space: nowrap;
-    }
-    .responsibilities {
-      list-style: none;
-      font-size: 12px;
-      line-height: 1.6;
-    }
-    .responsibilities li {
-      padding-left: 16px;
-      margin-bottom: 6px;
-      position: relative;
-    }
-    .responsibilities li::before {
-      content: '•';
-      position: absolute;
-      left: 0;
-      color: #d3e97a;
-    }
-    .project-item {
-      background: rgba(26, 26, 26, 0.5);
-      padding: 16px;
-      border-radius: 12px;
-      margin-bottom: 16px;
-    }
-    .project-title {
-      font-size: 14px;
-      font-weight: 600;
-      color: #ffffff;
-      margin-bottom: 4px;
-    }
-    .project-role {
-      font-size: 11px;
-      color: #d3e97a;
-      margin-bottom: 12px;
-    }
-    .tech-stack {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-bottom: 12px;
-    }
-    .tech-tag {
-      background: #d3e97a;
-      color: #2a4a4a;
-      padding: 4px 10px;
-      border-radius: 6px;
-      font-size: 10px;
-      font-weight: 500;
-    }
-    .education-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-    }
-    .education-item {
-      font-size: 12px;
-    }
-    .institution {
-      font-size: 13px;
-      font-weight: 600;
-      color: #ffffff;
-      margin-bottom: 4px;
-    }
-    .degree {
-      color: #c7c7c7;
-      margin-bottom: 4px;
-    }
-    .edu-period {
-      font-size: 11px;
-      color: #d3e97a;
-    }
-    .achievement-item {
-      display: flex;
-      gap: 12px;
-      background: rgba(26, 26, 26, 0.5);
-      padding: 12px;
-      border-radius: 8px;
-      margin-bottom: 8px;
-    }
-    .achievement-bullet {
-      width: 8px;
-      height: 8px;
-      background: #d3e97a;
-      border-radius: 50%;
-      margin-top: 6px;
-      flex-shrink: 0;
-    }
-    .achievement-text {
-      font-size: 12px;
-      line-height: 1.6;
-    }
-    .references-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-    }
-    .reference-item {
-      background: rgba(26, 26, 26, 0.5);
-      padding: 16px;
-      border-radius: 12px;
-    }
-    .reference-name {
-      font-size: 13px;
-      font-weight: 600;
-      color: #ffffff;
-      margin-bottom: 4px;
-    }
-    .reference-position {
-      font-size: 11px;
-      color: #d3e97a;
-      margin-bottom: 12px;
-    }
-    .reference-contact {
-      font-size: 10px;
-      line-height: 1.8;
-    }
-    .personal-projects {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-    .project-link {
-      font-size: 12px;
-      color: #ffffff;
-      background: rgba(26, 26, 26, 0.5);
-      padding: 8px 16px;
-      border-radius: 8px;
-      border: 1px solid rgba(211, 233, 122, 0.2);
-      text-decoration: none;
-    }
-    .project-link:hover {
-      background: rgba(211, 233, 122, 0.1);
-      border-color: #d3e97a;
-    }
-    
-    @media print {
-      body { background: #ffffff; padding: 0; }
-      .resume-container { 
-        background: #ffffff; 
-        box-shadow: none;
-        padding: 40px;
-      }
-      * { color: #000000 !important; }
-      .name, .job-title, .skill-category-title, .institution, .reference-name { color: #000000 !important; }
-      .title, .section-title, .period, .project-role, .edu-period, .reference-position { color: #2a4a4a !important; }
-      .skill-tag, .tech-tag { background: #d3e97a !important; color: #000000 !important; }
-      .header { border-bottom-color: #d3e97a !important; }
-      .section-title { border-bottom-color: #d3e97a !important; }
-      .experience-item::before { background: #d3e97a !important; border-color: #ffffff !important; }
-      .achievement-bullet { background: #d3e97a !important; }
-    }
-    
-    @media (max-width: 768px) {
-      body { padding: 20px 10px; }
-      .resume-container { padding: 30px 20px; }
-      .header { flex-direction: column; gap: 16px; }
-      .contact-info { text-align: left; }
-      .education-grid, .references-grid { grid-template-columns: 1fr; }
-    }
-  </style>
-</head>
-<body>
-  <div class="resume-container">
-    <div class="header">
-      <div>
-        <div class="name">${personalInfo.name.toUpperCase()}</div>
-        <div class="title">${personalInfo.title}</div>
-      </div>
-      <div class="contact-info">
-        <!-- <div><a href="mailto:${personalInfo.email}">${personalInfo.email}</a></div> -->
-        <!-- <div>${personalInfo.phone}</div> -->
-        <div>${personalInfo.location}</div>
-      </div>
-    </div>
+  const canvas = await html2canvas(element, {
+    scale: 2,
+    useCORS: true,
+    backgroundColor: "#1a1a1a",
+    logging: false,
+    windowWidth: element.scrollWidth,
+    windowHeight: element.scrollHeight,
+    onclone: (clonedDoc: Document) => {
+      patchModernColorsInClone(clonedDoc);
+    },
+  });
 
-    <div class="section">
-      <div class="section-title">Profile</div>
-      <div class="section-content">
-        Front End Engineer with ${experienceText} of experience building high-performance web and mobile applications. Proficient in React, JavaScript (ES6+), HTML, and CSS, with a strong focus on optimizing user experience and front-end performance. Adept at developing scalable, responsive interfaces using modern frameworks like Next.js, Redux Toolkit, and React Native. Proven track record of improving application speed, accessibility, and maintainability. Collaborative team player experienced in Agile environments, consistently delivering user-centric solutions that drive business impact in fast-paced product teams.
-      </div>
-    </div>
-
-    <div class="section">
-      <div class="section-title">Skills</div>
-      ${allSkills.map(category => `
-        <div class="skill-category">
-          <div class="skill-category-title">${category.title}</div>
-          <div class="skills-list">
-            ${category.items.map(skill => `<span class="skill-tag">${skill.name}</span>`).join('')}
-          </div>
-        </div>
-      `).join('')}
-    </div>
-
-    <div class="section">
-      <div class="section-title">Education</div>
-      <div class="education-grid">
-        ${education.map(edu => `
-          <div class="education-item">
-            <div class="institution">${edu.institution}</div>
-            <div class="degree">${edu.degree}</div>
-            <div class="edu-period">${edu.period}</div>
-          </div>
-        `).join('')}
-      </div>
-    </div>
-
-    <div class="section">
-      <div class="section-title">Notable Projects</div>
-      ${notableProjects.map(project => `
-        <div class="project-item">
-          <div class="project-title">${project.title}</div>
-          <div class="project-role">${project.role}</div>
-          <div class="tech-stack">
-            ${project.techStack.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
-          </div>
-          <ul class="responsibilities">
-            ${project.achievements.map(achievement => `<li>${achievement}</li>`).join('')}
-          </ul>
-        </div>
-      `).join('')}
-    </div>
-
-    <div class="section">
-      <div class="section-title">Personal Projects</div>
-      <div class="personal-projects">
-        ${personalProjects.map(project => `
-          <a href="${project.url}" class="project-link" target="_blank" rel="noopener noreferrer">${project.title}</a>
-        `).join('')}
-      </div>
-    </div>
-
-    <div class="section">
-      <div class="section-title">Work Experience</div>
-      ${workExperience.map(exp => `
-        <div class="experience-item">
-          <div class="experience-header">
-            <div>
-              <div class="job-title">${exp.title}</div>
-              <div class="company-info">${exp.company} | ${exp.location}</div>
-            </div>
-            <div class="period">${exp.period}</div>
-          </div>
-          <ul class="responsibilities">
-            ${exp.responsibilities.map(resp => `<li>${resp}</li>`).join('')}
-          </ul>
-        </div>
-      `).join('')}
-    </div>
-
-    <div class="section">
-      <div class="section-title">Achievements</div>
-      ${achievements.map(achievement => `
-        <div class="achievement-item">
-          <div class="achievement-bullet"></div>
-          <div class="achievement-text">${achievement}</div>
-        </div>
-      `).join('')}
-    </div>
-
-    <div class="section">
-      <div class="section-title">References</div>
-      <div class="references-grid">
-        ${references.map(ref => `
-          <div class="reference-item">
-            <div class="reference-name">${ref.name}</div>
-            <div class="reference-position">${ref.company} / ${ref.position}</div>
-            <!-- <div class="reference-contact">
-              <div>${ref.phone}</div>
-              <div>${ref.email}</div>
-            </div> -->
-          </div>
-        `).join('')}
-      </div>
-    </div>
-  </div>
-</body>
-</html>`;
-
-  // Create blob and download
-  const blob = new Blob([htmlContent], { type: 'text/html' });
-  const url = URL.createObjectURL(blob);
-  const link = document.createElement('a');
-  link.href = url;
-  link.download = `${personalInfo.name.replace(/\s+/g, '_')}_Resume.html`;
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-  URL.revokeObjectURL(url);
+  const imgData = canvas.toDataURL("image/png");
+  const pdfWidth = 210;
+  const pdfHeight = 297;
+  const pdf = new jsPDF({ orientation: "portrait", unit: "mm", format: "a4" });
+  const imgWidthMm = pdfWidth;
+  const imgHeightMm = (canvas.height * pdfWidth) / canvas.width;
+  let heightLeft = imgHeightMm;
+  let pageTop = 0;
+  pdf.addImage(imgData, "PNG", 0, pageTop, imgWidthMm, imgHeightMm);
+  heightLeft -= pdfHeight;
+  while (heightLeft > 0) {
+    pageTop -= pdfHeight;
+    pdf.addPage();
+    pdf.addImage(imgData, "PNG", 0, pageTop, imgWidthMm, imgHeightMm);
+    heightLeft -= pdfHeight;
+  }
+  pdf.save(`${personalInfo.name.replace(/\s+/g, "_")}_Resume.pdf`);
 };

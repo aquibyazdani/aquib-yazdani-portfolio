@@ -10,12 +10,11 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
-import ContactForm from "./ContactForm";
 import Footer from "./Footer";
+import ContactSection from "./ContactSection";
 import {
   personalInfo,
   aboutMe,
-  socialMedia,
   socialLinks,
 } from "../config/portfolio";
 import Link from "next/link";
@@ -486,74 +485,7 @@ export default function Portfolio() {
       {/* Contact Section */}
       <section ref={contactRef} id="contact" className="py-20 px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Left - Contact Info */}
-            <div className="space-y-8">
-              <div className="space-y-4">
-                <h2 className="text-[76px] text-white leading-none">
-                  Let's connect
-                </h2>
-                <div className="space-y-2">
-                  {/* <p className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[18px]">
-                      Say hello at{" "}
-                      <a
-                        href={`mailto:${personalInfo.email}`}
-                        className="text-white border-b border-[#d3e97a]"
-                      >
-                        {personalInfo.email}
-                      </a>
-                    </p> */}
-                  <p className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[18px]">
-                    For more info, here's my{" "}
-                    <Link
-                      href="/resume"
-                      className="text-white border-b border-[#d3e97a] hover:text-[#d3e97a] transition-colors font-['Manrope',sans-serif] text-[18px]"
-                    >
-                      resume
-                    </Link>
-                  </p>
-                </div>
-              </div>
-
-              {/* Social Links */}
-              <div className="flex gap-6">
-                {socialMedia.map((social, index) => {
-                  const Icon = social.icon;
-                  return (
-                    <a
-                      key={index}
-                      href={social.url}
-                      aria-label={`Aquib Yazdani on ${social.name}`}
-                      target={social.name !== "Phone" ? "_blank" : undefined}
-                      rel={
-                        social.name !== "Phone"
-                          ? "noopener noreferrer"
-                          : undefined
-                      }
-                      className="hover:opacity-80 transition-opacity"
-                    >
-                      <Icon
-                        className="w-8 h-8 text-[#d3e97a]"
-                        aria-hidden="true"
-                      />
-                    </a>
-                  );
-                })}
-              </div>
-
-            </div>
-
-            {/* Right - Contact Form */}
-            <div className="space-y-8">
-              <ContactForm
-                labelSize="text-[16px]"
-                inputSize="text-[18px]"
-                textareaRows={5}
-                buttonPadding="px-10 py-4"
-                buttonTextSize="text-[16px]"
-              />
-            </div>
-          </div>
+          <ContactSection />
         </div>
       </section>
       <Footer />

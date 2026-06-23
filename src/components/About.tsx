@@ -14,7 +14,7 @@ import {
   workExperience,
   socialMedia,
 } from "../config/portfolio";
-import ConnectSection from "./ConnectSection";
+import ContactSection from "./ContactSection";
 import Footer from "./Footer";
 import Link from "next/link";
 
@@ -235,7 +235,11 @@ export default function About() {
         </section>
 
         {/* Let's Connect Section */}
-        <ConnectSection ref={connectRef} />
+        <section ref={connectRef} className="py-20 px-6">
+          <div className="max-w-7xl mx-auto">
+            <ContactSection />
+          </div>
+        </section>
         <Footer />
       </div>
   );

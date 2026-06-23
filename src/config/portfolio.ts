@@ -26,6 +26,7 @@ import {
   MessageCircle,
   Phone,
 } from "lucide-react";
+import type { StaticImageData } from "next/image";
 import toi from "../assets/toi.png";
 import screener from "../assets/screener.png";
 import mm from "../assets/mm.png";
@@ -292,118 +293,200 @@ export const education = [
   },
 ];
 
-// Notable Projects
-export const notableProjects = [
+// ─── Unified Projects ────────────────────────────────────────────────────────
+// Single source of truth for all projects across homepage and projects page.
+// types: "featured" → homepage Featured Projects
+//        "notable"  → /projects Notable Projects
+//        "personal" → /projects Personal Projects
+// A project can have multiple types; images key provides the right asset per context.
+
+export type ProjectType = "featured" | "notable" | "personal";
+
+export type UnifiedProject = {
+  id: number;
+  title: string;
+  shortTitle?: string;
+  types: ProjectType[];
+  url: string;
+  year?: string;
+  role?: string;
+  techStack?: string[];
+  images: {
+    featured?: StaticImageData;
+    notable?: StaticImageData;
+    personal?: StaticImageData;
+  };
+  featured?: {
+    description: string;
+    client?: string | null;
+    badge: string;
+    linkLabel: string;
+    alt: string;
+  };
+  notable?: {
+    achievements: string[];
+  };
+};
+
+export const projects: UnifiedProject[] = [
+  // ── Featured order: TOI → Libsi Markah → Memorable Mumbai → Zamzam ──────
   {
     id: 1,
-    title: "Screener - Zamzam Capital",
-    role: "Sole Developer",
-    techStack: [
-      "React.js",
-      "TypeScript",
-      "Tailwind CSS",
-      "Chart.js",
-      "REST APIs",
-    ],
-    year: "2025",
-    src: screenr_long,
-    achievements: [
-      "Developed a dedicated Halal stock screening platform enabling investors to evaluate companies based on Shariah-compliant financial criteria.",
-      "Implemented advanced filtering and screening logic to assess stocks across multiple compliance parameters, providing a streamlined and user-friendly interface for Islamic investment research.",
-      "Created responsive dashboards with intuitive UI/UX for seamless user experience across devices.",
-    ],
-  },
-  {
-    id: 2,
     title: "TOI Epaper (Times of India)",
+    types: ["featured", "notable"],
+    url: "https://epaper.indiatimes.com/",
+    year: "2022",
     role: "Lead Frontend Engineer",
     techStack: ["React.js", "Redux", "Bootstrap", "REST APIs"],
-    year: "2024",
-    src: toi,
-    achievements: [
-      "Developed and maintained a high-traffic ePaper platform accessed by thousands daily.",
-      "Reduced development time by 30% using efficient language management and reusable components.",
-      "Built a reusable component library to streamline frontend development.",
-      "Integrated RESTful APIs for real-time updates, ensuring smooth content delivery.",
-      "Implemented cross-browser compatibility and accessibility features.",
-      "Integrated Google Ads and Google Analytics.",
-    ],
-  },
-  {
-    id: 3,
-    title: "Adlob (Response 4You) - (Times of India)",
-    role: "Principal UI Developer",
-    techStack: [
-      "React.js",
-      "Context API",
-      "Styled Components",
-      "Jest",
-      "REST APIs",
-    ],
-    year: "2024",
-    src: adlob,
-    achievements: [
-      "Designed a seamless ad booking platform, simplifying the process for agencies and clients.",
-      "Automated workflows, allowing 200+ agencies to manage campaigns effortlessly.",
-      "Developed a responsive UI, improving usability by 60% across all devices.",
-      "Integrated real-time tracking for ad placements and performance monitoring.",
-    ],
-  },
-  {
-    id: 4,
-    title: "Libsi Markah E-commerce",
-    role: "Key Developer",
-    techStack: ["React.js", "Node.js", "Express.js", "MongoDB", "AWS (EC2)"],
-    year: "2025",
-    src: libsilong,
-    achievements: [
-      "Improved operational efficiency by 30% with enhanced data workflows.",
-      "Reduced manual intervention by 20% through seamless system integrations.",
-      "Implemented efficient language management to support multilingual content.",
-      "Implemented SEO-friendly practices, improving search rankings and organic traffic.",
-    ],
-  },
-];
-
-// Personal Projects
-export const personalProjects = [
-  {
-    id: 1,
-    title: "Portfolio",
-    url: "https://aquibyazdani.com",
-    src: portfolio,
+    images: { featured: toi, notable: toi },
+    featured: {
+      description:
+        "Developed and maintained a high-traffic ePaper platform accessed by thousands daily. Built a reusable component library to streamline frontend development, reducing development time by 30% through efficient language management and implementing cross-browser compatibility features.",
+      client: "Times of India",
+      badge: "Professional",
+      linkLabel: "Live Demo",
+      alt: "Times of India ePaper platform — high-traffic digital newspaper serving 10M+ daily active users",
+    },
+    notable: {
+      achievements: [
+        "Developed and maintained a high-traffic ePaper platform accessed by thousands daily.",
+        "Reduced development time by 30% using efficient language management and reusable components.",
+        "Built a reusable component library to streamline frontend development.",
+        "Integrated RESTful APIs for real-time updates, ensuring smooth content delivery.",
+        "Implemented cross-browser compatibility and accessibility features.",
+        "Integrated Google Ads and Google Analytics.",
+      ],
+    },
   },
   {
     id: 2,
-    title: "Amusement Park",
-    url: "https://amusement-park-new.netlify.app",
-    src: funpark,
+    title: "Libsi Markah E-commerce",
+    types: ["featured", "notable"],
+    url: "https://libsimarkah.com/",
+    year: "2025",
+    role: "Key Developer",
+    techStack: ["React.js", "Node.js", "Express.js", "MongoDB", "AWS (EC2)"],
+    images: { featured: libsilong, notable: libsilong },
+    featured: {
+      description:
+        "Built a multilingual e-commerce platform covering payment flow, product pages, and cart on Next.js and Redux Toolkit. Improved operational efficiency by 30%, reduced manual intervention by 20%, and implemented SEO-friendly practices to improve search rankings and organic traffic.",
+      client: "Libsi Markah",
+      badge: "Professional",
+      linkLabel: "Live Demo",
+      alt: "Libsi Markah — multilingual e-commerce platform built with Next.js, Node.js, MongoDB and AWS",
+    },
+    notable: {
+      achievements: [
+        "Improved operational efficiency by 30% with enhanced data workflows.",
+        "Reduced manual intervention by 20% through seamless system integrations.",
+        "Implemented efficient language management to support multilingual content.",
+        "Implemented SEO-friendly practices, improving search rankings and organic traffic.",
+      ],
+    },
   },
   {
     id: 3,
     title: "Memorable Mumbai",
+    types: ["featured", "personal"],
     url: "https://memorablemumbai.com",
-    src: mm,
+    year: "2022",
+    role: "Sole Developer",
+    images: { featured: mm, personal: mm },
+    featured: {
+      description:
+        "A comprehensive travel and tourism website showcasing the vibrant culture, iconic landmarks, and hidden gems of Mumbai. Features an intuitive interface with responsive design, interactive maps, and detailed guides to help visitors explore and experience the city's rich heritage.",
+      client: null,
+      badge: "Personal Project",
+      linkLabel: "View Project",
+      alt: "Memorable Mumbai — travel and tourism website showcasing Mumbai's culture, landmarks, and heritage",
+    },
   },
   {
     id: 4,
-    title: "E-commerce clone",
-    url: "https://shoppe-aquib-yazdani.netlify.app",
-    src: ecommerce,
+    title: "Screener - Zamzam Capital",
+    shortTitle: "Screener",
+    types: ["featured", "notable"],
+    url: "https://screener.zamzam-capital.com/",
+    year: "2025",
+    role: "Sole Developer",
+    techStack: ["React.js", "TypeScript", "Tailwind CSS", "Chart.js", "REST APIs"],
+    images: { featured: screenr_long, notable: screenr_long, personal: screener },
+    featured: {
+      description:
+        "Developed a dedicated Halal stock screening platform enabling investors to evaluate companies based on Shariah-compliant financial criteria. Implemented advanced filtering and screening logic to assess stocks across multiple compliance parameters.",
+      client: "Zamzam Capital",
+      badge: "Professional",
+      linkLabel: "Live Demo",
+      alt: "Screener by Zamzam Capital — Halal stock screening platform for Shariah-compliant investment research",
+    },
+    notable: {
+      achievements: [
+        "Developed a dedicated Halal stock screening platform enabling investors to evaluate companies based on Shariah-compliant financial criteria.",
+        "Implemented advanced filtering and screening logic to assess stocks across multiple compliance parameters, providing a streamlined and user-friendly interface for Islamic investment research.",
+        "Created responsive dashboards with intuitive UI/UX for seamless user experience across devices.",
+      ],
+    },
   },
   {
     id: 5,
-    title: "Spotify clone",
-    url: "https://spotify-yazdani.netlify.app",
-    src: spotify,
+    title: "Adlob (Response 4You) - (Times of India)",
+    types: ["notable"],
+    url: "",
+    year: "2024",
+    role: "Principal UI Developer",
+    techStack: ["React.js", "Context API", "Styled Components", "Jest", "REST APIs"],
+    images: { notable: adlob },
+    notable: {
+      achievements: [
+        "Designed a seamless ad booking platform, simplifying the process for agencies and clients.",
+        "Automated workflows, allowing 200+ agencies to manage campaigns effortlessly.",
+        "Developed a responsive UI, improving usability by 60% across all devices.",
+        "Integrated real-time tracking for ad placements and performance monitoring.",
+      ],
+    },
   },
   {
     id: 6,
-    title: "Screener",
-    url: "https://screener.zamzam-capital.com",
-    src: screener,
+    title: "Portfolio",
+    types: ["personal"],
+    url: "https://aquibyazdani.com",
+    images: { personal: portfolio },
   },
-  { id: 7, title: "TOI ePaper - Archive", url: "#", src: toi },
+  {
+    id: 7,
+    title: "Amusement Park",
+    types: ["personal"],
+    url: "https://amusement-park-new.netlify.app",
+    images: { personal: funpark },
+  },
+  {
+    id: 8,
+    title: "E-commerce clone",
+    types: ["personal"],
+    url: "https://shoppe-aquib-yazdani.netlify.app",
+    images: { personal: ecommerce },
+  },
+  {
+    id: 9,
+    title: "Spotify clone",
+    types: ["personal"],
+    url: "https://spotify-yazdani.netlify.app",
+    images: { personal: spotify },
+  },
+  {
+    id: 10,
+    title: "Screener",
+    types: ["personal"],
+    url: "https://screener.zamzam-capital.com",
+    images: { personal: screener },
+  },
+  {
+    id: 11,
+    title: "TOI ePaper - Archive",
+    types: ["personal"],
+    url: "#",
+    images: { personal: toi },
+  },
 ];
 
 // Awards

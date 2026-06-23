@@ -1,7 +1,7 @@
 "use client";
 
 import Navbar from "./Navbar";
-import Link from "next/link";
+import Footer from "./Footer";
 import { personalInfo } from "../config/portfolio";
 
 export default function PrivacyPolicy() {
@@ -171,34 +171,7 @@ export default function PrivacyPolicy() {
         </div>
       </div>
 
-      {/* Footer */}
-      <footer className="py-8 px-6 border-t border-[#484848]">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[14px]">
-            {personalInfo.copyright}
-          </p>
-          <div className="flex gap-6">
-            <Link
-              href="/privacy-policy"
-              className="font-['Manrope',sans-serif] text-[#d3e97a] text-[14px] hover:text-white transition-colors"
-            >
-              Privacy Policy
-            </Link>
-            <Link
-              href="/terms"
-              className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[14px] hover:text-white transition-colors"
-            >
-              Terms
-            </Link>
-            <Link
-              href="/"
-              className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[14px] hover:text-white transition-colors"
-            >
-              Back to Home
-            </Link>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

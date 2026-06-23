@@ -4,6 +4,7 @@ import { MapPin, Download, Loader2 } from "lucide-react";
 import Navbar from "./Navbar";
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import Footer from "./Footer";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {
@@ -274,36 +275,7 @@ export default function Resume() {
           </div>
         </div>
 
-        {/* Footer */}
-        <footer className="py-8 px-6 border-t border-[#484848]">
-          <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="flex flex-col items-center md:items-start gap-1">
-              <p className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[14px]">
-                {personalInfo.copyright}
-              </p>
-              <div className="flex gap-4">
-                <Link
-                  href="/privacy-policy"
-                  className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[12px] hover:text-[#d3e97a] transition-colors"
-                >
-                  Privacy Policy
-                </Link>
-                <Link
-                  href="/terms"
-                  className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[12px] hover:text-[#d3e97a] transition-colors"
-                >
-                  Terms &amp; Conditions
-                </Link>
-              </div>
-            </div>
-            <Link
-              href="/"
-              className="font-['Manrope',sans-serif] text-[#d3e97a] text-[14px] hover:text-white transition-colors"
-            >
-              Back to Home
-            </Link>
-          </div>
-        </footer>
+        <Footer />
       </div>
   );
 }

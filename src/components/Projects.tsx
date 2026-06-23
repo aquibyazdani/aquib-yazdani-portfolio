@@ -13,6 +13,7 @@ import {
   socialMedia,
 } from "../config/portfolio";
 import Link from "next/link";
+import Footer from "./Footer";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -298,50 +299,7 @@ export default function Projects() {
           </div>
         </section>
 
-        {/* Footer */}
-        <footer className="py-8 px-6 border-t border-[#484848]">
-          <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="flex flex-col items-center md:items-start gap-1">
-              <p className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[14px]">
-                {personalInfo.copyright}
-              </p>
-              <div className="flex gap-4">
-                <Link
-                  href="/privacy-policy"
-                  className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[12px] hover:text-[#d3e97a] transition-colors"
-                >
-                  Privacy Policy
-                </Link>
-                <Link
-                  href="/terms"
-                  className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[12px] hover:text-[#d3e97a] transition-colors"
-                >
-                  Terms &amp; Conditions
-                </Link>
-              </div>
-            </div>
-            <div className="flex gap-4">
-              {socialMedia.map((social, index) => {
-                const Icon = social.icon;
-                return (
-                  <a
-                    key={index}
-                    href={social.url}
-                    target={social.name !== "Phone" ? "_blank" : undefined}
-                    rel={
-                      social.name !== "Phone"
-                        ? "noopener noreferrer"
-                        : undefined
-                    }
-                    className="hover:opacity-80 transition-opacity"
-                  >
-                    <Icon className="w-6 h-6 text-[#d3e97a]" />
-                  </a>
-                );
-              })}
-            </div>
-          </div>
-        </footer>
+        <Footer />
       </div>
   );
 }

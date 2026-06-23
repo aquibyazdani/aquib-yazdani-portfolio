@@ -46,25 +46,6 @@ const ConnectSection = forwardRef<HTMLElement>((_, ref) => {
               })}
             </div>
 
-            <div className="pt-8 space-y-2">
-              <p className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[14px]">
-                {personalInfo.copyright}
-              </p>
-              <div className="flex gap-4">
-                <Link
-                  href="/privacy-policy"
-                  className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[12px] hover:text-[#d3e97a] transition-colors"
-                >
-                  Privacy Policy
-                </Link>
-                <Link
-                  href="/terms"
-                  className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[12px] hover:text-[#d3e97a] transition-colors"
-                >
-                  Terms &amp; Conditions
-                </Link>
-              </div>
-            </div>
           </div>
 
           {/* Right - Contact Form */}

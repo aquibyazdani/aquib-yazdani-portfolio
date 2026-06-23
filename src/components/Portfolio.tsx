@@ -11,6 +11,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import ContactForm from "./ContactForm";
+import Footer from "./Footer";
 import {
   personalInfo,
   aboutMe,
@@ -540,25 +541,6 @@ export default function Portfolio() {
                 })}
               </div>
 
-              <div className="pt-8 space-y-2">
-                <p className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[16px]">
-                  {personalInfo.copyright}
-                </p>
-                <div className="flex gap-4">
-                  <Link
-                    href="/privacy-policy"
-                    className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[12px] hover:text-[#d3e97a] transition-colors"
-                  >
-                    Privacy Policy
-                  </Link>
-                  <Link
-                    href="/terms"
-                    className="font-['Manrope',sans-serif] text-[#c7c7c7] text-[12px] hover:text-[#d3e97a] transition-colors"
-                  >
-                    Terms &amp; Conditions
-                  </Link>
-                </div>
-              </div>
             </div>
 
             {/* Right - Contact Form */}
@@ -574,6 +556,7 @@ export default function Portfolio() {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 }

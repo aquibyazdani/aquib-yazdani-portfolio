@@ -15,6 +15,7 @@ import {
   socialMedia,
 } from "../config/portfolio";
 import ConnectSection from "./ConnectSection";
+import Footer from "./Footer";
 import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -235,6 +236,7 @@ export default function About() {
 
         {/* Let's Connect Section */}
         <ConnectSection ref={connectRef} />
+        <Footer />
       </div>
   );
 }

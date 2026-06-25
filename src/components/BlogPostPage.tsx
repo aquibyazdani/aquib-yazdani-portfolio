@@ -176,12 +176,52 @@ export default function BlogPostPage({ post }: { post: BlogPost }) {
             {post.subtitle}
           </p>
 
-          {/* Content blocks */}
-          <div className="space-y-8">
-            {post.content.map((block, i) => (
-              <ContentBlock key={i} block={block} />
-            ))}
-          </div>
+          {/* Content blocks — CTA injected at midpoint, never after a heading */}
+          {(() => {
+            let mid = Math.ceil(post.content.length / 2);
+            // Advance until the block just before the CTA is not a heading
+            while (
+              mid < post.content.length - 1 &&
+              post.content[mid - 1]?.type === "heading"
+            ) {
+              mid++;
+            }
+            const first = post.content.slice(0, mid);
+            const second = post.content.slice(mid);
+            return (
+              <>
+                <div className="space-y-8">
+                  {first.map((block, i) => (
+                    <ContentBlock key={i} block={block} />
+                  ))}
+                </div>
+
+                {/* Mid-article CTA */}
+                <div className="my-12 rounded-[16px] border border-[#d3e97a]/20 bg-[#d3e97a]/5 px-8 py-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+                  <div className="space-y-1">
+                    <p className="text-[22px] text-white leading-tight">
+                      Building something interesting?
+                    </p>
+                    <p className="font-['Inter',sans-serif] text-[#888] text-[15px]">
+                      I'm open to new projects, collaborations, and conversations.
+                    </p>
+                  </div>
+                  <Link
+                    href="/contact"
+                    className="flex-shrink-0 bg-[#d3e97a] text-neutral-950 font-['Inter',sans-serif] font-bold text-[14px] uppercase px-6 py-3 rounded-full hover:bg-[#c5db6c] transition-colors"
+                  >
+                    Let's Talk
+                  </Link>
+                </div>
+
+                <div className="space-y-8">
+                  {second.map((block, i) => (
+                    <ContentBlock key={mid + i} block={block} />
+                  ))}
+                </div>
+              </>
+            );
+          })()}
 
           {/* Footer nav */}
           <div className="mt-16 pt-8 border-t border-[#1a1a1a] flex items-center justify-between flex-wrap gap-4">

@@ -17,7 +17,7 @@ export default function PrivacyPolicy() {
               PRIVACY POLICY
             </h1>
             <p className="font-['Inter',sans-serif] text-[#c7c7c7] text-[14px]">
-              Last updated: June 23, 2026
+              Last updated: June 30, 2026
             </p>
           </div>
 
@@ -63,10 +63,31 @@ export default function PrivacyPolicy() {
                 </p>
                 <p>
                   <span className="text-white font-semibold">
-                    No Cookies for Tracking:
+                    Advertising:
                   </span>{" "}
-                  This site does not use cookies for advertising, remarketing,
-                  or cross-site user tracking.
+                  This site uses Google AdSense to display ads. Google and its
+                  partners may use cookies and similar technologies to serve
+                  ads based on your prior visits to this and other websites.
+                  You can learn more about how Google uses this data at{" "}
+                  <a
+                    href="https://policies.google.com/technologies/partner-sites"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#d3e97a] hover:text-white transition-colors underline underline-offset-2"
+                  >
+                    policies.google.com/technologies/partner-sites
+                  </a>
+                  , and you can opt out of personalized advertising by
+                  visiting{" "}
+                  <a
+                    href="https://adssettings.google.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#d3e97a] hover:text-white transition-colors underline underline-offset-2"
+                  >
+                    Google Ads Settings
+                  </a>
+                  .
                 </p>
               </div>
             </section>

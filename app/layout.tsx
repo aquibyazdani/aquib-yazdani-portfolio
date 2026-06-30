@@ -94,6 +94,9 @@ export const metadata: Metadata = {
     follow: true,
     googleBot: { index: true, follow: true, "max-image-preview": "large" },
   },
+  other: {
+    "google-adsense-account": "ca-pub-9910299971219204",
+  },
 };
 
 const jsonLd = {
@@ -164,7 +167,7 @@ export default function RootLayout({
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9910299971219204"
           crossOrigin="anonymous"
-          strategy="beforeInteractive"
+          strategy="afterInteractive"
         />
       </head>
       <body suppressHydrationWarning>

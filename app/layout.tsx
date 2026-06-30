@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Bebas_Neue, Inter } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import Providers from "./providers";
@@ -149,11 +150,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${bebasNeue.variable} ${inter.variable}`}>
+    <html
+      lang="en"
+      className={`${bebasNeue.variable} ${inter.variable}`}
+      suppressHydrationWarning
+    >
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9910299971219204"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
         />
       </head>
       <body suppressHydrationWarning>

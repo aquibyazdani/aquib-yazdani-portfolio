@@ -330,7 +330,7 @@ export type UnifiedProject = {
 };
 
 export const projects: UnifiedProject[] = [
-  // ── Featured order: TOI → Libsi Markah → Memorable Mumbai → Zamzam ──────
+  // ── Featured order: TOI → Libsi Markah → Woovet → Memorable Mumbai → Zamzam ──────
   {
     id: 1,
     title: "TOI Epaper (Times of India)",
@@ -387,49 +387,6 @@ export const projects: UnifiedProject[] = [
   },
   {
     id: 3,
-    title: "Memorable Mumbai",
-    types: ["featured", "personal"],
-    url: "https://memorablemumbai.com",
-    year: "2022",
-    role: "Sole Developer",
-    images: { featured: mm, personal: mm },
-    featured: {
-      description:
-        "A comprehensive travel and tourism website showcasing the vibrant culture, iconic landmarks, and hidden gems of Mumbai. Features an intuitive interface with responsive design, interactive maps, and detailed guides to help visitors explore and experience the city's rich heritage.",
-      client: null,
-      badge: "Personal Project",
-      linkLabel: "View Project",
-      alt: "Memorable Mumbai — travel and tourism website showcasing Mumbai's culture, landmarks, and heritage",
-    },
-  },
-  {
-    id: 4,
-    title: "Screener - Zamzam Capital",
-    shortTitle: "Screener",
-    types: ["featured", "notable"],
-    url: "https://screener.zamzam-capital.com/",
-    year: "2025",
-    role: "Sole Developer",
-    techStack: ["React.js", "TypeScript", "Tailwind CSS", "Chart.js", "REST APIs"],
-    images: { featured: screenr_long, notable: screenr_long, personal: screener },
-    featured: {
-      description:
-        "Developed a dedicated Halal stock screening platform enabling investors to evaluate companies based on Shariah-compliant financial criteria. Implemented advanced filtering and screening logic to assess stocks across multiple compliance parameters.",
-      client: "Zamzam Capital",
-      badge: "Professional",
-      linkLabel: "Live Demo",
-      alt: "Screener by Zamzam Capital — Halal stock screening platform for Shariah-compliant investment research",
-    },
-    notable: {
-      achievements: [
-        "Developed a dedicated Halal stock screening platform enabling investors to evaluate companies based on Shariah-compliant financial criteria.",
-        "Implemented advanced filtering and screening logic to assess stocks across multiple compliance parameters, providing a streamlined and user-friendly interface for Islamic investment research.",
-        "Created responsive dashboards with intuitive UI/UX for seamless user experience across devices.",
-      ],
-    },
-  },
-  {
-    id: 5,
     title: "Woovet",
     types: ["featured", "notable"],
     url: "https://www.woovet.com/",
@@ -454,13 +411,72 @@ export const projects: UnifiedProject[] = [
     },
   },
   {
+    id: 4,
+    title: "Memorable Mumbai",
+    types: ["personal"],
+    url: "https://memorablemumbai.com",
+    year: "2022",
+    role: "Sole Developer",
+    images: { featured: mm, personal: mm },
+    featured: {
+      description:
+        "A comprehensive travel and tourism website showcasing the vibrant culture, iconic landmarks, and hidden gems of Mumbai. Features an intuitive interface with responsive design, interactive maps, and detailed guides to help visitors explore and experience the city's rich heritage.",
+      client: null,
+      badge: "Personal Project",
+      linkLabel: "View Project",
+      alt: "Memorable Mumbai — travel and tourism website showcasing Mumbai's culture, landmarks, and heritage",
+    },
+  },
+  {
+    id: 5,
+    title: "Screener - Zamzam Capital",
+    shortTitle: "Screener",
+    types: ["featured", "notable"],
+    url: "https://screener.zamzam-capital.com/",
+    year: "2025",
+    role: "Sole Developer",
+    techStack: [
+      "React.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Chart.js",
+      "REST APIs",
+    ],
+    images: {
+      featured: screenr_long,
+      notable: screenr_long,
+      personal: screener,
+    },
+    featured: {
+      description:
+        "Developed a dedicated Halal stock screening platform enabling investors to evaluate companies based on Shariah-compliant financial criteria. Implemented advanced filtering and screening logic to assess stocks across multiple compliance parameters.",
+      client: "Zamzam Capital",
+      badge: "Professional",
+      linkLabel: "Live Demo",
+      alt: "Screener by Zamzam Capital — Halal stock screening platform for Shariah-compliant investment research",
+    },
+    notable: {
+      achievements: [
+        "Developed a dedicated Halal stock screening platform enabling investors to evaluate companies based on Shariah-compliant financial criteria.",
+        "Implemented advanced filtering and screening logic to assess stocks across multiple compliance parameters, providing a streamlined and user-friendly interface for Islamic investment research.",
+        "Created responsive dashboards with intuitive UI/UX for seamless user experience across devices.",
+      ],
+    },
+  },
+  {
     id: 6,
     title: "Adlob (Response 4You) - (Times of India)",
     types: ["notable"],
     url: "",
     year: "2024",
     role: "Principal UI Developer",
-    techStack: ["React.js", "Context API", "Styled Components", "Jest", "REST APIs"],
+    techStack: [
+      "React.js",
+      "Context API",
+      "Styled Components",
+      "Jest",
+      "REST APIs",
+    ],
     images: { notable: adlob },
     notable: {
       achievements: [

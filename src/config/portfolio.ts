@@ -396,7 +396,7 @@ export const projects: UnifiedProject[] = [
     images: { featured: woovet, notable: woovet },
     featured: {
       description:
-        "Migrated a US-based Veterinary SaaS platform from a legacy stack to Next.js, serving 50+ hospitals. Delivered core practice management modules with a modern, performant frontend architecture — improving load times, developer experience, and scalability across the platform.",
+        "AI-powered veterinary practice management platform (PIMS) serving 50+ hospitals. Features AI-assisted clinical diagnostics (Coggo Assess), voice-driven SOAP note generation (Coggo Voice), and a real-time clinic management whiteboard. Migrated from a legacy stack to Next.js, delivering a modern, performant frontend.",
       client: "Woovet",
       badge: "Professional",
       linkLabel: "Live Demo",

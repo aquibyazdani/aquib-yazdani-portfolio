@@ -13,6 +13,7 @@ import {
   workExperience,
   education,
   awards,
+  resumeNotableProjects,
 } from "../config/portfolio";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -54,18 +55,16 @@ export default function Resume() {
 
   const allSkills = [
     { title: "Languages", items: skills.languages },
-    { title: "Frameworks", items: skills.frameworks },
+    { title: "Frontend", items: skills.resumeFrontend },
+    { title: "Backend", items: skills.resumeBackend },
     { title: "Architecture", items: skills.architecture },
-    { title: "AI Integration", items: skills.aiIntegration },
-    { title: "AI Dev Tools", items: skills.aiDevTools },
     { title: "State & Data", items: skills.stateAndData },
-    { title: "UI & Styling", items: skills.uiAndStyling },
-    { title: "Web Performance", items: skills.webPerformance },
-    { title: "Auth & Security", items: skills.authAndSecurity },
+    { title: "AI & Dev Tools", items: skills.aiAndDevTools },
+    { title: "Performance", items: skills.webPerformance },
     { title: "Testing", items: skills.testing },
     { title: "Build & Tooling", items: skills.buildAndTooling },
-    { title: "Cloud & DevOps", items: skills.cloudAndDevOps },
-    { title: "Quality & Web", items: skills.qualityAndWeb },
+    { title: "Cloud & Deployment", items: skills.cloudAndDevOps },
+    { title: "Quality & Standards", items: skills.qualityAndWeb },
     { title: "Collaboration", items: skills.collaborationSkills },
   ];
 
@@ -242,6 +241,40 @@ export default function Resume() {
                           ))}
                         </ul>
                       </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Notable Projects Section */}
+              <div className="space-y-3">
+                <h2 className="font-['Bebas_Neue',sans-serif] text-white text-[18px] uppercase text-[#d3e97a] border-b border-[#d3e97a]/30 pb-1.5">
+                  Notable Projects
+                </h2>
+                <div className="space-y-3">
+                  {resumeNotableProjects.map((project) => (
+                    <div key={project.id} className="space-y-1">
+                      <div className="flex items-center gap-2 flex-wrap">
+                        <span className="font-['Inter',sans-serif] font-semibold text-white text-[13px]">
+                          {project.title}
+                        </span>
+                        <span className="text-[#484848]">•</span>
+                        <a
+                          href={project.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="font-['Inter',sans-serif] text-[#d3e97a] text-[12px] hover:text-white transition-colors"
+                        >
+                          {project.url.replace(/^https?:\/\/www\./, "").replace(/\/$/, "")}
+                        </a>
+                        <span className="text-[#484848]">•</span>
+                        <span className="font-['Inter',sans-serif] italic text-[#c7c7c7] text-[12px]">
+                          {project.techStack}
+                        </span>
+                      </div>
+                      <p className="font-['Inter',sans-serif] text-[#c7c7c7] text-[12px] leading-[1.6]">
+                        {project.description}
+                      </p>
                     </div>
                   ))}
                 </div>

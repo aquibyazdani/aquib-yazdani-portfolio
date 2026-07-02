@@ -37,6 +37,7 @@ import spotify from "../assets/spotify.png";
 import libsilong from "../assets/libsilong.png";
 import screenr_long from "../assets/screenr_long.png";
 import portfolio from "../assets/aquib-portfolio.png";
+import woovet from "../assets/woovet.png";
 // Personal Information
 export const personalInfo = {
   name: "Aquib Yazdani",
@@ -429,6 +430,31 @@ export const projects: UnifiedProject[] = [
   },
   {
     id: 5,
+    title: "Woovet",
+    types: ["featured", "notable"],
+    url: "https://www.woovet.com/",
+    year: "2023",
+    role: "Key Frontend Developer",
+    techStack: ["Next.js", "React.js", "TypeScript", "REST APIs"],
+    images: { featured: woovet, notable: woovet },
+    featured: {
+      description:
+        "Migrated a US-based Veterinary SaaS platform from a legacy stack to Next.js, serving 50+ hospitals. Delivered core practice management modules with a modern, performant frontend architecture — improving load times, developer experience, and scalability across the platform.",
+      client: "Woovet",
+      badge: "Professional",
+      linkLabel: "Live Demo",
+      alt: "Woovet — US-based Veterinary SaaS platform migrated to Next.js, serving 50+ hospitals",
+    },
+    notable: {
+      achievements: [
+        "Migrated the platform from a legacy stack to Next.js, serving 50+ veterinary hospitals across the US.",
+        "Delivered core practice management modules with a modern, performant frontend architecture.",
+        "Improved load times, developer experience, and scalability across the entire platform.",
+      ],
+    },
+  },
+  {
+    id: 6,
     title: "Adlob (Response 4You) - (Times of India)",
     types: ["notable"],
     url: "",
@@ -446,42 +472,42 @@ export const projects: UnifiedProject[] = [
     },
   },
   {
-    id: 6,
+    id: 7,
     title: "Portfolio",
     types: ["personal"],
     url: "https://aquibyazdani.com",
     images: { personal: portfolio },
   },
   {
-    id: 7,
+    id: 8,
     title: "Amusement Park",
     types: ["personal"],
     url: "https://amusement-park-new.netlify.app",
     images: { personal: funpark },
   },
   {
-    id: 8,
+    id: 9,
     title: "E-commerce clone",
     types: ["personal"],
     url: "https://shoppe-aquib-yazdani.netlify.app",
     images: { personal: ecommerce },
   },
   {
-    id: 9,
+    id: 10,
     title: "Spotify clone",
     types: ["personal"],
     url: "https://spotify-yazdani.netlify.app",
     images: { personal: spotify },
   },
   {
-    id: 10,
+    id: 11,
     title: "Screener",
     types: ["personal"],
     url: "https://screener.zamzam-capital.com",
     images: { personal: screener },
   },
   {
-    id: 11,
+    id: 12,
     title: "TOI ePaper - Archive",
     types: ["personal"],
     url: "#",

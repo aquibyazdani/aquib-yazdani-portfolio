@@ -5,15 +5,22 @@ import Navbar from "./Navbar";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { personalInfo, projects, socialMedia } from "../config/portfolio";
 import NotableProjectCard from "./NotableProjectCard";
 import PersonalProjectCard from "./PersonalProjectCard";
 import Link from "next/link";
 import Footer from "./Footer";
+import type { ChromeProps, Content, Project } from "../lib/content";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function Projects() {
+export type ProjectsProps = {
+  chrome: ChromeProps;
+  page: Content["projectsPage"];
+  notable: Project[];
+  personal: Project[];
+};
+
+export default function Projects({ chrome, page, notable, personal }: ProjectsProps) {
   const projectsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -39,73 +46,63 @@ export default function Projects() {
 
   return (
     <div className="bg-neutral-950 min-h-screen flex flex-col">
-        {/* Navigation */}
-        <Navbar />
+      {/* Navigation */}
+      <Navbar {...chrome.nav} />
 
-        {/* Hero Section */}
-        <section className="pt-32 pb-20 px-6">
-          <div className="max-w-7xl mx-auto">
-            <div className="space-y-4 mb-16">
-              <h1 className="text-[80px] lg:text-[90px] text-white leading-[0.9]">
-                ALL PROJECTS
-              </h1>
-              <p className="font-['Inter',sans-serif] text-[#c7c7c7] text-[18px] leading-[1.5] max-w-[600px]">
-                Here's a collection of projects that showcase my passion for
-                software development and problem-solving.
-              </p>
-            </div>
+      {/* Hero Section */}
+      <section className="pt-32 pb-20 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="space-y-4 mb-16">
+            <h1 className="text-[80px] lg:text-[90px] text-white leading-[0.9]">{page.heading}</h1>
+            <p className="font-['Inter',sans-serif] text-[#c7c7c7] text-[18px] leading-[1.5] max-w-[600px]">{page.intro}</p>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Notable Projects Section */}
+      {/* Notable Projects Section */}
+      {notable.length > 0 && (
         <section className="pb-12 px-6">
           <div className="max-w-7xl mx-auto">
             <div className="mb-12">
-              <h2 className="text-[56px] text-white leading-[0.9]">
-                NOTABLE PROJECTS
-              </h2>
+              <h2 className="text-[56px] text-white leading-[0.9]">{page.notableHeading}</h2>
             </div>
             <div className="space-y-20" ref={projectsRef}>
-              {projects
-                .filter((p) => p.types.includes("notable"))
-                .map((project, index) => (
-                  <NotableProjectCard key={project.id} project={project} index={index} />
-                ))}
+              {notable.map((project, index) => (
+                <NotableProjectCard key={project.id} project={project} index={index} labels={page} />
+              ))}
             </div>
           </div>
         </section>
+      )}
 
-        {/* Personal Projects Section */}
+      {/* Personal Projects Section */}
+      {personal.length > 0 && (
         <section className="pb-20 px-6">
           <div className="max-w-7xl mx-auto">
             <div className="mb-12">
-              <h2 className="text-[56px] text-white leading-[0.9]">
-                PERSONAL PROJECTS
-              </h2>
+              <h2 className="text-[56px] text-white leading-[0.9]">{page.personalHeading}</h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {projects
-                .filter((p) => p.types.includes("personal"))
-                .map((project) => (
-                  <PersonalProjectCard key={project.id} project={project} />
-                ))}
+              {personal.map((project) => (
+                <PersonalProjectCard key={project.id} project={project} linkLabel={page.viewProjectLabel} />
+              ))}
             </div>
           </div>
         </section>
+      )}
 
-        {/* Footer CTA */}
+      {/* Footer CTA */}
+      {page.ctaHeading && (
         <section className="py-20 px-6 border-t border-[#484848]">
           <div className="max-w-7xl mx-auto text-center">
             <div className="space-y-8">
-              <h2 className="text-[64px] lg:text-[76px] text-white leading-[0.9]">
-                INTERESTED IN WORKING TOGETHER?
-              </h2>
+              <h2 className="text-[64px] lg:text-[76px] text-white leading-[0.9]">{page.ctaHeading}</h2>
               <Link
                 href="/contact"
                 className="inline-flex bg-[#d3e97a] rounded-full items-center gap-3 pl-6 pr-2 py-3 h-[54px] hover:bg-[#c5db6c] transition-colors"
               >
                 <span className="font-['Inter',sans-serif] font-bold text-[16px] text-neutral-950 uppercase">
-                  Get in Touch
+                  {page.ctaButtonLabel}
                 </span>
                 <div className="size-[42px] bg-neutral-950 rounded-full flex items-center justify-center">
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -116,8 +113,9 @@ export default function Projects() {
             </div>
           </div>
         </section>
+      )}
 
-        <Footer />
-      </div>
+      <Footer {...chrome.footer} />
+    </div>
   );
 }

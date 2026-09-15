@@ -4,14 +4,19 @@ import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { personalInfo, navItems } from "../config/portfolio";
+import type { ChromeProps } from "../lib/content";
 
-export default function Navbar() {
+export default function Navbar({ logoText, items }: ChromeProps["nav"]) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
 
   const isActive = (path: string) =>
     path === "/" ? pathname === "/" : pathname.startsWith(path);
+
+  const linkClass = (path: string) =>
+    `font-['Inter',sans-serif] text-[14px] uppercase transition-colors ${
+      isActive(path) ? "text-[#d3e97a]" : "text-[#c7c7c7] hover:text-white"
+    }`;
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-neutral-950/90 backdrop-blur-sm border-b border-[#484848]">
@@ -20,21 +25,13 @@ export default function Navbar() {
           href="/"
           className="text-[#c7c7c7] text-[28px] tracking-[-0.32px] cursor-pointer uppercase font-bold"
         >
-          {personalInfo.displayName}
+          {logoText}
         </Link>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-8">
-          {navItems.map((item) => (
-            <Link
-              key={item.path}
-              href={item.path}
-              className={`font-['Inter',sans-serif] text-[14px] uppercase transition-colors ${
-                isActive(item.path)
-                  ? "text-[#d3e97a]"
-                  : "text-[#c7c7c7] hover:text-white"
-              }`}
-            >
+          {items.map((item) => (
+            <Link key={item.path} href={item.path} className={linkClass(item.path)}>
               {item.label}
             </Link>
           ))}
@@ -54,16 +51,12 @@ export default function Navbar() {
       {isMenuOpen && (
         <div className="md:hidden bg-neutral-950 border-t border-[#484848]">
           <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col gap-4">
-            {navItems.map((item) => (
+            {items.map((item) => (
               <Link
                 key={item.path}
                 href={item.path}
                 onClick={() => setIsMenuOpen(false)}
-                className={`font-['Inter',sans-serif] text-[14px] uppercase text-left transition-colors ${
-                  isActive(item.path)
-                    ? "text-[#d3e97a]"
-                    : "text-[#c7c7c7] hover:text-white"
-                }`}
+                className={`${linkClass(item.path)} text-left`}
               >
                 {item.label}
               </Link>

@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
-import Terms from "../../src/components/Terms";
+import LegalPage from "@/components/LegalPage";
+import { chromeProps, getContent } from "@/lib/content";
+import { legalTokens } from "@/lib/legal";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Terms & Conditions",
-  description:
-    "Terms & Conditions for aquibyazdani.com — permitted use, intellectual property, and legal information for this personal portfolio website.",
-  alternates: { canonical: "https://aquibyazdani.com/terms" },
-  robots: { index: true, follow: true },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const content = await getContent();
+  return pageMetadata(content, content.terms.seo, { path: "/terms", title: "Terms & Conditions" });
+}
 
-export default function TermsPage() {
-  return <Terms />;
+export default async function TermsPage() {
+  const content = await getContent();
+  return <LegalPage chrome={chromeProps(content)} doc={content.terms} tokens={legalTokens(content)} />;
 }

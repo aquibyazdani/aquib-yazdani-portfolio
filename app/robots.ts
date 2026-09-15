@@ -1,9 +1,11 @@
 import type { MetadataRoute } from "next";
+import { getContent, siteUrl } from "@/lib/content";
 
-export default function robots(): MetadataRoute.Robots {
+export default async function robots(): Promise<MetadataRoute.Robots> {
+  const base = siteUrl(await getContent());
   return {
-    rules: { userAgent: "*", allow: "/" },
-    sitemap: "https://aquibyazdani.com/sitemap.xml",
-    host: "https://aquibyazdani.com",
+    rules: { userAgent: "*", allow: "/", disallow: ["/api/"] },
+    sitemap: `${base}/sitemap.xml`,
+    host: base,
   };
 }

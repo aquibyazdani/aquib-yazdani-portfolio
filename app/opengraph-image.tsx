@@ -1,10 +1,21 @@
 import { ImageResponse } from "next/og";
+import { getContent, siteUrl } from "@/lib/content";
 
-export const alt = "Md Aquib Yazdani — Sr. Software Engineer";
+export const alt = "Share image";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-export default function Image() {
+export default async function Image() {
+  const content = await getContent();
+  const { profile, site } = content;
+  const card = {
+    title: site.ogCard.title || profile.legalName || profile.name,
+    subtitle: site.ogCard.subtitle || profile.role,
+    techLine: site.ogCard.techLine,
+    metaLine: site.ogCard.metaLine || profile.location,
+    domain: site.ogCard.domain || siteUrl(content).replace(/^https?:\/\//, ""),
+  };
+
   return new ImageResponse(
     (
       <div
@@ -29,21 +40,17 @@ export default function Image() {
 
         <div style={{ display: "flex", flexDirection: "column", marginLeft: 36 }}>
           <div style={{ fontSize: 72, fontWeight: 800, color: "#ffffff", letterSpacing: "-2px", lineHeight: 1.05 }}>
-            Md Aquib Yazdani
+            {card.title}
           </div>
-          <div style={{ fontSize: 36, fontWeight: 400, color: "#d3e97a", marginTop: 20 }}>
-            Sr. Software Engineer
-          </div>
+          <div style={{ fontSize: 36, fontWeight: 400, color: "#d3e97a", marginTop: 20 }}>{card.subtitle}</div>
           <div style={{ width: 520, height: 2, background: "#333333", marginTop: 32 }} />
-          <div style={{ fontSize: 22, fontWeight: 400, color: "#c7c7c7", marginTop: 32 }}>
-            React · Next.js · TypeScript · AI Integration
-          </div>
-          <div style={{ fontSize: 20, fontWeight: 400, color: "#666666", marginTop: 14 }}>
-            Pune, India · 5 years experience
-          </div>
-          <div style={{ fontSize: 18, fontWeight: 400, color: "#484848", marginTop: 110 }}>
-            aquibyazdani.com
-          </div>
+          {card.techLine && (
+            <div style={{ fontSize: 22, fontWeight: 400, color: "#c7c7c7", marginTop: 32 }}>{card.techLine}</div>
+          )}
+          {card.metaLine && (
+            <div style={{ fontSize: 20, fontWeight: 400, color: "#666666", marginTop: 14 }}>{card.metaLine}</div>
+          )}
+          <div style={{ fontSize: 18, fontWeight: 400, color: "#484848", marginTop: 110 }}>{card.domain}</div>
         </div>
       </div>
     ),

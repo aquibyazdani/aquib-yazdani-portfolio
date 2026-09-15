@@ -1,18 +1,17 @@
 import type { MetadataRoute } from "next";
-import { blogPosts } from "../src/config/blog";
+import { getContent, siteUrl } from "@/lib/content";
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const base = "https://aquibyazdani.com";
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const content = await getContent();
+  const base = siteUrl(content);
   const now = new Date();
 
-  const blogEntries = blogPosts
-    .filter((p) => p.published)
-    .map((p) => ({
-      url: `${base}/blog/${p.slug}`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    }));
+  const blogEntries = content.blogPosts.map((p) => ({
+    url: `${base}/blog/${p.slug}`,
+    lastModified: new Date(p.lastUpdated || p.publishedAt),
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
 
   return [
     { url: base, lastModified: now, changeFrequency: "monthly", priority: 1 },

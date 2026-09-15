@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
-import PrivacyPolicy from "../../src/components/PrivacyPolicy";
+import LegalPage from "@/components/LegalPage";
+import { chromeProps, getContent } from "@/lib/content";
+import { legalTokens } from "@/lib/legal";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Privacy Policy",
-  description:
-    "Privacy Policy for aquibyazdani.com — how your data is handled when you use the contact form or visit this portfolio website.",
-  alternates: { canonical: "https://aquibyazdani.com/privacy-policy" },
-  robots: { index: true, follow: true },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const content = await getContent();
+  return pageMetadata(content, content.privacy.seo, { path: "/privacy-policy", title: "Privacy Policy" });
+}
 
-export default function PrivacyPolicyPage() {
-  return <PrivacyPolicy />;
+export default async function PrivacyPolicyPage() {
+  const content = await getContent();
+  return <LegalPage chrome={chromeProps(content)} doc={content.privacy} tokens={legalTokens(content)} />;
 }

@@ -1,0 +1,2393 @@
+{
+  "profile": {
+    "name": "Aquib Yazdani",
+    "legalName": "Md Aquib Yazdani",
+    "logoText": "aquib yazdani",
+    "role": "Sr. Software Engineer",
+    "headline": "Senior Software Engineer | React • Next.js • TypeScript • Frontend Architecture • AI Integration",
+    "heroTagline": "Sr. Software Engg. / JavaScript Expert / Tech Explorer",
+    "location": "Pune, India",
+    "city": "Pune",
+    "region": "Maharashtra",
+    "countryCode": "IN",
+    "email": "yazdaniaquib2@gmail.com",
+    "phone": "+91 8210773776",
+    "careerStartDate": "2021-06-01",
+    "professionalSummary": "Senior Software Engineer with 5 years of experience shipping production-grade React applications at scale. Engineered the Times of India ePaper platform within the Times Group digital ecosystem (10M+ digital DAU, 60M+ app MAU) and the American Arbitration Association's legal-tech arbitration platform (180K+ annual cases). Specialized in frontend architecture, micro-frontends, performance engineering, AI/LLM integration, and accessibility. Consistent track record of end-to-end ownership across high-traffic products, leading direct reports, and conducting senior-level technical interviews. Currently deepening work in AI-integrated frontend systems and edge rendering patterns.",
+    "portrait": {
+      "url": "http://localhost:4000/media/6aa98b5397162c2e3c4c1a6e/hero.png",
+      "alt": "Aquib Yazdani — Sr. Software Engineer based in Pune, India"
+    },
+    "resumePdf": {
+      "url": "http://localhost:4000/media/6aa98b5597162c2e3c4c1ab5/Md_Aquib_Yazdani.pdf",
+      "fileName": "Md_Aquib_Yazdani.pdf"
+    }
+  },
+  "site": {
+    "siteUrl": "https://aquibyazdani.com",
+    "siteName": "Aquib Yazdani Portfolio",
+    "defaultTitle": "Md Aquib Yazdani — Sr. Software Engineer",
+    "titleTemplate": "%s | Md Aquib Yazdani",
+    "description": "Sr. Software Engineer in Pune, India. 5 years building React, Next.js & TypeScript at scale — Times of India (60M+ MAU), AI-integrated apps, WCAG accessibility.",
+    "keywords": [
+      "Md Aquib Yazdani",
+      "Aquib Yazdani",
+      "Sr. Software Engineer",
+      "Software Engineer Pune",
+      "Software Engineer India",
+      "React Developer",
+      "Next.js Developer",
+      "TypeScript Developer",
+      "JavaScript Developer",
+      "Frontend Engineer",
+      "Frontend Architect",
+      "Node.js Developer",
+      "Express.js",
+      "REST API Developer",
+      "GraphQL",
+      "MongoDB",
+      "Micro-frontend Architecture",
+      "Module Federation",
+      "SSR Developer",
+      "Design Systems",
+      "AI Integration Developer",
+      "LLM Integration",
+      "Claude API",
+      "Times of India ePaper",
+      "Zensar Technologies"
+    ],
+    "twitterHandle": "@aquibyazdani",
+    "ogImage": {
+      "url": "",
+      "alt": "Md Aquib Yazdani — Sr. Software Engineer"
+    },
+    "copyright": "© {year} Aquib Yazdani",
+    "privacyLinkLabel": "Privacy Policy",
+    "termsLinkLabel": "Terms & Conditions",
+    "jobTitle": "Sr. Software Engineer",
+    "worksForName": "Zensar Technologies",
+    "worksForUrl": "https://www.zensar.com",
+    "alumniOf": "Heritage Institute of Technology, Kolkata",
+    "knowsAbout": [
+      "React.js",
+      "Next.js",
+      "React Native",
+      "TypeScript",
+      "JavaScript (ES6+)",
+      "HTML5",
+      "CSS3",
+      "SCSS",
+      "Node.js",
+      "Express.js",
+      "REST APIs",
+      "GraphQL",
+      "WebSockets",
+      "Redux",
+      "Redux Toolkit",
+      "Zustand",
+      "Context API",
+      "React Query",
+      "Tailwind CSS",
+      "Material UI",
+      "Styled Components",
+      "Bootstrap",
+      "Micro-frontends",
+      "Module Federation",
+      "SSR",
+      "SSG",
+      "ISR",
+      "BFF Pattern",
+      "Design Systems",
+      "Component-Driven Development",
+      "Auth0",
+      "OAuth 2.0",
+      "OIDC",
+      "SAML",
+      "JWT",
+      "Multi-Tenant SSO",
+      "RBAC",
+      "AWS S3",
+      "AWS CloudFront",
+      "AWS EC2",
+      "Netlify",
+      "Azure",
+      "CI/CD",
+      "GitHub Actions",
+      "Vite",
+      "Webpack",
+      "Babel",
+      "ESLint",
+      "Storybook",
+      "Jest",
+      "React Testing Library",
+      "Cypress",
+      "Playwright",
+      "Core Web Vitals",
+      "Lighthouse",
+      "Code Splitting",
+      "Lazy Loading",
+      "List Virtualization",
+      "WCAG 2.1 AA Accessibility",
+      "i18n",
+      "Google Analytics",
+      "GTM",
+      "Web Speech API",
+      "AI/LLM Integration",
+      "Claude API",
+      "Streaming Responses",
+      "Prompt Engineering",
+      "GitHub Copilot",
+      "Cursor",
+      "MongoDB"
+    ],
+    "ogCard": {
+      "title": "Md Aquib Yazdani",
+      "subtitle": "Sr. Software Engineer",
+      "techLine": "React · Next.js · TypeScript · AI Integration",
+      "metaLine": "Pune, India · 5 years experience",
+      "domain": "aquibyazdani.com"
+    },
+    "manifest": {
+      "name": "Aquib Yazdani — Sr. Software Engineer",
+      "shortName": "Aquib Yazdani",
+      "description": "Portfolio of Md Aquib Yazdani, Sr. Software Engineer specializing in React, Next.js, and TypeScript.",
+      "themeColor": "#0a0a0a",
+      "backgroundColor": "#0a0a0a"
+    },
+    "llmsTxt": ""
+  },
+  "integrations": {
+    "gaId": "G-YR78Y0K8L8",
+    "adsenseClientId": "ca-pub-9910299971219204",
+    "emailjsServiceId": "service_veddnmx",
+    "emailjsTemplateId": "template_74daohb",
+    "emailjsPublicKey": "YaMenwRBpbdGB9Q9r"
+  },
+  "navigation": {
+    "items": [
+      {
+        "label": "Home",
+        "path": "/",
+        "visible": true
+      },
+      {
+        "label": "About",
+        "path": "/about",
+        "visible": true
+      },
+      {
+        "label": "Projects",
+        "path": "/projects",
+        "visible": true
+      },
+      {
+        "label": "Blog",
+        "path": "/blog",
+        "visible": true
+      },
+      {
+        "label": "Resume",
+        "path": "/resume",
+        "visible": true
+      },
+      {
+        "label": "Contact",
+        "path": "/contact",
+        "visible": true
+      }
+    ]
+  },
+  "home": {
+    "seo": {
+      "title": "Md Aquib Yazdani — Sr. Software Engineer",
+      "description": "Sr. Software Engineer — React, Next.js, TypeScript, Node.js, AI integration. Built Times of India ePaper (60M+ MAU), AAA arbitration platform, Auth0 SSO. Pune, India.",
+      "keywords": [
+        "Md Aquib Yazdani portfolio",
+        "Sr. Software Engineer Pune",
+        "React Next.js TypeScript developer",
+        "Node.js Express developer",
+        "AI LLM integration engineer",
+        "frontend architect India",
+        "JavaScript expert",
+        "Times of India developer",
+        "American Arbitration Association tech",
+        "Auth0 SSO developer",
+        "micro-frontend engineer",
+        "full stack software engineer",
+        "React developer India",
+        "Next.js developer Pune"
+      ],
+      "ogTitle": "",
+      "ogDescription": "",
+      "ogImage": {
+        "url": "",
+        "alt": ""
+      }
+    },
+    "heroGreeting": "HI, I AM",
+    "ctaLabel": "Let's Connect",
+    "featuredHeading": "Featured Projects",
+    "featuredIntro": "Here are some of the selected projects that showcase my passion for software development.",
+    "allProjectsLabel": "All Projects",
+    "aboutHeading": "About me",
+    "aboutBlurb": "I work as a senior software engineer with deep frontend expertise, building scalable products from UI to backend.",
+    "aboutText": "When I'm not coding, you'll find me playing football, practicing photography, or in a few rounds of Valorant. Always learning, always curious.",
+    "aboutLinkLabel": "More about me",
+    "websiteDescription": "Personal portfolio of Md Aquib Yazdani, Sr. Software Engineer specializing in React, Next.js, TypeScript, Node.js, and AI integration."
+  },
+  "about": {
+    "seo": {
+      "title": "About Md Aquib Yazdani — Sr. Software Engineer, Pune",
+      "description": "5 years building with React, Next.js, TypeScript, Node.js, Auth0, AWS & AI. WCAG 2.1 AA, Core Web Vitals, micro-frontends, design systems. Based in Pune, India.",
+      "keywords": [
+        "React.js developer",
+        "Next.js SSR SSG ISR",
+        "TypeScript engineer",
+        "JavaScript ES6 developer",
+        "HTML5 CSS3 SCSS",
+        "Tailwind CSS Material UI",
+        "Redux Zustand Context API",
+        "React Query",
+        "Framer Motion GSAP animation",
+        "React Native developer",
+        "Node.js developer",
+        "Express.js REST API",
+        "GraphQL developer",
+        "MongoDB developer",
+        "WebSockets real-time",
+        "Auth0 developer",
+        "OAuth 2.0 OIDC SAML",
+        "JWT multi-tenant SSO",
+        "RBAC role-based access",
+        "micro-frontend Module Federation",
+        "design system component library",
+        "BFF backend for frontend",
+        "frontend architecture India",
+        "AWS S3 CloudFront EC2",
+        "Netlify Azure CI/CD",
+        "GitHub Actions Vite Webpack",
+        "WCAG 2.1 AA accessibility",
+        "Core Web Vitals Lighthouse",
+        "Jest React Testing Library Cypress",
+        "i18n localization",
+        "Claude API LLM integration",
+        "prompt engineering streaming",
+        "AI-powered web applications",
+        "Md Aquib Yazdani",
+        "Sr. Software Engineer Pune India"
+      ],
+      "ogTitle": "About Md Aquib Yazdani — Sr. Software Engineer",
+      "ogDescription": "React, Next.js, Node.js, Auth0, AWS & AI integration. WCAG 2.1 AA, Core Web Vitals, micro-frontends. 5 years building at scale from Pune, India.",
+      "ogImage": {
+        "url": "",
+        "alt": ""
+      }
+    },
+    "heading": "ABOUT ME",
+    "intro": "Passionate Software Engineer with Deep Frontend Expertise",
+    "background": "I care deeply about clean architecture, usability, and creating meaningful digital products. I build end-to-end solutions that integrate seamlessly from UI to backend. Outside of programming, I enjoy playing football, photography, and a few rounds of Valorant.",
+    "resumeButtonLabel": "My Resume",
+    "capabilitiesHeading": "MY CAPABILITIES",
+    "capabilitiesDescription": "I am always learning and expanding my toolkit — from React performance patterns and AI/LLM integration to WCAG accessibility and modern build tooling. Here's what I bring to the table today.",
+    "experienceHeading": "MY EXPERIENCE"
+  },
+  "projectsPage": {
+    "seo": {
+      "title": "Projects — Md Aquib Yazdani | React, Next.js, Node.js Portfolio",
+      "description": "Times of India ePaper (10M+ DAU), AAA arbitration platform, Zamzam Capital Screener, Adlob (200+ agencies), Libsi Markah e-commerce. React, Next.js, Node.js, MongoDB.",
+      "keywords": [
+        "Times of India ePaper developer",
+        "TOI ePaper React frontend",
+        "Adlob advertisement platform React",
+        "Zamzam Capital Screener",
+        "Halal stock screening app",
+        "Libsi Markah e-commerce Next.js",
+        "AAA arbitration portal React TypeScript",
+        "American Arbitration Association digital platform",
+        "React.js project portfolio",
+        "Next.js project portfolio",
+        "TypeScript project examples",
+        "Node.js Express MongoDB project",
+        "AWS EC2 deployment",
+        "Redux Context API state management",
+        "Google AdSense GTM integration",
+        "Web Speech API text to speech",
+        "Virtualized list performance",
+        "Chart.js data visualization",
+        "REST API integration React",
+        "Styled Components Bootstrap",
+        "Sr. Software Engineer portfolio",
+        "software engineering projects India",
+        "React developer portfolio Pune",
+        "Md Aquib Yazdani projects"
+      ],
+      "ogTitle": "Projects — Md Aquib Yazdani | React, Next.js, Node.js Portfolio",
+      "ogDescription": "Times of India ePaper (10M+ DAU), AAA arbitration platform, Zamzam Capital Screener, Adlob (200+ agencies) — React, Next.js, Node.js, MongoDB.",
+      "ogImage": {
+        "url": "",
+        "alt": ""
+      }
+    },
+    "heading": "ALL PROJECTS",
+    "intro": "Here's a collection of projects that showcase my passion for software development and problem-solving.",
+    "notableHeading": "NOTABLE PROJECTS",
+    "personalHeading": "PERSONAL PROJECTS",
+    "ctaHeading": "INTERESTED IN WORKING TOGETHER?",
+    "ctaButtonLabel": "Get in Touch",
+    "projectInfoLabel": "Project Info",
+    "clientLabel": "Client",
+    "yearLabel": "Year",
+    "roleLabel": "Role",
+    "techStackLabel": "Tech Stack",
+    "viewProjectLabel": "View Project",
+    "notableBulletLimit": 3,
+    "notableTechLimit": 3
+  },
+  "blogPage": {
+    "seo": {
+      "title": "Blog — Md Aquib Yazdani",
+      "description": "Articles on frontend engineering, system design, AI integration, and building products at scale. React, Next.js, TypeScript, and more.",
+      "keywords": [],
+      "ogTitle": "Blog — Md Aquib Yazdani",
+      "ogDescription": "Thoughts on frontend engineering, system design, AI integration, and building products at scale.",
+      "ogImage": {
+        "url": "",
+        "alt": ""
+      }
+    },
+    "heading": "BLOG",
+    "intro": "Thoughts on frontend engineering, system design, AI integration, and building products at scale.",
+    "featuredLabel": "Featured",
+    "morePostsLabel": "More Posts",
+    "emptyMessage": "No posts yet — check back soon.",
+    "readLabel": "Read →",
+    "authorName": "Aquib Yazdani",
+    "authorAvatar": {
+      "url": "",
+      "alt": ""
+    },
+    "backLabel": "← All Posts",
+    "ctaEnabled": true,
+    "ctaHeading": "Building something interesting?",
+    "ctaText": "I'm open to new projects, collaborations, and conversations.",
+    "ctaButtonLabel": "Let's Talk",
+    "ctaButtonHref": "/contact"
+  },
+  "resumePage": {
+    "seo": {
+      "title": "Resume — Md Aquib Yazdani | Sr. Software Engineer",
+      "description": "Resume: React, Next.js, TypeScript, Node.js, Express, MongoDB, Auth0, AWS, Redux, Zustand, Jest, WCAG, micro-frontends, AI/LLM. Zensar & Harns Technologies.",
+      "keywords": [
+        "hire React developer India",
+        "hire Next.js developer Pune",
+        "hire TypeScript engineer",
+        "hire Node.js developer",
+        "senior frontend engineer CV",
+        "software engineer resume India",
+        "React.js",
+        "Next.js",
+        "React Native",
+        "TypeScript",
+        "JavaScript ES6",
+        "Node.js",
+        "Express.js",
+        "REST API",
+        "GraphQL",
+        "WebSockets",
+        "MongoDB",
+        "AWS S3 CloudFront",
+        "Redux",
+        "Redux Toolkit",
+        "Zustand",
+        "Context API",
+        "React Query",
+        "Tailwind CSS",
+        "Material UI",
+        "Styled Components",
+        "Bootstrap",
+        "SCSS",
+        "Auth0",
+        "OAuth 2.0",
+        "OIDC",
+        "SAML",
+        "JWT",
+        "multi-tenant SSO",
+        "RBAC",
+        "micro-frontend",
+        "Module Federation",
+        "design systems",
+        "SSR",
+        "SSG",
+        "ISR",
+        "BFF pattern",
+        "Vite",
+        "Webpack",
+        "Babel",
+        "ESLint",
+        "Prettier",
+        "Storybook",
+        "Jest",
+        "React Testing Library",
+        "Cypress",
+        "Playwright",
+        "Core Web Vitals",
+        "Lighthouse",
+        "code splitting",
+        "lazy loading",
+        "WCAG 2.1 AA",
+        "i18n",
+        "Google Analytics",
+        "GTM",
+        "Claude API",
+        "LLM integration",
+        "streaming AI",
+        "GitHub Actions",
+        "CI/CD",
+        "Azure",
+        "Netlify",
+        "Agile Scrum",
+        "code review",
+        "technical interviewing",
+        "mentoring",
+        "Zensar Technologies engineer",
+        "Harns Technologies developer",
+        "Md Aquib Yazdani resume",
+        "Md Aquib Yazdani CV"
+      ],
+      "ogTitle": "Resume — Md Aquib Yazdani | Sr. Software Engineer",
+      "ogDescription": "React, Next.js, TypeScript, Node.js, Auth0, AWS, Redux, Jest, WCAG, micro-frontends, AI/LLM. 5 years at Zensar & Harns Technologies.",
+      "ogImage": {
+        "url": "",
+        "alt": ""
+      }
+    },
+    "downloadLabel": "Download Resume",
+    "generatingLabel": "Generating...",
+    "summaryHeading": "Professional Summary",
+    "skillsHeading": "Skills",
+    "educationHeading": "Education",
+    "experienceHeading": "Work Experience",
+    "projectsHeading": "Notable Projects",
+    "awardsHeading": "Awards",
+    "showSummary": true,
+    "showSkills": true,
+    "showEducation": true,
+    "showExperience": true,
+    "showProjects": true,
+    "showAwards": true,
+    "showEmail": false,
+    "showPhone": false
+  },
+  "contact": {
+    "seo": {
+      "title": "Contact Md Aquib Yazdani — Sr. Software Engineer",
+      "description": "Get in touch with Md Aquib Yazdani — open to new opportunities, collaborations, and interesting projects. React, Next.js & TypeScript engineer based in Pune, India.",
+      "keywords": [
+        "contact Md Aquib Yazdani",
+        "hire React developer Pune",
+        "hire Next.js developer India",
+        "hire TypeScript engineer",
+        "hire Sr. Software Engineer India",
+        "software engineer available for hire",
+        "React developer contact",
+        "frontend engineer contact Pune"
+      ],
+      "ogTitle": "Contact Md Aquib Yazdani — Sr. Software Engineer",
+      "ogDescription": "Open to new opportunities and collaborations. React, Next.js & TypeScript engineer based in Pune, India.",
+      "ogImage": {
+        "url": "",
+        "alt": ""
+      }
+    },
+    "heading": "GET IN TOUCH",
+    "intro": "Open to new opportunities, collaborations, and interesting conversations. Fill in the form or reach out directly.",
+    "findMeLabel": "Find me on",
+    "resumeButtonLabel": "View My Resume",
+    "nameLabel": "Name",
+    "emailLabel": "Email",
+    "messageLabel": "Message",
+    "submitLabel": "Submit",
+    "sendingLabel": "Submitting",
+    "successMessage": "Thank you! I'll get back to you soon!",
+    "errorMessage": "Oops! Something went wrong. Please try again or contact me directly."
+  },
+  "privacy": {
+    "seo": {
+      "title": "Privacy Policy",
+      "description": "Privacy Policy for aquibyazdani.com — how your data is handled when you use the contact form or visit this portfolio website.",
+      "keywords": [],
+      "ogTitle": "",
+      "ogDescription": "",
+      "ogImage": {
+        "url": "",
+        "alt": ""
+      }
+    },
+    "title": "PRIVACY POLICY",
+    "lastUpdated": "2026-06-30",
+    "sections": [
+      {
+        "heading": "OVERVIEW",
+        "body": "This is the personal portfolio website of Aquib Yazdani (aquibyazdani.com). This Privacy Policy explains how information is handled when you visit this website or use the contact form. This site is not a commercial service — it exists solely to showcase professional work and skills."
+      },
+      {
+        "heading": "INFORMATION COLLECTED",
+        "body": "**Contact Form:** When you submit the contact form, your name, email address, and message are collected. This information is transmitted directly via EmailJS to a private email inbox. No form submissions are stored in a database or on any server.\n\n**Analytics:** This site may use browser-standard analytics tools (such as Google Analytics) to understand aggregate visitor behavior — such as page views and session duration. This data is anonymized and not linked to any personal identity.\n\n**Advertising:** This site uses Google AdSense to display ads. Google and its partners may use cookies and similar technologies to serve ads based on your prior visits to this and other websites. You can learn more about how Google uses this data at [policies.google.com/technologies/partner-sites](https://policies.google.com/technologies/partner-sites), and you can opt out of personalized advertising by visiting [Google Ads Settings](https://adssettings.google.com)."
+      },
+      {
+        "heading": "HOW YOUR INFORMATION IS USED",
+        "body": "- To respond to inquiries submitted through the contact form.\n- To understand aggregate traffic patterns and improve the website experience.\n- Your information is never sold, rented, or shared with third parties for marketing purposes."
+      },
+      {
+        "heading": "THIRD-PARTY LINKS",
+        "body": "This website contains links to external profiles and projects (LinkedIn, GitHub, Instagram, live project demos). Clicking these links takes you to third-party websites governed by their own privacy policies. This site is not responsible for the privacy practices of those external services."
+      },
+      {
+        "heading": "DATA RETENTION",
+        "body": "Contact form submissions received by email are retained only as long as necessary to respond to your inquiry. You may request deletion of your email conversation at any time by contacting {email}."
+      },
+      {
+        "heading": "YOUR RIGHTS",
+        "body": "If you are located in the European Economic Area (EEA) or similar jurisdiction, you have the right to access, correct, or request deletion of any personal data submitted through this website. To exercise these rights, email {email}."
+      },
+      {
+        "heading": "CHANGES TO THIS POLICY",
+        "body": "This Privacy Policy may be updated occasionally. The \"Last updated\" date at the top of this page reflects the most recent revision. Continued use of the website after updates constitutes acceptance of the revised policy."
+      },
+      {
+        "heading": "CONTACT",
+        "body": "For any questions or concerns about this Privacy Policy, reach out at {email}."
+      }
+    ]
+  },
+  "terms": {
+    "seo": {
+      "title": "Terms & Conditions",
+      "description": "Terms & Conditions for aquibyazdani.com — permitted use, intellectual property, and legal information for this personal portfolio website.",
+      "keywords": [],
+      "ogTitle": "",
+      "ogDescription": "",
+      "ogImage": {
+        "url": "",
+        "alt": ""
+      }
+    },
+    "title": "TERMS & CONDITIONS",
+    "lastUpdated": "2026-06-23",
+    "sections": [
+      {
+        "heading": "ACCEPTANCE OF TERMS",
+        "body": "By accessing and using aquibyazdani.com (the \"Website\"), you accept and agree to be bound by these Terms & Conditions. This is a personal portfolio website — not a commercial product, SaaS platform, or subscription service. If you do not agree to these terms, please discontinue use of the Website."
+      },
+      {
+        "heading": "INTELLECTUAL PROPERTY",
+        "body": "All content on this Website — including but not limited to text, design, graphics, code, project descriptions, and the portfolio structure — is the intellectual property of **Aquib Yazdani** unless otherwise stated.\n\n**Professional projects** displayed ({professionalProjects}) represent work done in professional employment or contract engagements. The underlying codebases are proprietary to the respective employers and clients. Project descriptions and achievements are shared for portfolio demonstration purposes only.\n\n**Personal projects** ({personalProjects}) are built and owned by Aquib Yazdani. Clone projects are built for learning and demonstration purposes only and are not affiliated with the original brands."
+      },
+      {
+        "heading": "PERMITTED USE",
+        "body": "- You may view and browse this Website for personal, non-commercial purposes.\n- You may share links to this Website.\n- You may not copy, reproduce, distribute, or commercially exploit any content from this Website without written permission.\n- You may not use automated scrapers, bots, or crawlers to extract data from this Website at scale."
+      },
+      {
+        "heading": "CONTACT FORM",
+        "body": "The contact form is provided to facilitate genuine professional inquiries. By submitting the form, you agree not to send spam, unsolicited marketing, or any content that is unlawful, offensive, or harmful. Messages are delivered directly to a private email — there is no moderation layer or automated processing applied to submissions."
+      },
+      {
+        "heading": "EXTERNAL LINKS",
+        "body": "This Website links to external services including LinkedIn, GitHub, Instagram, and live project URLs. These links are provided for reference and convenience. Aquib Yazdani has no control over the content, availability, or privacy practices of external websites and accepts no responsibility for them."
+      },
+      {
+        "heading": "DISCLAIMER OF WARRANTIES",
+        "body": "This Website is provided \"as is\" without warranties of any kind, express or implied. While reasonable efforts are made to keep content accurate and up-to-date, no guarantee is made regarding the completeness, accuracy, or availability of the Website at any given time. Use of this Website is at your own risk."
+      },
+      {
+        "heading": "LIMITATION OF LIABILITY",
+        "body": "To the fullest extent permitted by applicable law, Aquib Yazdani shall not be liable for any indirect, incidental, special, or consequential damages arising from your use of, or inability to use, this Website or its content."
+      },
+      {
+        "heading": "GOVERNING LAW",
+        "body": "These Terms & Conditions are governed by the laws of India. Any disputes arising from use of this Website shall be subject to the jurisdiction of the courts of Pune, Maharashtra, India."
+      },
+      {
+        "heading": "CHANGES TO THESE TERMS",
+        "body": "These Terms may be revised at any time. The \"Last updated\" date reflects the most recent version. Continued use of the Website after any changes constitutes acceptance of the updated Terms."
+      },
+      {
+        "heading": "CONTACT",
+        "body": "Questions about these Terms & Conditions can be directed to {email}."
+      }
+    ]
+  },
+  "notFound": {
+    "title": "Page Not Found — Md Aquib Yazdani",
+    "heading": "Page not found",
+    "message": "The page you're looking for doesn't exist or has been moved.",
+    "buttonLabel": "Back to Home"
+  },
+  "projects": [
+    {
+      "id": "6aa98b5597162c2e3c4c1ab7",
+      "title": "TOI Epaper (Times of India)",
+      "shortTitle": "",
+      "slug": "toi-epaper-times-of-india",
+      "url": "https://epaper.indiatimes.com/",
+      "year": "2022",
+      "role": "Lead Frontend Engineer",
+      "client": "Times of India",
+      "badge": "Professional",
+      "linkLabel": "Live Demo",
+      "description": "Developed and maintained a high-traffic ePaper platform accessed by thousands daily. Built a reusable component library to streamline frontend development, reducing development time by 30% through efficient language management and implementing cross-browser compatibility features.",
+      "achievements": [
+        "Developed and maintained a high-traffic ePaper platform accessed by thousands daily.",
+        "Reduced development time by 30% using efficient language management and reusable components.",
+        "Built a reusable component library to streamline frontend development.",
+        "Integrated RESTful APIs for real-time updates, ensuring smooth content delivery.",
+        "Implemented cross-browser compatibility and accessibility features.",
+        "Integrated Google Ads and Google Analytics."
+      ],
+      "techStack": [
+        "React.js",
+        "Redux",
+        "Bootstrap",
+        "REST APIs"
+      ],
+      "images": {
+        "featured": {
+          "url": "http://localhost:4000/media/6aa98b5397162c2e3c4c1a72/toi.png",
+          "alt": "Times of India ePaper platform — high-traffic digital newspaper serving 10M+ daily active users"
+        },
+        "notable": {
+          "url": "http://localhost:4000/media/6aa98b5397162c2e3c4c1a72/toi.png",
+          "alt": "TOI Epaper (Times of India)"
+        },
+        "personal": {
+          "url": "",
+          "alt": "TOI Epaper (Times of India)"
+        }
+      },
+      "placements": {
+        "featured": true,
+        "notable": true,
+        "personal": false,
+        "resume": false
+      },
+      "resume": {
+        "techStack": "",
+        "description": ""
+      },
+      "published": true,
+      "order": 0,
+      "createdAt": "2026-09-15T18:15:49.429Z",
+      "updatedAt": "2026-09-15T18:15:49.429Z"
+    },
+    {
+      "id": "6aa98b5597162c2e3c4c1ab8",
+      "title": "Libsi Markah E-commerce",
+      "shortTitle": "",
+      "slug": "libsi-markah-e-commerce",
+      "url": "https://libsimarkah.com/",
+      "year": "2025",
+      "role": "Key Developer",
+      "client": "Libsi Markah",
+      "badge": "Professional",
+      "linkLabel": "Live Demo",
+      "description": "Built a multilingual e-commerce platform covering payment flow, product pages, and cart on Next.js and Redux Toolkit. Improved operational efficiency by 30%, reduced manual intervention by 20%, and implemented SEO-friendly practices to improve search rankings and organic traffic.",
+      "achievements": [
+        "Improved operational efficiency by 30% with enhanced data workflows.",
+        "Reduced manual intervention by 20% through seamless system integrations.",
+        "Implemented efficient language management to support multilingual content.",
+        "Implemented SEO-friendly practices, improving search rankings and organic traffic."
+      ],
+      "techStack": [
+        "React.js",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "AWS (EC2)"
+      ],
+      "images": {
+        "featured": {
+          "url": "http://localhost:4000/media/6aa98b5497162c2e3c4c1aa1/libsilong.png",
+          "alt": "Libsi Markah — multilingual e-commerce platform built with Next.js, Node.js, MongoDB and AWS"
+        },
+        "notable": {
+          "url": "http://localhost:4000/media/6aa98b5497162c2e3c4c1aa1/libsilong.png",
+          "alt": "Libsi Markah E-commerce"
+        },
+        "personal": {
+          "url": "",
+          "alt": "Libsi Markah E-commerce"
+        }
+      },
+      "placements": {
+        "featured": true,
+        "notable": true,
+        "personal": false,
+        "resume": false
+      },
+      "resume": {
+        "techStack": "",
+        "description": ""
+      },
+      "published": true,
+      "order": 1,
+      "createdAt": "2026-09-15T18:15:49.429Z",
+      "updatedAt": "2026-09-15T18:15:49.429Z"
+    },
+    {
+      "id": "6aa98b5597162c2e3c4c1ab9",
+      "title": "Woovet",
+      "shortTitle": "",
+      "slug": "woovet",
+      "url": "https://www.woovet.com/",
+      "year": "2023",
+      "role": "Key Frontend Developer",
+      "client": "Woovet",
+      "badge": "Professional",
+      "linkLabel": "Live Demo",
+      "description": "AI-powered veterinary practice management platform (PIMS) serving 50+ hospitals. Features AI-assisted clinical diagnostics (Coggo Assess), voice-driven SOAP note generation (Coggo Voice), and a real-time clinic management whiteboard. Migrated from a legacy stack to Next.js, delivering a modern, performant frontend.",
+      "achievements": [
+        "Migrated the platform from a legacy stack to Next.js, serving 50+ veterinary hospitals across the US.",
+        "Delivered core practice management modules with a modern, performant frontend architecture.",
+        "Improved load times, developer experience, and scalability across the entire platform."
+      ],
+      "techStack": [
+        "Next.js",
+        "React.js",
+        "TypeScript",
+        "REST APIs"
+      ],
+      "images": {
+        "featured": {
+          "url": "http://localhost:4000/media/6aa98b5597162c2e3c4c1ab3/woovet.png",
+          "alt": "Woovet — US-based Veterinary SaaS platform migrated to Next.js, serving 50+ hospitals"
+        },
+        "notable": {
+          "url": "http://localhost:4000/media/6aa98b5597162c2e3c4c1ab3/woovet.png",
+          "alt": "Woovet"
+        },
+        "personal": {
+          "url": "",
+          "alt": "Woovet"
+        }
+      },
+      "placements": {
+        "featured": true,
+        "notable": true,
+        "personal": false,
+        "resume": true
+      },
+      "resume": {
+        "techStack": "Next.js, TypeScript",
+        "description": "AI-powered veterinary practice management platform (PIMS) serving 50+ hospitals. Features AI-assisted clinical diagnostics (Coggo Assess), voice-driven SOAP note generation (Coggo Voice), and a real-time clinic management whiteboard. Migrated from a legacy stack to Next.js, delivering a modern, performant frontend."
+      },
+      "published": true,
+      "order": 2,
+      "createdAt": "2026-09-15T18:15:49.429Z",
+      "updatedAt": "2026-09-15T18:15:49.429Z"
+    },
+    {
+      "id": "6aa98b5597162c2e3c4c1aba",
+      "title": "Memorable Mumbai",
+      "shortTitle": "",
+      "slug": "memorable-mumbai",
+      "url": "https://memorablemumbai.com",
+      "year": "2022",
+      "role": "Sole Developer",
+      "client": "",
+      "badge": "Personal Project",
+      "linkLabel": "View Project",
+      "description": "A comprehensive travel and tourism website showcasing the vibrant culture, iconic landmarks, and hidden gems of Mumbai. Features an intuitive interface with responsive design, interactive maps, and detailed guides to help visitors explore and experience the city's rich heritage.",
+      "achievements": [],
+      "techStack": [],
+      "images": {
+        "featured": {
+          "url": "http://localhost:4000/media/6aa98b5397162c2e3c4c1a7a/mm.png",
+          "alt": "Memorable Mumbai — travel and tourism website showcasing Mumbai's culture, landmarks, and heritage"
+        },
+        "notable": {
+          "url": "",
+          "alt": "Memorable Mumbai"
+        },
+        "personal": {
+          "url": "http://localhost:4000/media/6aa98b5397162c2e3c4c1a7a/mm.png",
+          "alt": "Memorable Mumbai"
+        }
+      },
+      "placements": {
+        "featured": false,
+        "notable": false,
+        "personal": true,
+        "resume": false
+      },
+      "resume": {
+        "techStack": "",
+        "description": ""
+      },
+      "published": true,
+      "order": 3,
+      "createdAt": "2026-09-15T18:15:49.429Z",
+      "updatedAt": "2026-09-15T18:15:49.429Z"
+    },
+    {
+      "id": "6aa98b5597162c2e3c4c1abb",
+      "title": "Screener - Zamzam Capital",
+      "shortTitle": "Screener",
+      "slug": "screener-zamzam-capital",
+      "url": "https://screener.zamzam-capital.com/",
+      "year": "2025",
+      "role": "Sole Developer",
+      "client": "Zamzam Capital",
+      "badge": "Professional",
+      "linkLabel": "Live Demo",
+      "description": "Developed a dedicated Halal stock screening platform enabling investors to evaluate companies based on Shariah-compliant financial criteria. Implemented advanced filtering and screening logic to assess stocks across multiple compliance parameters.",
+      "achievements": [
+        "Developed a dedicated Halal stock screening platform enabling investors to evaluate companies based on Shariah-compliant financial criteria.",
+        "Implemented advanced filtering and screening logic to assess stocks across multiple compliance parameters, providing a streamlined and user-friendly interface for Islamic investment research.",
+        "Created responsive dashboards with intuitive UI/UX for seamless user experience across devices."
+      ],
+      "techStack": [
+        "React.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "Chart.js",
+        "REST APIs"
+      ],
+      "images": {
+        "featured": {
+          "url": "http://localhost:4000/media/6aa98b5397162c2e3c4c1a78/screenr_long.png",
+          "alt": "Screener by Zamzam Capital — Halal stock screening platform for Shariah-compliant investment research"
+        },
+        "notable": {
+          "url": "http://localhost:4000/media/6aa98b5397162c2e3c4c1a78/screenr_long.png",
+          "alt": "Screener - Zamzam Capital"
+        },
+        "personal": {
+          "url": "http://localhost:4000/media/6aa98b5397162c2e3c4c1a76/screener.png",
+          "alt": "Screener"
+        }
+      },
+      "placements": {
+        "featured": true,
+        "notable": true,
+        "personal": false,
+        "resume": false
+      },
+      "resume": {
+        "techStack": "",
+        "description": ""
+      },
+      "published": true,
+      "order": 4,
+      "createdAt": "2026-09-15T18:15:49.429Z",
+      "updatedAt": "2026-09-15T18:15:49.429Z"
+    },
+    {
+      "id": "6aa98b5597162c2e3c4c1abc",
+      "title": "Adlob (Response 4You) - (Times of India)",
+      "shortTitle": "",
+      "slug": "adlob-response-4you-times-of-india",
+      "url": "",
+      "year": "2024",
+      "role": "Principal UI Developer",
+      "client": "",
+      "badge": "Professional",
+      "linkLabel": "Live Demo",
+      "description": "",
+      "achievements": [
+        "Designed a seamless ad booking platform, simplifying the process for agencies and clients.",
+        "Automated workflows, allowing 200+ agencies to manage campaigns effortlessly.",
+        "Developed a responsive UI, improving usability by 60% across all devices.",
+        "Integrated real-time tracking for ad placements and performance monitoring."
+      ],
+      "techStack": [
+        "React.js",
+        "Context API",
+        "Styled Components",
+        "Jest",
+        "REST APIs"
+      ],
+      "images": {
+        "featured": {
+          "url": "",
+          "alt": "Adlob (Response 4You) - (Times of India)"
+        },
+        "notable": {
+          "url": "http://localhost:4000/media/6aa98b5497162c2e3c4c1a8c/adlob.png",
+          "alt": "Adlob (Response 4You) - (Times of India)"
+        },
+        "personal": {
+          "url": "",
+          "alt": "Adlob (Response 4You) - (Times of India)"
+        }
+      },
+      "placements": {
+        "featured": false,
+        "notable": true,
+        "personal": false,
+        "resume": false
+      },
+      "resume": {
+        "techStack": "",
+        "description": ""
+      },
+      "published": true,
+      "order": 5,
+      "createdAt": "2026-09-15T18:15:49.429Z",
+      "updatedAt": "2026-09-15T18:15:49.429Z"
+    },
+    {
+      "id": "6aa98b5597162c2e3c4c1abd",
+      "title": "Portfolio",
+      "shortTitle": "",
+      "slug": "portfolio",
+      "url": "https://aquibyazdani.com",
+      "year": "",
+      "role": "",
+      "client": "",
+      "badge": "",
+      "linkLabel": "View Project",
+      "description": "",
+      "achievements": [],
+      "techStack": [],
+      "images": {
+        "featured": {
+          "url": "",
+          "alt": "Portfolio"
+        },
+        "notable": {
+          "url": "",
+          "alt": "Portfolio"
+        },
+        "personal": {
+          "url": "http://localhost:4000/media/6aa98b5597162c2e3c4c1ab0/aquib-portfolio.png",
+          "alt": "Portfolio"
+        }
+      },
+      "placements": {
+        "featured": false,
+        "notable": false,
+        "personal": true,
+        "resume": false
+      },
+      "resume": {
+        "techStack": "",
+        "description": ""
+      },
+      "published": true,
+      "order": 6,
+      "createdAt": "2026-09-15T18:15:49.429Z",
+      "updatedAt": "2026-09-15T18:15:49.429Z"
+    },
+    {
+      "id": "6aa98b5597162c2e3c4c1abe",
+      "title": "Amusement Park",
+      "shortTitle": "",
+      "slug": "amusement-park",
+      "url": "https://amusement-park-new.netlify.app",
+      "year": "",
+      "role": "",
+      "client": "",
+      "badge": "",
+      "linkLabel": "View Project",
+      "description": "",
+      "achievements": [],
+      "techStack": [],
+      "images": {
+        "featured": {
+          "url": "",
+          "alt": "Amusement Park"
+        },
+        "notable": {
+          "url": "",
+          "alt": "Amusement Park"
+        },
+        "personal": {
+          "url": "http://localhost:4000/media/6aa98b5497162c2e3c4c1a91/funpark.png",
+          "alt": "Amusement Park"
+        }
+      },
+      "placements": {
+        "featured": false,
+        "notable": false,
+        "personal": true,
+        "resume": false
+      },
+      "resume": {
+        "techStack": "",
+        "description": ""
+      },
+      "published": true,
+      "order": 7,
+      "createdAt": "2026-09-15T18:15:49.429Z",
+      "updatedAt": "2026-09-15T18:15:49.429Z"
+    },
+    {
+      "id": "6aa98b5597162c2e3c4c1abf",
+      "title": "E-commerce clone",
+      "shortTitle": "",
+      "slug": "e-commerce-clone",
+      "url": "https://shoppe-aquib-yazdani.netlify.app",
+      "year": "",
+      "role": "",
+      "client": "",
+      "badge": "",
+      "linkLabel": "View Project",
+      "description": "",
+      "achievements": [],
+      "techStack": [],
+      "images": {
+        "featured": {
+          "url": "",
+          "alt": "E-commerce clone"
+        },
+        "notable": {
+          "url": "",
+          "alt": "E-commerce clone"
+        },
+        "personal": {
+          "url": "http://localhost:4000/media/6aa98b5497162c2e3c4c1a9b/ecommerce.png",
+          "alt": "E-commerce clone"
+        }
+      },
+      "placements": {
+        "featured": false,
+        "notable": false,
+        "personal": true,
+        "resume": false
+      },
+      "resume": {
+        "techStack": "",
+        "description": ""
+      },
+      "published": true,
+      "order": 8,
+      "createdAt": "2026-09-15T18:15:49.429Z",
+      "updatedAt": "2026-09-15T18:15:49.429Z"
+    },
+    {
+      "id": "6aa98b5597162c2e3c4c1ac0",
+      "title": "Spotify clone",
+      "shortTitle": "",
+      "slug": "spotify-clone",
+      "url": "https://spotify-yazdani.netlify.app",
+      "year": "",
+      "role": "",
+      "client": "",
+      "badge": "",
+      "linkLabel": "View Project",
+      "description": "",
+      "achievements": [],
+      "techStack": [],
+      "images": {
+        "featured": {
+          "url": "",
+          "alt": "Spotify clone"
+        },
+        "notable": {
+          "url": "",
+          "alt": "Spotify clone"
+        },
+        "personal": {
+          "url": "http://localhost:4000/media/6aa98b5497162c2e3c4c1a9e/spotify.png",
+          "alt": "Spotify clone"
+        }
+      },
+      "placements": {
+        "featured": false,
+        "notable": false,
+        "personal": true,
+        "resume": false
+      },
+      "resume": {
+        "techStack": "",
+        "description": ""
+      },
+      "published": true,
+      "order": 9,
+      "createdAt": "2026-09-15T18:15:49.429Z",
+      "updatedAt": "2026-09-15T18:15:49.429Z"
+    },
+    {
+      "id": "6aa98b5597162c2e3c4c1ac1",
+      "title": "Screener",
+      "shortTitle": "",
+      "slug": "screener-personal",
+      "url": "https://screener.zamzam-capital.com",
+      "year": "",
+      "role": "",
+      "client": "",
+      "badge": "",
+      "linkLabel": "View Project",
+      "description": "",
+      "achievements": [],
+      "techStack": [],
+      "images": {
+        "featured": {
+          "url": "",
+          "alt": "Screener"
+        },
+        "notable": {
+          "url": "",
+          "alt": "Screener"
+        },
+        "personal": {
+          "url": "http://localhost:4000/media/6aa98b5397162c2e3c4c1a76/screener.png",
+          "alt": "Screener"
+        }
+      },
+      "placements": {
+        "featured": false,
+        "notable": false,
+        "personal": true,
+        "resume": false
+      },
+      "resume": {
+        "techStack": "",
+        "description": ""
+      },
+      "published": true,
+      "order": 10,
+      "createdAt": "2026-09-15T18:15:49.429Z",
+      "updatedAt": "2026-09-15T18:15:49.429Z"
+    },
+    {
+      "id": "6aa98b5597162c2e3c4c1ac2",
+      "title": "TOI ePaper - Archive",
+      "shortTitle": "",
+      "slug": "toi-epaper-archive-archive",
+      "url": "",
+      "year": "",
+      "role": "",
+      "client": "",
+      "badge": "",
+      "linkLabel": "View Project",
+      "description": "",
+      "achievements": [],
+      "techStack": [],
+      "images": {
+        "featured": {
+          "url": "",
+          "alt": "TOI ePaper - Archive"
+        },
+        "notable": {
+          "url": "",
+          "alt": "TOI ePaper - Archive"
+        },
+        "personal": {
+          "url": "http://localhost:4000/media/6aa98b5397162c2e3c4c1a72/toi.png",
+          "alt": "TOI ePaper - Archive"
+        }
+      },
+      "placements": {
+        "featured": false,
+        "notable": false,
+        "personal": true,
+        "resume": false
+      },
+      "resume": {
+        "techStack": "",
+        "description": ""
+      },
+      "published": true,
+      "order": 11,
+      "createdAt": "2026-09-15T18:15:49.429Z",
+      "updatedAt": "2026-09-15T18:15:49.429Z"
+    }
+  ],
+  "blogPosts": [
+    {
+      "id": "6aa98b5597162c2e3c4c1ac5",
+      "title": "Zustand vs Redux Toolkit: The Honest Breakdown Nobody Gives You",
+      "slug": "zustand-vs-redux-toolkit-honest-breakdown",
+      "subtitle": "My team picked Redux Toolkit. Three months later we ripped it out. Not because it was bad — because it was too much for what we actually needed. Here's the full breakdown.",
+      "publishedAt": "2026-06-20",
+      "lastUpdated": "",
+      "readingTime": "7 min read",
+      "tags": [
+        "React",
+        "Zustand",
+        "Redux Toolkit",
+        "State Management",
+        "TypeScript"
+      ],
+      "coverAccent": "#d3a07a",
+      "coverImage": {
+        "url": "",
+        "alt": ""
+      },
+      "featured": false,
+      "published": true,
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "My team picked Redux Toolkit at the start of a new project. The decision was easy — it's the official Redux recommendation, it has great DevTools, and everyone on the team already knew it. Three months later we ripped it out. Not because Redux Toolkit is bad. Because it was too much for what we actually needed. This is the honest breakdown I wish someone had given us before we started."
+        },
+        {
+          "type": "paragraph",
+          "text": "Zustand just crossed Redux Toolkit in weekly npm downloads in 2025. That's not a coincidence. Developers have been quietly making the same switch. The question is whether the switch makes sense for your project — and the answer depends on more than bundle size."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "The Numbers"
+        },
+        {
+          "type": "paragraph",
+          "text": "Zustand 5.0 ships at 486 bytes gzipped. Redux Toolkit ships at 13.6KB gzipped. That's a 28× size difference. On a throttled device, Zustand parses approximately 4× faster. These numbers matter on mobile — they don't move the needle on desktop."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Zustand — 486B gzipped, ~3 files of boilerplate, surgical re-renders by default",
+            "Redux Toolkit — 13.6KB gzipped, ~15 files of boilerplate, re-renders need manual reselect",
+            "Zustand crossed Redux Toolkit in weekly npm downloads in 2025",
+            "Same counter: RTK needs 15 files, Zustand needs 3"
+          ],
+          "ordered": false
+        },
+        {
+          "type": "paragraph",
+          "text": "But bundle size isn't the real argument. The real difference shows up in three places: boilerplate, re-renders, and DevTools. Let's take each one."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Boilerplate: 15 Files vs 3"
+        },
+        {
+          "type": "paragraph",
+          "text": "The boilerplate gap sounds trivial until you're onboarding someone at 11pm before a release. Here's the same feature — a modal toggle — implemented in both."
+        },
+        {
+          "type": "code",
+          "language": "typescript",
+          "text": "// Redux Toolkit — modal toggle\n// modalSlice.ts\nimport { createSlice } from \"@reduxjs/toolkit\";\n\nconst modalSlice = createSlice({\n  name: \"modal\",\n  initialState: { isOpen: false },\n  reducers: {\n    openModal: (state) => { state.isOpen = true; },\n    closeModal: (state) => { state.isOpen = false; },\n  },\n});\n\nexport const { openModal, closeModal } = modalSlice.actions;\nexport default modalSlice.reducer;\n\n// store.ts — add to combineReducers\n// hooks.ts — typed useAppDispatch + useAppSelector\n// Component usage:\nconst isOpen = useAppSelector((s) => s.modal.isOpen);\nconst dispatch = useAppDispatch();\ndispatch(openModal());"
+        },
+        {
+          "type": "code",
+          "language": "typescript",
+          "text": "// Zustand — same modal toggle, one file\nimport { create } from \"zustand\";\n\nconst useModalStore = create<{\n  isOpen: boolean;\n  open: () => void;\n  close: () => void;\n}>()((set) => ({\n  isOpen: false,\n  open: () => set({ isOpen: true }),\n  close: () => set({ isOpen: false }),\n}));\n\n// Component usage — that's it\nconst { isOpen, open, close } = useModalStore();"
+        },
+        {
+          "type": "paragraph",
+          "text": "For a modal. The Redux Toolkit version touches 4 files minimum. The Zustand version is self-contained. Multiply this across 20 features and you understand why teams are switching."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Re-renders: Surgical vs Manual"
+        },
+        {
+          "type": "paragraph",
+          "text": "This is where Zustand's design philosophy becomes concrete. By default, a component re-renders when any part of the store it reads changes. Redux Toolkit has the same problem without Reselect. Zustand's selector pattern is surgical — subscribe to exactly what you need."
+        },
+        {
+          "type": "code",
+          "language": "typescript",
+          "text": "// Bad — re-renders whenever ANY store value changes\nconst { filters, pagination, user } = useAppStore();\n\n// Good — only re-renders when filters.status changes\nconst status = useAppStore((s) => s.filters.status);\n\n// Good — derived selector, re-renders only when count changes\nconst activeCount = useAppStore(\n  (s) => Object.values(s.filters).filter(Boolean).length\n);\n\n// Zustand compares selector output by reference equality —\n// no extra memoization library required."
+        },
+        {
+          "type": "paragraph",
+          "text": "I migrated a high-churn dashboard from prop-drilled Context to Zustand and the render noise disappeared overnight. The case filter panel, results table, and pagination — all previously re-rendering in lockstep — became independent. Each component subscribed to its own slice and re-rendered in isolation."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "DevTools: Where Redux Toolkit Genuinely Wins"
+        },
+        {
+          "type": "paragraph",
+          "text": "This is the honest part nobody says. Redux DevTools — time-travel debugging, action replay, state export — is not replicated by Zustand. If you're in a regulated industry (legal, finance, healthcare), debugging a race condition from three async actions ago is invaluable. Redux's action log is a linear, inspectable history of your entire state. Zustand's middleware logger exists but it's basic."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Time-travel debugging — step backwards through state changes",
+            "Action replay — reproduce bugs from production logs",
+            "State export/import — share exact app state with teammates",
+            "Diff view — see exactly what changed per dispatch"
+          ],
+          "ordered": false
+        },
+        {
+          "type": "paragraph",
+          "text": "If your team lives in Redux DevTools every day, don't switch. If you've opened it twice in six months, it's not a real argument for keeping Redux Toolkit."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "The Modern Pattern: TanStack Query + Zustand"
+        },
+        {
+          "type": "paragraph",
+          "text": "Here's what I actually reach for now, and why it covers 90% of React apps with almost zero overhead."
+        },
+        {
+          "type": "quote",
+          "text": "Most 'state management' problems are actually server state problems. Conflating the two is what leads to 80-line Redux slices managing data that should just be a cache."
+        },
+        {
+          "type": "paragraph",
+          "text": "TanStack Query handles everything that comes from the server: fetching, caching, background refetching, stale-while-revalidate, optimistic updates. Zustand handles everything that is genuinely client-side: UI state, filters, selections, modals, multi-step wizard progress."
+        },
+        {
+          "type": "code",
+          "language": "typescript",
+          "text": "// TanStack Query — server state\nconst { data: cases, isLoading } = useQuery({\n  queryKey: [\"cases\", filters],\n  queryFn: () => fetchCases(filters),\n  staleTime: 30_000,\n});\n\n// Zustand — client state\nconst filters = useCaseStore((s) => s.filters);\nconst setFilter = useCaseStore((s) => s.setFilter);\n\n// No manual loading state. No Redux thunks.\n// No normalization. Just: what does the server give us,\n// and what has the user selected locally."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "When to Use Redux Toolkit"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Large teams (10+ engineers) where consistent patterns matter more than flexibility",
+            "Complex async orchestration — Redux-Saga or Redux-Thunk with heavy side effects",
+            "Codebases already deep in Redux where migration cost exceeds benefit",
+            "Regulated industries where DevTools time-travel is a debugging requirement",
+            "Apps with normalized entity caching (Redux Toolkit's createEntityAdapter is excellent)"
+          ],
+          "ordered": false
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "When to Use Zustand"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Small to medium teams who ship fast and hate boilerplate",
+            "Apps where 80%+ of state comes from a server (pair with TanStack Query)",
+            "Greenfield projects — start simple, scale up only when you hit real limits",
+            "When you need state outside of React components (utility functions, event handlers)",
+            "Micro-frontends — each remote can own its store without global provider hell"
+          ],
+          "ordered": false
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "The Mistake I Still See Constantly"
+        },
+        {
+          "type": "paragraph",
+          "text": "Teams adding Redux Toolkit to a three-person startup that ships every two weeks. Six months later they're maintaining 80-line slices for a modal toggle. The framework isn't the problem. The mismatch between tool complexity and actual problem complexity is the problem."
+        },
+        {
+          "type": "paragraph",
+          "text": "Pick the tool that stays out of your way. For most teams in 2026, that's TanStack Query + Zustand. For teams with genuinely complex async state and large codebases, Redux Toolkit earns its weight. Know which situation you're actually in before you start typing."
+        },
+        {
+          "type": "quote",
+          "text": "The best state management setup is the one your newest team member can understand on day one without reading documentation."
+        }
+      ],
+      "seo": {
+        "title": "",
+        "description": "",
+        "keywords": [],
+        "ogTitle": "",
+        "ogDescription": "",
+        "ogImage": {
+          "url": "",
+          "alt": ""
+        }
+      },
+      "createdAt": "2026-09-15T18:15:49.429Z",
+      "updatedAt": "2026-09-15T18:15:49.429Z"
+    },
+    {
+      "id": "6aa98b5597162c2e3c4c1ac3",
+      "title": "Building TOI ePaper for 10M+ Daily Active Users",
+      "slug": "building-toi-epaper-for-10m-daily-users",
+      "subtitle": "How we architected, optimized, and scaled the Times of India digital ePaper — from a blank React project to India's most-read digital newspaper.",
+      "publishedAt": "2026-06-10",
+      "lastUpdated": "",
+      "readingTime": "8 min read",
+      "tags": [
+        "React",
+        "SSR",
+        "Performance",
+        "Architecture"
+      ],
+      "coverAccent": "#d3e97a",
+      "coverImage": {
+        "url": "",
+        "alt": ""
+      },
+      "featured": true,
+      "published": true,
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "When I joined Harns Technologies in 2021, one of my first large-scale assignments was the Times of India ePaper platform — a product that would eventually serve 10M+ digital daily active users and sit inside an ecosystem with 60M+ monthly active app users. This is the story of the decisions we made, the performance bottlenecks we hit, and how we resolved them."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Starting From Scratch"
+        },
+        {
+          "type": "paragraph",
+          "text": "We started with a blank React project. The requirement was clear: build a digital replica of the print newspaper that loads fast, works across devices, integrates ads revenue, and can be reused across multiple regional ePaper properties. That last point turned out to be the most architecturally important decision we made."
+        },
+        {
+          "type": "paragraph",
+          "text": "Instead of building a monolithic app, we designed a shared component library from day one — pages, navigation, search, text-to-speech, and ad slots were all isolated into composable units. This allowed us to launch three additional regional ePapers on top of the same architecture, each with different branding but zero duplicated logic."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "SSR + Context API for State"
+        },
+        {
+          "type": "paragraph",
+          "text": "The platform is server-side rendered. SSR was non-negotiable for two reasons: SEO (news content needs to be crawlable) and first-contentful-paint (users landing on the ePaper via Google search should see content immediately, not a spinner)."
+        },
+        {
+          "type": "paragraph",
+          "text": "For state management we went with React Context API rather than Redux — the app state is mostly read-heavy (current edition, selected page, zoom level) with infrequent mutations. Context avoided Redux boilerplate without sacrificing the ability to share state deeply across the component tree."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "The Archive Problem: 20 Seconds → Under 1 Second"
+        },
+        {
+          "type": "paragraph",
+          "text": "The archive view — a grid of every past edition going back years — was our biggest performance crisis. The initial implementation loaded and rendered every edition card into the DOM simultaneously. On a slow connection or low-end device, this caused a 20+ second render block that made the page completely unusable."
+        },
+        {
+          "type": "paragraph",
+          "text": "The fix was list virtualization. We only rendered the cards currently within (or near) the viewport, and destroyed cards that scrolled far out of view. The result: DOM nodes dropped from several thousand to under a hundred at any time. Render time collapsed to under one second — a 20× improvement that unblocked the archive product launch entirely."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Only visible rows rendered — DOM size stayed constant regardless of total data",
+            "Scroll position maintained perfectly via item height estimation",
+            "Lazy hydration for individual cards below the fold",
+            "Image lazy-loading combined with virtual scroll for bandwidth savings"
+          ],
+          "ordered": false
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Text-to-Speech Accessibility"
+        },
+        {
+          "type": "paragraph",
+          "text": "One feature I'm particularly proud of is the text-to-speech reader, built using the Web Speech API. Readers could highlight any article and have it read aloud — useful for accessibility and for commuters who want to consume news hands-free. The implementation required careful handling of browser compatibility, playback controls, and pitch/rate settings, all without any third-party TTS library."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Ads, Analytics, and Revenue"
+        },
+        {
+          "type": "paragraph",
+          "text": "Integrating Google AdSense and GTM into an SSR React app without degrading Core Web Vitals is genuinely tricky. Ad scripts are notorious for layout shift (CLS) and blocking the main thread (TBT). We deferred all ad initialization until after first contentful paint, used fixed-size ad slot placeholders to prevent layout shift, and loaded GTM asynchronously with a nonce-based CSP strategy."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Key Takeaways"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Design for reuse early — a shared component library across 4 ePapers saved months of future work",
+            "List virtualization is essential for any data-heavy scrollable surface",
+            "SSR + careful hydration strategy is the right default for content-heavy news products",
+            "Defer third-party scripts aggressively to protect Core Web Vitals",
+            "Web Speech API can deliver real accessibility value without external dependencies"
+          ],
+          "ordered": false
+        }
+      ],
+      "seo": {
+        "title": "",
+        "description": "",
+        "keywords": [],
+        "ogTitle": "",
+        "ogDescription": "",
+        "ogImage": {
+          "url": "",
+          "alt": ""
+        }
+      },
+      "createdAt": "2026-09-15T18:15:49.429Z",
+      "updatedAt": "2026-09-15T18:15:49.429Z"
+    },
+    {
+      "id": "6aa98b5597162c2e3c4c1ac4",
+      "title": "Replacing Prop Drilling with Zustand: A Practical Guide",
+      "slug": "zustand-over-prop-drilling-practical-guide",
+      "subtitle": "How Zustand's sliced stores and reusable selectors fixed the highest-churn screens in an enterprise arbitration platform — and why it beats both Redux and Context for mid-size apps.",
+      "publishedAt": "2026-05-15",
+      "lastUpdated": "",
+      "readingTime": "7 min read",
+      "tags": [
+        "React",
+        "Zustand",
+        "State Management",
+        "TypeScript"
+      ],
+      "coverAccent": "#d3a07a",
+      "coverImage": {
+        "url": "",
+        "alt": ""
+      },
+      "featured": false,
+      "published": true,
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "State management is one of those decisions that feels low-stakes early in a project and high-stakes six months in. At AAA's dispute resolution platform, we inherited a React codebase with deeply prop-drilled state — filter configs, pagination state, and async data passed through 5–6 component layers. Refactoring to Zustand was one of the most impactful engineering decisions I made there."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "The Problem With Deep Prop Drilling"
+        },
+        {
+          "type": "paragraph",
+          "text": "Prop drilling isn't just an aesthetics problem. When state lives several layers up from where it's used, every intermediate component becomes a pass-through. Add a new field to that state and you touch files that conceptually have nothing to do with the feature. Worse, every re-render of the parent causes re-renders all the way down the tree — even for components whose relevant slice of state hasn't changed."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Why Zustand Over Redux or Context?"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Zero boilerplate — no actions, reducers, or action creators",
+            "Fine-grained subscriptions — components only re-render when their specific slice changes",
+            "TypeScript-first — store type is inferred from the create() call",
+            "Works outside React — useful for utility functions that need to read state",
+            "No Provider wrapper needed — global store is just a hook"
+          ],
+          "ordered": false
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Sliced Store Pattern"
+        },
+        {
+          "type": "paragraph",
+          "text": "For larger stores, Zustand recommends a sliced pattern — each domain of state is defined in its own slice and combined into one store. This keeps files manageable without fragmenting state into multiple separate stores."
+        },
+        {
+          "type": "code",
+          "language": "typescript",
+          "text": "// filterSlice.ts\nexport type FilterSlice = {\n  filters: CaseFilters;\n  setFilter: (key: keyof CaseFilters, value: string) => void;\n  resetFilters: () => void;\n};\n\nconst defaultFilters: CaseFilters = { status: \"all\", type: \"all\", dateRange: null };\n\nexport const createFilterSlice = (set: SetState): FilterSlice => ({\n  filters: defaultFilters,\n  setFilter: (key, value) =>\n    set((s) => ({ filters: { ...s.filters, [key]: value } })),\n  resetFilters: () => set({ filters: defaultFilters }),\n});\n\n// store.ts\nexport const useCaseStore = create<FilterSlice & PaginationSlice>()((...a) => ({\n  ...createFilterSlice(...a),\n  ...createPaginationSlice(...a),\n}));"
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Selectors Prevent Unnecessary Re-renders"
+        },
+        {
+          "type": "paragraph",
+          "text": "The most important Zustand pattern for performance is using selectors. Rather than subscribing to the entire store, a component subscribes to only the specific fields it uses. Zustand compares the selector's output by reference equality on each state update, skipping the re-render if nothing changed."
+        },
+        {
+          "type": "code",
+          "language": "typescript",
+          "text": "// BAD — subscribes to entire store, re-renders on any change\nconst { filters, pagination } = useCaseStore();\n\n// GOOD — only re-renders when filters.status changes\nconst status = useCaseStore((s) => s.filters.status);\n\n// GOOD — selector for derived value\nconst activeFilterCount = useCaseStore(\n  (s) => Object.values(s.filters).filter(Boolean).length\n);"
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Results"
+        },
+        {
+          "type": "paragraph",
+          "text": "After the refactor, the highest-churn screens (case filter panel + results table + pagination) went from being the buggiest to the most stable. Redundant re-renders were eliminated. New filter fields could be added in one file without touching intermediary components. And junior engineers could understand the state shape in seconds — just open the store file."
+        },
+        {
+          "type": "quote",
+          "text": "The best state management solution is the one that makes state changes obvious and co-located with the components that care about them."
+        }
+      ],
+      "seo": {
+        "title": "",
+        "description": "",
+        "keywords": [],
+        "ogTitle": "",
+        "ogDescription": "",
+        "ogImage": {
+          "url": "",
+          "alt": ""
+        }
+      },
+      "createdAt": "2026-09-15T18:15:49.429Z",
+      "updatedAt": "2026-09-15T18:15:49.429Z"
+    }
+  ],
+  "skillCategories": [
+    {
+      "id": "6aa98b5597162c2e3c4c1ac6",
+      "title": "Frontend Development",
+      "page": "about",
+      "skills": [
+        {
+          "name": "React.js",
+          "icon": "Atom"
+        },
+        {
+          "name": "React Native",
+          "icon": "Smartphone"
+        },
+        {
+          "name": "Next.js",
+          "icon": "Zap"
+        },
+        {
+          "name": "JavaScript (ES6+)",
+          "icon": "Code2"
+        },
+        {
+          "name": "TypeScript",
+          "icon": "FileCode"
+        },
+        {
+          "name": "HTML",
+          "icon": "FileCode"
+        },
+        {
+          "name": "CSS",
+          "icon": "Paintbrush"
+        },
+        {
+          "name": "SCSS",
+          "icon": "Paintbrush"
+        },
+        {
+          "name": "Tailwind CSS",
+          "icon": "Wind"
+        },
+        {
+          "name": "Material UI",
+          "icon": "Palette"
+        },
+        {
+          "name": "Bootstrap",
+          "icon": "Palette"
+        }
+      ],
+      "order": 0,
+      "createdAt": "2026-09-15T18:15:49.429Z",
+      "updatedAt": "2026-09-15T18:15:49.429Z"
+    },
+    {
+      "id": "6aa98b5597162c2e3c4c1ac7",
+      "title": "State Management",
+      "page": "about",
+      "skills": [
+        {
+          "name": "Redux",
+          "icon": "Box"
+        },
+        {
+          "name": "Context API",
+          "icon": "Box"
+        },
+        {
+          "name": "Zustand",
+          "icon": "Box"
+        }
+      ],
+      "order": 1,
+      "createdAt": "2026-09-15T18:15:49.429Z",
+      "updatedAt": "2026-09-15T18:15:49.429Z"
+    },
+    {
+      "id": "6aa98b5597162c2e3c4c1ac8",
+      "title": "Testing & QA",
+      "page": "about",
+      "skills": [
+        {
+          "name": "Jest",
+          "icon": "CheckCircle"
+        },
+        {
+          "name": "React Testing Library",
+          "icon": "TestTube2"
+        },
+        {
+          "name": "Cypress",
+          "icon": "TestTube2"
+        },
+        {
+          "name": "Playwright",
+          "icon": "TestTube2"
+        }
+      ],
+      "order": 2,
+      "createdAt": "2026-09-15T18:15:49.429Z",
+      "updatedAt": "2026-09-15T18:15:49.429Z"
+    },
+    {
+      "id": "6aa98b5597162c2e3c4c1ac9",
+      "title": "Performance Optimization",
+      "page": "about",
+      "skills": [
+        {
+          "name": "SSR",
+          "icon": "Zap"
+        },
+        {
+          "name": "SSG",
+          "icon": "Zap"
+        },
+        {
+          "name": "Component Reusability",
+          "icon": "Puzzle"
+        },
+        {
+          "name": "UI Optimization",
+          "icon": "Gauge"
+        },
+        {
+          "name": "Load Time Reduction",
+          "icon": "Timer"
+        },
+        {
+          "name": "Accessibility Improvements",
+          "icon": "Users"
+        }
+      ],
+      "order": 3,
+      "createdAt": "2026-09-15T18:15:49.429Z",
+      "updatedAt": "2026-09-15T18:15:49.429Z"
+    },
+    {
+      "id": "6aa98b5597162c2e3c4c1aca",
+      "title": "API Integration",
+      "page": "about",
+      "skills": [
+        {
+          "name": "RESTful APIs",
+          "icon": "Globe"
+        },
+        {
+          "name": "GraphQL",
+          "icon": "Database"
+        }
+      ],
+      "order": 4,
+      "createdAt": "2026-09-15T18:15:49.429Z",
+      "updatedAt": "2026-09-15T18:15:49.429Z"
+    },
+    {
+      "id": "6aa98b5597162c2e3c4c1acb",
+      "title": "Version Control & Collaboration",
+      "page": "about",
+      "skills": [
+        {
+          "name": "Git",
+          "icon": "GitBranch"
+        },
+        {
+          "name": "GitHub",
+          "icon": "Github"
+        },
+        {
+          "name": "Azure",
+          "icon": "Cloud"
+        },
+        {
+          "name": "GitLab",
+          "icon": "GitBranch"
+        },
+        {
+          "name": "Bitbucket",
+          "icon": "GitBranch"
+        },
+        {
+          "name": "Jira",
+          "icon": "Folder"
+        },
+        {
+          "name": "Slack",
+          "icon": "MessageSquare"
+        },
+        {
+          "name": "ProofHub",
+          "icon": "Folder"
+        }
+      ],
+      "order": 5,
+      "createdAt": "2026-09-15T18:15:49.429Z",
+      "updatedAt": "2026-09-15T18:15:49.429Z"
+    },
+    {
+      "id": "6aa98b5597162c2e3c4c1acc",
+      "title": "Languages",
+      "page": "resume",
+      "skills": [
+        {
+          "name": "JavaScript (ES6+)",
+          "icon": "Code2"
+        },
+        {
+          "name": "TypeScript",
+          "icon": "FileCode"
+        },
+        {
+          "name": "HTML5",
+          "icon": "FileCode"
+        },
+        {
+          "name": "CSS3",
+          "icon": "Paintbrush"
+        },
+        {
+          "name": "SCSS",
+          "icon": "Paintbrush"
+        }
+      ],
+      "order": 0,
+      "createdAt": "2026-09-15T18:15:49.429Z",
+      "updatedAt": "2026-09-15T18:15:49.429Z"
+    },
+    {
+      "id": "6aa98b5597162c2e3c4c1acd",
+      "title": "Frontend",
+      "page": "resume",
+      "skills": [
+        {
+          "name": "React",
+          "icon": "Atom"
+        },
+        {
+          "name": "Next.js",
+          "icon": "Zap"
+        },
+        {
+          "name": "Tailwind CSS",
+          "icon": "Wind"
+        },
+        {
+          "name": "Material UI",
+          "icon": "Palette"
+        },
+        {
+          "name": "Styled Components",
+          "icon": "Paintbrush"
+        },
+        {
+          "name": "Framer Motion",
+          "icon": "Zap"
+        },
+        {
+          "name": "Bootstrap",
+          "icon": "Palette"
+        },
+        {
+          "name": "Storybook",
+          "icon": "Folder"
+        }
+      ],
+      "order": 1,
+      "createdAt": "2026-09-15T18:15:49.429Z",
+      "updatedAt": "2026-09-15T18:15:49.429Z"
+    },
+    {
+      "id": "6aa98b5597162c2e3c4c1ace",
+      "title": "Backend",
+      "page": "resume",
+      "skills": [
+        {
+          "name": "Node.js",
+          "icon": "Code2"
+        },
+        {
+          "name": "Express.js",
+          "icon": "Code2"
+        },
+        {
+          "name": "REST APIs",
+          "icon": "Globe"
+        },
+        {
+          "name": "GraphQL",
+          "icon": "Database"
+        },
+        {
+          "name": "WebSockets",
+          "icon": "Globe"
+        }
+      ],
+      "order": 2,
+      "createdAt": "2026-09-15T18:15:49.429Z",
+      "updatedAt": "2026-09-15T18:15:49.429Z"
+    },
+    {
+      "id": "6aa98b5597162c2e3c4c1acf",
+      "title": "Architecture",
+      "page": "resume",
+      "skills": [
+        {
+          "name": "Micro-Frontends",
+          "icon": "Puzzle"
+        },
+        {
+          "name": "Webpack Module Federation",
+          "icon": "Puzzle"
+        },
+        {
+          "name": "SSR",
+          "icon": "Zap"
+        },
+        {
+          "name": "SSG",
+          "icon": "Zap"
+        },
+        {
+          "name": "ISR",
+          "icon": "Zap"
+        },
+        {
+          "name": "BFF Pattern",
+          "icon": "Puzzle"
+        },
+        {
+          "name": "Design Systems",
+          "icon": "Palette"
+        },
+        {
+          "name": "Component-Driven Development",
+          "icon": "Box"
+        }
+      ],
+      "order": 3,
+      "createdAt": "2026-09-15T18:15:49.429Z",
+      "updatedAt": "2026-09-15T18:15:49.429Z"
+    },
+    {
+      "id": "6aa98b5597162c2e3c4c1ad0",
+      "title": "State & Data",
+      "page": "resume",
+      "skills": [
+        {
+          "name": "Redux",
+          "icon": "Box"
+        },
+        {
+          "name": "Redux Toolkit",
+          "icon": "Box"
+        },
+        {
+          "name": "Zustand",
+          "icon": "Box"
+        },
+        {
+          "name": "Context API",
+          "icon": "Box"
+        },
+        {
+          "name": "React Query",
+          "icon": "Database"
+        }
+      ],
+      "order": 4,
+      "createdAt": "2026-09-15T18:15:49.429Z",
+      "updatedAt": "2026-09-15T18:15:49.429Z"
+    },
+    {
+      "id": "6aa98b5597162c2e3c4c1ad1",
+      "title": "AI & Dev Tools",
+      "page": "resume",
+      "skills": [
+        {
+          "name": "Claude API",
+          "icon": "MessageSquare"
+        },
+        {
+          "name": "LLM Integration",
+          "icon": "MessageSquare"
+        },
+        {
+          "name": "Streaming Responses",
+          "icon": "Zap"
+        },
+        {
+          "name": "Prompt Engineering",
+          "icon": "MessageSquare"
+        },
+        {
+          "name": "GitHub Copilot",
+          "icon": "Github"
+        },
+        {
+          "name": "Cursor",
+          "icon": "Code2"
+        },
+        {
+          "name": "Claude Code",
+          "icon": "MessageSquare"
+        }
+      ],
+      "order": 5,
+      "createdAt": "2026-09-15T18:15:49.429Z",
+      "updatedAt": "2026-09-15T18:15:49.429Z"
+    },
+    {
+      "id": "6aa98b5597162c2e3c4c1ad2",
+      "title": "Performance",
+      "page": "resume",
+      "skills": [
+        {
+          "name": "Core Web Vitals (LCP, INP, CLS)",
+          "icon": "Gauge"
+        },
+        {
+          "name": "Lighthouse",
+          "icon": "Gauge"
+        },
+        {
+          "name": "Code Splitting",
+          "icon": "Timer"
+        },
+        {
+          "name": "Lazy Loading",
+          "icon": "Timer"
+        },
+        {
+          "name": "List Virtualization",
+          "icon": "Gauge"
+        },
+        {
+          "name": "Bundle Analysis",
+          "icon": "Gauge"
+        },
+        {
+          "name": "CDN",
+          "icon": "Cloud"
+        }
+      ],
+      "order": 6,
+      "createdAt": "2026-09-15T18:15:49.429Z",
+      "updatedAt": "2026-09-15T18:15:49.429Z"
+    },
+    {
+      "id": "6aa98b5597162c2e3c4c1ad3",
+      "title": "Testing",
+      "page": "resume",
+      "skills": [
+        {
+          "name": "Jest",
+          "icon": "CheckCircle"
+        },
+        {
+          "name": "React Testing Library",
+          "icon": "TestTube2"
+        },
+        {
+          "name": "Cypress",
+          "icon": "TestTube2"
+        },
+        {
+          "name": "Playwright",
+          "icon": "TestTube2"
+        }
+      ],
+      "order": 7,
+      "createdAt": "2026-09-15T18:15:49.429Z",
+      "updatedAt": "2026-09-15T18:15:49.429Z"
+    },
+    {
+      "id": "6aa98b5597162c2e3c4c1ad4",
+      "title": "Build & Tooling",
+      "page": "resume",
+      "skills": [
+        {
+          "name": "Vite",
+          "icon": "Zap"
+        },
+        {
+          "name": "Webpack",
+          "icon": "Box"
+        },
+        {
+          "name": "Babel",
+          "icon": "Code2"
+        },
+        {
+          "name": "ESLint",
+          "icon": "CheckCircle"
+        },
+        {
+          "name": "Prettier",
+          "icon": "Paintbrush"
+        }
+      ],
+      "order": 8,
+      "createdAt": "2026-09-15T18:15:49.429Z",
+      "updatedAt": "2026-09-15T18:15:49.429Z"
+    },
+    {
+      "id": "6aa98b5597162c2e3c4c1ad5",
+      "title": "Cloud & Deployment",
+      "page": "resume",
+      "skills": [
+        {
+          "name": "AWS (S3, CloudFront)",
+          "icon": "Cloud"
+        },
+        {
+          "name": "Netlify",
+          "icon": "Cloud"
+        }
+      ],
+      "order": 9,
+      "createdAt": "2026-09-15T18:15:49.429Z",
+      "updatedAt": "2026-09-15T18:15:49.429Z"
+    },
+    {
+      "id": "6aa98b5597162c2e3c4c1ad6",
+      "title": "Quality & Standards",
+      "page": "resume",
+      "skills": [
+        {
+          "name": "WCAG 2.1 Accessibility",
+          "icon": "Users"
+        },
+        {
+          "name": "i18n / Localization",
+          "icon": "Globe"
+        },
+        {
+          "name": "SEO",
+          "icon": "Globe"
+        },
+        {
+          "name": "Web Speech API",
+          "icon": "MessageSquare"
+        },
+        {
+          "name": "Google Analytics",
+          "icon": "Gauge"
+        },
+        {
+          "name": "GTM",
+          "icon": "Gauge"
+        }
+      ],
+      "order": 10,
+      "createdAt": "2026-09-15T18:15:49.429Z",
+      "updatedAt": "2026-09-15T18:15:49.429Z"
+    },
+    {
+      "id": "6aa98b5597162c2e3c4c1ad7",
+      "title": "Collaboration",
+      "page": "resume",
+      "skills": [
+        {
+          "name": "Git",
+          "icon": "GitBranch"
+        },
+        {
+          "name": "GitHub",
+          "icon": "Github"
+        },
+        {
+          "name": "GitLab",
+          "icon": "GitBranch"
+        },
+        {
+          "name": "Jira",
+          "icon": "Folder"
+        },
+        {
+          "name": "Agile/Scrum",
+          "icon": "Users"
+        },
+        {
+          "name": "Code Reviews",
+          "icon": "CheckCircle"
+        },
+        {
+          "name": "Mentoring",
+          "icon": "Users"
+        },
+        {
+          "name": "Technical Interviewing",
+          "icon": "Users"
+        }
+      ],
+      "order": 11,
+      "createdAt": "2026-09-15T18:15:49.429Z",
+      "updatedAt": "2026-09-15T18:15:49.429Z"
+    }
+  ],
+  "experience": [
+    {
+      "id": "6aa98b5597162c2e3c4c1ad8",
+      "title": "Senior Software Engineer",
+      "company": "Zensar Technologies",
+      "location": "Pune, India",
+      "startDate": "2025-06",
+      "endDate": "",
+      "periodLabel": "",
+      "responsibilities": [
+        "Own end-to-end frontend for the AAA Digital Dispute Resolution platform, a legal-grade arbitration system for the American Arbitration Association (largest US arbitration administrator, ~88% market share, 180K+ annual cases) spanning case filings, evidence workflows, hearings, and arbitrator verdicts.",
+        "Architected the multi-step case submission module in React and TypeScript with chunked document uploads, draft auto-persistence, schema-driven validation, and role-based UI states, replacing a fragmented legacy flow and stabilizing the platform's highest-traffic intake surface.",
+        "Integrated the Claude API into arbitration dashboards with streaming responses and structured prompt design, auto-summarizing 30 to 60 page case documents into expandable navigable briefs, substantially reducing arbitrator first-pass review time and surfacing critical case context within seconds.",
+        "Shipped a multi-tenant Auth0 SSO platform end-to-end (POC to production) across 3 tenant configurations, with a custom token-exchange layer, Universal Login, RBAC, and tenant-aware routing, now serving as the centralized authentication layer across multiple internal applications.",
+        "Contributing to a micro-frontend modernization via Webpack Module Federation, enabling independent team deploys, shared runtime dependencies, and incremental migration away from a large legacy monolith without a big-bang rewrite.",
+        "Migrated legacy build configuration to Vite, reducing build times from approximately 90 seconds to under 20 seconds (4.5x faster) and cutting HMR feedback to sub-second, directly improving team-wide development throughput.",
+        "Refactored prop-drilled, unstable UI to Zustand with reusable selectors and sliced stores across filters, pagination, and async data flows, eliminating redundant re-renders and stabilizing the highest-churn screens.",
+        "Established Jest and React Testing Library coverage across filter logic, role-based rendering, and async workflows, preventing regressions during weekly production releases.",
+        "Drove WCAG 2.1 AA compliance via keyboard navigation, ARIA semantics, focus management, and screen-reader support, critical for legal workflows where accessibility is statutorily required.",
+        "Conducted 20+ senior-level frontend interviews, led team-wide PR reviews, and mentored junior engineers, directly contributing to hiring quality and delivery velocity."
+      ],
+      "order": 0,
+      "createdAt": "2026-09-15T18:15:49.429Z",
+      "updatedAt": "2026-09-15T18:15:49.429Z",
+      "period": "Jun 2025 – Present"
+    },
+    {
+      "id": "6aa98b5597162c2e3c4c1ad9",
+      "title": "Software Development Engineer II",
+      "company": "Harns Technologies",
+      "location": "Mumbai, India",
+      "startDate": "2021-06",
+      "endDate": "2025-06",
+      "periodLabel": "",
+      "responsibilities": [
+        "Owned and shipped the Times of India ePaper platform from scratch to production, part of the Times Group digital ecosystem (10M+ digital DAU, 60M+ app MAU; India's #1 English daily).",
+        "Extended the ePaper architecture to launch 3 additional regional ePapers on the same platform, with a shared React component library and frontend architecture reused across all editions and a standalone Archive application.",
+        "Spearheaded Adlob end-to-end, Times of India's unified advertisement booking platform used by 200+ media agencies, built from scratch on React with virtualized calendar inventory grids, campaign creation workflows, and booking management.",
+        "Resolved a rendering bottleneck on archive views with dense paginated data through list virtualization and lazy hydration, bringing DOM render time from ~20s to under 1s and unblocking the archive product launch.",
+        "Engineered the ePaper on React with SSR, Context API, Google AdSense, GTM, and analytics integrations supporting ad-revenue monetization; built a text-to-speech reader via the Web Speech API for accessible audio consumption.",
+        "Delivered advanced multi-keyword archive search across years of historical editions with boolean operators, date ranges, and edition filters, enabling deep content discovery for readers and researchers.",
+        "Achieved strong Lighthouse and Core Web Vitals scores across ePaper through code splitting, lazy loading, image optimization, and route-level prefetching; drove WCAG 2.1 AA compliance for a mass-market news audience.",
+        "Migrated a US-based Veterinary SaaS serving 50+ hospitals from a legacy stack to Next.js; delivered core modules of Libsi Markah multilingual e-commerce (payment flow, product pages, cart) on Next.js and Redux Toolkit.",
+        "Built a custom CMS for podcast and post management, enabling editorial teams to self-serve content publishing and removing engineering as a bottleneck.",
+        "Mentored and led a team of 5 frontend engineers as direct reports, directing task planning, code reviews, delivery timelines, and growth conversations.",
+        "Owned on-call coverage during peak-traffic production releases for major national events including general elections and the Union Budget, collaborating directly with engineering leadership and the CEO to ensure zero-downtime delivery."
+      ],
+      "order": 1,
+      "createdAt": "2026-09-15T18:15:49.429Z",
+      "updatedAt": "2026-09-15T18:15:49.429Z",
+      "period": "Jun 2021 – Jun 2025"
+    }
+  ],
+  "education": [
+    {
+      "id": "6aa98b5597162c2e3c4c1ada",
+      "institution": "Heritage Institute Of Technology, Kolkata",
+      "degree": "B.Tech, Chemical Engineering",
+      "startYear": "2016",
+      "endYear": "2020",
+      "grade": "",
+      "order": 0,
+      "createdAt": "2026-09-15T18:15:49.429Z",
+      "updatedAt": "2026-09-15T18:15:49.429Z"
+    }
+  ],
+  "awards": [
+    {
+      "id": "6aa98b5597162c2e3c4c1adb",
+      "title": "Customer Focus Award",
+      "organization": "Harns Technologies",
+      "date": "2025",
+      "description": "Recognized for client-delivery excellence on high-traffic Times Group production products.",
+      "order": 0,
+      "createdAt": "2026-09-15T18:15:49.429Z",
+      "updatedAt": "2026-09-15T18:15:49.429Z"
+    }
+  ],
+  "socialLinks": [
+    {
+      "id": "6aa98b5597162c2e3c4c1adc",
+      "name": "LinkedIn",
+      "url": "https://www.linkedin.com/in/aquibyazdani/",
+      "icon": "Linkedin",
+      "newTab": true,
+      "placements": {
+        "hero": true,
+        "about": true,
+        "footer": true,
+        "contact": true
+      },
+      "order": 0,
+      "createdAt": "2026-09-15T18:15:49.429Z",
+      "updatedAt": "2026-09-15T18:15:49.429Z"
+    },
+    {
+      "id": "6aa98b5597162c2e3c4c1add",
+      "name": "GitHub",
+      "url": "https://github.com/aquibyazdani/",
+      "icon": "Github",
+      "newTab": true,
+      "placements": {
+        "hero": true,
+        "about": true,
+        "footer": true,
+        "contact": true
+      },
+      "order": 1,
+      "createdAt": "2026-09-15T18:15:49.429Z",
+      "updatedAt": "2026-09-15T18:15:49.429Z"
+    },
+    {
+      "id": "6aa98b5597162c2e3c4c1ade",
+      "name": "Instagram",
+      "url": "https://www.instagram.com/aquibyazdani/",
+      "icon": "Instagram",
+      "newTab": true,
+      "placements": {
+        "hero": false,
+        "about": true,
+        "footer": true,
+        "contact": true
+      },
+      "order": 2,
+      "createdAt": "2026-09-15T18:15:49.429Z",
+      "updatedAt": "2026-09-15T18:15:49.429Z"
+    },
+    {
+      "id": "6aa98b5597162c2e3c4c1adf",
+      "name": "WhatsApp",
+      "url": "https://wa.me/918210773776",
+      "icon": "MessageCircle",
+      "newTab": true,
+      "placements": {
+        "hero": false,
+        "about": true,
+        "footer": true,
+        "contact": true
+      },
+      "order": 3,
+      "createdAt": "2026-09-15T18:15:49.429Z",
+      "updatedAt": "2026-09-15T18:15:49.429Z"
+    },
+    {
+      "id": "6aa98b5597162c2e3c4c1ae0",
+      "name": "Phone",
+      "url": "tel:+918210773776",
+      "icon": "Phone",
+      "newTab": false,
+      "placements": {
+        "hero": false,
+        "about": true,
+        "footer": true,
+        "contact": true
+      },
+      "order": 4,
+      "createdAt": "2026-09-15T18:15:49.429Z",
+      "updatedAt": "2026-09-15T18:15:49.429Z"
+    }
+  ],
+  "updatedAt": "2026-09-15T18:15:49.429Z"
+}

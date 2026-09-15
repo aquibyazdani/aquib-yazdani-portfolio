@@ -4,6 +4,7 @@ import { Bebas_Neue, Inter } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import Providers from "./providers";
 import "./globals.css";
+import { getContent, ogImageUrl, siteUrl } from "@/lib/content";
 
 const bebasNeue = Bebas_Neue({
   weight: "400",
@@ -19,186 +20,111 @@ const inter = Inter({
   display: "swap",
 });
 
-const OG_IMAGE = {
-  url: "https://aquibyazdani.com/opengraph-image",
-  width: 1200,
-  height: 630,
-  alt: "Md Aquib Yazdani — Sr. Software Engineer",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const content = await getContent();
+  const { site, profile, integrations } = content;
+  const base = siteUrl(content);
+  const image = { url: ogImageUrl(content), width: 1200, height: 630, alt: site.ogImage.alt || site.defaultTitle };
+  const author = profile.legalName || profile.name;
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://aquibyazdani.com"),
-  title: {
-    default: "Md Aquib Yazdani — Sr. Software Engineer",
-    template: "%s | Md Aquib Yazdani",
-  },
-  description:
-    "Sr. Software Engineer in Pune, India. 5 years building React, Next.js & TypeScript at scale — Times of India (60M+ MAU), AI-integrated apps, WCAG accessibility.",
-  keywords: [
-    // Identity
-    "Md Aquib Yazdani",
-    "Aquib Yazdani",
-    "Sr. Software Engineer",
-    "Software Engineer Pune",
-    "Software Engineer India",
-    // Core frontend
-    "React Developer",
-    "Next.js Developer",
-    "TypeScript Developer",
-    "JavaScript Developer",
-    "Frontend Engineer",
-    "Frontend Architect",
-    // Backend & fullstack
-    "Node.js Developer",
-    "Express.js",
-    "REST API Developer",
-    "GraphQL",
-    "MongoDB",
-    // Architecture
-    "Micro-frontend Architecture",
-    "Module Federation",
-    "SSR Developer",
-    "Design Systems",
-    // AI
-    "AI Integration Developer",
-    "LLM Integration",
-    "Claude API",
-    // Notable work
-    "Times of India ePaper",
-    "Zensar Technologies",
-  ],
-  authors: [{ name: "Md Aquib Yazdani", url: "https://aquibyazdani.com" }],
-  creator: "Md Aquib Yazdani",
-  publisher: "Md Aquib Yazdani",
-  openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: "https://aquibyazdani.com",
-    siteName: "Aquib Yazdani Portfolio",
-    title: "Md Aquib Yazdani — Sr. Software Engineer",
-    description:
-      "Sr. Software Engineer in Pune, India. 5 years building React, Next.js & TypeScript at scale — Times of India (60M+ MAU), AI-integrated apps.",
-    images: [OG_IMAGE],
-  },
-  twitter: {
-    card: "summary_large_image",
-    site: "@aquibyazdani",
-    creator: "@aquibyazdani",
-    title: "Md Aquib Yazdani — Sr. Software Engineer",
-    description:
-      "Sr. Software Engineer in Pune, India. 5 years building React, Next.js & TypeScript at scale — Times of India (60M+ MAU), AI-integrated apps.",
-    images: [OG_IMAGE],
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: { index: true, follow: true, "max-image-preview": "large" },
-  },
-  other: {
-    "google-adsense-account": "ca-pub-9910299971219204",
-  },
-};
+  return {
+    metadataBase: new URL(base),
+    title: { default: site.defaultTitle, template: site.titleTemplate || "%s" },
+    description: site.description,
+    keywords: site.keywords,
+    authors: [{ name: author, url: base }],
+    creator: author,
+    publisher: author,
+    openGraph: {
+      type: "website",
+      locale: "en_US",
+      url: base,
+      siteName: site.siteName,
+      title: site.defaultTitle,
+      description: site.description,
+      images: [image],
+    },
+    twitter: {
+      card: "summary_large_image",
+      site: site.twitterHandle || undefined,
+      creator: site.twitterHandle || undefined,
+      title: site.defaultTitle,
+      description: site.description,
+      images: [image],
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: { index: true, follow: true, "max-image-preview": "large" },
+    },
+    other: integrations.adsenseClientId ? { "google-adsense-account": integrations.adsenseClientId } : undefined,
+  };
+}
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Person",
-  name: "Md Aquib Yazdani",
-  alternateName: "Aquib Yazdani",
-  jobTitle: "Sr. Software Engineer",
-  url: "https://aquibyazdani.com",
-  email: "yazdaniaquib2@gmail.com",
-  image: "https://aquibyazdani.com/opengraph-image",
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: "Pune",
-    addressRegion: "Maharashtra",
-    addressCountry: "IN",
-  },
-  sameAs: [
-    "https://www.linkedin.com/in/aquibyazdani/",
-    "https://github.com/aquibyazdani/",
-    "https://www.instagram.com/aquibyazdani/",
-  ],
-  knowsAbout: [
-    "React.js", "Next.js", "React Native",
-    "TypeScript", "JavaScript (ES6+)", "HTML5", "CSS3", "SCSS",
-    "Node.js", "Express.js", "REST APIs", "GraphQL", "WebSockets",
-    "Redux", "Redux Toolkit", "Zustand", "Context API", "React Query",
-    "Tailwind CSS", "Material UI", "Styled Components", "Bootstrap",
-    "Micro-frontends", "Module Federation", "SSR", "SSG", "ISR", "BFF Pattern",
-    "Design Systems", "Component-Driven Development",
-    "Auth0", "OAuth 2.0", "OIDC", "SAML", "JWT", "Multi-Tenant SSO", "RBAC",
-    "AWS S3", "AWS CloudFront", "AWS EC2", "Netlify", "Azure", "CI/CD", "GitHub Actions",
-    "Vite", "Webpack", "Babel", "ESLint", "Storybook",
-    "Jest", "React Testing Library", "Cypress", "Playwright",
-    "Core Web Vitals", "Lighthouse", "Code Splitting", "Lazy Loading", "List Virtualization",
-    "WCAG 2.1 AA Accessibility", "i18n", "Google Analytics", "GTM", "Web Speech API",
-    "AI/LLM Integration", "Claude API", "Streaming Responses", "Prompt Engineering",
-    "GitHub Copilot", "Cursor", "MongoDB",
-  ],
-  worksFor: {
-    "@type": "Organization",
-    name: "Zensar Technologies",
-    url: "https://www.zensar.com",
-  },
-  alumniOf: {
-    "@type": "EducationalOrganization",
-    name: "Heritage Institute of Technology, Kolkata",
-  },
-};
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const content = await getContent();
+  const { site, profile, integrations } = content;
+  const base = siteUrl(content);
+  const adsensePub = integrations.adsenseClientId.replace(/^ca-/, "");
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: profile.legalName || profile.name,
+    alternateName: profile.legalName ? profile.name : undefined,
+    jobTitle: site.jobTitle || profile.role,
+    url: base,
+    email: profile.email || undefined,
+    image: ogImageUrl(content),
+    address: profile.city
+      ? { "@type": "PostalAddress", addressLocality: profile.city, addressRegion: profile.region, addressCountry: profile.countryCode }
+      : undefined,
+    sameAs: content.socialLinks.map((s) => s.url).filter((u) => /^https?:/.test(u)),
+    knowsAbout: site.knowsAbout.length ? site.knowsAbout : undefined,
+    worksFor: site.worksForName ? { "@type": "Organization", name: site.worksForName, url: site.worksForUrl || undefined } : undefined,
+    alumniOf: site.alumniOf ? { "@type": "EducationalOrganization", name: site.alumniOf } : undefined,
+  };
+
   return (
-    <html
-      lang="en"
-      className={`${bebasNeue.variable} ${inter.variable}`}
-      suppressHydrationWarning
-    >
+    <html lang="en" className={`${bebasNeue.variable} ${inter.variable}`} suppressHydrationWarning>
       <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-        {/* Google-certified CMP: shows the EEA/UK consent message configured
-            in AdSense > Privacy & messaging. Must load before the ad script. */}
-        <Script
-          async
-          src="https://fundingchoicesmessages.google.com/i/pub-9910299971219204?ers=1"
-          strategy="beforeInteractive"
-        />
-        <Script id="googlefc-present" strategy="beforeInteractive">
-          {`(function() {
-            function signalGooglefcPresent() {
-              if (!window.frames['googlefcPresent']) {
-                if (document.body) {
-                  const iframe = document.createElement('iframe');
-                  iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;';
-                  iframe.style.display = 'none';
-                  iframe.name = 'googlefcPresent';
-                  document.body.appendChild(iframe);
-                } else {
-                  setTimeout(signalGooglefcPresent, 0);
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+        {integrations.adsenseClientId && (
+          <>
+            {/* Google-certified CMP: shows the EEA/UK consent message configured
+                in AdSense > Privacy & messaging. Must load before the ad script. */}
+            <Script async src={`https://fundingchoicesmessages.google.com/i/${adsensePub}?ers=1`} strategy="beforeInteractive" />
+            <Script id="googlefc-present" strategy="beforeInteractive">
+              {`(function() {
+                function signalGooglefcPresent() {
+                  if (!window.frames['googlefcPresent']) {
+                    if (document.body) {
+                      const iframe = document.createElement('iframe');
+                      iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;';
+                      iframe.style.display = 'none';
+                      iframe.name = 'googlefcPresent';
+                      document.body.appendChild(iframe);
+                    } else {
+                      setTimeout(signalGooglefcPresent, 0);
+                    }
+                  }
                 }
-              }
-            }
-            signalGooglefcPresent();
-          })();`}
-        </Script>
-        <Script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9910299971219204"
-          crossOrigin="anonymous"
-          strategy="afterInteractive"
-        />
+                signalGooglefcPresent();
+              })();`}
+            </Script>
+            <Script
+              async
+              src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${integrations.adsenseClientId}`}
+              crossOrigin="anonymous"
+              strategy="afterInteractive"
+            />
+          </>
+        )}
       </head>
       <body suppressHydrationWarning>
         <Providers>{children}</Providers>
       </body>
-      <GoogleAnalytics gaId="G-YR78Y0K8L8" />
+      {integrations.gaId && <GoogleAnalytics gaId={integrations.gaId} />}
     </html>
   );
 }

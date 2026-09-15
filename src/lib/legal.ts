@@ -1,4 +1,4 @@
-import { siteUrl, type Content } from "./content";
+import { displayName, siteUrl, type Content } from "./content";
 
 /** Placeholders available inside privacy / terms section bodies. */
 export function legalTokens(content: Content): Record<string, string> {
@@ -7,9 +7,9 @@ export function legalTokens(content: Content): Record<string, string> {
   const names = (list: typeof content.projects) => [...new Set(list.map((p) => p.shortTitle || p.title))].join(", ");
 
   return {
-    email: content.profile.email,
     name: content.profile.name,
-    legalName: content.profile.legalName || content.profile.name,
+    fullName: displayName(content),
+    email: content.profile.email,
     siteUrl: siteUrl(content),
     domain: siteUrl(content).replace(/^https?:\/\//, ""),
     location: content.profile.location,

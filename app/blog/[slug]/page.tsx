@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import BlogPostPage from "@/components/BlogPostPage";
-import { chromeProps, getContent, ogImageUrl, siteUrl } from "@/lib/content";
+import { chromeProps, displayName, getContent, ogImageUrl, siteUrl } from "@/lib/content";
 import { pageMetadata } from "@/lib/seo";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     article: {
       publishedTime: post.publishedAt,
       modifiedTime: post.lastUpdated || undefined,
-      authors: [content.profile.legalName || content.profile.name],
+      authors: [displayName(content)],
       tags: post.tags,
     },
   });
@@ -53,13 +53,13 @@ export default async function BlogPostRoute({ params }: Props) {
     keywords: post.tags.join(", "),
     url: `${siteUrl(content)}/blog/${post.slug}`,
     image: post.coverImage.url || ogImageUrl(content),
-    author: { "@type": "Person", name: content.profile.legalName || content.profile.name, url: siteUrl(content) },
+    author: { "@type": "Person", name: displayName(content), url: siteUrl(content) },
   };
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
-      <BlogPostPage chrome={chromeProps(content)} page={content.blogPage} post={post} />
+      <BlogPostPage chrome={chromeProps(content)} post={post} author={{ name: content.profile.name, avatar: content.profile.portrait }} />
     </>
   );
 }

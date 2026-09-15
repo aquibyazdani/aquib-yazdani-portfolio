@@ -5,10 +5,10 @@ import { pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata(): Promise<Metadata> {
   const content = await getContent();
-  return pageMetadata(content, content.blogPage.seo, { path: "/blog", title: "Blog" });
+  return pageMetadata(content, "blog", { path: "/blog", title: "Blog" });
 }
 
 export default async function BlogPage() {
   const content = await getContent();
-  return <BlogList chrome={chromeProps(content)} page={content.blogPage} posts={content.blogPosts} />;
+  return <BlogList chrome={chromeProps(content)} posts={content.blogPosts} />;
 }

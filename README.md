@@ -1,6 +1,6 @@
 # aquibyazdani.com
 
-Personal portfolio built with Next.js 16. All copy, projects, blog posts, skills, experience, SEO metadata and media come from a headless CMS made of two sibling repos:
+Personal portfolio built with Next.js 16. Content comes from a headless CMS made of two sibling repos:
 
 - [`../portfolio-api`](../portfolio-api) — Express + MongoDB content API (media stored in GridFS).
 - [`../portfolio-admin`](../portfolio-admin) — React admin panel for editing everything.
@@ -15,12 +15,25 @@ npm run dev                  # http://localhost:3000
 
 Start the API first (`npm run dev` in `portfolio-api`). If `CONTENT_API_URL` is unset or the API is down, the site renders from `src/content/fallback.json` instead, so it always builds.
 
+## What comes from where
+
+| From the CMS | From the code |
+|---|---|
+| Profile (name, role, bio text, contact details, portrait, resume PDF) | Navigation, footer labels |
+| Projects, blog posts, skills, experience, education, awards, social links | Section headings, button and card labels |
+| The active contact form (fields, messages, delivery) | Blog mid-article CTA, 404 page |
+| SEO: site defaults, per-page titles/descriptions/share images, `llms.txt` | Theme colours, layout, animations |
+| Privacy policy and terms text | |
+
+Design copy is collected in [src/config/site.ts](src/config/site.ts). Structured data (schema.org Person) is derived from experience, education and skills in [src/lib/jsonld.ts](src/lib/jsonld.ts).
+
 ## How content flows
 
 1. `src/lib/content.ts` → `getContent()` fetches `/api/public/content` once per request, cached by Next for 5 minutes under the `content` tag.
 2. Saving anything in the admin makes the API `POST /api/revalidate` here, which purges that cache — edits are live within seconds.
 3. Images and the resume PDF come from the API; when a field is empty the site falls back to the bundled assets in `src/assets` (mapped by project slug in `src/lib/fallback-images.ts`).
 4. Skill and social icons are stored as Lucide icon names and resolved in `src/lib/icons.tsx`.
+5. The contact form (`src/components/ContactForm.tsx`) renders whatever fields the active form defines and posts to the API's inbox and/or EmailJS, as configured per form.
 
 `npm run content:snapshot` refreshes the fallback JSON from the API — run it and commit after big content changes.
 

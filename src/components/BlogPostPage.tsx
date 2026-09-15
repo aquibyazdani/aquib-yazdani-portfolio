@@ -4,7 +4,10 @@ import { useEffect, useState } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import Link from "next/link";
-import { formatDate, type BlogBlock, type BlogPost, type ChromeProps, type Content } from "../lib/content";
+import { site } from "../config/site";
+import { formatDate, type BlogBlock, type BlogPost, type ChromeProps, type Image } from "../lib/content";
+
+const copy = site.blog;
 
 function ReadingProgress() {
   const [progress, setProgress] = useState(0);
@@ -92,9 +95,7 @@ function ContentBlock({ block }: { block: BlogBlock }) {
       return (
         <figure className="space-y-3">
           <img src={block.url} alt={block.alt} className="w-full rounded-[12px] border border-[#2a2a2a]" loading="lazy" />
-          {block.caption && (
-            <figcaption className="font-['Inter',sans-serif] text-[#666] text-[13px] text-center">{block.caption}</figcaption>
-          )}
+          {block.caption && <figcaption className="font-['Inter',sans-serif] text-[#666] text-[13px] text-center">{block.caption}</figcaption>}
         </figure>
       );
 
@@ -108,11 +109,11 @@ function ContentBlock({ block }: { block: BlogBlock }) {
 
 export type BlogPostPageProps = {
   chrome: ChromeProps;
-  page: Content["blogPage"];
   post: BlogPost;
+  author: { name: string; avatar: Image };
 };
 
-export default function BlogPostPage({ chrome, page, post }: BlogPostPageProps) {
+export default function BlogPostPage({ chrome, post, author }: BlogPostPageProps) {
   // CTA goes at the midpoint, never directly after a heading.
   let mid = Math.ceil(post.content.length / 2);
   while (mid < post.content.length - 1 && post.content[mid - 1]?.type === "heading") mid++;
@@ -154,13 +155,13 @@ export default function BlogPostPage({ chrome, page, post }: BlogPostPageProps) 
         <div className="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between flex-wrap gap-3">
           <div className="flex items-center gap-4">
             <div className="w-8 h-8 rounded-full bg-[#d3e97a]/20 border border-[#d3e97a]/30 flex items-center justify-center overflow-hidden">
-              {page.authorAvatar.url ? (
-                <img src={page.authorAvatar.url} alt={page.authorAvatar.alt || page.authorName} className="w-full h-full object-cover" />
+              {author.avatar.url ? (
+                <img src={author.avatar.url} alt={author.avatar.alt || author.name} className="w-full h-full object-cover" />
               ) : (
-                <span className="font-['Inter',sans-serif] text-[#d3e97a] text-[13px] font-bold">{page.authorName.charAt(0)}</span>
+                <span className="font-['Inter',sans-serif] text-[#d3e97a] text-[13px] font-bold">{author.name.charAt(0)}</span>
               )}
             </div>
-            <span className="font-['Inter',sans-serif] text-white text-[14px]">{page.authorName}</span>
+            <span className="font-['Inter',sans-serif] text-white text-[14px]">{author.name}</span>
           </div>
           <div className="flex items-center gap-3 font-['Inter',sans-serif] text-[#555] text-[13px]">
             <span>{formatDate(post.publishedAt)}</span>
@@ -183,17 +184,17 @@ export default function BlogPostPage({ chrome, page, post }: BlogPostPageProps) 
           </div>
 
           {/* Mid-article CTA */}
-          {page.ctaEnabled && (
+          {copy.cta.enabled && (
             <div className="my-12 rounded-[16px] border border-[#d3e97a]/20 bg-[#d3e97a]/5 px-8 py-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
               <div className="space-y-1">
-                <p className="text-[22px] text-white leading-tight">{page.ctaHeading}</p>
-                <p className="font-['Inter',sans-serif] text-[#888] text-[15px]">{page.ctaText}</p>
+                <p className="text-[22px] text-white leading-tight">{copy.cta.heading}</p>
+                <p className="font-['Inter',sans-serif] text-[#888] text-[15px]">{copy.cta.text}</p>
               </div>
               <Link
-                href={page.ctaButtonHref || "/contact"}
+                href={copy.cta.href}
                 className="flex-shrink-0 bg-[#d3e97a] text-neutral-950 font-['Inter',sans-serif] font-bold text-[14px] uppercase px-6 py-3 rounded-full hover:bg-[#c5db6c] transition-colors"
               >
-                {page.ctaButtonLabel}
+                {copy.cta.buttonLabel}
               </Link>
             </div>
           )}
@@ -207,14 +208,11 @@ export default function BlogPostPage({ chrome, page, post }: BlogPostPageProps) 
           {/* Footer nav */}
           <div className="mt-16 pt-8 border-t border-[#1a1a1a] flex items-center justify-between flex-wrap gap-4">
             <Link href="/blog" className="font-['Inter',sans-serif] text-[#d3e97a] text-[14px] hover:text-white transition-colors flex items-center gap-2">
-              {page.backLabel}
+              {copy.backLabel}
             </Link>
             <div className="flex flex-wrap gap-2">
               {post.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="font-['Inter',sans-serif] text-[11px] text-[#555] border border-[#2a2a2a] px-2.5 py-1 rounded-full uppercase tracking-wide"
-                >
+                <span key={tag} className="font-['Inter',sans-serif] text-[11px] text-[#555] border border-[#2a2a2a] px-2.5 py-1 rounded-full uppercase tracking-wide">
                   {tag}
                 </span>
               ))}

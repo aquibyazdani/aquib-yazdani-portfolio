@@ -9,18 +9,20 @@ import NotableProjectCard from "./NotableProjectCard";
 import PersonalProjectCard from "./PersonalProjectCard";
 import Link from "next/link";
 import Footer from "./Footer";
-import type { ChromeProps, Content, Project } from "../lib/content";
+import { site } from "../config/site";
+import type { ChromeProps, Project } from "../lib/content";
 
 gsap.registerPlugin(ScrollTrigger);
 
+const copy = site.projects;
+
 export type ProjectsProps = {
   chrome: ChromeProps;
-  page: Content["projectsPage"];
   notable: Project[];
   personal: Project[];
 };
 
-export default function Projects({ chrome, page, notable, personal }: ProjectsProps) {
+export default function Projects({ chrome, notable, personal }: ProjectsProps) {
   const projectsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -53,8 +55,8 @@ export default function Projects({ chrome, page, notable, personal }: ProjectsPr
       <section className="pt-32 pb-20 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="space-y-4 mb-16">
-            <h1 className="text-[80px] lg:text-[90px] text-white leading-[0.9]">{page.heading}</h1>
-            <p className="font-['Inter',sans-serif] text-[#c7c7c7] text-[18px] leading-[1.5] max-w-[600px]">{page.intro}</p>
+            <h1 className="text-[80px] lg:text-[90px] text-white leading-[0.9]">{copy.heading}</h1>
+            <p className="font-['Inter',sans-serif] text-[#c7c7c7] text-[18px] leading-[1.5] max-w-[600px]">{copy.intro}</p>
           </div>
         </div>
       </section>
@@ -64,11 +66,11 @@ export default function Projects({ chrome, page, notable, personal }: ProjectsPr
         <section className="pb-12 px-6">
           <div className="max-w-7xl mx-auto">
             <div className="mb-12">
-              <h2 className="text-[56px] text-white leading-[0.9]">{page.notableHeading}</h2>
+              <h2 className="text-[56px] text-white leading-[0.9]">{copy.notableHeading}</h2>
             </div>
             <div className="space-y-20" ref={projectsRef}>
               {notable.map((project, index) => (
-                <NotableProjectCard key={project.id} project={project} index={index} labels={page} />
+                <NotableProjectCard key={project.id} project={project} index={index} />
               ))}
             </div>
           </div>
@@ -80,11 +82,11 @@ export default function Projects({ chrome, page, notable, personal }: ProjectsPr
         <section className="pb-20 px-6">
           <div className="max-w-7xl mx-auto">
             <div className="mb-12">
-              <h2 className="text-[56px] text-white leading-[0.9]">{page.personalHeading}</h2>
+              <h2 className="text-[56px] text-white leading-[0.9]">{copy.personalHeading}</h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {personal.map((project) => (
-                <PersonalProjectCard key={project.id} project={project} linkLabel={page.viewProjectLabel} />
+                <PersonalProjectCard key={project.id} project={project} />
               ))}
             </div>
           </div>
@@ -92,28 +94,24 @@ export default function Projects({ chrome, page, notable, personal }: ProjectsPr
       )}
 
       {/* Footer CTA */}
-      {page.ctaHeading && (
-        <section className="py-20 px-6 border-t border-[#484848]">
-          <div className="max-w-7xl mx-auto text-center">
-            <div className="space-y-8">
-              <h2 className="text-[64px] lg:text-[76px] text-white leading-[0.9]">{page.ctaHeading}</h2>
-              <Link
-                href="/contact"
-                className="inline-flex bg-[#d3e97a] rounded-full items-center gap-3 pl-6 pr-2 py-3 h-[54px] hover:bg-[#c5db6c] transition-colors"
-              >
-                <span className="font-['Inter',sans-serif] font-bold text-[16px] text-neutral-950 uppercase">
-                  {page.ctaButtonLabel}
-                </span>
-                <div className="size-[42px] bg-neutral-950 rounded-full flex items-center justify-center">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                    <path d={svgPaths.p23c4ec40} fill="white" />
-                  </svg>
-                </div>
-              </Link>
-            </div>
+      <section className="py-20 px-6 border-t border-[#484848]">
+        <div className="max-w-7xl mx-auto text-center">
+          <div className="space-y-8">
+            <h2 className="text-[64px] lg:text-[76px] text-white leading-[0.9]">{copy.ctaHeading}</h2>
+            <Link
+              href="/contact"
+              className="inline-flex bg-[#d3e97a] rounded-full items-center gap-3 pl-6 pr-2 py-3 h-[54px] hover:bg-[#c5db6c] transition-colors"
+            >
+              <span className="font-['Inter',sans-serif] font-bold text-[16px] text-neutral-950 uppercase">{copy.ctaButtonLabel}</span>
+              <div className="size-[42px] bg-neutral-950 rounded-full flex items-center justify-center">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path d={svgPaths.p23c4ec40} fill="white" />
+                </svg>
+              </div>
+            </Link>
           </div>
-        </section>
-      )}
+        </div>
+      </section>
 
       <Footer {...chrome.footer} />
     </div>

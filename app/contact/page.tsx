@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import Contact from "@/components/Contact";
-import { chromeProps, getContent, siteUrl } from "@/lib/content";
+import { chromeProps, displayName, getContent, siteUrl } from "@/lib/content";
 import { pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata(): Promise<Metadata> {
   const content = await getContent();
-  return pageMetadata(content, content.contact.seo, { path: "/contact", title: `Contact ${content.profile.name}` });
+  return pageMetadata(content, "contact", { path: "/contact", title: "Contact" });
 }
 
 export default async function ContactPage() {
@@ -16,10 +16,10 @@ export default async function ContactPage() {
   const contactJsonLd = {
     "@context": "https://schema.org",
     "@type": "ContactPage",
-    name: `Contact ${profile.legalName || profile.name}`,
+    name: `Contact ${displayName(content)}`,
     url: `${base}/contact`,
-    description: content.contact.seo.description || undefined,
-    author: { "@type": "Person", name: profile.legalName || profile.name, email: profile.email || undefined, url: base },
+    description: content.seo.pages.contact.description || undefined,
+    author: { "@type": "Person", name: displayName(content), email: profile.email || undefined, url: base },
   };
 
   return (

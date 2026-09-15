@@ -1,19 +1,22 @@
 {
   "profile": {
     "name": "Aquib Yazdani",
-    "legalName": "Md Aquib Yazdani",
-    "logoText": "aquib yazdani",
+    "fullName": "Md Aquib Yazdani",
     "role": "Sr. Software Engineer",
     "headline": "Senior Software Engineer | React • Next.js • TypeScript • Frontend Architecture • AI Integration",
-    "heroTagline": "Sr. Software Engg. / JavaScript Expert / Tech Explorer",
+    "tagline": "Sr. Software Engg. / JavaScript Expert / Tech Explorer",
+    "intro": "Passionate Software Engineer with Deep Frontend Expertise",
+    "shortBio": "I work as a senior software engineer with deep frontend expertise, building scalable products from UI to backend.",
+    "bio": "I care deeply about clean architecture, usability, and creating meaningful digital products. I build end-to-end solutions that integrate seamlessly from UI to backend. Outside of programming, I enjoy playing football, photography, and a few rounds of Valorant.",
+    "summary": "Senior Software Engineer with 5 years of experience shipping production-grade React applications at scale. Engineered the Times of India ePaper platform within the Times Group digital ecosystem (10M+ digital DAU, 60M+ app MAU) and the American Arbitration Association's legal-tech arbitration platform (180K+ annual cases). Specialized in frontend architecture, micro-frontends, performance engineering, AI/LLM integration, and accessibility. Consistent track record of end-to-end ownership across high-traffic products, leading direct reports, and conducting senior-level technical interviews. Currently deepening work in AI-integrated frontend systems and edge rendering patterns.",
+    "skillsSummary": "I am always learning and expanding my toolkit — from React performance patterns and AI/LLM integration to WCAG accessibility and modern build tooling. Here's what I bring to the table today.",
+    "email": "yazdaniaquib2@gmail.com",
+    "phone": "+91 8210773776",
     "location": "Pune, India",
     "city": "Pune",
     "region": "Maharashtra",
     "countryCode": "IN",
-    "email": "yazdaniaquib2@gmail.com",
-    "phone": "+91 8210773776",
     "careerStartDate": "2021-06-01",
-    "professionalSummary": "Senior Software Engineer with 5 years of experience shipping production-grade React applications at scale. Engineered the Times of India ePaper platform within the Times Group digital ecosystem (10M+ digital DAU, 60M+ app MAU) and the American Arbitration Association's legal-tech arbitration platform (180K+ annual cases). Specialized in frontend architecture, micro-frontends, performance engineering, AI/LLM integration, and accessibility. Consistent track record of end-to-end ownership across high-traffic products, leading direct reports, and conducting senior-level technical interviews. Currently deepening work in AI-integrated frontend systems and edge rendering patterns.",
     "portrait": {
       "url": "",
       "alt": "Aquib Yazdani — Sr. Software Engineer based in Pune, India"
@@ -23,13 +26,13 @@
       "fileName": "Md_Aquib_Yazdani.pdf"
     }
   },
-  "site": {
-    "siteUrl": "https://aquibyazdani.com",
+  "seo": {
     "siteName": "Aquib Yazdani Portfolio",
-    "defaultTitle": "Md Aquib Yazdani — Sr. Software Engineer",
+    "siteUrl": "https://aquibyazdani.com",
     "titleTemplate": "%s | Md Aquib Yazdani",
-    "description": "Sr. Software Engineer in Pune, India. 5 years building React, Next.js & TypeScript at scale — Times of India (60M+ MAU), AI-integrated apps, WCAG accessibility.",
-    "keywords": [
+    "defaultTitle": "Md Aquib Yazdani — Sr. Software Engineer",
+    "defaultDescription": "Sr. Software Engineer in Pune, India. 5 years building React, Next.js & TypeScript at scale — Times of India (60M+ MAU), AI-integrated apps, WCAG accessibility.",
+    "defaultKeywords": [
       "Md Aquib Yazdani",
       "Aquib Yazdani",
       "Sr. Software Engineer",
@@ -57,474 +60,283 @@
       "Zensar Technologies"
     ],
     "twitterHandle": "@aquibyazdani",
-    "ogImage": {
+    "defaultOgImage": {
       "url": "",
       "alt": "Md Aquib Yazdani — Sr. Software Engineer"
     },
-    "copyright": "© {year} Aquib Yazdani",
-    "privacyLinkLabel": "Privacy Policy",
-    "termsLinkLabel": "Terms & Conditions",
-    "jobTitle": "Sr. Software Engineer",
-    "worksForName": "Zensar Technologies",
-    "worksForUrl": "https://www.zensar.com",
-    "alumniOf": "Heritage Institute of Technology, Kolkata",
-    "knowsAbout": [
-      "React.js",
-      "Next.js",
-      "React Native",
-      "TypeScript",
-      "JavaScript (ES6+)",
-      "HTML5",
-      "CSS3",
-      "SCSS",
-      "Node.js",
-      "Express.js",
-      "REST APIs",
-      "GraphQL",
-      "WebSockets",
-      "Redux",
-      "Redux Toolkit",
-      "Zustand",
-      "Context API",
-      "React Query",
-      "Tailwind CSS",
-      "Material UI",
-      "Styled Components",
-      "Bootstrap",
-      "Micro-frontends",
-      "Module Federation",
-      "SSR",
-      "SSG",
-      "ISR",
-      "BFF Pattern",
-      "Design Systems",
-      "Component-Driven Development",
-      "Auth0",
-      "OAuth 2.0",
-      "OIDC",
-      "SAML",
-      "JWT",
-      "Multi-Tenant SSO",
-      "RBAC",
-      "AWS S3",
-      "AWS CloudFront",
-      "AWS EC2",
-      "Netlify",
-      "Azure",
-      "CI/CD",
-      "GitHub Actions",
-      "Vite",
-      "Webpack",
-      "Babel",
-      "ESLint",
-      "Storybook",
-      "Jest",
-      "React Testing Library",
-      "Cypress",
-      "Playwright",
-      "Core Web Vitals",
-      "Lighthouse",
-      "Code Splitting",
-      "Lazy Loading",
-      "List Virtualization",
-      "WCAG 2.1 AA Accessibility",
-      "i18n",
-      "Google Analytics",
-      "GTM",
-      "Web Speech API",
-      "AI/LLM Integration",
-      "Claude API",
-      "Streaming Responses",
-      "Prompt Engineering",
-      "GitHub Copilot",
-      "Cursor",
-      "MongoDB"
-    ],
-    "ogCard": {
+    "shareCard": {
       "title": "Md Aquib Yazdani",
       "subtitle": "Sr. Software Engineer",
-      "techLine": "React · Next.js · TypeScript · AI Integration",
-      "metaLine": "Pune, India · 5 years experience",
-      "domain": "aquibyazdani.com"
+      "tagline": "React · Next.js · TypeScript · AI Integration",
+      "meta": "Pune, India · 5 years experience"
     },
-    "manifest": {
-      "name": "Aquib Yazdani — Sr. Software Engineer",
-      "shortName": "Aquib Yazdani",
-      "description": "Portfolio of Md Aquib Yazdani, Sr. Software Engineer specializing in React, Next.js, and TypeScript.",
-      "themeColor": "#0a0a0a",
-      "backgroundColor": "#0a0a0a"
-    },
-    "llmsTxt": ""
+    "llmsTxt": "",
+    "pages": {
+      "home": {
+        "title": "Md Aquib Yazdani — Sr. Software Engineer",
+        "description": "Sr. Software Engineer — React, Next.js, TypeScript, Node.js, AI integration. Built Times of India ePaper (60M+ MAU), AAA arbitration platform, Auth0 SSO. Pune, India.",
+        "keywords": [
+          "Md Aquib Yazdani portfolio",
+          "Sr. Software Engineer Pune",
+          "React Next.js TypeScript developer",
+          "Node.js Express developer",
+          "AI LLM integration engineer",
+          "frontend architect India",
+          "JavaScript expert",
+          "Times of India developer",
+          "American Arbitration Association tech",
+          "Auth0 SSO developer",
+          "micro-frontend engineer",
+          "full stack software engineer",
+          "React developer India",
+          "Next.js developer Pune"
+        ],
+        "ogTitle": "",
+        "ogDescription": "",
+        "ogImage": {
+          "url": "",
+          "alt": ""
+        },
+        "noindex": false
+      },
+      "about": {
+        "title": "About Md Aquib Yazdani — Sr. Software Engineer, Pune",
+        "description": "5 years building with React, Next.js, TypeScript, Node.js, Auth0, AWS & AI. WCAG 2.1 AA, Core Web Vitals, micro-frontends, design systems. Based in Pune, India.",
+        "keywords": [
+          "React.js developer",
+          "Next.js SSR SSG ISR",
+          "TypeScript engineer",
+          "JavaScript ES6 developer",
+          "HTML5 CSS3 SCSS",
+          "Tailwind CSS Material UI",
+          "Redux Zustand Context API",
+          "React Query",
+          "Framer Motion GSAP animation",
+          "React Native developer",
+          "Node.js developer",
+          "Express.js REST API",
+          "GraphQL developer",
+          "MongoDB developer",
+          "WebSockets real-time",
+          "Auth0 developer",
+          "OAuth 2.0 OIDC SAML",
+          "JWT multi-tenant SSO",
+          "RBAC role-based access",
+          "micro-frontend Module Federation",
+          "design system component library",
+          "BFF backend for frontend",
+          "frontend architecture India",
+          "AWS S3 CloudFront EC2",
+          "Netlify Azure CI/CD",
+          "GitHub Actions Vite Webpack",
+          "WCAG 2.1 AA accessibility",
+          "Core Web Vitals Lighthouse",
+          "Jest React Testing Library Cypress",
+          "i18n localization",
+          "Claude API LLM integration",
+          "prompt engineering streaming",
+          "AI-powered web applications",
+          "Md Aquib Yazdani",
+          "Sr. Software Engineer Pune India"
+        ],
+        "ogTitle": "About Md Aquib Yazdani — Sr. Software Engineer",
+        "ogDescription": "React, Next.js, Node.js, Auth0, AWS & AI integration. WCAG 2.1 AA, Core Web Vitals, micro-frontends. 5 years building at scale from Pune, India.",
+        "ogImage": {
+          "url": "",
+          "alt": ""
+        },
+        "noindex": false
+      },
+      "projects": {
+        "title": "Projects — Md Aquib Yazdani | React, Next.js, Node.js Portfolio",
+        "description": "Times of India ePaper (10M+ DAU), AAA arbitration platform, Zamzam Capital Screener, Adlob (200+ agencies), Libsi Markah e-commerce. React, Next.js, Node.js, MongoDB.",
+        "keywords": [
+          "Times of India ePaper developer",
+          "TOI ePaper React frontend",
+          "Adlob advertisement platform React",
+          "Zamzam Capital Screener",
+          "Halal stock screening app",
+          "Libsi Markah e-commerce Next.js",
+          "AAA arbitration portal React TypeScript",
+          "American Arbitration Association digital platform",
+          "React.js project portfolio",
+          "Next.js project portfolio",
+          "TypeScript project examples",
+          "Node.js Express MongoDB project",
+          "AWS EC2 deployment",
+          "Redux Context API state management",
+          "Google AdSense GTM integration",
+          "Web Speech API text to speech",
+          "Virtualized list performance",
+          "Chart.js data visualization",
+          "REST API integration React",
+          "Styled Components Bootstrap",
+          "Sr. Software Engineer portfolio",
+          "software engineering projects India",
+          "React developer portfolio Pune",
+          "Md Aquib Yazdani projects"
+        ],
+        "ogTitle": "Projects — Md Aquib Yazdani | React, Next.js, Node.js Portfolio",
+        "ogDescription": "Times of India ePaper (10M+ DAU), AAA arbitration platform, Zamzam Capital Screener, Adlob (200+ agencies) — React, Next.js, Node.js, MongoDB.",
+        "ogImage": {
+          "url": "",
+          "alt": ""
+        },
+        "noindex": false
+      },
+      "blog": {
+        "title": "Blog — Md Aquib Yazdani",
+        "description": "Articles on frontend engineering, system design, AI integration, and building products at scale. React, Next.js, TypeScript, and more.",
+        "keywords": [],
+        "ogTitle": "Blog — Md Aquib Yazdani",
+        "ogDescription": "Thoughts on frontend engineering, system design, AI integration, and building products at scale.",
+        "ogImage": {
+          "url": "",
+          "alt": ""
+        },
+        "noindex": false
+      },
+      "resume": {
+        "title": "Resume — Md Aquib Yazdani | Sr. Software Engineer",
+        "description": "Resume: React, Next.js, TypeScript, Node.js, Express, MongoDB, Auth0, AWS, Redux, Zustand, Jest, WCAG, micro-frontends, AI/LLM. Zensar & Harns Technologies.",
+        "keywords": [
+          "hire React developer India",
+          "hire Next.js developer Pune",
+          "hire TypeScript engineer",
+          "hire Node.js developer",
+          "senior frontend engineer CV",
+          "software engineer resume India",
+          "React.js",
+          "Next.js",
+          "React Native",
+          "TypeScript",
+          "JavaScript ES6",
+          "Node.js",
+          "Express.js",
+          "REST API",
+          "GraphQL",
+          "WebSockets",
+          "MongoDB",
+          "AWS S3 CloudFront",
+          "Redux",
+          "Redux Toolkit",
+          "Zustand",
+          "Context API",
+          "React Query",
+          "Tailwind CSS",
+          "Material UI",
+          "Styled Components",
+          "Bootstrap",
+          "SCSS",
+          "Auth0",
+          "OAuth 2.0",
+          "OIDC",
+          "SAML",
+          "JWT",
+          "multi-tenant SSO",
+          "RBAC",
+          "micro-frontend",
+          "Module Federation",
+          "design systems",
+          "SSR",
+          "SSG",
+          "ISR",
+          "BFF pattern",
+          "Vite",
+          "Webpack",
+          "Babel",
+          "ESLint",
+          "Prettier",
+          "Storybook",
+          "Jest",
+          "React Testing Library",
+          "Cypress",
+          "Playwright",
+          "Core Web Vitals",
+          "Lighthouse",
+          "code splitting",
+          "lazy loading",
+          "WCAG 2.1 AA",
+          "i18n",
+          "Google Analytics",
+          "GTM",
+          "Claude API",
+          "LLM integration",
+          "streaming AI",
+          "GitHub Actions",
+          "CI/CD",
+          "Azure",
+          "Netlify",
+          "Agile Scrum",
+          "code review",
+          "technical interviewing",
+          "mentoring",
+          "Zensar Technologies engineer",
+          "Harns Technologies developer",
+          "Md Aquib Yazdani resume",
+          "Md Aquib Yazdani CV"
+        ],
+        "ogTitle": "Resume — Md Aquib Yazdani | Sr. Software Engineer",
+        "ogDescription": "React, Next.js, TypeScript, Node.js, Auth0, AWS, Redux, Jest, WCAG, micro-frontends, AI/LLM. 5 years at Zensar & Harns Technologies.",
+        "ogImage": {
+          "url": "",
+          "alt": ""
+        },
+        "noindex": false
+      },
+      "contact": {
+        "title": "Contact Md Aquib Yazdani — Sr. Software Engineer",
+        "description": "Get in touch with Md Aquib Yazdani — open to new opportunities, collaborations, and interesting projects. React, Next.js & TypeScript engineer based in Pune, India.",
+        "keywords": [
+          "contact Md Aquib Yazdani",
+          "hire React developer Pune",
+          "hire Next.js developer India",
+          "hire TypeScript engineer",
+          "hire Sr. Software Engineer India",
+          "software engineer available for hire",
+          "React developer contact",
+          "frontend engineer contact Pune"
+        ],
+        "ogTitle": "Contact Md Aquib Yazdani — Sr. Software Engineer",
+        "ogDescription": "Open to new opportunities and collaborations. React, Next.js & TypeScript engineer based in Pune, India.",
+        "ogImage": {
+          "url": "",
+          "alt": ""
+        },
+        "noindex": false
+      },
+      "privacy": {
+        "title": "Privacy Policy",
+        "description": "Privacy Policy for aquibyazdani.com — how your data is handled when you use the contact form or visit this portfolio website.",
+        "keywords": [],
+        "ogTitle": "",
+        "ogDescription": "",
+        "ogImage": {
+          "url": "",
+          "alt": ""
+        },
+        "noindex": false
+      },
+      "terms": {
+        "title": "Terms & Conditions",
+        "description": "Terms & Conditions for aquibyazdani.com — permitted use, intellectual property, and legal information for this personal portfolio website.",
+        "keywords": [],
+        "ogTitle": "",
+        "ogDescription": "",
+        "ogImage": {
+          "url": "",
+          "alt": ""
+        },
+        "noindex": false
+      }
+    }
   },
   "integrations": {
     "gaId": "G-YR78Y0K8L8",
-    "adsenseClientId": "ca-pub-9910299971219204",
-    "emailjsServiceId": "service_veddnmx",
-    "emailjsTemplateId": "template_74daohb",
-    "emailjsPublicKey": "YaMenwRBpbdGB9Q9r"
-  },
-  "navigation": {
-    "items": [
-      {
-        "label": "Home",
-        "path": "/",
-        "visible": true
-      },
-      {
-        "label": "About",
-        "path": "/about",
-        "visible": true
-      },
-      {
-        "label": "Projects",
-        "path": "/projects",
-        "visible": true
-      },
-      {
-        "label": "Blog",
-        "path": "/blog",
-        "visible": true
-      },
-      {
-        "label": "Resume",
-        "path": "/resume",
-        "visible": true
-      },
-      {
-        "label": "Contact",
-        "path": "/contact",
-        "visible": true
-      }
-    ]
-  },
-  "home": {
-    "seo": {
-      "title": "Md Aquib Yazdani — Sr. Software Engineer",
-      "description": "Sr. Software Engineer — React, Next.js, TypeScript, Node.js, AI integration. Built Times of India ePaper (60M+ MAU), AAA arbitration platform, Auth0 SSO. Pune, India.",
-      "keywords": [
-        "Md Aquib Yazdani portfolio",
-        "Sr. Software Engineer Pune",
-        "React Next.js TypeScript developer",
-        "Node.js Express developer",
-        "AI LLM integration engineer",
-        "frontend architect India",
-        "JavaScript expert",
-        "Times of India developer",
-        "American Arbitration Association tech",
-        "Auth0 SSO developer",
-        "micro-frontend engineer",
-        "full stack software engineer",
-        "React developer India",
-        "Next.js developer Pune"
-      ],
-      "ogTitle": "",
-      "ogDescription": "",
-      "ogImage": {
-        "url": "",
-        "alt": ""
-      }
-    },
-    "heroGreeting": "HI, I AM",
-    "ctaLabel": "Let's Connect",
-    "featuredHeading": "Featured Projects",
-    "featuredIntro": "Here are some of the selected projects that showcase my passion for software development.",
-    "allProjectsLabel": "All Projects",
-    "aboutHeading": "About me",
-    "aboutBlurb": "I work as a senior software engineer with deep frontend expertise, building scalable products from UI to backend.",
-    "aboutText": "When I'm not coding, you'll find me playing football, practicing photography, or in a few rounds of Valorant. Always learning, always curious.",
-    "aboutLinkLabel": "More about me",
-    "websiteDescription": "Personal portfolio of Md Aquib Yazdani, Sr. Software Engineer specializing in React, Next.js, TypeScript, Node.js, and AI integration."
-  },
-  "about": {
-    "seo": {
-      "title": "About Md Aquib Yazdani — Sr. Software Engineer, Pune",
-      "description": "5 years building with React, Next.js, TypeScript, Node.js, Auth0, AWS & AI. WCAG 2.1 AA, Core Web Vitals, micro-frontends, design systems. Based in Pune, India.",
-      "keywords": [
-        "React.js developer",
-        "Next.js SSR SSG ISR",
-        "TypeScript engineer",
-        "JavaScript ES6 developer",
-        "HTML5 CSS3 SCSS",
-        "Tailwind CSS Material UI",
-        "Redux Zustand Context API",
-        "React Query",
-        "Framer Motion GSAP animation",
-        "React Native developer",
-        "Node.js developer",
-        "Express.js REST API",
-        "GraphQL developer",
-        "MongoDB developer",
-        "WebSockets real-time",
-        "Auth0 developer",
-        "OAuth 2.0 OIDC SAML",
-        "JWT multi-tenant SSO",
-        "RBAC role-based access",
-        "micro-frontend Module Federation",
-        "design system component library",
-        "BFF backend for frontend",
-        "frontend architecture India",
-        "AWS S3 CloudFront EC2",
-        "Netlify Azure CI/CD",
-        "GitHub Actions Vite Webpack",
-        "WCAG 2.1 AA accessibility",
-        "Core Web Vitals Lighthouse",
-        "Jest React Testing Library Cypress",
-        "i18n localization",
-        "Claude API LLM integration",
-        "prompt engineering streaming",
-        "AI-powered web applications",
-        "Md Aquib Yazdani",
-        "Sr. Software Engineer Pune India"
-      ],
-      "ogTitle": "About Md Aquib Yazdani — Sr. Software Engineer",
-      "ogDescription": "React, Next.js, Node.js, Auth0, AWS & AI integration. WCAG 2.1 AA, Core Web Vitals, micro-frontends. 5 years building at scale from Pune, India.",
-      "ogImage": {
-        "url": "",
-        "alt": ""
-      }
-    },
-    "heading": "ABOUT ME",
-    "intro": "Passionate Software Engineer with Deep Frontend Expertise",
-    "background": "I care deeply about clean architecture, usability, and creating meaningful digital products. I build end-to-end solutions that integrate seamlessly from UI to backend. Outside of programming, I enjoy playing football, photography, and a few rounds of Valorant.",
-    "resumeButtonLabel": "My Resume",
-    "capabilitiesHeading": "MY CAPABILITIES",
-    "capabilitiesDescription": "I am always learning and expanding my toolkit — from React performance patterns and AI/LLM integration to WCAG accessibility and modern build tooling. Here's what I bring to the table today.",
-    "experienceHeading": "MY EXPERIENCE"
-  },
-  "projectsPage": {
-    "seo": {
-      "title": "Projects — Md Aquib Yazdani | React, Next.js, Node.js Portfolio",
-      "description": "Times of India ePaper (10M+ DAU), AAA arbitration platform, Zamzam Capital Screener, Adlob (200+ agencies), Libsi Markah e-commerce. React, Next.js, Node.js, MongoDB.",
-      "keywords": [
-        "Times of India ePaper developer",
-        "TOI ePaper React frontend",
-        "Adlob advertisement platform React",
-        "Zamzam Capital Screener",
-        "Halal stock screening app",
-        "Libsi Markah e-commerce Next.js",
-        "AAA arbitration portal React TypeScript",
-        "American Arbitration Association digital platform",
-        "React.js project portfolio",
-        "Next.js project portfolio",
-        "TypeScript project examples",
-        "Node.js Express MongoDB project",
-        "AWS EC2 deployment",
-        "Redux Context API state management",
-        "Google AdSense GTM integration",
-        "Web Speech API text to speech",
-        "Virtualized list performance",
-        "Chart.js data visualization",
-        "REST API integration React",
-        "Styled Components Bootstrap",
-        "Sr. Software Engineer portfolio",
-        "software engineering projects India",
-        "React developer portfolio Pune",
-        "Md Aquib Yazdani projects"
-      ],
-      "ogTitle": "Projects — Md Aquib Yazdani | React, Next.js, Node.js Portfolio",
-      "ogDescription": "Times of India ePaper (10M+ DAU), AAA arbitration platform, Zamzam Capital Screener, Adlob (200+ agencies) — React, Next.js, Node.js, MongoDB.",
-      "ogImage": {
-        "url": "",
-        "alt": ""
-      }
-    },
-    "heading": "ALL PROJECTS",
-    "intro": "Here's a collection of projects that showcase my passion for software development and problem-solving.",
-    "notableHeading": "NOTABLE PROJECTS",
-    "personalHeading": "PERSONAL PROJECTS",
-    "ctaHeading": "INTERESTED IN WORKING TOGETHER?",
-    "ctaButtonLabel": "Get in Touch",
-    "projectInfoLabel": "Project Info",
-    "clientLabel": "Client",
-    "yearLabel": "Year",
-    "roleLabel": "Role",
-    "techStackLabel": "Tech Stack",
-    "viewProjectLabel": "View Project",
-    "notableBulletLimit": 3,
-    "notableTechLimit": 3
-  },
-  "blogPage": {
-    "seo": {
-      "title": "Blog — Md Aquib Yazdani",
-      "description": "Articles on frontend engineering, system design, AI integration, and building products at scale. React, Next.js, TypeScript, and more.",
-      "keywords": [],
-      "ogTitle": "Blog — Md Aquib Yazdani",
-      "ogDescription": "Thoughts on frontend engineering, system design, AI integration, and building products at scale.",
-      "ogImage": {
-        "url": "",
-        "alt": ""
-      }
-    },
-    "heading": "BLOG",
-    "intro": "Thoughts on frontend engineering, system design, AI integration, and building products at scale.",
-    "featuredLabel": "Featured",
-    "morePostsLabel": "More Posts",
-    "emptyMessage": "No posts yet — check back soon.",
-    "readLabel": "Read →",
-    "authorName": "Aquib Yazdani",
-    "authorAvatar": {
-      "url": "",
-      "alt": ""
-    },
-    "backLabel": "← All Posts",
-    "ctaEnabled": true,
-    "ctaHeading": "Building something interesting?",
-    "ctaText": "I'm open to new projects, collaborations, and conversations.",
-    "ctaButtonLabel": "Let's Talk",
-    "ctaButtonHref": "/contact"
-  },
-  "resumePage": {
-    "seo": {
-      "title": "Resume — Md Aquib Yazdani | Sr. Software Engineer",
-      "description": "Resume: React, Next.js, TypeScript, Node.js, Express, MongoDB, Auth0, AWS, Redux, Zustand, Jest, WCAG, micro-frontends, AI/LLM. Zensar & Harns Technologies.",
-      "keywords": [
-        "hire React developer India",
-        "hire Next.js developer Pune",
-        "hire TypeScript engineer",
-        "hire Node.js developer",
-        "senior frontend engineer CV",
-        "software engineer resume India",
-        "React.js",
-        "Next.js",
-        "React Native",
-        "TypeScript",
-        "JavaScript ES6",
-        "Node.js",
-        "Express.js",
-        "REST API",
-        "GraphQL",
-        "WebSockets",
-        "MongoDB",
-        "AWS S3 CloudFront",
-        "Redux",
-        "Redux Toolkit",
-        "Zustand",
-        "Context API",
-        "React Query",
-        "Tailwind CSS",
-        "Material UI",
-        "Styled Components",
-        "Bootstrap",
-        "SCSS",
-        "Auth0",
-        "OAuth 2.0",
-        "OIDC",
-        "SAML",
-        "JWT",
-        "multi-tenant SSO",
-        "RBAC",
-        "micro-frontend",
-        "Module Federation",
-        "design systems",
-        "SSR",
-        "SSG",
-        "ISR",
-        "BFF pattern",
-        "Vite",
-        "Webpack",
-        "Babel",
-        "ESLint",
-        "Prettier",
-        "Storybook",
-        "Jest",
-        "React Testing Library",
-        "Cypress",
-        "Playwright",
-        "Core Web Vitals",
-        "Lighthouse",
-        "code splitting",
-        "lazy loading",
-        "WCAG 2.1 AA",
-        "i18n",
-        "Google Analytics",
-        "GTM",
-        "Claude API",
-        "LLM integration",
-        "streaming AI",
-        "GitHub Actions",
-        "CI/CD",
-        "Azure",
-        "Netlify",
-        "Agile Scrum",
-        "code review",
-        "technical interviewing",
-        "mentoring",
-        "Zensar Technologies engineer",
-        "Harns Technologies developer",
-        "Md Aquib Yazdani resume",
-        "Md Aquib Yazdani CV"
-      ],
-      "ogTitle": "Resume — Md Aquib Yazdani | Sr. Software Engineer",
-      "ogDescription": "React, Next.js, TypeScript, Node.js, Auth0, AWS, Redux, Jest, WCAG, micro-frontends, AI/LLM. 5 years at Zensar & Harns Technologies.",
-      "ogImage": {
-        "url": "",
-        "alt": ""
-      }
-    },
-    "downloadLabel": "Download Resume",
-    "generatingLabel": "Generating...",
-    "summaryHeading": "Professional Summary",
-    "skillsHeading": "Skills",
-    "educationHeading": "Education",
-    "experienceHeading": "Work Experience",
-    "projectsHeading": "Notable Projects",
-    "awardsHeading": "Awards",
-    "showSummary": true,
-    "showSkills": true,
-    "showEducation": true,
-    "showExperience": true,
-    "showProjects": true,
-    "showAwards": true,
-    "showEmail": false,
-    "showPhone": false
-  },
-  "contact": {
-    "seo": {
-      "title": "Contact Md Aquib Yazdani — Sr. Software Engineer",
-      "description": "Get in touch with Md Aquib Yazdani — open to new opportunities, collaborations, and interesting projects. React, Next.js & TypeScript engineer based in Pune, India.",
-      "keywords": [
-        "contact Md Aquib Yazdani",
-        "hire React developer Pune",
-        "hire Next.js developer India",
-        "hire TypeScript engineer",
-        "hire Sr. Software Engineer India",
-        "software engineer available for hire",
-        "React developer contact",
-        "frontend engineer contact Pune"
-      ],
-      "ogTitle": "Contact Md Aquib Yazdani — Sr. Software Engineer",
-      "ogDescription": "Open to new opportunities and collaborations. React, Next.js & TypeScript engineer based in Pune, India.",
-      "ogImage": {
-        "url": "",
-        "alt": ""
-      }
-    },
-    "heading": "GET IN TOUCH",
-    "intro": "Open to new opportunities, collaborations, and interesting conversations. Fill in the form or reach out directly.",
-    "findMeLabel": "Find me on",
-    "resumeButtonLabel": "View My Resume",
-    "nameLabel": "Name",
-    "emailLabel": "Email",
-    "messageLabel": "Message",
-    "submitLabel": "Submit",
-    "sendingLabel": "Submitting",
-    "successMessage": "Thank you! I'll get back to you soon!",
-    "errorMessage": "Oops! Something went wrong. Please try again or contact me directly."
+    "adsenseClientId": "ca-pub-9910299971219204"
   },
   "privacy": {
-    "seo": {
-      "title": "Privacy Policy",
-      "description": "Privacy Policy for aquibyazdani.com — how your data is handled when you use the contact form or visit this portfolio website.",
-      "keywords": [],
-      "ogTitle": "",
-      "ogDescription": "",
-      "ogImage": {
-        "url": "",
-        "alt": ""
-      }
-    },
-    "title": "PRIVACY POLICY",
-    "lastUpdated": "2026-06-30",
+    "lastUpdated": "2026-09-16",
     "sections": [
       {
         "heading": "OVERVIEW",
@@ -532,7 +344,7 @@
       },
       {
         "heading": "INFORMATION COLLECTED",
-        "body": "**Contact Form:** When you submit the contact form, your name, email address, and message are collected. This information is transmitted directly via EmailJS to a private email inbox. No form submissions are stored in a database or on any server.\n\n**Analytics:** This site may use browser-standard analytics tools (such as Google Analytics) to understand aggregate visitor behavior — such as page views and session duration. This data is anonymized and not linked to any personal identity.\n\n**Advertising:** This site uses Google AdSense to display ads. Google and its partners may use cookies and similar technologies to serve ads based on your prior visits to this and other websites. You can learn more about how Google uses this data at [policies.google.com/technologies/partner-sites](https://policies.google.com/technologies/partner-sites), and you can opt out of personalized advertising by visiting [Google Ads Settings](https://adssettings.google.com)."
+        "body": "**Contact Form:** When you submit the contact form, the details you enter (such as your name, email address and message) are collected. Submissions are stored securely in a private database so they can be reviewed and answered, and may also be forwarded to a private email inbox. They are never made public.\n\n**Analytics:** This site may use browser-standard analytics tools (such as Google Analytics) to understand aggregate visitor behavior — such as page views and session duration. This data is anonymized and not linked to any personal identity.\n\n**Advertising:** This site uses Google AdSense to display ads. Google and its partners may use cookies and similar technologies to serve ads based on your prior visits to this and other websites. You can learn more about how Google uses this data at [policies.google.com/technologies/partner-sites](https://policies.google.com/technologies/partner-sites), and you can opt out of personalized advertising by visiting [Google Ads Settings](https://adssettings.google.com)."
       },
       {
         "heading": "HOW YOUR INFORMATION IS USED",
@@ -544,7 +356,7 @@
       },
       {
         "heading": "DATA RETENTION",
-        "body": "Contact form submissions received by email are retained only as long as necessary to respond to your inquiry. You may request deletion of your email conversation at any time by contacting {email}."
+        "body": "Contact form submissions are retained only as long as necessary to respond to your inquiry and are deleted periodically. You may request deletion of your submission at any time by contacting {email}."
       },
       {
         "heading": "YOUR RIGHTS",
@@ -561,19 +373,7 @@
     ]
   },
   "terms": {
-    "seo": {
-      "title": "Terms & Conditions",
-      "description": "Terms & Conditions for aquibyazdani.com — permitted use, intellectual property, and legal information for this personal portfolio website.",
-      "keywords": [],
-      "ogTitle": "",
-      "ogDescription": "",
-      "ogImage": {
-        "url": "",
-        "alt": ""
-      }
-    },
-    "title": "TERMS & CONDITIONS",
-    "lastUpdated": "2026-06-23",
+    "lastUpdated": "2026-09-16",
     "sections": [
       {
         "heading": "ACCEPTANCE OF TERMS",
@@ -589,7 +389,7 @@
       },
       {
         "heading": "CONTACT FORM",
-        "body": "The contact form is provided to facilitate genuine professional inquiries. By submitting the form, you agree not to send spam, unsolicited marketing, or any content that is unlawful, offensive, or harmful. Messages are delivered directly to a private email — there is no moderation layer or automated processing applied to submissions."
+        "body": "The contact form is provided to facilitate genuine professional inquiries. By submitting the form, you agree not to send spam, unsolicited marketing, or any content that is unlawful, offensive, or harmful. Submissions are stored privately and reviewed by {name}; abusive or automated submissions may be discarded without response."
       },
       {
         "heading": "EXTERNAL LINKS",
@@ -617,12 +417,6 @@
       }
     ]
   },
-  "notFound": {
-    "title": "Page Not Found — Md Aquib Yazdani",
-    "heading": "Page not found",
-    "message": "The page you're looking for doesn't exist or has been moved.",
-    "buttonLabel": "Back to Home"
-  },
   "projects": [
     {
       "id": "6aa98b5597162c2e3c4c1ab7",
@@ -634,7 +428,6 @@
       "role": "Lead Frontend Engineer",
       "client": "Times of India",
       "badge": "Professional",
-      "linkLabel": "Live Demo",
       "description": "Developed and maintained a high-traffic ePaper platform accessed by thousands daily. Built a reusable component library to streamline frontend development, reducing development time by 30% through efficient language management and implementing cross-browser compatibility features.",
       "achievements": [
         "Developed and maintained a high-traffic ePaper platform accessed by thousands daily.",
@@ -689,7 +482,6 @@
       "role": "Key Developer",
       "client": "Libsi Markah",
       "badge": "Professional",
-      "linkLabel": "Live Demo",
       "description": "Built a multilingual e-commerce platform covering payment flow, product pages, and cart on Next.js and Redux Toolkit. Improved operational efficiency by 30%, reduced manual intervention by 20%, and implemented SEO-friendly practices to improve search rankings and organic traffic.",
       "achievements": [
         "Improved operational efficiency by 30% with enhanced data workflows.",
@@ -743,7 +535,6 @@
       "role": "Key Frontend Developer",
       "client": "Woovet",
       "badge": "Professional",
-      "linkLabel": "Live Demo",
       "description": "AI-powered veterinary practice management platform (PIMS) serving 50+ hospitals. Features AI-assisted clinical diagnostics (Coggo Assess), voice-driven SOAP note generation (Coggo Voice), and a real-time clinic management whiteboard. Migrated from a legacy stack to Next.js, delivering a modern, performant frontend.",
       "achievements": [
         "Migrated the platform from a legacy stack to Next.js, serving 50+ veterinary hospitals across the US.",
@@ -795,7 +586,6 @@
       "role": "Sole Developer",
       "client": "",
       "badge": "Personal Project",
-      "linkLabel": "View Project",
       "description": "A comprehensive travel and tourism website showcasing the vibrant culture, iconic landmarks, and hidden gems of Mumbai. Features an intuitive interface with responsive design, interactive maps, and detailed guides to help visitors explore and experience the city's rich heritage.",
       "achievements": [],
       "techStack": [],
@@ -838,7 +628,6 @@
       "role": "Sole Developer",
       "client": "Zamzam Capital",
       "badge": "Professional",
-      "linkLabel": "Live Demo",
       "description": "Developed a dedicated Halal stock screening platform enabling investors to evaluate companies based on Shariah-compliant financial criteria. Implemented advanced filtering and screening logic to assess stocks across multiple compliance parameters.",
       "achievements": [
         "Developed a dedicated Halal stock screening platform enabling investors to evaluate companies based on Shariah-compliant financial criteria.",
@@ -891,7 +680,6 @@
       "role": "Principal UI Developer",
       "client": "",
       "badge": "Professional",
-      "linkLabel": "Live Demo",
       "description": "",
       "achievements": [
         "Designed a seamless ad booking platform, simplifying the process for agencies and clients.",
@@ -945,7 +733,6 @@
       "role": "",
       "client": "",
       "badge": "",
-      "linkLabel": "View Project",
       "description": "",
       "achievements": [],
       "techStack": [],
@@ -988,7 +775,6 @@
       "role": "",
       "client": "",
       "badge": "",
-      "linkLabel": "View Project",
       "description": "",
       "achievements": [],
       "techStack": [],
@@ -1031,7 +817,6 @@
       "role": "",
       "client": "",
       "badge": "",
-      "linkLabel": "View Project",
       "description": "",
       "achievements": [],
       "techStack": [],
@@ -1074,7 +859,6 @@
       "role": "",
       "client": "",
       "badge": "",
-      "linkLabel": "View Project",
       "description": "",
       "achievements": [],
       "techStack": [],
@@ -1117,7 +901,6 @@
       "role": "",
       "client": "",
       "badge": "",
-      "linkLabel": "View Project",
       "description": "",
       "achievements": [],
       "techStack": [],
@@ -1160,7 +943,6 @@
       "role": "",
       "client": "",
       "badge": "",
-      "linkLabel": "View Project",
       "description": "",
       "achievements": [],
       "techStack": [],
@@ -1394,7 +1176,8 @@
         "ogImage": {
           "url": "",
           "alt": ""
-        }
+        },
+        "noindex": false
       },
       "createdAt": "2026-09-15T18:15:49.429Z",
       "updatedAt": "2026-09-15T18:15:49.429Z"
@@ -1518,7 +1301,8 @@
         "ogImage": {
           "url": "",
           "alt": ""
-        }
+        },
+        "noindex": false
       },
       "createdAt": "2026-09-15T18:15:49.429Z",
       "updatedAt": "2026-09-15T18:15:49.429Z"
@@ -1625,7 +1409,8 @@
         "ogImage": {
           "url": "",
           "alt": ""
-        }
+        },
+        "noindex": false
       },
       "createdAt": "2026-09-15T18:15:49.429Z",
       "updatedAt": "2026-09-15T18:15:49.429Z"
@@ -2126,15 +1911,10 @@
       "url": "https://www.linkedin.com/in/aquibyazdani/",
       "icon": "Linkedin",
       "newTab": true,
-      "placements": {
-        "hero": true,
-        "about": true,
-        "footer": true,
-        "contact": true
-      },
       "order": 0,
       "createdAt": "2026-09-15T18:15:49.429Z",
-      "updatedAt": "2026-09-15T18:15:49.429Z"
+      "updatedAt": "2026-09-15T18:15:49.429Z",
+      "showInHero": true
     },
     {
       "id": "6aa98b5597162c2e3c4c1add",
@@ -2142,15 +1922,10 @@
       "url": "https://github.com/aquibyazdani/",
       "icon": "Github",
       "newTab": true,
-      "placements": {
-        "hero": true,
-        "about": true,
-        "footer": true,
-        "contact": true
-      },
       "order": 1,
       "createdAt": "2026-09-15T18:15:49.429Z",
-      "updatedAt": "2026-09-15T18:15:49.429Z"
+      "updatedAt": "2026-09-15T18:15:49.429Z",
+      "showInHero": true
     },
     {
       "id": "6aa98b5597162c2e3c4c1ade",
@@ -2158,15 +1933,10 @@
       "url": "https://www.instagram.com/aquibyazdani/",
       "icon": "Instagram",
       "newTab": true,
-      "placements": {
-        "hero": false,
-        "about": true,
-        "footer": true,
-        "contact": true
-      },
       "order": 2,
       "createdAt": "2026-09-15T18:15:49.429Z",
-      "updatedAt": "2026-09-15T18:15:49.429Z"
+      "updatedAt": "2026-09-15T18:15:49.429Z",
+      "showInHero": false
     },
     {
       "id": "6aa98b5597162c2e3c4c1adf",
@@ -2174,15 +1944,10 @@
       "url": "https://wa.me/918210773776",
       "icon": "MessageCircle",
       "newTab": true,
-      "placements": {
-        "hero": false,
-        "about": true,
-        "footer": true,
-        "contact": true
-      },
       "order": 3,
       "createdAt": "2026-09-15T18:15:49.429Z",
-      "updatedAt": "2026-09-15T18:15:49.429Z"
+      "updatedAt": "2026-09-15T18:15:49.429Z",
+      "showInHero": false
     },
     {
       "id": "6aa98b5597162c2e3c4c1ae0",
@@ -2190,16 +1955,56 @@
       "url": "tel:+918210773776",
       "icon": "Phone",
       "newTab": false,
-      "placements": {
-        "hero": false,
-        "about": true,
-        "footer": true,
-        "contact": true
-      },
       "order": 4,
       "createdAt": "2026-09-15T18:15:49.429Z",
-      "updatedAt": "2026-09-15T18:15:49.429Z"
+      "updatedAt": "2026-09-15T18:15:49.429Z",
+      "showInHero": false
     }
   ],
-  "updatedAt": "2026-09-15T18:32:38.263Z"
+  "form": {
+    "id": "6aa9984a223c25343e3ac8a1",
+    "name": "Contact form",
+    "description": "Open to new opportunities, collaborations, and interesting conversations. Fill in the form or reach out directly.",
+    "fields": [
+      {
+        "label": "Name",
+        "name": "from_name",
+        "type": "text",
+        "placeholder": "",
+        "required": true,
+        "width": "full",
+        "options": []
+      },
+      {
+        "label": "Email",
+        "name": "from_email",
+        "type": "email",
+        "placeholder": "",
+        "required": true,
+        "width": "full",
+        "options": []
+      },
+      {
+        "label": "Message",
+        "name": "message",
+        "type": "textarea",
+        "placeholder": "",
+        "required": true,
+        "width": "full",
+        "options": []
+      }
+    ],
+    "submitLabel": "Submit",
+    "successMessage": "Thank you! I'll get back to you soon!",
+    "errorMessage": "Oops! Something went wrong. Please try again or contact me directly.",
+    "storeSubmissions": true,
+    "emailjs": {
+      "enabled": true,
+      "serviceId": "service_veddnmx",
+      "templateId": "template_74daohb",
+      "publicKey": "YaMenwRBpbdGB9Q9r"
+    },
+    "submitUrl": "http://localhost:4000/api/public/forms/6aa9984a223c25343e3ac8a1/submissions"
+  },
+  "updatedAt": "2026-09-15T19:13:48.569Z"
 }

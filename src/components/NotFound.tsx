@@ -3,9 +3,12 @@
 import Link from "next/link";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import type { ChromeProps, Content } from "../lib/content";
+import { site } from "../config/site";
+import type { ChromeProps } from "../lib/content";
 
-export default function NotFound({ chrome, copy }: { chrome: ChromeProps; copy: Content["notFound"] }) {
+const copy = site.notFound;
+
+export default function NotFound({ chrome }: { chrome: ChromeProps }) {
   return (
     <div className="bg-neutral-950 min-h-screen flex flex-col">
       <Navbar {...chrome.nav} />

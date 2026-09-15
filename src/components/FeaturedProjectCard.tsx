@@ -2,15 +2,16 @@
 
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import svgPaths from "../imports/svg-34il4djopb";
-import type { Content, Project } from "../lib/content";
+import { site } from "../config/site";
+import type { Project } from "../lib/content";
 import { projectImage } from "../lib/fallback-images";
 
-export type CardLabels = Pick<
-  Content["projectsPage"],
-  "projectInfoLabel" | "clientLabel" | "yearLabel" | "roleLabel" | "techStackLabel" | "viewProjectLabel" | "notableBulletLimit" | "notableTechLimit"
->;
+const labels = site.projects;
 
-export default function FeaturedProjectCard({ project, labels }: { project: Project; labels: CardLabels }) {
+/** Professional work links to a live demo; personal work to the project. */
+export const projectLinkLabel = (project: Project) => (project.client ? labels.liveDemoLabel : labels.viewProjectLabel);
+
+export default function FeaturedProjectCard({ project }: { project: Project }) {
   const img = projectImage(project, "featured");
 
   return (
@@ -37,7 +38,7 @@ export default function FeaturedProjectCard({ project, labels }: { project: Proj
         </div>
 
         <div className="space-y-4">
-          <p className="font-['Inter',sans-serif] font-semibold text-white text-[16px] uppercase">{labels.projectInfoLabel}</p>
+          <p className="font-['Inter',sans-serif] font-semibold text-white text-[16px] uppercase">{labels.infoLabel}</p>
           <div className="border-t border-b border-[#484848] divide-y divide-[#484848]">
             {project.client && <InfoRow label={labels.clientLabel} value={project.client} />}
             {project.year && <InfoRow label={labels.yearLabel} value={project.year} />}
@@ -48,9 +49,7 @@ export default function FeaturedProjectCard({ project, labels }: { project: Proj
         {project.url && (
           <a href={project.url} target="_blank" rel="noopener noreferrer" className="group inline-flex flex-col gap-1">
             <div className="flex items-center gap-1">
-              <span className="font-['Inter',sans-serif] font-bold text-[#d3e97a] text-[16px] uppercase">
-                {project.linkLabel || labels.viewProjectLabel}
-              </span>
+              <span className="font-['Inter',sans-serif] font-bold text-[#d3e97a] text-[16px] uppercase">{projectLinkLabel(project)}</span>
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                 <path d={svgPaths.p3589c00} fill="#D3E97A" />
               </svg>

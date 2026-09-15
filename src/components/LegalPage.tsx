@@ -2,16 +2,18 @@
 
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import { formatDate, type ChromeProps, type Content } from "../lib/content";
+import { site } from "../config/site";
+import { formatDate, type ChromeProps, type LegalPage as LegalPageData } from "../lib/content";
 import { RichText } from "../lib/richtext";
 
 export type LegalPageProps = {
   chrome: ChromeProps;
-  doc: Content["privacy"];
+  title: string;
+  doc: LegalPageData;
   tokens: Record<string, string>;
 };
 
-export default function LegalPage({ chrome, doc, tokens }: LegalPageProps) {
+export default function LegalPage({ chrome, title, doc, tokens }: LegalPageProps) {
   return (
     <div className="bg-neutral-950 min-h-screen flex flex-col">
       <Navbar {...chrome.nav} />
@@ -20,9 +22,11 @@ export default function LegalPage({ chrome, doc, tokens }: LegalPageProps) {
         <div className="max-w-4xl mx-auto">
           {/* Header */}
           <div className="space-y-4 mb-12 border-b border-[#484848] pb-10">
-            <h1 className="text-[64px] lg:text-[80px] text-white leading-[0.9]">{doc.title}</h1>
+            <h1 className="text-[64px] lg:text-[80px] text-white leading-[0.9]">{title}</h1>
             {doc.lastUpdated && (
-              <p className="font-['Inter',sans-serif] text-[#c7c7c7] text-[14px]">Last updated: {formatDate(doc.lastUpdated)}</p>
+              <p className="font-['Inter',sans-serif] text-[#c7c7c7] text-[14px]">
+                {site.legal.lastUpdatedLabel}: {formatDate(doc.lastUpdated)}
+              </p>
             )}
           </div>
 

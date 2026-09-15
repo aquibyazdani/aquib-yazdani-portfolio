@@ -1,33 +1,33 @@
-import { getContent, siteUrl, yearsOfExperience } from "@/lib/content";
+import { site } from "@/config/site";
+import { displayName, getContent, siteUrl, yearsOfExperience, type Content } from "@/lib/content";
 
-// Plain-text summary for AI crawlers. Editable in the CMS (Site → llms.txt);
-// generated from profile, experience and projects when left empty.
+// Plain-text summary for AI crawlers. Editable in the admin (SEO → llms.txt);
+// generated from profile, skills, experience and projects when left empty.
 export async function GET() {
   const content = await getContent();
-  const text = content.site.llmsTxt.trim() || generate(content);
+  const text = content.seo.llmsTxt.trim() || generate(content);
   return new Response(text, {
     headers: { "Content-Type": "text/plain; charset=utf-8", "Cache-Control": "public, max-age=3600" },
   });
 }
 
-function generate(content: Awaited<ReturnType<typeof getContent>>) {
-  const { profile, site } = content;
-  const name = profile.legalName || profile.name;
+function generate(content: Content) {
+  const { profile, seo } = content;
+  const name = displayName(content);
   const years = yearsOfExperience(content);
   const base = siteUrl(content);
   const lines: string[] = [];
 
   lines.push(`# ${name} — ${profile.role}`, "");
   lines.push("## Who I am", "");
-  lines.push(profile.professionalSummary || `${name} is a ${profile.role}${years ? ` with ${years} years of experience` : ""} based in ${profile.location}.`, "");
+  lines.push(profile.summary || `${name} is a ${profile.role}${years ? ` with ${years} years of experience` : ""} based in ${profile.location}.`, "");
   if (profile.email) lines.push(`Email: ${profile.email}`);
   for (const s of content.socialLinks.filter((s) => /^https?:/.test(s.url))) lines.push(`${s.name}: ${s.url}`);
   lines.push(`Portfolio: ${base}`, "");
 
-  const skills = content.skillCategories;
-  if (skills.length) {
+  if (content.skillCategories.length) {
     lines.push("## Core expertise", "");
-    for (const c of skills) lines.push(`- ${c.title}: ${c.skills.map((s) => s.name).join(", ")}`);
+    for (const c of content.skillCategories) lines.push(`- ${c.title}: ${c.skills.map((s) => s.name).join(", ")}`);
     lines.push("");
   }
 
@@ -56,9 +56,9 @@ function generate(content: Awaited<ReturnType<typeof getContent>>) {
   }
 
   lines.push("## Site structure", "");
-  for (const item of content.navigation.items.filter((i) => i.visible)) lines.push(`- ${item.path} — ${item.label}`);
+  for (const item of site.nav) lines.push(`- ${item.path} — ${item.label}`);
   lines.push("");
 
-  if (site.description) lines.push("## Summary", "", site.description, "");
+  if (seo.defaultDescription) lines.push("## Summary", "", seo.defaultDescription, "");
   return lines.join("\n");
 }

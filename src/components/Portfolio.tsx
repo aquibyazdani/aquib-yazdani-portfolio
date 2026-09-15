@@ -2,7 +2,7 @@
 
 import svgPaths from "../imports/svg-34il4djopb";
 import Navbar from "./Navbar";
-import FeaturedProjectCard, { type CardLabels } from "./FeaturedProjectCard";
+import FeaturedProjectCard from "./FeaturedProjectCard";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -11,22 +11,25 @@ import Footer from "./Footer";
 import ContactSection from "./ContactSection";
 import SocialIcons from "./SocialIcons";
 import Link from "next/link";
-import type { ChromeProps, Content, Image, Project, SocialLink } from "../lib/content";
+import { site } from "../config/site";
+import type { ChromeProps, Image, Project, SocialLink } from "../lib/content";
 
 gsap.registerPlugin(ScrollTrigger);
+
+const copy = site.home;
 
 export type PortfolioProps = {
   chrome: ChromeProps;
   name: string;
-  heroTagline: string;
+  tagline: string;
+  shortBio: string;
+  bio: string;
   portrait: Image;
-  home: Content["home"];
   heroSocial: SocialLink[];
   featured: Project[];
-  labels: CardLabels;
 };
 
-export default function Portfolio({ chrome, name, heroTagline, portrait, home, heroSocial, featured, labels }: PortfolioProps) {
+export default function Portfolio({ chrome, name, tagline, shortBio, bio, portrait, heroSocial, featured }: PortfolioProps) {
   const heroRef = useRef(null);
   const projectsRef = useRef(null);
   const aboutRef = useRef(null);
@@ -71,13 +74,13 @@ export default function Portfolio({ chrome, name, heroTagline, portrait, home, h
             <div className="space-y-8">
               <div className="space-y-2">
                 <h1 className="text-[80px] lg:text-[101px] leading-[0.9] text-white">
-                  {home.heroGreeting}
+                  {copy.greeting}
                   <br />
                   {name.toUpperCase()}.
                 </h1>
-                <p className="font-['Inter',sans-serif] text-[#c7c7c7] text-[18px] leading-[1.5] max-w-[540px]">
-                  {heroTagline}
-                </p>
+                {tagline && (
+                  <p className="font-['Inter',sans-serif] text-[#c7c7c7] text-[18px] leading-[1.5] max-w-[540px]">{tagline}</p>
+                )}
               </div>
 
               {/* Action Buttons */}
@@ -86,9 +89,7 @@ export default function Portfolio({ chrome, name, heroTagline, portrait, home, h
                   onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
                   className="bg-[#d3e97a] rounded-full flex items-center gap-3 pl-6 pr-2 py-3 h-[54px] hover:bg-[#c5db6c] transition-colors"
                 >
-                  <span className="font-['Inter',sans-serif] font-bold text-[16px] text-neutral-950 uppercase">
-                    {home.ctaLabel}
-                  </span>
+                  <span className="font-['Inter',sans-serif] font-bold text-[16px] text-neutral-950 uppercase">{copy.ctaLabel}</span>
                   <div className="size-[42px] bg-neutral-950 rounded-full flex items-center justify-center">
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                       <path d={svgPaths.p23c4ec40} fill="white" />
@@ -108,11 +109,7 @@ export default function Portfolio({ chrome, name, heroTagline, portrait, home, h
             {/* Right Image */}
             <div className="relative">
               <div className="bg-[#c7c7c7] rounded-[16px] w-full max-w-[450px] mx-auto aspect-[6/7] relative overflow-hidden">
-                <ImageWithFallback
-                  src={portrait.url}
-                  alt={portrait.alt}
-                  className="absolute inset-0 w-full h-full object-cover object-center"
-                />
+                <ImageWithFallback src={portrait.url} alt={portrait.alt} className="absolute inset-0 w-full h-full object-cover object-center" />
               </div>
             </div>
           </div>
@@ -125,58 +122,56 @@ export default function Portfolio({ chrome, name, heroTagline, portrait, home, h
       </div>
 
       {/* Featured Projects Section */}
-      <section ref={projectsRef} id="work" className="py-20 px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="space-y-4 mb-16">
-            <h2 className="text-[76px] text-white leading-none">{home.featuredHeading}</h2>
-            <p className="font-['Inter',sans-serif] text-[#c7c7c7] text-[18px] leading-[1.5] max-w-[600px]">
-              {home.featuredIntro}
-            </p>
+      {featured.length > 0 && (
+        <>
+          <section ref={projectsRef} id="work" className="py-20 px-6">
+            <div className="max-w-7xl mx-auto">
+              <div className="space-y-4 mb-16">
+                <h2 className="text-[76px] text-white leading-none">{copy.featuredHeading}</h2>
+                <p className="font-['Inter',sans-serif] text-[#c7c7c7] text-[18px] leading-[1.5] max-w-[600px]">{copy.featuredIntro}</p>
+              </div>
+
+              <div className="space-y-20">
+                {featured.map((project) => (
+                  <FeaturedProjectCard key={project.id} project={project} />
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* All Projects Button */}
+          <section className="py-12 pb-20 px-6">
+            <div className="max-w-7xl mx-auto text-center">
+              <Link href="/projects" className="inline-flex flex-col gap-1">
+                <span className="font-['Inter',sans-serif] font-bold text-[#d3e97a] text-[16px] uppercase">{copy.allProjectsLabel}</span>
+                <div className="h-[2px] w-full bg-[#d3e97a]" />
+              </Link>
+            </div>
+          </section>
+
+          {/* Divider */}
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="border-t border-[#484848]" />
           </div>
-
-          <div className="space-y-20">
-            {featured.map((project) => (
-              <FeaturedProjectCard key={project.id} project={project} labels={labels} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* All Projects Button */}
-      <section className="py-12 pb-20 px-6">
-        <div className="max-w-7xl mx-auto text-center">
-          <Link href="/projects" className="inline-flex flex-col gap-1">
-            <span className="font-['Inter',sans-serif] font-bold text-[#d3e97a] text-[16px] uppercase">
-              {home.allProjectsLabel}
-            </span>
-            <div className="h-[2px] w-full bg-[#d3e97a]" />
-          </Link>
-        </div>
-      </section>
-
-      {/* Divider */}
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="border-t border-[#484848]" />
-      </div>
+        </>
+      )}
 
       {/* About Section */}
       <section ref={aboutRef} id="about" className="py-20 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div>
-              <h2 className="text-[76px] lg:text-[101px] text-white leading-[0.9] mb-8">{home.aboutHeading}</h2>
+              <h2 className="text-[76px] lg:text-[101px] text-white leading-[0.9] mb-8">{copy.aboutHeading}</h2>
             </div>
 
             <div className="space-y-8">
               <div className="space-y-4">
-                <p className="font-['Inter',sans-serif] text-[32px] text-white leading-[1.4]">{home.aboutBlurb}</p>
-                <p className="font-['Inter',sans-serif] text-[#c7c7c7] text-[18px] leading-[1.5]">{home.aboutText}</p>
+                {shortBio && <p className="font-['Inter',sans-serif] text-[32px] text-white leading-[1.4]">{shortBio}</p>}
+                {bio && <p className="font-['Inter',sans-serif] text-[#c7c7c7] text-[18px] leading-[1.5]">{bio}</p>}
               </div>
 
               <Link href="/about" className="inline-flex flex-col gap-1">
-                <span className="font-['Inter',sans-serif] font-bold text-[#d3e97a] text-[16px] uppercase">
-                  {home.aboutLinkLabel}
-                </span>
+                <span className="font-['Inter',sans-serif] font-bold text-[#d3e97a] text-[16px] uppercase">{copy.aboutLinkLabel}</span>
                 <div className="h-[2px] w-full bg-[#d3e97a]" />
               </Link>
             </div>

@@ -6,7 +6,7 @@ import { pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata(): Promise<Metadata> {
   const content = await getContent();
-  return pageMetadata(content, content.resumePage.seo, { path: "/resume", title: "Resume" });
+  return pageMetadata(content, "resume", { path: "/resume", title: "Resume" });
 }
 
 export default async function ResumePage() {
@@ -17,7 +17,6 @@ export default async function ResumePage() {
     <Resume
       chrome={chromeProps(content)}
       profile={profile}
-      page={content.resumePage}
       categories={content.skillCategories}
       experience={content.experience}
       education={content.education}

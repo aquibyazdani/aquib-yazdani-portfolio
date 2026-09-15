@@ -10,23 +10,24 @@ import ContactSection from "./ContactSection";
 import Footer from "./Footer";
 import SocialIcons from "./SocialIcons";
 import Link from "next/link";
-import type { ChromeProps, Content, Experience, Image, SkillCategory, SocialLink } from "../lib/content";
+import { site } from "../config/site";
+import type { ChromeProps, Experience, Image, Profile, SkillCategory, SocialLink } from "../lib/content";
 import { iconFor } from "../lib/icons";
 
 gsap.registerPlugin(ScrollTrigger);
 
+const copy = site.about;
+
 export type AboutProps = {
   chrome: ChromeProps;
-  name: string;
-  role: string;
+  profile: Pick<Profile, "name" | "role" | "intro" | "bio" | "skillsSummary">;
   portrait: Image;
-  about: Content["about"];
   categories: SkillCategory[];
   experience: Experience[];
   social: SocialLink[];
 };
 
-export default function About({ chrome, name, role, portrait, about, categories, experience, social }: AboutProps) {
+export default function About({ chrome, profile, portrait, categories, experience, social }: AboutProps) {
   const heroRef = useRef(null);
   const capabilitiesRef = useRef(null);
   const experienceRef = useRef(null);
@@ -70,47 +71,36 @@ export default function About({ chrome, name, role, portrait, about, categories,
             <div className="space-y-8">
               <div className="space-y-6">
                 <h1 className="text-[80px] lg:text-[90px] leading-[0.9] text-white">
-                  {about.heading}
+                  {copy.heading}
                   <span className="sr-only">
                     {" "}
-                    — {name}, {role}
+                    — {profile.name}, {profile.role}
                   </span>
                 </h1>
 
                 <div className="space-y-4">
-                  <p className="font-['Inter',sans-serif] text-[24px] text-white leading-[1.4]">{about.intro}</p>
-                  <p className="font-['Inter',sans-serif] text-[#c7c7c7] text-[16px] leading-[1.6]">{about.background}</p>
+                  {profile.intro && <p className="font-['Inter',sans-serif] text-[24px] text-white leading-[1.4]">{profile.intro}</p>}
+                  {profile.bio && <p className="font-['Inter',sans-serif] text-[#c7c7c7] text-[16px] leading-[1.6]">{profile.bio}</p>}
                 </div>
               </div>
 
-              {/* Download Resume & Social Links */}
+              {/* Resume & Social Links */}
               <div className="flex gap-4 items-center flex-wrap">
-                {about.resumeButtonLabel && (
-                  <Link
-                    href="/resume"
-                    className="bg-[#d3e97a] rounded-full flex items-center gap-2 px-6 py-3 hover:bg-[#c5db6c] transition-colors"
-                  >
-                    <span className="font-['Inter',sans-serif] font-bold text-[14px] text-neutral-950 uppercase">
-                      {about.resumeButtonLabel}
-                    </span>
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                      <path d={svgPaths.p23c4ec40} fill="#0A0A0A" />
-                    </svg>
-                  </Link>
-                )}
+                <Link href="/resume" className="bg-[#d3e97a] rounded-full flex items-center gap-2 px-6 py-3 hover:bg-[#c5db6c] transition-colors">
+                  <span className="font-['Inter',sans-serif] font-bold text-[14px] text-neutral-950 uppercase">{copy.resumeButtonLabel}</span>
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d={svgPaths.p23c4ec40} fill="#0A0A0A" />
+                  </svg>
+                </Link>
 
-                <SocialIcons links={social} ownerName={name} hover="hover:opacity-80" />
+                <SocialIcons links={social} ownerName={profile.name} hover="hover:opacity-80" />
               </div>
             </div>
 
             {/* Right - Profile Image */}
             <div className="flex justify-center lg:justify-end">
               <div className="bg-[#c7c7c7] rounded-[12px] overflow-hidden w-full max-w-[400px] aspect-[4/5] relative">
-                <ImageWithFallback
-                  src={portrait.url}
-                  alt={portrait.alt}
-                  className="absolute inset-0 w-full h-full object-cover object-top"
-                />
+                <ImageWithFallback src={portrait.url} alt={portrait.alt} className="absolute inset-0 w-full h-full object-cover object-top" />
               </div>
             </div>
           </div>
@@ -118,81 +108,81 @@ export default function About({ chrome, name, role, portrait, about, categories,
       </section>
 
       {/* My Capabilities Section */}
-      <section className="py-20 px-6" ref={capabilitiesRef}>
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <div>
-              <h2 className="text-[64px] lg:text-[76px] text-white leading-[0.9]">{about.capabilitiesHeading}</h2>
-            </div>
+      {categories.length > 0 && (
+        <section className="py-20 px-6" ref={capabilitiesRef}>
+          <div className="max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+              <div>
+                <h2 className="text-[64px] lg:text-[76px] text-white leading-[0.9]">{copy.capabilitiesHeading}</h2>
+              </div>
 
-            <div className="space-y-6">
-              <p className="font-['Inter',sans-serif] text-[#c7c7c7] text-[16px] leading-[1.6]">
-                {about.capabilitiesDescription}
-              </p>
-
-              {/* Capability Tags */}
               <div className="space-y-6">
-                {categories.map((category) => (
-                  <div key={category.id} className="space-y-3">
-                    <h3 className="font-['Bebas_Neue',sans-serif] font-semibold text-[#d3e97a] text-[14px] uppercase">
-                      {category.title}
-                    </h3>
-                    <div className="flex flex-wrap gap-3">
-                      {category.skills.map((skill) => {
-                        const Icon = iconFor(skill.icon);
-                        return (
-                          <div
-                            key={skill.name}
-                            className="border border-[#484848] px-4 py-2.5 rounded-[4px] inline-flex items-center gap-2 hover:border-[#d3e97a] transition-colors"
-                          >
-                            <Icon className="size-4 text-[#d3e97a]" />
-                            <span className="font-['Inter',sans-serif] text-white text-[13px]">{skill.name}</span>
-                          </div>
-                        );
-                      })}
+                {profile.skillsSummary && (
+                  <p className="font-['Inter',sans-serif] text-[#c7c7c7] text-[16px] leading-[1.6]">{profile.skillsSummary}</p>
+                )}
+
+                {/* Capability Tags */}
+                <div className="space-y-6">
+                  {categories.map((category) => (
+                    <div key={category.id} className="space-y-3">
+                      <h3 className="font-['Bebas_Neue',sans-serif] font-semibold text-[#d3e97a] text-[14px] uppercase">{category.title}</h3>
+                      <div className="flex flex-wrap gap-3">
+                        {category.skills.map((skill) => {
+                          const Icon = iconFor(skill.icon);
+                          return (
+                            <div
+                              key={skill.name}
+                              className="border border-[#484848] px-4 py-2.5 rounded-[4px] inline-flex items-center gap-2 hover:border-[#d3e97a] transition-colors"
+                            >
+                              <Icon className="size-4 text-[#d3e97a]" />
+                              <span className="font-['Inter',sans-serif] text-white text-[13px]">{skill.name}</span>
+                            </div>
+                          );
+                        })}
+                      </div>
                     </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* My Experience Section */}
+      {experience.length > 0 && (
+        <section className="py-20 px-6" ref={experienceRef}>
+          <div className="max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+              <div>
+                <h2 className="text-[64px] lg:text-[76px] text-white leading-[0.9]">{copy.experienceHeading}</h2>
+              </div>
+
+              <div className="space-y-12">
+                {experience.map((exp) => (
+                  <div key={exp.id} className="space-y-4">
+                    <div className="flex justify-between items-start flex-wrap gap-2">
+                      <div>
+                        <h3 className="font-['Bebas_Neue',sans-serif] text-white text-[20px]">{exp.title}</h3>
+                        {exp.company && <p className="font-['Inter',sans-serif] text-[#c7c7c7] text-[16px]">{exp.company}</p>}
+                      </div>
+                      <span className="font-['Inter',sans-serif] text-[#c7c7c7] text-[14px]">{exp.period}</span>
+                    </div>
+                    <ul className="space-y-2 font-['Inter',sans-serif] text-[#c7c7c7] text-[16px] leading-[1.6]">
+                      {exp.responsibilities.map((resp, idx) => (
+                        <li key={idx} className="flex items-start gap-2">
+                          <span className="text-[#d3e97a] mt-1">•</span>
+                          <span>{resp}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 ))}
               </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* My Experience Section */}
-      <section className="py-20 px-6" ref={experienceRef}>
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <div>
-              <h2 className="text-[64px] lg:text-[76px] text-white leading-[0.9]">{about.experienceHeading}</h2>
-            </div>
-
-            <div className="space-y-12">
-              {experience.map((exp) => (
-                <div key={exp.id} className="space-y-4">
-                  <div className="flex justify-between items-start flex-wrap gap-2">
-                    <div>
-                      <h3 className="font-['Bebas_Neue',sans-serif] text-white text-[20px]">{exp.title}</h3>
-                      {exp.company && (
-                        <p className="font-['Inter',sans-serif] text-[#c7c7c7] text-[16px]">{exp.company}</p>
-                      )}
-                    </div>
-                    <span className="font-['Inter',sans-serif] text-[#c7c7c7] text-[14px]">{exp.period}</span>
-                  </div>
-                  <ul className="space-y-2 font-['Inter',sans-serif] text-[#c7c7c7] text-[16px] leading-[1.6]">
-                    {exp.responsibilities.map((resp, idx) => (
-                      <li key={idx} className="flex items-start gap-2">
-                        <span className="text-[#d3e97a] mt-1">•</span>
-                        <span>{resp}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Let's Connect Section */}
       <section ref={connectRef} className="py-20 px-6">

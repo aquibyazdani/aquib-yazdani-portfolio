@@ -1,17 +1,62 @@
 import { cache } from "react";
 import fallback from "../content/fallback.json";
+import { site } from "../config/site";
 
 // ─── Types (mirror portfolio-api/src/content/schemas.ts) ─────────────────────
 
 export type Image = { url: string; alt: string };
-export type Seo = {
+
+export type PageSeo = {
   title: string;
   description: string;
   keywords: string[];
   ogTitle: string;
   ogDescription: string;
   ogImage: Image;
+  noindex: boolean;
 };
+
+export type SeoPageKey = "home" | "about" | "projects" | "blog" | "resume" | "contact" | "privacy" | "terms";
+
+export type Seo = {
+  siteName: string;
+  siteUrl: string;
+  titleTemplate: string;
+  defaultTitle: string;
+  defaultDescription: string;
+  defaultKeywords: string[];
+  twitterHandle: string;
+  defaultOgImage: Image;
+  shareCard: { title: string; subtitle: string; tagline: string; meta: string };
+  llmsTxt: string;
+  pages: Record<SeoPageKey, PageSeo>;
+};
+
+export type Profile = {
+  name: string;
+  fullName: string;
+  role: string;
+  headline: string;
+  tagline: string;
+  intro: string;
+  shortBio: string;
+  bio: string;
+  summary: string;
+  skillsSummary: string;
+  email: string;
+  phone: string;
+  location: string;
+  city: string;
+  region: string;
+  countryCode: string;
+  careerStartDate: string;
+  portrait: Image;
+  resumePdf: { url: string; fileName: string };
+};
+
+export type Integrations = { gaId: string; adsenseClientId: string };
+
+export type LegalPage = { lastUpdated: string; sections: Array<{ heading: string; body: string }> };
 
 export type Project = {
   id: string;
@@ -23,7 +68,6 @@ export type Project = {
   role: string;
   client: string;
   badge: string;
-  linkLabel: string;
   description: string;
   achievements: string[];
   techStack: string[];
@@ -57,7 +101,7 @@ export type BlogPost = {
   featured: boolean;
   published: boolean;
   content: BlogBlock[];
-  seo: Seo;
+  seo: PageSeo;
 };
 
 export type Skill = { name: string; icon: string };
@@ -75,18 +119,37 @@ export type Experience = {
 };
 export type Education = { id: string; institution: string; degree: string; startYear: string; endYear: string; grade: string };
 export type Award = { id: string; title: string; organization: string; date: string; description: string };
-export type SocialLink = {
+export type SocialLink = { id: string; name: string; url: string; icon: string; newTab: boolean; showInHero: boolean };
+
+export type FormFieldType = "text" | "email" | "tel" | "url" | "textarea" | "select" | "checkbox";
+export type FormField = {
+  label: string;
+  name: string;
+  type: FormFieldType;
+  placeholder: string;
+  required: boolean;
+  width: "full" | "half";
+  options: string[];
+};
+export type ContactForm = {
   id: string;
   name: string;
-  url: string;
-  icon: string;
-  newTab: boolean;
-  placements: { hero: boolean; about: boolean; footer: boolean; contact: boolean };
+  description: string;
+  fields: FormField[];
+  submitLabel: string;
+  successMessage: string;
+  errorMessage: string;
+  storeSubmissions: boolean;
+  emailjs: { enabled: boolean; serviceId: string; templateId: string; publicKey: string };
+  submitUrl: string;
 };
 
-type CollectionKeys = "projects" | "blogPosts" | "skillCategories" | "experience" | "education" | "awards" | "socialLinks";
-
-export type Content = Omit<typeof fallback, CollectionKeys> & {
+export type Content = {
+  profile: Profile;
+  seo: Seo;
+  integrations: Integrations;
+  privacy: LegalPage;
+  terms: LegalPage;
   projects: Project[];
   blogPosts: BlogPost[];
   skillCategories: SkillCategory[];
@@ -94,11 +157,9 @@ export type Content = Omit<typeof fallback, CollectionKeys> & {
   education: Education[];
   awards: Award[];
   socialLinks: SocialLink[];
+  form: ContactForm | null;
+  updatedAt: string | null;
 };
-
-export type Profile = Content["profile"];
-export type Site = Content["site"];
-export type Integrations = Content["integrations"];
 
 // ─── Fetching ────────────────────────────────────────────────────────────────
 
@@ -130,7 +191,11 @@ export const getContent = cache(async (): Promise<Content> => {
 // ─── Helpers ─────────────────────────────────────────────────────────────────
 
 export function siteUrl(content: Content) {
-  return (content.site.siteUrl || "https://aquibyazdani.com").replace(/\/$/, "");
+  return (content.seo.siteUrl || "https://aquibyazdani.com").replace(/\/$/, "");
+}
+
+export function displayName(content: Content) {
+  return content.profile.fullName || content.profile.name;
 }
 
 export function yearsOfExperience(content: Content) {
@@ -141,41 +206,31 @@ export function yearsOfExperience(content: Content) {
 }
 
 export function copyrightText(content: Content) {
-  const template = content.site.copyright || `© {year} ${content.profile.name}`;
-  return template.replace("{year}", String(new Date().getFullYear()));
+  return site.footer.copyright.replace("{year}", String(new Date().getFullYear())).replace("{name}", content.profile.name);
 }
 
-export function ogImageUrl(content: Content, seo?: Seo) {
-  return seo?.ogImage.url || content.site.ogImage.url || `${siteUrl(content)}/opengraph-image`;
+export function ogImageUrl(content: Content, seo?: PageSeo) {
+  return seo?.ogImage.url || content.seo.defaultOgImage.url || `${siteUrl(content)}/opengraph-image`;
 }
-
-export const socialFor = (content: Content, place: keyof SocialLink["placements"]) =>
-  content.socialLinks.filter((s) => s.placements[place]);
 
 export const projectsFor = (content: Content, place: keyof Project["placements"]) =>
   content.projects.filter((p) => p.placements[place]);
 
+/** The most recent role, used as the current employer in structured data. */
+export function currentRole(content: Content) {
+  return content.experience.find((e) => !e.endDate) ?? content.experience[0] ?? null;
+}
+
 /** Props shared by every page: header, footer and the contact section. */
 export function chromeProps(content: Content) {
   return {
-    nav: { logoText: content.profile.logoText || content.profile.name, items: content.navigation.items.filter((i) => i.visible) },
-    footer: {
-      copyright: copyrightText(content),
-      privacyLabel: content.site.privacyLinkLabel || "Privacy Policy",
-      termsLabel: content.site.termsLinkLabel || "Terms & Conditions",
-      social: socialFor(content, "footer"),
-      name: content.profile.name,
-    },
+    nav: { logoText: content.profile.name },
+    footer: { copyright: copyrightText(content), social: content.socialLinks, name: content.profile.name },
     contact: {
-      copy: content.contact,
+      form: content.form,
       email: content.profile.email,
       location: content.profile.location,
-      social: socialFor(content, "contact"),
-      emailjs: {
-        serviceId: content.integrations.emailjsServiceId,
-        templateId: content.integrations.emailjsTemplateId,
-        publicKey: content.integrations.emailjsPublicKey,
-      },
+      social: content.socialLinks,
       name: content.profile.name,
     },
   };

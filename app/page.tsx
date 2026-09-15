@@ -1,39 +1,31 @@
 import type { Metadata } from "next";
 import Portfolio from "@/components/Portfolio";
-import { chromeProps, getContent, projectsFor, siteUrl, socialFor } from "@/lib/content";
+import { chromeProps, getContent, projectsFor } from "@/lib/content";
 import { portraitImage } from "@/lib/fallback-images";
+import { websiteJsonLd } from "@/lib/jsonld";
 import { pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata(): Promise<Metadata> {
   const content = await getContent();
-  return pageMetadata(content, content.home.seo, { path: "" });
+  return pageMetadata(content, "home", { path: "" });
 }
 
 export default async function Home() {
   const content = await getContent();
-  const { profile, home, site } = content;
-
-  const websiteJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    name: site.siteName,
-    url: siteUrl(content),
-    description: home.websiteDescription || site.description,
-    author: { "@type": "Person", name: profile.legalName || profile.name },
-  };
+  const { profile } = content;
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd(content)) }} />
       <Portfolio
         chrome={chromeProps(content)}
         name={profile.name}
-        heroTagline={profile.heroTagline}
+        tagline={profile.tagline}
+        shortBio={profile.shortBio}
+        bio={profile.bio}
         portrait={portraitImage(profile)}
-        home={home}
-        heroSocial={socialFor(content, "hero")}
+        heroSocial={content.socialLinks.filter((s) => s.showInHero)}
         featured={projectsFor(content, "featured")}
-        labels={content.projectsPage}
       />
     </>
   );

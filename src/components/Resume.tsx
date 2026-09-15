@@ -6,15 +6,17 @@ import { useEffect, useRef } from "react";
 import Footer from "./Footer";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import type { Award, ChromeProps, Content, Education, Experience, Profile, Project, SkillCategory } from "../lib/content";
+import { site } from "../config/site";
+import type { Award, ChromeProps, Education, Experience, Profile, Project, SkillCategory } from "../lib/content";
 import { iconFor } from "../lib/icons";
 
 gsap.registerPlugin(ScrollTrigger);
 
+const copy = site.resume;
+
 export type ResumeProps = {
   chrome: ChromeProps;
   profile: Profile;
-  page: Content["resumePage"];
   categories: SkillCategory[];
   experience: Experience[];
   education: Education[];
@@ -24,12 +26,10 @@ export type ResumeProps = {
 };
 
 function SectionHeading({ children }: { children: React.ReactNode }) {
-  return (
-    <h2 className="font-['Bebas_Neue',sans-serif] text-[18px] uppercase text-[#d3e97a] border-b border-[#d3e97a]/30 pb-1.5">{children}</h2>
-  );
+  return <h2 className="font-['Bebas_Neue',sans-serif] text-[18px] uppercase text-[#d3e97a] border-b border-[#d3e97a]/30 pb-1.5">{children}</h2>;
 }
 
-export default function Resume({ chrome, profile, page, categories, experience, education, awards, projects, pdf }: ResumeProps) {
+export default function Resume({ chrome, profile, categories, experience, education, awards, projects, pdf }: ResumeProps) {
   const resumeRef = useRef(null);
 
   useEffect(() => {
@@ -69,7 +69,7 @@ export default function Resume({ chrome, profile, page, categories, experience, 
               className="inline-flex items-center gap-2 bg-[#d3e97a] text-neutral-950 px-6 py-3 rounded-full hover:bg-[#c5db6c] transition-colors"
             >
               <Download className="size-4" />
-              <span className="font-['Inter',sans-serif] font-bold text-[14px] uppercase">{page.downloadLabel}</span>
+              <span className="font-['Inter',sans-serif] font-bold text-[14px] uppercase">{copy.downloadLabel}</span>
             </a>
           </div>
 
@@ -80,11 +80,11 @@ export default function Resume({ chrome, profile, page, categories, experience, 
               <div className="flex items-start justify-between gap-8 pb-4 border-b-2 border-[#d3e97a]">
                 <div className="space-y-1">
                   <h1 className="text-[48px] text-white leading-[0.9]">{profile.name.toUpperCase()}</h1>
-                  <p className="font-['Inter',sans-serif] text-[#d3e97a] text-[18px]">{profile.headline}</p>
+                  {profile.headline && <p className="font-['Inter',sans-serif] text-[#d3e97a] text-[18px]">{profile.headline}</p>}
                 </div>
 
                 <div className="space-y-1.5 pt-1">
-                  {page.showEmail && profile.email && (
+                  {copy.showEmail && profile.email && (
                     <div className="flex items-center gap-2 justify-end">
                       <Mail className="size-3.5 text-[#d3e97a]" />
                       <a href={`mailto:${profile.email}`} className="font-['Inter',sans-serif] text-[12px] text-[#c7c7c7] hover:text-white">
@@ -92,7 +92,7 @@ export default function Resume({ chrome, profile, page, categories, experience, 
                       </a>
                     </div>
                   )}
-                  {page.showPhone && profile.phone && (
+                  {copy.showPhone && profile.phone && (
                     <div className="flex items-center gap-2 justify-end">
                       <Phone className="size-3.5 text-[#d3e97a]" />
                       <span className="font-['Inter',sans-serif] text-[12px] text-[#c7c7c7]">{profile.phone}</span>
@@ -108,17 +108,17 @@ export default function Resume({ chrome, profile, page, categories, experience, 
               </div>
 
               {/* Professional Summary Section */}
-              {page.showSummary && profile.professionalSummary && (
+              {profile.summary && (
                 <div className="space-y-2.5">
-                  <SectionHeading>{page.summaryHeading}</SectionHeading>
-                  <p className="font-['Inter',sans-serif] text-[#c7c7c7] text-[13px] leading-[1.6]">{profile.professionalSummary}</p>
+                  <SectionHeading>{copy.summaryHeading}</SectionHeading>
+                  <p className="font-['Inter',sans-serif] text-[#c7c7c7] text-[13px] leading-[1.6]">{profile.summary}</p>
                 </div>
               )}
 
               {/* Skills Section */}
-              {page.showSkills && categories.length > 0 && (
+              {categories.length > 0 && (
                 <div className="space-y-3">
-                  <SectionHeading>{page.skillsHeading}</SectionHeading>
+                  <SectionHeading>{copy.skillsHeading}</SectionHeading>
 
                   {categories.map((category) => (
                     <div key={category.id} className="space-y-1.5">
@@ -143,9 +143,9 @@ export default function Resume({ chrome, profile, page, categories, experience, 
               )}
 
               {/* Education Section */}
-              {page.showEducation && education.length > 0 && (
+              {education.length > 0 && (
                 <div className="space-y-2.5">
-                  <SectionHeading>{page.educationHeading}</SectionHeading>
+                  <SectionHeading>{copy.educationHeading}</SectionHeading>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                     {education.map((edu) => (
                       <div key={edu.id} className="space-y-0.5">
@@ -154,9 +154,7 @@ export default function Resume({ chrome, profile, page, categories, experience, 
                           {edu.degree}
                           {edu.grade && <span className="text-[#888]"> · {edu.grade}</span>}
                         </p>
-                        <p className="font-['Inter',sans-serif] text-[#d3e97a] text-[11px]">
-                          {[edu.startYear, edu.endYear].filter(Boolean).join(" – ")}
-                        </p>
+                        <p className="font-['Inter',sans-serif] text-[#d3e97a] text-[11px]">{[edu.startYear, edu.endYear].filter(Boolean).join(" – ")}</p>
                       </div>
                     ))}
                   </div>
@@ -164,9 +162,9 @@ export default function Resume({ chrome, profile, page, categories, experience, 
               )}
 
               {/* Work Experience Section */}
-              {page.showExperience && experience.length > 0 && (
+              {experience.length > 0 && (
                 <div className="space-y-3">
-                  <SectionHeading>{page.experienceHeading}</SectionHeading>
+                  <SectionHeading>{copy.experienceHeading}</SectionHeading>
 
                   <div className="relative pl-8">
                     {/* Timeline Line */}
@@ -181,13 +179,9 @@ export default function Resume({ chrome, profile, page, categories, experience, 
                           <div className="flex items-start justify-between gap-4">
                             <div className="space-y-0.5 flex-1">
                               <h3 className="font-['Bebas_Neue',sans-serif] text-white text-[15px]">{exp.title}</h3>
-                              <p className="font-['Inter',sans-serif] text-[#c7c7c7] text-[12px]">
-                                {[exp.company, exp.location].filter(Boolean).join(" | ")}
-                              </p>
+                              <p className="font-['Inter',sans-serif] text-[#c7c7c7] text-[12px]">{[exp.company, exp.location].filter(Boolean).join(" | ")}</p>
                             </div>
-                            <span className="font-['Inter',sans-serif] text-[#d3e97a] text-[11px] whitespace-nowrap bg-[#d3e97a]/10 px-2.5 py-1 rounded-md">
-                              {exp.period}
-                            </span>
+                            <span className="font-['Inter',sans-serif] text-[#d3e97a] text-[11px] whitespace-nowrap bg-[#d3e97a]/10 px-2.5 py-1 rounded-md">{exp.period}</span>
                           </div>
                           <ul className="space-y-1 font-['Inter',sans-serif] text-[#c7c7c7] text-[12px]">
                             {exp.responsibilities.map((resp, idx) => (
@@ -205,9 +199,9 @@ export default function Resume({ chrome, profile, page, categories, experience, 
               )}
 
               {/* Notable Projects Section */}
-              {page.showProjects && projects.length > 0 && (
+              {projects.length > 0 && (
                 <div className="space-y-3">
-                  <SectionHeading>{page.projectsHeading}</SectionHeading>
+                  <SectionHeading>{copy.projectsHeading}</SectionHeading>
                   <div className="space-y-3">
                     {projects.map((project) => (
                       <div key={project.id} className="space-y-1">
@@ -229,15 +223,11 @@ export default function Resume({ chrome, profile, page, categories, experience, 
                           {(project.resume.techStack || project.techStack.length > 0) && (
                             <>
                               <span className="text-[#484848]">•</span>
-                              <span className="font-['Inter',sans-serif] italic text-[#c7c7c7] text-[12px]">
-                                {project.resume.techStack || project.techStack.join(", ")}
-                              </span>
+                              <span className="font-['Inter',sans-serif] italic text-[#c7c7c7] text-[12px]">{project.resume.techStack || project.techStack.join(", ")}</span>
                             </>
                           )}
                         </div>
-                        <p className="font-['Inter',sans-serif] text-[#c7c7c7] text-[12px] leading-[1.6]">
-                          {project.resume.description || project.description}
-                        </p>
+                        <p className="font-['Inter',sans-serif] text-[#c7c7c7] text-[12px] leading-[1.6]">{project.resume.description || project.description}</p>
                       </div>
                     ))}
                   </div>
@@ -245,9 +235,9 @@ export default function Resume({ chrome, profile, page, categories, experience, 
               )}
 
               {/* Awards Section */}
-              {page.showAwards && awards.length > 0 && (
+              {awards.length > 0 && (
                 <div className="space-y-3">
-                  <SectionHeading>{page.awardsHeading}</SectionHeading>
+                  <SectionHeading>{copy.awardsHeading}</SectionHeading>
 
                   <div className="space-y-1">
                     {awards.map((award) => (
@@ -256,9 +246,7 @@ export default function Resume({ chrome, profile, page, categories, experience, 
                         <p className="font-['Inter',sans-serif] text-[#c7c7c7] text-[12px] leading-[1.6]">
                           <span className="text-white font-semibold">{award.title}</span>
                           {award.description && <> — {award.description}</>}
-                          {(award.organization || award.date) && (
-                            <span className="text-[#888]"> ({[award.organization, award.date].filter(Boolean).join(", ")})</span>
-                          )}
+                          {(award.organization || award.date) && <span className="text-[#888]"> ({[award.organization, award.date].filter(Boolean).join(", ")})</span>}
                         </p>
                       </div>
                     ))}

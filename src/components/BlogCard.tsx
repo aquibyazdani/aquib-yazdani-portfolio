@@ -1,7 +1,10 @@
 "use client";
 
 import Link from "next/link";
+import { site } from "../config/site";
 import { formatDate, type BlogPost } from "../lib/content";
+
+const readLabel = site.blog.readLabel;
 
 function TagChip({ tag }: { tag: string }) {
   return (
@@ -22,16 +25,14 @@ function coverStyle(post: BlogPost, stop: number) {
   return { background: `linear-gradient(135deg, ${post.coverAccent}30 0%, #0f0f0f ${stop}%)` };
 }
 
-export function BlogCardFeatured({ post, readLabel }: { post: BlogPost; readLabel: string }) {
+export function BlogCardFeatured({ post }: { post: BlogPost }) {
   return (
     <Link href={`/blog/${post.slug}`} className="group block">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 bg-[#111111] rounded-[16px] overflow-hidden hover:bg-[#161616] transition-colors">
         {/* Cover */}
         <div className="aspect-[16/9] lg:aspect-auto lg:min-h-[320px] relative" style={coverStyle(post, 70)}>
           <div className="absolute inset-0 flex items-center justify-center p-10">
-            <h2 className="text-[48px] lg:text-[56px] text-white leading-[0.95] group-hover:text-[#d3e97a] transition-colors">
-              {post.title}
-            </h2>
+            <h2 className="text-[48px] lg:text-[56px] text-white leading-[0.95] group-hover:text-[#d3e97a] transition-colors">{post.title}</h2>
           </div>
         </div>
 
@@ -51,9 +52,7 @@ export function BlogCardFeatured({ post, readLabel }: { post: BlogPost; readLabe
               <span className="text-[#333]">·</span>
               <span className="font-['Inter',sans-serif] text-[#666] text-[13px]">{post.readingTime}</span>
             </div>
-            <span className="font-['Inter',sans-serif] text-[#d3e97a] text-[13px] font-semibold uppercase tracking-wide group-hover:underline">
-              {readLabel}
-            </span>
+            <span className="font-['Inter',sans-serif] text-[#d3e97a] text-[13px] font-semibold uppercase tracking-wide group-hover:underline">{readLabel}</span>
           </div>
         </div>
       </div>
@@ -61,7 +60,7 @@ export function BlogCardFeatured({ post, readLabel }: { post: BlogPost; readLabe
   );
 }
 
-export function BlogCardSmall({ post, readLabel }: { post: BlogPost; readLabel: string }) {
+export function BlogCardSmall({ post }: { post: BlogPost }) {
   return (
     <Link href={`/blog/${post.slug}`} className="group block h-full">
       <div className="bg-[#111111] rounded-[16px] overflow-hidden hover:bg-[#161616] transition-colors h-full flex flex-col">
@@ -78,9 +77,7 @@ export function BlogCardSmall({ post, readLabel }: { post: BlogPost; readLabel: 
 
         {/* Content */}
         <div className="p-6 flex flex-col gap-3 flex-1">
-          <h3 className="text-[24px] text-white leading-[1.1] group-hover:text-[#d3e97a] transition-colors line-clamp-2">
-            {post.title}
-          </h3>
+          <h3 className="text-[24px] text-white leading-[1.1] group-hover:text-[#d3e97a] transition-colors line-clamp-2">{post.title}</h3>
           <p className="font-['Inter',sans-serif] text-[#888] text-[14px] leading-[1.6] line-clamp-3 flex-1">{post.subtitle}</p>
           <div className="flex items-center justify-between pt-1 border-t border-[#222]">
             <span className="font-['Inter',sans-serif] text-[#555] text-[12px]">

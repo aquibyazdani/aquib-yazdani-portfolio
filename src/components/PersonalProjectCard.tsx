@@ -2,10 +2,11 @@
 
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import svgPaths from "../imports/svg-34il4djopb";
+import { site } from "../config/site";
 import type { Project } from "../lib/content";
 import { projectImage } from "../lib/fallback-images";
 
-export default function PersonalProjectCard({ project, linkLabel }: { project: Project; linkLabel: string }) {
+export default function PersonalProjectCard({ project }: { project: Project }) {
   const img = projectImage(project, "personal");
   const displayTitle = project.shortTitle || project.title;
 
@@ -27,7 +28,7 @@ export default function PersonalProjectCard({ project, linkLabel }: { project: P
         {project.url && (
           <a href={project.url} target="_blank" rel="noopener noreferrer" className="group inline-flex flex-col gap-1">
             <div className="flex items-center gap-1">
-              <span className="font-['Inter',sans-serif] font-bold text-[#d3e97a] text-[14px] uppercase">{linkLabel}</span>
+              <span className="font-['Inter',sans-serif] font-bold text-[#d3e97a] text-[14px] uppercase">{site.projects.viewProjectLabel}</span>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                 <path d={svgPaths.p3589c00} fill="#D3E97A" />
               </svg>

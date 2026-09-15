@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import About from "@/components/About";
-import { chromeProps, getContent, socialFor } from "@/lib/content";
+import { chromeProps, getContent } from "@/lib/content";
 import { portraitImage } from "@/lib/fallback-images";
 import { pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata(): Promise<Metadata> {
   const content = await getContent();
-  return pageMetadata(content, content.about.seo, { path: "/about", title: `About ${content.profile.name}` });
+  return pageMetadata(content, "about", { path: "/about", title: "About" });
 }
 
 export default async function AboutPage() {
@@ -16,13 +16,11 @@ export default async function AboutPage() {
   return (
     <About
       chrome={chromeProps(content)}
-      name={profile.name}
-      role={profile.role}
+      profile={profile}
       portrait={portraitImage(profile)}
-      about={content.about}
       categories={content.skillCategories}
       experience={content.experience}
-      social={socialFor(content, "about")}
+      social={content.socialLinks}
     />
   );
 }

@@ -4,7 +4,8 @@ import { Bebas_Neue, Inter } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import Providers from "./providers";
 import "./globals.css";
-import { getContent, ogImageUrl, siteUrl } from "@/lib/content";
+import { displayName, getContent, ogImageUrl, siteUrl } from "@/lib/content";
+import { personJsonLd } from "@/lib/jsonld";
 
 const bebasNeue = Bebas_Neue({
   weight: "400",
@@ -22,16 +23,16 @@ const inter = Inter({
 
 export async function generateMetadata(): Promise<Metadata> {
   const content = await getContent();
-  const { site, profile, integrations } = content;
+  const { seo, integrations } = content;
   const base = siteUrl(content);
-  const image = { url: ogImageUrl(content), width: 1200, height: 630, alt: site.ogImage.alt || site.defaultTitle };
-  const author = profile.legalName || profile.name;
+  const image = { url: ogImageUrl(content), width: 1200, height: 630, alt: seo.defaultOgImage.alt || seo.defaultTitle };
+  const author = displayName(content);
 
   return {
     metadataBase: new URL(base),
-    title: { default: site.defaultTitle, template: site.titleTemplate || "%s" },
-    description: site.description,
-    keywords: site.keywords,
+    title: { default: seo.defaultTitle, template: seo.titleTemplate || "%s" },
+    description: seo.defaultDescription,
+    keywords: seo.defaultKeywords,
     authors: [{ name: author, url: base }],
     creator: author,
     publisher: author,
@@ -39,17 +40,17 @@ export async function generateMetadata(): Promise<Metadata> {
       type: "website",
       locale: "en_US",
       url: base,
-      siteName: site.siteName,
-      title: site.defaultTitle,
-      description: site.description,
+      siteName: seo.siteName,
+      title: seo.defaultTitle,
+      description: seo.defaultDescription,
       images: [image],
     },
     twitter: {
       card: "summary_large_image",
-      site: site.twitterHandle || undefined,
-      creator: site.twitterHandle || undefined,
-      title: site.defaultTitle,
-      description: site.description,
+      site: seo.twitterHandle || undefined,
+      creator: seo.twitterHandle || undefined,
+      title: seo.defaultTitle,
+      description: seo.defaultDescription,
       images: [image],
     },
     robots: {
@@ -63,32 +64,13 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const content = await getContent();
-  const { site, profile, integrations } = content;
-  const base = siteUrl(content);
+  const { integrations } = content;
   const adsensePub = integrations.adsenseClientId.replace(/^ca-/, "");
-
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    name: profile.legalName || profile.name,
-    alternateName: profile.legalName ? profile.name : undefined,
-    jobTitle: site.jobTitle || profile.role,
-    url: base,
-    email: profile.email || undefined,
-    image: ogImageUrl(content),
-    address: profile.city
-      ? { "@type": "PostalAddress", addressLocality: profile.city, addressRegion: profile.region, addressCountry: profile.countryCode }
-      : undefined,
-    sameAs: content.socialLinks.map((s) => s.url).filter((u) => /^https?:/.test(u)),
-    knowsAbout: site.knowsAbout.length ? site.knowsAbout : undefined,
-    worksFor: site.worksForName ? { "@type": "Organization", name: site.worksForName, url: site.worksForUrl || undefined } : undefined,
-    alumniOf: site.alumniOf ? { "@type": "EducationalOrganization", name: site.alumniOf } : undefined,
-  };
 
   return (
     <html lang="en" className={`${bebasNeue.variable} ${inter.variable}`} suppressHydrationWarning>
       <head>
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd(content)) }} />
         {integrations.adsenseClientId && (
           <>
             {/* Google-certified CMP: shows the EEA/UK consent message configured

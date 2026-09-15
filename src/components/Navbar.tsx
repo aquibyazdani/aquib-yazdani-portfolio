@@ -4,9 +4,10 @@ import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { site } from "../config/site";
 import type { ChromeProps } from "../lib/content";
 
-export default function Navbar({ logoText, items }: ChromeProps["nav"]) {
+export default function Navbar({ logoText }: ChromeProps["nav"]) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
 
@@ -30,7 +31,7 @@ export default function Navbar({ logoText, items }: ChromeProps["nav"]) {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-8">
-          {items.map((item) => (
+          {site.nav.map((item) => (
             <Link key={item.path} href={item.path} className={linkClass(item.path)}>
               {item.label}
             </Link>
@@ -51,7 +52,7 @@ export default function Navbar({ logoText, items }: ChromeProps["nav"]) {
       {isMenuOpen && (
         <div className="md:hidden bg-neutral-950 border-t border-[#484848]">
           <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col gap-4">
-            {items.map((item) => (
+            {site.nav.map((item) => (
               <Link
                 key={item.path}
                 href={item.path}

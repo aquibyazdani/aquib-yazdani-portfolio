@@ -20,7 +20,7 @@ export default async function AboutPage() {
       role={profile.role}
       portrait={portraitImage(profile)}
       about={content.about}
-      categories={content.skillCategories.filter((c) => c.page === "about")}
+      categories={content.skillCategories}
       experience={content.experience}
       social={socialFor(content, "about")}
     />

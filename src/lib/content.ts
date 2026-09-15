@@ -61,7 +61,7 @@ export type BlogPost = {
 };
 
 export type Skill = { name: string; icon: string };
-export type SkillCategory = { id: string; title: string; page: "about" | "resume"; skills: Skill[]; order: number };
+export type SkillCategory = { id: string; title: string; skills: Skill[]; order: number };
 export type Experience = {
   id: string;
   title: string;

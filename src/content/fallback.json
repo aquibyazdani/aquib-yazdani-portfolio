@@ -1633,205 +1633,8 @@
   ],
   "skillCategories": [
     {
-      "id": "6aa98b5597162c2e3c4c1ac6",
-      "title": "Frontend Development",
-      "page": "about",
-      "skills": [
-        {
-          "name": "React.js",
-          "icon": "Atom"
-        },
-        {
-          "name": "React Native",
-          "icon": "Smartphone"
-        },
-        {
-          "name": "Next.js",
-          "icon": "Zap"
-        },
-        {
-          "name": "JavaScript (ES6+)",
-          "icon": "Code2"
-        },
-        {
-          "name": "TypeScript",
-          "icon": "FileCode"
-        },
-        {
-          "name": "HTML",
-          "icon": "FileCode"
-        },
-        {
-          "name": "CSS",
-          "icon": "Paintbrush"
-        },
-        {
-          "name": "SCSS",
-          "icon": "Paintbrush"
-        },
-        {
-          "name": "Tailwind CSS",
-          "icon": "Wind"
-        },
-        {
-          "name": "Material UI",
-          "icon": "Palette"
-        },
-        {
-          "name": "Bootstrap",
-          "icon": "Palette"
-        }
-      ],
-      "order": 0,
-      "createdAt": "2026-09-15T18:15:49.429Z",
-      "updatedAt": "2026-09-15T18:15:49.429Z"
-    },
-    {
-      "id": "6aa98b5597162c2e3c4c1ac7",
-      "title": "State Management",
-      "page": "about",
-      "skills": [
-        {
-          "name": "Redux",
-          "icon": "Box"
-        },
-        {
-          "name": "Context API",
-          "icon": "Box"
-        },
-        {
-          "name": "Zustand",
-          "icon": "Box"
-        }
-      ],
-      "order": 1,
-      "createdAt": "2026-09-15T18:15:49.429Z",
-      "updatedAt": "2026-09-15T18:15:49.429Z"
-    },
-    {
-      "id": "6aa98b5597162c2e3c4c1ac8",
-      "title": "Testing & QA",
-      "page": "about",
-      "skills": [
-        {
-          "name": "Jest",
-          "icon": "CheckCircle"
-        },
-        {
-          "name": "React Testing Library",
-          "icon": "TestTube2"
-        },
-        {
-          "name": "Cypress",
-          "icon": "TestTube2"
-        },
-        {
-          "name": "Playwright",
-          "icon": "TestTube2"
-        }
-      ],
-      "order": 2,
-      "createdAt": "2026-09-15T18:15:49.429Z",
-      "updatedAt": "2026-09-15T18:15:49.429Z"
-    },
-    {
-      "id": "6aa98b5597162c2e3c4c1ac9",
-      "title": "Performance Optimization",
-      "page": "about",
-      "skills": [
-        {
-          "name": "SSR",
-          "icon": "Zap"
-        },
-        {
-          "name": "SSG",
-          "icon": "Zap"
-        },
-        {
-          "name": "Component Reusability",
-          "icon": "Puzzle"
-        },
-        {
-          "name": "UI Optimization",
-          "icon": "Gauge"
-        },
-        {
-          "name": "Load Time Reduction",
-          "icon": "Timer"
-        },
-        {
-          "name": "Accessibility Improvements",
-          "icon": "Users"
-        }
-      ],
-      "order": 3,
-      "createdAt": "2026-09-15T18:15:49.429Z",
-      "updatedAt": "2026-09-15T18:15:49.429Z"
-    },
-    {
-      "id": "6aa98b5597162c2e3c4c1aca",
-      "title": "API Integration",
-      "page": "about",
-      "skills": [
-        {
-          "name": "RESTful APIs",
-          "icon": "Globe"
-        },
-        {
-          "name": "GraphQL",
-          "icon": "Database"
-        }
-      ],
-      "order": 4,
-      "createdAt": "2026-09-15T18:15:49.429Z",
-      "updatedAt": "2026-09-15T18:15:49.429Z"
-    },
-    {
-      "id": "6aa98b5597162c2e3c4c1acb",
-      "title": "Version Control & Collaboration",
-      "page": "about",
-      "skills": [
-        {
-          "name": "Git",
-          "icon": "GitBranch"
-        },
-        {
-          "name": "GitHub",
-          "icon": "Github"
-        },
-        {
-          "name": "Azure",
-          "icon": "Cloud"
-        },
-        {
-          "name": "GitLab",
-          "icon": "GitBranch"
-        },
-        {
-          "name": "Bitbucket",
-          "icon": "GitBranch"
-        },
-        {
-          "name": "Jira",
-          "icon": "Folder"
-        },
-        {
-          "name": "Slack",
-          "icon": "MessageSquare"
-        },
-        {
-          "name": "ProofHub",
-          "icon": "Folder"
-        }
-      ],
-      "order": 5,
-      "createdAt": "2026-09-15T18:15:49.429Z",
-      "updatedAt": "2026-09-15T18:15:49.429Z"
-    },
-    {
       "id": "6aa98b5597162c2e3c4c1acc",
       "title": "Languages",
-      "page": "resume",
       "skills": [
         {
           "name": "JavaScript (ES6+)",
@@ -1856,12 +1659,11 @@
       ],
       "order": 0,
       "createdAt": "2026-09-15T18:15:49.429Z",
-      "updatedAt": "2026-09-15T18:15:49.429Z"
+      "updatedAt": "2026-09-15T18:59:03.826Z"
     },
     {
       "id": "6aa98b5597162c2e3c4c1acd",
       "title": "Frontend",
-      "page": "resume",
       "skills": [
         {
           "name": "React",
@@ -1894,16 +1696,19 @@
         {
           "name": "Storybook",
           "icon": "Folder"
+        },
+        {
+          "name": "React Native",
+          "icon": "Smartphone"
         }
       ],
       "order": 1,
       "createdAt": "2026-09-15T18:15:49.429Z",
-      "updatedAt": "2026-09-15T18:15:49.429Z"
+      "updatedAt": "2026-09-15T18:59:03.838Z"
     },
     {
       "id": "6aa98b5597162c2e3c4c1ace",
       "title": "Backend",
-      "page": "resume",
       "skills": [
         {
           "name": "Node.js",
@@ -1928,12 +1733,11 @@
       ],
       "order": 2,
       "createdAt": "2026-09-15T18:15:49.429Z",
-      "updatedAt": "2026-09-15T18:15:49.429Z"
+      "updatedAt": "2026-09-15T18:59:03.849Z"
     },
     {
       "id": "6aa98b5597162c2e3c4c1acf",
       "title": "Architecture",
-      "page": "resume",
       "skills": [
         {
           "name": "Micro-Frontends",
@@ -1970,12 +1774,11 @@
       ],
       "order": 3,
       "createdAt": "2026-09-15T18:15:49.429Z",
-      "updatedAt": "2026-09-15T18:15:49.429Z"
+      "updatedAt": "2026-09-15T18:59:03.860Z"
     },
     {
       "id": "6aa98b5597162c2e3c4c1ad0",
       "title": "State & Data",
-      "page": "resume",
       "skills": [
         {
           "name": "Redux",
@@ -2000,12 +1803,11 @@
       ],
       "order": 4,
       "createdAt": "2026-09-15T18:15:49.429Z",
-      "updatedAt": "2026-09-15T18:15:49.429Z"
+      "updatedAt": "2026-09-15T18:59:03.873Z"
     },
     {
       "id": "6aa98b5597162c2e3c4c1ad1",
       "title": "AI & Dev Tools",
-      "page": "resume",
       "skills": [
         {
           "name": "Claude API",
@@ -2038,12 +1840,11 @@
       ],
       "order": 5,
       "createdAt": "2026-09-15T18:15:49.429Z",
-      "updatedAt": "2026-09-15T18:15:49.429Z"
+      "updatedAt": "2026-09-15T18:59:03.884Z"
     },
     {
       "id": "6aa98b5597162c2e3c4c1ad2",
       "title": "Performance",
-      "page": "resume",
       "skills": [
         {
           "name": "Core Web Vitals (LCP, INP, CLS)",
@@ -2076,12 +1877,11 @@
       ],
       "order": 6,
       "createdAt": "2026-09-15T18:15:49.429Z",
-      "updatedAt": "2026-09-15T18:15:49.429Z"
+      "updatedAt": "2026-09-15T18:59:03.911Z"
     },
     {
       "id": "6aa98b5597162c2e3c4c1ad3",
       "title": "Testing",
-      "page": "resume",
       "skills": [
         {
           "name": "Jest",
@@ -2102,12 +1902,11 @@
       ],
       "order": 7,
       "createdAt": "2026-09-15T18:15:49.429Z",
-      "updatedAt": "2026-09-15T18:15:49.429Z"
+      "updatedAt": "2026-09-15T18:59:03.925Z"
     },
     {
       "id": "6aa98b5597162c2e3c4c1ad4",
       "title": "Build & Tooling",
-      "page": "resume",
       "skills": [
         {
           "name": "Vite",
@@ -2132,12 +1931,11 @@
       ],
       "order": 8,
       "createdAt": "2026-09-15T18:15:49.429Z",
-      "updatedAt": "2026-09-15T18:15:49.429Z"
+      "updatedAt": "2026-09-15T18:59:03.938Z"
     },
     {
       "id": "6aa98b5597162c2e3c4c1ad5",
       "title": "Cloud & Deployment",
-      "page": "resume",
       "skills": [
         {
           "name": "AWS (S3, CloudFront)",
@@ -2146,16 +1944,19 @@
         {
           "name": "Netlify",
           "icon": "Cloud"
+        },
+        {
+          "name": "Azure",
+          "icon": "Cloud"
         }
       ],
       "order": 9,
       "createdAt": "2026-09-15T18:15:49.429Z",
-      "updatedAt": "2026-09-15T18:15:49.429Z"
+      "updatedAt": "2026-09-15T18:59:03.948Z"
     },
     {
       "id": "6aa98b5597162c2e3c4c1ad6",
       "title": "Quality & Standards",
-      "page": "resume",
       "skills": [
         {
           "name": "WCAG 2.1 Accessibility",
@@ -2184,12 +1985,11 @@
       ],
       "order": 10,
       "createdAt": "2026-09-15T18:15:49.429Z",
-      "updatedAt": "2026-09-15T18:15:49.429Z"
+      "updatedAt": "2026-09-15T18:59:03.960Z"
     },
     {
       "id": "6aa98b5597162c2e3c4c1ad7",
       "title": "Collaboration",
-      "page": "resume",
       "skills": [
         {
           "name": "Git",
@@ -2222,11 +2022,23 @@
         {
           "name": "Technical Interviewing",
           "icon": "Users"
+        },
+        {
+          "name": "Bitbucket",
+          "icon": "GitBranch"
+        },
+        {
+          "name": "Slack",
+          "icon": "MessageSquare"
+        },
+        {
+          "name": "ProofHub",
+          "icon": "Folder"
         }
       ],
       "order": 11,
       "createdAt": "2026-09-15T18:15:49.429Z",
-      "updatedAt": "2026-09-15T18:15:49.429Z"
+      "updatedAt": "2026-09-15T18:59:03.972Z"
     }
   ],
   "experience": [

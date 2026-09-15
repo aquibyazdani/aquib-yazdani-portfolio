@@ -24,7 +24,7 @@ function generate(content: Awaited<ReturnType<typeof getContent>>) {
   for (const s of content.socialLinks.filter((s) => /^https?:/.test(s.url))) lines.push(`${s.name}: ${s.url}`);
   lines.push(`Portfolio: ${base}`, "");
 
-  const skills = content.skillCategories.filter((c) => c.page === "resume");
+  const skills = content.skillCategories;
   if (skills.length) {
     lines.push("## Core expertise", "");
     for (const c of skills) lines.push(`- ${c.title}: ${c.skills.map((s) => s.name).join(", ")}`);

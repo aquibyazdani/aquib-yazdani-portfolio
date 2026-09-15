@@ -18,7 +18,7 @@ export default async function ResumePage() {
       chrome={chromeProps(content)}
       profile={profile}
       page={content.resumePage}
-      categories={content.skillCategories.filter((c) => c.page === "resume")}
+      categories={content.skillCategories}
       experience={content.experience}
       education={content.education}
       awards={content.awards}

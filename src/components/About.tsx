@@ -100,7 +100,9 @@ export default function About({ chrome, profile, portrait, categories, experienc
             {/* Right - Profile Image */}
             <div className="flex justify-center lg:justify-end">
               <div className="bg-[#c7c7c7] rounded-[12px] overflow-hidden w-full max-w-[400px] aspect-[4/5] relative">
-                <ImageWithFallback src={portrait.url} alt={portrait.alt} className="absolute inset-0 w-full h-full object-cover object-top" />
+                {portrait.url && (
+                  <ImageWithFallback src={portrait.url} alt={portrait.alt} className="absolute inset-0 w-full h-full object-cover object-top" />
+                )}
               </div>
             </div>
           </div>

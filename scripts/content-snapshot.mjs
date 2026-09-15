@@ -1,6 +1,7 @@
 // Refreshes src/content/fallback.json from the live content API. The snapshot
 // is what the site renders when the API is unreachable, so re-run this
-// (and commit the result) after significant content changes.
+// (and commit the result) after significant content changes. Image and PDF
+// URLs point at R2, which stays available when the API is down.
 //
 //   CONTENT_API_URL=https://api.example.com node scripts/content-snapshot.mjs
 
@@ -17,17 +18,5 @@ if (!res.ok) {
   process.exit(1);
 }
 const json = await res.json();
-
-// Media URLs point at the API, which is exactly what is unavailable when the
-// snapshot is used. Blank them so the bundled images/PDF take over instead.
-const stripMedia = (value) => {
-  if (typeof value === "string") return /\/media\/[a-f0-9]{24}\//.test(value) ? "" : value;
-  if (Array.isArray(value)) return value.map(stripMedia);
-  if (value && typeof value === "object") {
-    return Object.fromEntries(Object.entries(value).map(([k, v]) => [k, stripMedia(v)]));
-  }
-  return value;
-};
-
-writeFileSync(out, JSON.stringify(stripMedia(json), null, 2) + "\n");
+writeFileSync(out, JSON.stringify(json, null, 2) + "\n");
 console.log(`Saved snapshot (${json.projects.length} projects, ${json.blogPosts.length} posts) to ${path.relative(process.cwd(), out)}`);

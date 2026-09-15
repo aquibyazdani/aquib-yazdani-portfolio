@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Portfolio from "@/components/Portfolio";
 import { chromeProps, getContent, projectsFor } from "@/lib/content";
-import { portraitImage } from "@/lib/fallback-images";
+import { profileImage } from "@/lib/images";
 import { websiteJsonLd } from "@/lib/jsonld";
 import { pageMetadata } from "@/lib/seo";
 
@@ -23,7 +23,7 @@ export default async function Home() {
         tagline={profile.tagline}
         shortBio={profile.shortBio}
         bio={profile.bio}
-        portrait={portraitImage(profile)}
+        portrait={profileImage(profile)}
         heroSocial={content.socialLinks.filter((s) => s.showInHero)}
         featured={projectsFor(content, "featured")}
       />

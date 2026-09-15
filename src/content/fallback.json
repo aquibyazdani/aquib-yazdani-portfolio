@@ -18,11 +18,11 @@
     "countryCode": "IN",
     "careerStartDate": "2021-06-01",
     "portrait": {
-      "url": "",
+      "url": "https://pub-ba51f7650cd24e298a4ea74ab48033b5.r2.dev/profile/202609-575f93a6-hero.png",
       "alt": "Aquib Yazdani — Sr. Software Engineer based in Pune, India"
     },
     "resumePdf": {
-      "url": "",
+      "url": "https://pub-ba51f7650cd24e298a4ea74ab48033b5.r2.dev/resume/202609-05a63dd3-md_aquib_yazdani.pdf",
       "fileName": "Md_Aquib_Yazdani.pdf"
     }
   },
@@ -445,11 +445,11 @@
       ],
       "images": {
         "featured": {
-          "url": "",
+          "url": "https://pub-ba51f7650cd24e298a4ea74ab48033b5.r2.dev/projects/202609-d1493bd3-toi.png",
           "alt": "Times of India ePaper platform — high-traffic digital newspaper serving 10M+ daily active users"
         },
         "notable": {
-          "url": "",
+          "url": "https://pub-ba51f7650cd24e298a4ea74ab48033b5.r2.dev/projects/202609-d1493bd3-toi.png",
           "alt": "TOI Epaper (Times of India)"
         },
         "personal": {
@@ -498,11 +498,11 @@
       ],
       "images": {
         "featured": {
-          "url": "",
+          "url": "https://pub-ba51f7650cd24e298a4ea74ab48033b5.r2.dev/projects/202609-c20163de-libsilong.png",
           "alt": "Libsi Markah — multilingual e-commerce platform built with Next.js, Node.js, MongoDB and AWS"
         },
         "notable": {
-          "url": "",
+          "url": "https://pub-ba51f7650cd24e298a4ea74ab48033b5.r2.dev/projects/202609-c20163de-libsilong.png",
           "alt": "Libsi Markah E-commerce"
         },
         "personal": {
@@ -549,11 +549,11 @@
       ],
       "images": {
         "featured": {
-          "url": "",
+          "url": "https://pub-ba51f7650cd24e298a4ea74ab48033b5.r2.dev/projects/202609-41efde9e-woovet.png",
           "alt": "Woovet — US-based Veterinary SaaS platform migrated to Next.js, serving 50+ hospitals"
         },
         "notable": {
-          "url": "",
+          "url": "https://pub-ba51f7650cd24e298a4ea74ab48033b5.r2.dev/projects/202609-41efde9e-woovet.png",
           "alt": "Woovet"
         },
         "personal": {
@@ -591,7 +591,7 @@
       "techStack": [],
       "images": {
         "featured": {
-          "url": "",
+          "url": "https://pub-ba51f7650cd24e298a4ea74ab48033b5.r2.dev/projects/202609-039bc0b4-mm.png",
           "alt": "Memorable Mumbai — travel and tourism website showcasing Mumbai's culture, landmarks, and heritage"
         },
         "notable": {
@@ -599,7 +599,7 @@
           "alt": "Memorable Mumbai"
         },
         "personal": {
-          "url": "",
+          "url": "https://pub-ba51f7650cd24e298a4ea74ab48033b5.r2.dev/projects/202609-039bc0b4-mm.png",
           "alt": "Memorable Mumbai"
         }
       },
@@ -643,15 +643,15 @@
       ],
       "images": {
         "featured": {
-          "url": "",
+          "url": "https://pub-ba51f7650cd24e298a4ea74ab48033b5.r2.dev/projects/202609-c080e4fc-screenr_long.png",
           "alt": "Screener by Zamzam Capital — Halal stock screening platform for Shariah-compliant investment research"
         },
         "notable": {
-          "url": "",
+          "url": "https://pub-ba51f7650cd24e298a4ea74ab48033b5.r2.dev/projects/202609-c080e4fc-screenr_long.png",
           "alt": "Screener - Zamzam Capital"
         },
         "personal": {
-          "url": "",
+          "url": "https://pub-ba51f7650cd24e298a4ea74ab48033b5.r2.dev/projects/202609-fc4f50fe-screener.png",
           "alt": "Screener"
         }
       },
@@ -700,7 +700,7 @@
           "alt": "Adlob (Response 4You) - (Times of India)"
         },
         "notable": {
-          "url": "",
+          "url": "https://pub-ba51f7650cd24e298a4ea74ab48033b5.r2.dev/projects/202609-0bb2806f-adlob.png",
           "alt": "Adlob (Response 4You) - (Times of India)"
         },
         "personal": {
@@ -746,7 +746,7 @@
           "alt": "Portfolio"
         },
         "personal": {
-          "url": "",
+          "url": "https://pub-ba51f7650cd24e298a4ea74ab48033b5.r2.dev/projects/202609-d7438b19-aquib-portfolio.png",
           "alt": "Portfolio"
         }
       },
@@ -788,7 +788,7 @@
           "alt": "Amusement Park"
         },
         "personal": {
-          "url": "",
+          "url": "https://pub-ba51f7650cd24e298a4ea74ab48033b5.r2.dev/projects/202609-fb8c7e5d-funpark.png",
           "alt": "Amusement Park"
         }
       },
@@ -830,7 +830,7 @@
           "alt": "E-commerce clone"
         },
         "personal": {
-          "url": "",
+          "url": "https://pub-ba51f7650cd24e298a4ea74ab48033b5.r2.dev/projects/202609-45d47461-ecommerce.png",
           "alt": "E-commerce clone"
         }
       },
@@ -872,7 +872,7 @@
           "alt": "Spotify clone"
         },
         "personal": {
-          "url": "",
+          "url": "https://pub-ba51f7650cd24e298a4ea74ab48033b5.r2.dev/projects/202609-8ccbcb26-spotify.png",
           "alt": "Spotify clone"
         }
       },
@@ -914,7 +914,7 @@
           "alt": "Screener"
         },
         "personal": {
-          "url": "",
+          "url": "https://pub-ba51f7650cd24e298a4ea74ab48033b5.r2.dev/projects/202609-fc4f50fe-screener.png",
           "alt": "Screener"
         }
       },
@@ -956,7 +956,7 @@
           "alt": "TOI ePaper - Archive"
         },
         "personal": {
-          "url": "",
+          "url": "https://pub-ba51f7650cd24e298a4ea74ab48033b5.r2.dev/projects/202609-d1493bd3-toi.png",
           "alt": "TOI ePaper - Archive"
         }
       },
@@ -2006,5 +2006,5 @@
     },
     "submitUrl": "http://localhost:4000/api/public/forms/6aa9984a223c25343e3ac8a1/submissions"
   },
-  "updatedAt": "2026-09-15T19:13:48.569Z"
+  "updatedAt": "2026-09-15T19:51:59.360Z"
 }

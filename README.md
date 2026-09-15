@@ -31,7 +31,7 @@ Design copy is collected in [src/config/site.ts](src/config/site.ts). Structured
 
 1. `src/lib/content.ts` → `getContent()` fetches `/api/public/content` once per request, cached by Next for 5 minutes under the `content` tag.
 2. Saving anything in the admin makes the API `POST /api/revalidate` here, which purges that cache — edits are live within seconds.
-3. Images and the resume PDF come from the API; when a field is empty the site falls back to the bundled assets in `src/assets` (mapped by project slug in `src/lib/fallback-images.ts`).
+3. Images and the resume PDF are public Cloudflare R2 URLs stored in the CMS; the site renders them as-is and keeps no image files of its own. An empty image field shows a placeholder, and the resume download button is hidden until a PDF is uploaded. The old `/Md_Aquib_Yazdani.pdf` link redirects to the current resume.
 4. Skill and social icons are stored as Lucide icon names and resolved in `src/lib/icons.tsx`.
 5. The contact form (`src/components/ContactForm.tsx`) renders whatever fields the active form defines and posts to the API's inbox and/or EmailJS, as configured per form.
 

@@ -109,7 +109,9 @@ export default function Portfolio({ chrome, name, tagline, shortBio, bio, portra
             {/* Right Image */}
             <div className="relative">
               <div className="bg-[#c7c7c7] rounded-[16px] w-full max-w-[450px] mx-auto aspect-[6/7] relative overflow-hidden">
-                <ImageWithFallback src={portrait.url} alt={portrait.alt} className="absolute inset-0 w-full h-full object-cover object-center" />
+                {portrait.url && (
+                  <ImageWithFallback src={portrait.url} alt={portrait.alt} className="absolute inset-0 w-full h-full object-cover object-center" />
+                )}
               </div>
             </div>
           </div>

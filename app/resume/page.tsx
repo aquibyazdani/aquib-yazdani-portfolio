@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Resume from "@/components/Resume";
 import { chromeProps, getContent, projectsFor } from "@/lib/content";
-import { FALLBACK_RESUME_PDF } from "@/lib/fallback-images";
 import { pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -22,10 +21,7 @@ export default async function ResumePage() {
       education={content.education}
       awards={content.awards}
       projects={projectsFor(content, "resume")}
-      pdf={{
-        url: profile.resumePdf.url || FALLBACK_RESUME_PDF,
-        fileName: profile.resumePdf.fileName || FALLBACK_RESUME_PDF.slice(1),
-      }}
+      pdf={profile.resumePdf.url ? profile.resumePdf : null}
     />
   );
 }

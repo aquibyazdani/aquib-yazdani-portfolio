@@ -4,7 +4,7 @@ import { ImageWithFallback } from "./figma/ImageWithFallback";
 import svgPaths from "../imports/svg-34il4djopb";
 import { site } from "../config/site";
 import type { Project } from "../lib/content";
-import { projectImage } from "../lib/fallback-images";
+import { projectImage } from "../lib/images";
 import { InfoRow, projectLinkLabel } from "./FeaturedProjectCard";
 
 const labels = site.projects;

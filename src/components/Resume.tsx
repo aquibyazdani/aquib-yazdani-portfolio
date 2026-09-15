@@ -22,7 +22,8 @@ export type ResumeProps = {
   education: Education[];
   awards: Award[];
   projects: Project[];
-  pdf: { url: string; fileName: string };
+  /** Null when no resume has been uploaded; the download button is hidden. */
+  pdf: { url: string; fileName: string } | null;
 };
 
 function SectionHeading({ children }: { children: React.ReactNode }) {
@@ -62,16 +63,18 @@ export default function Resume({ chrome, profile, categories, experience, educat
       <div className="pt-32 pb-20 px-6">
         <div className="max-w-6xl mx-auto">
           {/* Download Button */}
-          <div className="flex justify-end mb-8">
-            <a
-              href={pdf.url}
-              download={pdf.fileName || undefined}
-              className="inline-flex items-center gap-2 bg-[#d3e97a] text-neutral-950 px-6 py-3 rounded-full hover:bg-[#c5db6c] transition-colors"
-            >
-              <Download className="size-4" />
-              <span className="font-['Inter',sans-serif] font-bold text-[14px] uppercase">{copy.downloadLabel}</span>
-            </a>
-          </div>
+          {pdf && (
+            <div className="flex justify-end mb-8">
+              <a
+                href={pdf.url}
+                download={pdf.fileName || undefined}
+                className="inline-flex items-center gap-2 bg-[#d3e97a] text-neutral-950 px-6 py-3 rounded-full hover:bg-[#c5db6c] transition-colors"
+              >
+                <Download className="size-4" />
+                <span className="font-['Inter',sans-serif] font-bold text-[14px] uppercase">{copy.downloadLabel}</span>
+              </a>
+            </div>
+          )}
 
           {/* Resume Card */}
           <div id="resume-card" className="bg-[#1a1a1a] rounded-[20px] overflow-hidden shadow-2xl" ref={resumeRef}>

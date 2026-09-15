@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import About from "@/components/About";
 import { chromeProps, getContent } from "@/lib/content";
-import { portraitImage } from "@/lib/fallback-images";
+import { profileImage } from "@/lib/images";
 import { pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -17,7 +17,7 @@ export default async function AboutPage() {
     <About
       chrome={chromeProps(content)}
       profile={profile}
-      portrait={portraitImage(profile)}
+      portrait={profileImage(profile)}
       categories={content.skillCategories}
       experience={content.experience}
       social={content.socialLinks}

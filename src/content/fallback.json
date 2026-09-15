@@ -15,11 +15,11 @@
     "careerStartDate": "2021-06-01",
     "professionalSummary": "Senior Software Engineer with 5 years of experience shipping production-grade React applications at scale. Engineered the Times of India ePaper platform within the Times Group digital ecosystem (10M+ digital DAU, 60M+ app MAU) and the American Arbitration Association's legal-tech arbitration platform (180K+ annual cases). Specialized in frontend architecture, micro-frontends, performance engineering, AI/LLM integration, and accessibility. Consistent track record of end-to-end ownership across high-traffic products, leading direct reports, and conducting senior-level technical interviews. Currently deepening work in AI-integrated frontend systems and edge rendering patterns.",
     "portrait": {
-      "url": "http://localhost:4000/media/6aa98b5397162c2e3c4c1a6e/hero.png",
+      "url": "",
       "alt": "Aquib Yazdani — Sr. Software Engineer based in Pune, India"
     },
     "resumePdf": {
-      "url": "http://localhost:4000/media/6aa98b5597162c2e3c4c1ab5/Md_Aquib_Yazdani.pdf",
+      "url": "",
       "fileName": "Md_Aquib_Yazdani.pdf"
     }
   },
@@ -652,11 +652,11 @@
       ],
       "images": {
         "featured": {
-          "url": "http://localhost:4000/media/6aa98b5397162c2e3c4c1a72/toi.png",
+          "url": "",
           "alt": "Times of India ePaper platform — high-traffic digital newspaper serving 10M+ daily active users"
         },
         "notable": {
-          "url": "http://localhost:4000/media/6aa98b5397162c2e3c4c1a72/toi.png",
+          "url": "",
           "alt": "TOI Epaper (Times of India)"
         },
         "personal": {
@@ -706,11 +706,11 @@
       ],
       "images": {
         "featured": {
-          "url": "http://localhost:4000/media/6aa98b5497162c2e3c4c1aa1/libsilong.png",
+          "url": "",
           "alt": "Libsi Markah — multilingual e-commerce platform built with Next.js, Node.js, MongoDB and AWS"
         },
         "notable": {
-          "url": "http://localhost:4000/media/6aa98b5497162c2e3c4c1aa1/libsilong.png",
+          "url": "",
           "alt": "Libsi Markah E-commerce"
         },
         "personal": {
@@ -758,11 +758,11 @@
       ],
       "images": {
         "featured": {
-          "url": "http://localhost:4000/media/6aa98b5597162c2e3c4c1ab3/woovet.png",
+          "url": "",
           "alt": "Woovet — US-based Veterinary SaaS platform migrated to Next.js, serving 50+ hospitals"
         },
         "notable": {
-          "url": "http://localhost:4000/media/6aa98b5597162c2e3c4c1ab3/woovet.png",
+          "url": "",
           "alt": "Woovet"
         },
         "personal": {
@@ -801,7 +801,7 @@
       "techStack": [],
       "images": {
         "featured": {
-          "url": "http://localhost:4000/media/6aa98b5397162c2e3c4c1a7a/mm.png",
+          "url": "",
           "alt": "Memorable Mumbai — travel and tourism website showcasing Mumbai's culture, landmarks, and heritage"
         },
         "notable": {
@@ -809,7 +809,7 @@
           "alt": "Memorable Mumbai"
         },
         "personal": {
-          "url": "http://localhost:4000/media/6aa98b5397162c2e3c4c1a7a/mm.png",
+          "url": "",
           "alt": "Memorable Mumbai"
         }
       },
@@ -854,15 +854,15 @@
       ],
       "images": {
         "featured": {
-          "url": "http://localhost:4000/media/6aa98b5397162c2e3c4c1a78/screenr_long.png",
+          "url": "",
           "alt": "Screener by Zamzam Capital — Halal stock screening platform for Shariah-compliant investment research"
         },
         "notable": {
-          "url": "http://localhost:4000/media/6aa98b5397162c2e3c4c1a78/screenr_long.png",
+          "url": "",
           "alt": "Screener - Zamzam Capital"
         },
         "personal": {
-          "url": "http://localhost:4000/media/6aa98b5397162c2e3c4c1a76/screener.png",
+          "url": "",
           "alt": "Screener"
         }
       },
@@ -912,7 +912,7 @@
           "alt": "Adlob (Response 4You) - (Times of India)"
         },
         "notable": {
-          "url": "http://localhost:4000/media/6aa98b5497162c2e3c4c1a8c/adlob.png",
+          "url": "",
           "alt": "Adlob (Response 4You) - (Times of India)"
         },
         "personal": {
@@ -959,7 +959,7 @@
           "alt": "Portfolio"
         },
         "personal": {
-          "url": "http://localhost:4000/media/6aa98b5597162c2e3c4c1ab0/aquib-portfolio.png",
+          "url": "",
           "alt": "Portfolio"
         }
       },
@@ -1002,7 +1002,7 @@
           "alt": "Amusement Park"
         },
         "personal": {
-          "url": "http://localhost:4000/media/6aa98b5497162c2e3c4c1a91/funpark.png",
+          "url": "",
           "alt": "Amusement Park"
         }
       },
@@ -1045,7 +1045,7 @@
           "alt": "E-commerce clone"
         },
         "personal": {
-          "url": "http://localhost:4000/media/6aa98b5497162c2e3c4c1a9b/ecommerce.png",
+          "url": "",
           "alt": "E-commerce clone"
         }
       },
@@ -1088,7 +1088,7 @@
           "alt": "Spotify clone"
         },
         "personal": {
-          "url": "http://localhost:4000/media/6aa98b5497162c2e3c4c1a9e/spotify.png",
+          "url": "",
           "alt": "Spotify clone"
         }
       },
@@ -1131,7 +1131,7 @@
           "alt": "Screener"
         },
         "personal": {
-          "url": "http://localhost:4000/media/6aa98b5397162c2e3c4c1a76/screener.png",
+          "url": "",
           "alt": "Screener"
         }
       },
@@ -1174,7 +1174,7 @@
           "alt": "TOI ePaper - Archive"
         },
         "personal": {
-          "url": "http://localhost:4000/media/6aa98b5397162c2e3c4c1a72/toi.png",
+          "url": "",
           "alt": "TOI ePaper - Archive"
         }
       },
@@ -2389,5 +2389,5 @@
       "updatedAt": "2026-09-15T18:15:49.429Z"
     }
   ],
-  "updatedAt": "2026-09-15T18:15:49.429Z"
+  "updatedAt": "2026-09-15T18:32:38.263Z"
 }

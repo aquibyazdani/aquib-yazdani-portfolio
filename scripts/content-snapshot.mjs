@@ -17,5 +17,17 @@ if (!res.ok) {
   process.exit(1);
 }
 const json = await res.json();
-writeFileSync(out, JSON.stringify(json, null, 2) + "\n");
+
+// Media URLs point at the API, which is exactly what is unavailable when the
+// snapshot is used. Blank them so the bundled images/PDF take over instead.
+const stripMedia = (value) => {
+  if (typeof value === "string") return /\/media\/[a-f0-9]{24}\//.test(value) ? "" : value;
+  if (Array.isArray(value)) return value.map(stripMedia);
+  if (value && typeof value === "object") {
+    return Object.fromEntries(Object.entries(value).map(([k, v]) => [k, stripMedia(v)]));
+  }
+  return value;
+};
+
+writeFileSync(out, JSON.stringify(stripMedia(json), null, 2) + "\n");
 console.log(`Saved snapshot (${json.projects.length} projects, ${json.blogPosts.length} posts) to ${path.relative(process.cwd(), out)}`);

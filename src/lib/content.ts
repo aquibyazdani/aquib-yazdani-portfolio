@@ -1,5 +1,4 @@
 import { cache } from "react";
-import fallback from "../content/fallback.json";
 import { site } from "../config/site";
 
 // ─── Types (mirror portfolio-api/src/content/schemas.ts) ─────────────────────
@@ -139,8 +138,6 @@ export type ContactForm = {
   submitLabel: string;
   successMessage: string;
   errorMessage: string;
-  storeSubmissions: boolean;
-  emailjs: { enabled: boolean; serviceId: string; templateId: string; publicKey: string };
   submitUrl: string;
 };
 
@@ -167,25 +164,19 @@ export const CONTENT_TAG = "content";
 
 /**
  * Loads all site content from the CMS API. Cached by Next for 5 minutes and
- * purged on demand by /api/revalidate. Falls back to the committed snapshot
- * (src/content/fallback.json) when the API is unreachable or not configured,
- * so builds never fail because of the CMS.
+ * purged on demand by /api/revalidate. There is no local snapshot: the CMS is
+ * the only source of content, so a failure here surfaces rather than serving
+ * something stale. app/error.tsx renders the message.
  */
 export const getContent = cache(async (): Promise<Content> => {
-  const snapshot = fallback as unknown as Content;
   const base = process.env.CONTENT_API_URL?.replace(/\/$/, "");
-  if (!base) return snapshot;
+  if (!base) throw new Error("CONTENT_API_URL is not set — every page renders from the CMS API.");
 
-  try {
-    const res = await fetch(`${base}/api/public/content`, {
-      next: { revalidate: 300, tags: [CONTENT_TAG] },
-    });
-    if (!res.ok) throw new Error(`content API responded ${res.status}`);
-    return (await res.json()) as Content;
-  } catch (err) {
-    console.warn("[content] using fallback snapshot:", err instanceof Error ? err.message : err);
-    return snapshot;
-  }
+  const res = await fetch(`${base}/api/public/content`, {
+    next: { revalidate: 300, tags: [CONTENT_TAG] },
+  });
+  if (!res.ok) throw new Error(`Content API responded ${res.status} ${res.statusText}`);
+  return (await res.json()) as Content;
 });
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────

@@ -13,7 +13,7 @@ npm install
 npm run dev                  # http://localhost:3000
 ```
 
-Start the API first (`npm run dev` in `portfolio-api`). If `CONTENT_API_URL` is unset or the API is down, the site renders from `src/content/fallback.json` instead, so it always builds.
+Start the API first (`npm run dev` in `portfolio-api`). `CONTENT_API_URL` is required: the CMS is the only source of content, so the site will not build or render without it.
 
 ## What comes from where
 
@@ -31,11 +31,11 @@ Design copy is collected in [src/config/site.ts](src/config/site.ts). Structured
 
 1. `src/lib/content.ts` → `getContent()` fetches `/api/public/content` once per request, cached by Next for 5 minutes under the `content` tag.
 2. Saving anything in the admin makes the API `POST /api/revalidate` here, which purges that cache — edits are live within seconds.
-3. Images and the resume PDF are public Cloudflare R2 URLs stored in the CMS; the site renders them as-is and keeps no image files of its own. An empty image field shows a placeholder, and the resume download button is hidden until a PDF is uploaded. The old `/Md_Aquib_Yazdani.pdf` link redirects to the current resume.
-4. Skill and social icons are stored as Lucide icon names and resolved in `src/lib/icons.tsx`.
-5. The contact form (`src/components/ContactForm.tsx`) renders whatever fields the active form defines and posts to the API's inbox and/or EmailJS, as configured per form.
+3. While a route waits on that fetch, `app/loading.tsx` renders a loader; if the API is unreachable, `app/error.tsx` renders a retry instead. There is no local snapshot, so the CMS is the only source of content.
+4. Images and the resume PDF are public Cloudflare R2 URLs stored in the CMS; the site renders them as-is and keeps no image files of its own. An empty image field shows a placeholder, and the resume download button is hidden until a PDF is uploaded. The old `/Md_Aquib_Yazdani.pdf` link redirects to the current resume.
+5. Skill and social icons are stored as Lucide icon names and resolved in `src/lib/icons.tsx`.
+6. The contact form (`src/components/ContactForm.tsx`) renders whatever fields the active form defines and posts them to the API, which handles delivery — saving to the submissions inbox, emailing via Resend, recording the sender in the audience list and sending them a branded acknowledgement. No email credentials reach the browser.
 
-`npm run content:snapshot` refreshes the fallback JSON from the API — run it and commit after big content changes.
 
 ## Deploy
 

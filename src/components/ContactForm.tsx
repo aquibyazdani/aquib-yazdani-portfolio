@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import emailjs from "emailjs-com";
 import { toast } from "react-toastify";
 import { Loader2 } from "lucide-react";
 import { site } from "../config/site";
@@ -54,8 +53,9 @@ const inputClass =
 const labelClass = "font-['Inter',sans-serif] text-[#c7c7c7] text-[15px]";
 
 /**
- * Renders the CMS-defined contact form. Submissions go to the API inbox
- * and/or EmailJS depending on how the form is configured in the admin.
+ * Renders the CMS-defined contact form. The API handles delivery — saving to
+ * the submissions inbox and emailing via Resend — so no email credentials
+ * are shipped to the browser.
  */
 export default function ContactForm({ form, email }: Props) {
   const [values, setValues] = useState<Values>(() => initialValues(form?.fields ?? []));
@@ -89,10 +89,9 @@ export default function ContactForm({ form, email }: Props) {
     toast.error(form.errorMessage || "Something went wrong. Please try again.", TOAST_OPTIONS);
   };
 
-  // Order matters: validate, then save to the inbox (the API is the source
-  // of truth for validation), and only then relay by email. Nothing is
-  // emailed for an invalid submission, and a saved message still counts as
-  // delivered if the email relay fails.
+  // The API is the source of truth for validation and for delivery: it saves
+  // the submission and sends the notification email server-side, so no email
+  // credentials ever reach the browser.
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     const clientIssues = validate(form.fields, values);
@@ -104,30 +103,17 @@ export default function ContactForm({ form, email }: Props) {
     setSending(true);
     setErrors({});
     try {
-      if (form.storeSubmissions) {
-        const res = await fetch(form.submitUrl, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ ...values, _gotcha: honeypot }),
-        });
-        if (!res.ok) {
-          const body = await res.json().catch(() => ({}));
-          if (res.status === 400 && Array.isArray(body.issues)) {
-            setErrors(Object.fromEntries(body.issues.map((i: { path: string; message: string }) => [i.path, i.message])));
-          }
-          throw new Error(body.error ?? `Request failed (${res.status})`);
+      const res = await fetch(form.submitUrl, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...values, _gotcha: honeypot }),
+      });
+      if (!res.ok) {
+        const body = await res.json().catch(() => ({}));
+        if (res.status === 400 && Array.isArray(body.issues)) {
+          setErrors(Object.fromEntries(body.issues.map((i: { path: string; message: string }) => [i.path, i.message])));
         }
-      }
-
-      if (form.emailjs.enabled) {
-        // EmailJS template variables use the field keys as names.
-        const templateParams = Object.fromEntries(Object.entries(values).map(([k, v]) => [k, typeof v === "boolean" ? (v ? "Yes" : "No") : v]));
-        try {
-          await emailjs.send(form.emailjs.serviceId, form.emailjs.templateId, templateParams, form.emailjs.publicKey);
-        } catch (err) {
-          if (!form.storeSubmissions) throw err;
-          console.error("Email relay failed; submission was saved:", err);
-        }
+        throw new Error(body.error ?? `Request failed (${res.status})`);
       }
 
       succeed();
